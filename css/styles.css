@@ -721,4 +721,6 @@ hr.star-primary:after {
     font-size: 2em;
 }
 
-col-
+.navbar-center {
+  margin: 0 auto;
+}
