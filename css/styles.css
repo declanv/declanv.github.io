@@ -448,12 +448,12 @@ padding: 0;
   background-image:none;
 }
 
-.hi-intro-container {
+/*.hi-intro-container {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
-}
-
+}*/
+/*
 .hi-intro-wrap {
 display: inline-block;
 position: relative;
@@ -461,6 +461,9 @@ width: 100%;
 padding-bottom: 100%;
 vertical-align: middle;
 overflow: hidden;
+}*/
+.hi-intro-wrap {
+margin: 0;
 }
 .hi-intro {
   position: absolute;
