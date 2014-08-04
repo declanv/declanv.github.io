@@ -15,7 +15,7 @@ $(function() {
   // $('.squiggle-animated').on('load', function() {
 
 var paths = document.querySelectorAll('.squiggle-animated');
-debugger
+// debugger
 // var paths = Array.prototype.slice.call(document.querySelectorAll('.squiggle-animated'));
 $(paths).each(function(path){
 var length = paths[path].getTotalLength();
