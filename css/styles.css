@@ -728,7 +728,7 @@ hr.star-primary:after {
 }*/
 
 .navbar.navbar-center {
-  margin: 0 auto;
+  margin: 0 33%;
   padding: 0;
   display: inline-block;
   float: none;
@@ -785,5 +785,5 @@ display:inline-block;
 }
 
 .container-fluid.bottom {
-  margin-bottom: 15%;
+  margin: 0 5% 15% 5%;
 }
