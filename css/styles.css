@@ -734,7 +734,7 @@ hr.star-primary:after {
   float: none;
 }
 
-.nav.navbar-nav.center {
+.nav.navbar-nav.bottom.center {
   margin: 0 auto;
 }
 
@@ -749,7 +749,7 @@ hr.star-primary:after {
     }
 }
 
-
-.navbar-nav>li, .navbar-nav {
+/*, .navbar-nav.bottom*/
+.navbar-nav.bottom>li {
 float: left !important;
 }
