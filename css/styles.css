@@ -748,6 +748,18 @@ hr.star-primary:after {
         text-align: center;
     }
 
+    .nav.navbar-nav.bottom.center {
+  margin: 0 auto;
+  display:inline-block;
+  float: none;
+}
+
+.navbar-nav.bottom>li {
+/*float: left !important;*/
+float: none;
+display:inline-block;
+}
+
 }
 
 /*, .navbar-nav.bottom*/
