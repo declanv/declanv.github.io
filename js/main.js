@@ -125,6 +125,7 @@ $('.nav li a').click(function(event) {
 // doc = object['#document'];
 
 // paths = object.document.querySelectorAll('.squiggle-animated');
+$('svg_real.html').on('load', function() {
 
 var paths = document.querySelectorAll('.squiggle-animated');
 debugger
@@ -147,7 +148,7 @@ paths[path].style.transition = paths[path].style.WebkitTransition =
 paths[path].style.strokeDashoffset = '0';
 
 });
-
+});
 // An approach using object tag:
 
 
