@@ -755,3 +755,9 @@ hr.star-primary:after {
 /*float: left !important;*/
 float: left;
 }
+
+.web-header {
+  float: left;
+  margin: 0;
+  padding-left: 5%;
+}
