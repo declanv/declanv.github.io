@@ -448,16 +448,16 @@ padding: 0;
   background-image:none;
 }
 
-/*.hi-intro-container {
-  max-width: 1000px;
+.hi-intro-container {
+  max-width: 100%;
   margin: 0 auto;
   padding: 0;
-}*/
+}
 
 .hi-intro-wrap {
 display: inline-block;
 position: relative;
-width: 1000px;
+width: 100%;
 padding-bottom: 100%;
 vertical-align: middle;
 overflow: hidden;
@@ -466,7 +466,7 @@ overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
-  width: 1000px;
+  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
