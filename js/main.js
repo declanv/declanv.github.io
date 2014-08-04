@@ -127,7 +127,7 @@ $('.nav li a').click(function(event) {
 // paths = object.document.querySelectorAll('.squiggle-animated');
 
 var paths = document.querySelectorAll('.squiggle-animated');
-// debugger
+debugger
 // var paths = Array.prototype.slice.call(document.querySelectorAll('.squiggle-animated'));
 $(paths).each(function(path){
 var length = paths[path].getTotalLength();
