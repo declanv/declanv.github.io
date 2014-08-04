@@ -730,8 +730,11 @@ hr.star-primary:after {
 .navbar.navbar-center {
   margin: 0px 20%;
   padding: 0;
+  display: inline-block;
+  float: none;
 }
 
 .nav.navbar-nav.center {
   margin: 0 auto;
 }
+
