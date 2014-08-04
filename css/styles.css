@@ -448,17 +448,17 @@ padding: 0;
   background-image:none;
 }
 
-/*.hi-intro-container {
+.hi-intro-container {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
-}*/
+}
 
 .hi-intro-wrap {
 display: inline-block;
 position: relative;
 margin: 0;
-height: 100%;
+/*height: 100%;*/
 width: 100%;
 padding-bottom: 100%;
 vertical-align: middle;
