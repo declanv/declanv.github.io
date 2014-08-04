@@ -738,3 +738,13 @@ hr.star-primary:after {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .navbar.navbar-center {
+        display: inline-block;
+        float: none;
+    }
+
+    .navbar.navbar-center {
+        text-align: center;
+    }
+}
