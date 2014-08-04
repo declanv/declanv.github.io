@@ -1,6 +1,6 @@
 $(function() {
 
-  $( ".hi-intro-wrap" ).load( "svg_real.html", function() {
+  $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
 
     var paths = document.querySelectorAll('.squiggle-animated');
 
