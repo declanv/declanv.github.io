@@ -1,8 +1,8 @@
 $(function() {
 
-  skrollr.init({
-    forceHeight: false
-  });
+  // skrollr.init({
+  //   forceHeight: false
+  // });
 
   // $("#hi-intro-wrap").load("/svg_real.html" [, data ]
   //       [, complete(responseText, textStatus, XMLHttpRequest) ]);
@@ -11,7 +11,7 @@ $(function() {
 
   // // Run code
   $( ".hi-intro-wrap" ).load( "svg_real.html", function() {
-  // alert( "Load was performed." );
+  alert( "Load was performed." );
   // $('.squiggle-animated').on('load', function() {
 
 var paths = document.querySelectorAll('.squiggle-animated');
@@ -41,50 +41,50 @@ paths[path].style.strokeDashoffset = '0';
 // document.getElementById("content").innerHTML='<object type="text/html" data="svg_real.html" ></object>';
 // }
 
-  /* copy loaded thumbnails into carousel */
-$('.row .thumbnail').on('load', function() {
+//   /* copy loaded thumbnails into carousel */
+// $('.row .thumbnail').on('load', function() {
 
-}).each(function(i) {
-  if(this.complete) {
-    var item = $('<div class="item"></div>');
-    var itemDiv = $(this).parents('div');
-    var title = $(this).parent('a').attr("title");
+// }).each(function(i) {
+//   if(this.complete) {
+//     var item = $('<div class="item"></div>');
+//     var itemDiv = $(this).parents('div');
+//     var title = $(this).parent('a').attr("title");
 
-    item.attr("title",title);
-    $(itemDiv.html()).appendTo(item);
-    item.appendTo('.carousel-inner');
-    if (i==0){ // set first item active
-     item.addClass('active');
-    }
-  }
-});
+//     item.attr("title",title);
+//     $(itemDiv.html()).appendTo(item);
+//     item.appendTo('.carousel-inner');
+//     if (i==0){ // set first item active
+//      item.addClass('active');
+//     }
+//   }
+// });
 
-/* activate the carousel */
-$('#modalCarousel').carousel({interval:false});
+// /* activate the carousel */
+// $('#modalCarousel').carousel({interval:false});
 
-/* change modal title when slide changes */
-$('#modalCarousel').on('slid.bs.carousel', function () {
-  $('.modal-title').html($(this).find('.active').attr("title"));
-})
+// /* change modal title when slide changes */
+// $('#modalCarousel').on('slid.bs.carousel', function () {
+//   $('.modal-title').html($(this).find('.active').attr("title"));
+// })
 
-/* when clicking a thumbnail */
-$('.row .thumbnail').click(function(){
-    var idx = $(this).parents('div').index();
-    var id = parseInt(idx);
-    $('#myModal').modal('show'); // show the modal
-    $('#modalCarousel').carousel(id); // slide carousel to selected
+// /* when clicking a thumbnail */
+// $('.row .thumbnail').click(function(){
+//     var idx = $(this).parents('div').index();
+//     var id = parseInt(idx);
+//     $('#myModal').modal('show'); // show the modal
+//     $('#modalCarousel').carousel(id); // slide carousel to selected
 
-});
+// });
 
-var offset = 80;
+// var offset = 80;
 
-$('.nav li a').click(function(event) {
-    event.preventDefault();
-    $($(this).attr('href'))[0].scrollIntoView();
-    scrollBy(0, -offset);
-    $(this).addClass('active').siblings().removeClass('active');
+// $('.nav li a').click(function(event) {
+//     event.preventDefault();
+//     $($(this).attr('href'))[0].scrollIntoView();
+//     scrollBy(0, -offset);
+//     $(this).addClass('active').siblings().removeClass('active');
 
-});
+// });
 
 // One working option:
 
@@ -150,30 +150,30 @@ $('.nav li a').click(function(event) {
 // doc = object['#document'];
 
 // paths = object.document.querySelectorAll('.squiggle-animated');
-$('.squiggle-animated').on('load', function() {
+// $('.squiggle-animated').on('load', function() {
 
-var paths = document.querySelectorAll('.squiggle-animated');
-debugger
-// var paths = Array.prototype.slice.call(document.querySelectorAll('.squiggle-animated'));
-$(paths).each(function(path){
-var length = paths[path].getTotalLength();
-// Clear any previous transition
-paths[path].style.transition = paths[path].style.WebkitTransition =
-  'none';
-// Set up the starting positions
-paths[path].style.strokeDasharray = length + ' ' + length;
-paths[path].style.strokeDashoffset = length;
-// Trigger a layout so styles are calculated & the browser
-// picks up the starting position before animating
-paths[path].getBoundingClientRect();
-// Define our transition
-paths[path].style.transition = paths[path].style.WebkitTransition =
-  'stroke-dashoffset 5s ease-in-out';
-// Go!
-paths[path].style.strokeDashoffset = '0';
+// var paths = document.querySelectorAll('.squiggle-animated');
+// debugger
+// // var paths = Array.prototype.slice.call(document.querySelectorAll('.squiggle-animated'));
+// $(paths).each(function(path){
+// var length = paths[path].getTotalLength();
+// // Clear any previous transition
+// paths[path].style.transition = paths[path].style.WebkitTransition =
+//   'none';
+// // Set up the starting positions
+// paths[path].style.strokeDasharray = length + ' ' + length;
+// paths[path].style.strokeDashoffset = length;
+// // Trigger a layout so styles are calculated & the browser
+// // picks up the starting position before animating
+// paths[path].getBoundingClientRect();
+// // Define our transition
+// paths[path].style.transition = paths[path].style.WebkitTransition =
+//   'stroke-dashoffset 5s ease-in-out';
+// // Go!
+// paths[path].style.strokeDashoffset = '0';
 
-});
-});
+// });
+// });
 // An approach using object tag:
 
 
