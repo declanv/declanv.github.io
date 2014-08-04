@@ -173,7 +173,7 @@ paths[path].style.transition = paths[path].style.WebkitTransition =
 paths[path].style.strokeDashoffset = '0';
 
 });
-// });
+});
 // An approach using object tag:
 
 
