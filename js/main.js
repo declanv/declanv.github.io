@@ -10,7 +10,9 @@ $(function() {
   //   $(".illustration").on("click", function(){
 
   // // Run code
-  $( ".hi-intro-wrap" ).load( "svg_real.html" );
+  $( ".hi-intro-wrap" ).load( "svg_real.html", function() {
+  alert( "Load was performed." );
+  });
   // });
 //    function load_home(){
 // document.getElementById("content").innerHTML='<object type="text/html" data="svg_real.html" ></object>';
