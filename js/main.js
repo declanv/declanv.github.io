@@ -11,7 +11,6 @@ $(function() {
 
   // // Run code
   $( ".hi-intro-wrap" ).load( "svg_real.html", function() {
-  alert( "Load was performed." );
   // $('.squiggle-animated').on('load', function() {
 
 var paths = document.querySelectorAll('.squiggle-animated');
