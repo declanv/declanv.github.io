@@ -731,3 +731,7 @@ hr.star-primary:after {
   margin: 0px 20%;
   padding: 0;
 }
+
+.nav.navbar-nav.center {
+  margin: 0 auto;
+}
