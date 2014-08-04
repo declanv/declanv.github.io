@@ -757,7 +757,8 @@ float: left;
 }
 
 .web-header {
-  float: left;
+  /*float: left;*/
   margin: 0;
   padding-left: 5%;
+  display: inline-block;
 }
