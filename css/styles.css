@@ -782,3 +782,7 @@ display:inline-block;
 .rightlink {
   margin-left: 1%;
 }
+
+.container-fluid.bottom {
+  margin-bottom: 15%;
+}
