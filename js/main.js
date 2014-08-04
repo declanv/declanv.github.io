@@ -11,7 +11,30 @@ $(function() {
 
   // // Run code
   $( ".hi-intro-wrap" ).load( "svg_real.html", function() {
-  alert( "Load was performed." );
+  // alert( "Load was performed." );
+  $('.squiggle-animated').on('load', function() {
+
+var paths = document.querySelectorAll('.squiggle-animated');
+debugger
+// var paths = Array.prototype.slice.call(document.querySelectorAll('.squiggle-animated'));
+$(paths).each(function(path){
+var length = paths[path].getTotalLength();
+// Clear any previous transition
+paths[path].style.transition = paths[path].style.WebkitTransition =
+  'none';
+// Set up the starting positions
+paths[path].style.strokeDasharray = length + ' ' + length;
+paths[path].style.strokeDashoffset = length;
+// Trigger a layout so styles are calculated & the browser
+// picks up the starting position before animating
+paths[path].getBoundingClientRect();
+// Define our transition
+paths[path].style.transition = paths[path].style.WebkitTransition =
+  'stroke-dashoffset 5s ease-in-out';
+// Go!
+paths[path].style.strokeDashoffset = '0';
+
+});
   });
   // });
 //    function load_home(){
@@ -150,7 +173,7 @@ paths[path].style.transition = paths[path].style.WebkitTransition =
 paths[path].style.strokeDashoffset = '0';
 
 });
-});
+// });
 // An approach using object tag:
 
 
