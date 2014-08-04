@@ -747,13 +747,11 @@ hr.star-primary:after {
     .navbar.navbar-center {
         text-align: center;
     }
-    /*, .navbar-nav.bottom*/
-    .navbar-nav.bottom>li {
-      float: left !important;
-    }
+
 }
 
 /*, .navbar-nav.bottom*/
 .navbar-nav.bottom>li {
-float: left !important;
+/*float: left !important;*/
+float: left;
 }
