@@ -125,7 +125,7 @@ $('.nav li a').click(function(event) {
 // doc = object['#document'];
 
 // paths = object.document.querySelectorAll('.squiggle-animated');
-$('svg_real.html').on('load', function() {
+$('.squiggle-animated').on('load', function() {
 
 var paths = document.querySelectorAll('.squiggle-animated');
 debugger
