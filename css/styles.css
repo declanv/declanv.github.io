@@ -762,3 +762,7 @@ float: left;
   padding-left: 5%;
   display: inline-block;
 }
+
+.gitlink {
+  margin: 5%;
+}
