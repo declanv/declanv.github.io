@@ -763,10 +763,10 @@ display:inline-block;
 }
 
 /*, .navbar-nav.bottom*/
-.navbar-nav.bottom>li {
+/*.navbar-nav.bottom>li {*/
 /*float: left !important;*/
-float: left;
-}
+/*float: left;
+}*/
 
 .web-header {
   /*float: left;*/
