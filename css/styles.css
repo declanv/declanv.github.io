@@ -764,5 +764,9 @@ float: left;
 }
 
 .iconlink {
-  margin: 5%;
+  margin: 0 5%;
+}
+
+.rightlink {
+  margin-left: 1%;
 }
