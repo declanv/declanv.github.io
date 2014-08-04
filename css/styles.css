@@ -741,11 +741,15 @@ hr.star-primary:after {
 @media (max-width: 768px) {
     .navbar.navbar-center {
         display: inline-block;
-        /*float: none;*/
+        float: none;
     }
 
     .navbar.navbar-center {
         text-align: center;
+    }
+    /*, .navbar-nav.bottom*/
+    .navbar-nav.bottom>li {
+      float: left !important;
     }
 }
 
