@@ -792,6 +792,10 @@ display:inline-block;
   color: black;
 }
 
+.fa:hover {
+  color: blue;
+}
+
 .styled_link {
   color: black;
 }
