@@ -5,20 +5,20 @@ $(function() {
 
     $(namePaths).each(function(nPath){
 
-      var length = paths[nPath].getTotalLength();
+      var length = namePaths[nPath].getTotalLength();
 
-      paths[nPath].style.transition = paths[nPath].style.WebkitTransition =
+      namePaths[nPath].style.transition = namePaths[nPath].style.WebkitTransition =
       'none';
 
-      paths[nPath].style.strokeDasharray = length + ' ' + length;
-      paths[nPath].style.strokeDashoffset = length;
+      namePaths[nPath].style.strokeDasharray = length + ' ' + length;
+      namePaths[nPath].style.strokeDashoffset = length;
 
-      paths[nPath].getBoundingClientRect();
+      namePaths[nPath].getBoundingClientRect();
 
-      paths[nPath].style.transition = paths[nPath].style.WebkitTransition =
+      namePaths[nPath].style.transition = namePaths[nPath].style.WebkitTransition =
       'stroke-dashoffset 5s ease-in-out';
 
-      paths[nPath].style.strokeDashoffset = '0';
+      namePaths[nPath].style.strokeDashoffset = '0';
 
     });
 
