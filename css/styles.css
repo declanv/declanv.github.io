@@ -893,7 +893,7 @@ overflow: hidden;
 /*.hi-intro-wrap {
 margin: 0;
 }*/
-/*.name_svg {
+.name_svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -901,7 +901,7 @@ margin: 0;
   height: 100%;
   margin: 0;
   padding: 0;
-}*/
+}
 /*
 .name-wrap {
   width: 300px;
