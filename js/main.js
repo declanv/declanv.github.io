@@ -1,8 +1,8 @@
 $(function() {
 
-  $(".name").load("name_svg.html", function(){
-    console.log("name loaded");
-  });
+  // $(".name").load("name_svg.html", function(){
+  //   console.log("name loaded");
+  // });
 
   $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
 
