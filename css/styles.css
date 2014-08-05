@@ -807,7 +807,11 @@ display:inline-block;
 }
 
 .styled_link {
-  color: black;
+  color: RGBA(52, 30, 38, 1);
+}
+
+.styled_link:hover {
+  color: RGBA(197, 189, 165, 1);
 }
 
 /*.navbar-inner .container .nav.pull-right > li > a:hover*/
