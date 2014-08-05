@@ -802,6 +802,7 @@ display:inline-block;
 
 /*.navbar-inner .container .nav.pull-right > li > a:hover*/
 li > a:hover {
-  background-color: black;
+  background-color: white;
+  background: white;
   color: blue;
 }
