@@ -579,7 +579,7 @@ margin: 0;
     opacity: 0;
     text-align: center;
     letter-spacing: .15em;
-    color: RGBA(52, 30, 38, 1);
+    color: RGBA(52, 30, 38, .5);
     /*background: rgba(253, 85, 55, .9);*/
     background: RGBA(255, 255, 255, .7);
     -webkit-transition: all ease .5s;
@@ -625,7 +625,7 @@ margin: 0;
     opacity: 0;
     text-align: center;
     letter-spacing: .15em;
-    color: RGBA(52, 30, 38, 1);
+    color: RGBA(52, 30, 38, .5);
     /*background: rgba(253, 85, 55, .9);*/
     background: RGBA(255, 255, 255, .7);
     -webkit-transition: all ease .5s;
@@ -651,6 +651,7 @@ margin: 0;
 
 .caption .caption-content i {
     margin-top: -12px;
+    margin-left: -15px;
 }
 
 .caption .caption-content img {
@@ -660,7 +661,8 @@ margin: 0;
 .caption .caption-content h2,
 .caption .caption-content h3,
 .caption .caption-content h4 {
-    margin: 0;
+    /*margin: 0;*/
+    margin: 0 0 0 -15px;
     /*color: RGBA(255, 255, 255, .7);*/
 }
 
