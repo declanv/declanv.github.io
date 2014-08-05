@@ -16,7 +16,7 @@ $(function() {
       namePaths[nPath].getBoundingClientRect();
 
       namePaths[nPath].style.transition = namePaths[nPath].style.WebkitTransition =
-      'stroke-dashoffset 5s ease-in-out';
+      'stroke-dashoffset 10s ease-in-out';
 
       namePaths[nPath].style.strokeDashoffset = '0';
 
