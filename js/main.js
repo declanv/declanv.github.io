@@ -1,6 +1,6 @@
 $(function() {
 
-  $(".name").load("name_svg.html", function(){
+  $(".name-wrap").load("name_svg.html", function(){
     var namePaths = document.querySelectorAll('.name-path');
 
     $(namePaths).each(function(nPath){
