@@ -787,3 +787,7 @@ display:inline-block;
 .container-fluid.bottom {
   margin: 0 5% 15% 5%;
 }
+
+.fa {
+  color: black;
+}
