@@ -905,7 +905,7 @@ margin: 0;
 
 .navbar-brand
 {
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     left: 0;
     text-align: center;
