@@ -796,8 +796,8 @@ display:inline-block;
   color: black;
 }
 
-.navbar-inner .container .nav.pull-right > li > a:hover
-
-.nav.navbar-nav.bottom.center > li > a:hover {
+/*.navbar-inner .container .nav.pull-right > li > a:hover*/
+nav.navbar-nav.bottom.center > li > a:hover {
   background-color: black;
+  color: blue;
 }
