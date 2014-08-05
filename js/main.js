@@ -2,7 +2,7 @@ $(function() {
 
   $(".name-wrap").load("name_svg.html", function(){
     var namePaths = document.querySelectorAll('.name-path');
-
+    console.log("name loaded, and here are the namepaths", namePaths);
     $(namePaths).each(function(nPath){
 
       var length = namePaths[nPath].getTotalLength();
