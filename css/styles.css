@@ -650,8 +650,7 @@ margin: 0;
 }
 
 .caption .caption-content i {
-    margin-top: -12px;
-    margin-left: -15px;
+    margin: -12px auto 0 auto;
 }
 
 .caption .caption-content img {
@@ -662,7 +661,7 @@ margin: 0;
 .caption .caption-content h3,
 .caption .caption-content h4 {
     /*margin: 0;*/
-    margin: 0 0 0 -15px;
+    margin: 0 auto 0 auto;
     /*color: RGBA(255, 255, 255, .7);*/
 }
 
