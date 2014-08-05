@@ -806,3 +806,9 @@ li > a:hover {
   background: white;
   color: blue;
 }
+
+li:hover {
+  background-color: white;
+  background: white;
+  color: blue;
+}
