@@ -591,8 +591,11 @@ margin: 0;
     opacity: 1;
 }
 
-.portfolio .portfolio-item .portfolio-link a:visited {
+a,
+a:visited
+ {
     border: solid 3px black;
+    color: black;
 }
 
 .portfolio .portfolio-item .portfolio-link .caption .caption-content {
