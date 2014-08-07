@@ -592,9 +592,14 @@ margin: 0;
 }
 
 a,
-a:visited
+a:visited,
+a:focus,
+a:active,
+a:hover
  {
     border: none;
+    color: none;
+    text-decoration: none;
 }
 
 .portfolio .portfolio-item .portfolio-link .caption .caption-content {

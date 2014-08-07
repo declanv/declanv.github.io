@@ -24,7 +24,7 @@ $(function() {
 
   // });
 
-if(window.innerWidth <= 768) {
+if(window.innerWidth >= 768) {
 
   $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
 
