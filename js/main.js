@@ -24,6 +24,8 @@ $(function() {
 
   // });
 
+if(window.innerWidth <= 768) {
+
   $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
 
     var paths = document.querySelectorAll('.desktop_path');
@@ -48,5 +50,7 @@ $(function() {
     });
 
   });
+
+}
 
 });
