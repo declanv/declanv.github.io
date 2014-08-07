@@ -24,29 +24,29 @@ $(function() {
 
   // });
 
-  // $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
+  $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
 
-  //   var paths = document.querySelectorAll('.desktop_path');
+    var paths = document.querySelectorAll('.desktop_path');
 
-  //   $(paths).each(function(path){
+    $(paths).each(function(path){
 
-  //     var length = paths[path].getTotalLength();
+      var length = paths[path].getTotalLength();
 
-  //     paths[path].style.transition = paths[path].style.WebkitTransition =
-  //     'none';
+      paths[path].style.transition = paths[path].style.WebkitTransition =
+      'none';
 
-  //     paths[path].style.strokeDasharray = length + ' ' + length;
-  //     paths[path].style.strokeDashoffset = length;
+      paths[path].style.strokeDasharray = length + ' ' + length;
+      paths[path].style.strokeDashoffset = length;
 
-  //     paths[path].getBoundingClientRect();
+      paths[path].getBoundingClientRect();
 
-  //     paths[path].style.transition = paths[path].style.WebkitTransition =
-  //     'stroke-dashoffset 5s ease-in-out';
+      paths[path].style.transition = paths[path].style.WebkitTransition =
+      'stroke-dashoffset 5s ease-in-out';
 
-  //     paths[path].style.strokeDashoffset = '0';
+      paths[path].style.strokeDashoffset = '0';
 
-  //   });
+    });
 
-  // });
+  });
 
 });
