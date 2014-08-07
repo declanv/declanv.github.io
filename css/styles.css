@@ -808,6 +808,13 @@ float: none;
 display:inline-block;
 }
 
+.row.featurette button{
+  /*border-radius: 50px;*/
+  margin: 0 0 0 10%;
+  padding: 0;
+  a:visited { border: none;};
+}
+
 }
 
 /*, .navbar-nav.bottom*/
