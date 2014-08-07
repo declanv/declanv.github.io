@@ -839,6 +839,12 @@ display:inline-block;
   a:visited { border: none;};
 }
 
+.hi-intro-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
 }
 
 /*, .navbar-nav.bottom*/
