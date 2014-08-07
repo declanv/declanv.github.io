@@ -594,8 +594,7 @@ margin: 0;
 a,
 a:visited
  {
-    border: solid 3px black;
-    color: black;
+    border: none;
 }
 
 .portfolio .portfolio-item .portfolio-link .caption .caption-content {
