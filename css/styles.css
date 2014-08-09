@@ -407,8 +407,13 @@ padding: 0;
   padding: 0;
   /*border-radius: 50px;*/
 }
-.img-responsive {
 
+.row.featurette.img-responsive.web{
+  margin: 0;
+  padding: 0;
+  max-height: 150px;
+  width: auto;
+  /*border-radius: 50px;*/
 }
 
 .row.featurette button{
