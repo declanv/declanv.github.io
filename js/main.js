@@ -24,9 +24,11 @@ $(function() {
 
   // });
 
-if(window.innerWidth >= 768) {
+var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
-  $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
+if(window.innerWidth >= 768 && isSafari = false) {
+
+  // $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
 
     var paths = document.querySelectorAll('.desktop_path');
 
@@ -49,7 +51,7 @@ if(window.innerWidth >= 768) {
 
     });
 
-  });
+  // });
 
 }
 
