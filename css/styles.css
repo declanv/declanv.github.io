@@ -854,9 +854,9 @@ display:inline-block;
 }
 
 .name_svg {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 50px;
   max-width: 100px;
   height: 100%;
   margin: 0;
