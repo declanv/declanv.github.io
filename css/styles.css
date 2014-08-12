@@ -991,3 +991,6 @@ margin: 0;
     margin: auto;
 }*/
 
+.affix, .navbar-fixed-top {
+  -webkit-transform: scale3d(1, 1, 1);
+}
