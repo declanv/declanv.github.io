@@ -26,7 +26,7 @@ $(function() {
 
 var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
-if(window.innerWidth >= 768 && isSafari = false) {
+if(window.innerWidth >= 768 && isSafari == false) {
 
   // $( ".hi-intro-wrap" ).load( "desktop_svg.html", function() {
 
