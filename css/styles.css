@@ -870,7 +870,7 @@ display:inline-block;
 */
 .navbar-brand
 {
-    position: absolute;
+    position: fixed;
     width: 60%;
     left: 10%;
 
