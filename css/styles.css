@@ -705,9 +705,10 @@ a:hover
     .portfolio .portfolio-item {
         margin: 0 auto 30px auto;
     }
+    .navbar-nav.navbar-right:last-child {
+        margin-right: -50px;
+    }
 }
-
-
 
 .modal {
     width: 100%;
@@ -854,14 +855,27 @@ display:inline-block;
 }
 
 .name_svg {
-  position: fixed;
-  top: 0;
-  left: 50px;
-  max-width: 100px;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  max-width: 200px;
 }
+
+/*
+.name-wrap {
+  width: 300px;
+  height: 100%;
+  left: 0;
+  text-align: center;
+  margin-left: 200px;
+  vertical-align: center;
+}
+*/
+.navbar-brand
+{
+    position: absolute;
+    width: 60%;
+    left: 10%;
+
+}
+
 
 }
 
@@ -976,3 +990,4 @@ margin: 0;
     text-align: center;
     margin: auto;
 }*/
+
