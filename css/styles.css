@@ -701,6 +701,7 @@ a:hover
     z-index: 2;
 }
 
+/*Attempt to correctly position the title*/
 @media(min-width:980px) {
       .navbar-brand
     {
