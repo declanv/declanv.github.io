@@ -701,7 +701,7 @@ a:hover
     z-index: 2;
 }
 
-@media(min-width:767px) {
+@media(min-width:770px) {
     .portfolio .portfolio-item {
         margin: 0 auto 30px auto;
     }
@@ -818,7 +818,7 @@ hr.star-primary:after {
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .navbar.navbar-center {
         display: inline-block;
         float: none;
