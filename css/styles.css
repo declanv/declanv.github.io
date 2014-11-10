@@ -1141,6 +1141,12 @@ margin: 0;
 
 /*NEW STYLES*/
 
+/*Eliminating the divider space between elements*/
+.featurette-divider {
+  border: none;
+  margin: 0;
+}
+
 .web-content-container {
   max-width: 970px;
   margin: 0 auto;
@@ -1167,7 +1173,23 @@ margin: 0;
 }
 
 .row.featurette.q {
-  background-color: #F7F7F3;
+  /*hot pink*/
+  /*background-color: #F7F7F3;*/
+  /*warmer beige*/
+  /*background-color: #E68FD7;*/
+  /*darker beige*/
+  /*background-color: #E9E9E9;*/
+  /*near-black*/
+  background-color: #333333;
+  margin-left: -5%;
+  margin-right: -5%;
+}
+
+.row.featurette.yorestory {
+  /*dark violet*/
+  background-color: #3D2230;
+  /*Grey blue*/
+  /*background-color: #627F80;*/
   margin-left: -5%;
   margin-right: -5%;
 }
