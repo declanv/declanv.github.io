@@ -836,7 +836,8 @@ a:hover
     {
         position: fixed;
         width: 50%;
-        left: -10%;
+        margin-top: -25px;
+        /*left: -10%;*/
 
     }
 }
@@ -852,7 +853,9 @@ a:hover
     {
         position: fixed;
         width: 50%;
-        left: -5%;
+        margin-top: -10px;
+        padding-top: 0;
+        /*left: -5%;*/
 
     }
 }
@@ -1019,7 +1022,9 @@ display:inline-block;
 {
     position: fixed;
     width: 60%;
-    left: 5%;
+    padding-top: 0;
+    margin: -5px;
+    /*left: 5%;*/
 
 }
 
@@ -1188,6 +1193,15 @@ margin: 0;
 .row.featurette.yorestory {
   /*dark violet*/
   background-color: #3D2230;
+  /*Grey blue*/
+  /*background-color: #627F80;*/
+  margin-left: -5%;
+  margin-right: -5%;
+}
+
+.row.featurette.sightseer {
+  /*dark violet*/
+  background-color: #69D1EE;
   /*Grey blue*/
   /*background-color: #627F80;*/
   margin-left: -5%;
