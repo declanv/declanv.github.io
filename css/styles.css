@@ -1255,3 +1255,8 @@ margin: 0;
   /*letter-spacing: 2px;*/
 }
 
+.fa.fa-chevron-down {
+  color: #FF69B4;
+  font-size: 50px;
+}
+
