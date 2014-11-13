@@ -1040,6 +1040,7 @@ display:inline-block;
 .iconlink,
 .fa.fa-chevron-down {
   margin: 0 auto;
+  text-align: center;
 }
 .iconlink {
   color: white;
@@ -1055,21 +1056,27 @@ display:inline-block;
 
 .fa.fa-envelope-square,
 .fa.fa-linkedin-square,
-.fa.fa-github-square,
 .fa.fa-behance-square,
-.fa.fa-instagram,
-.fa.fa-link {
+.fa.fa-instagram {
   color: RGBA(52, 30, 38, 1);
 }
 
 .fa.fa-envelope-square:hover,
 .fa.fa-linkedin-square:hover,
-.fa.fa-github-square:hover,
 .fa.fa-behance-square:hover,
-.fa.fa-instagram:hover,
-.fa.fa-link:hover {
+.fa.fa-instagram:hover {
   color: RGBA(197, 189, 165, 1);
 }
+
+/*.fa.fa-github-square,
+.fa.fa-link {
+
+}
+
+.fa.fa-github-square:hover,
+.fa.fa-link:hover {
+
+}*/
 
 .styled_link {
   color: RGBA(52, 30, 38, 1);
