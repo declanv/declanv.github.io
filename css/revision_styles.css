@@ -1039,9 +1039,10 @@ display:inline-block;
 
 .iconlink,
 .fa.fa-chevron-down {
-  margin: 10px auto;
+  margin: 15px auto 5px auto;
   text-align: center;
 }
+
 .iconlink {
   color: white;
 }
@@ -1057,7 +1058,8 @@ display:inline-block;
 .fa.fa-envelope-square,
 .fa.fa-linkedin-square,
 .fa.fa-behance-square,
-.fa.fa-instagram {
+.fa.fa-instagram,
+.fa.fa-github-square.fa-2x.bottom {
   color: RGBA(52, 30, 38, 1);
 }
 
@@ -1067,16 +1069,6 @@ display:inline-block;
 .fa.fa-instagram:hover {
   color: RGBA(197, 189, 165, 1);
 }
-
-/*.fa.fa-github-square,
-.fa.fa-link {
-
-}
-
-.fa.fa-github-square:hover,
-.fa.fa-link:hover {
-
-}*/
 
 .styled_link {
   color: RGBA(52, 30, 38, 1);
