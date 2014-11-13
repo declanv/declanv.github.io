@@ -217,7 +217,6 @@ padding: 0;
   font-family: 'JosefinSans-SemiBold', sans-serif;
   font-style: italic;
   text-transform: uppercase;
-  /*min-width: 300px;*/
 }
 
 .col-xs-4.frog-prince {
@@ -1142,7 +1141,7 @@ min-width: 300px;
 /*NEW STYLES*/
 
 /*Eliminating the divider space between elements*/
-.featurette-divider {
+.featurette-divider.web-section {
   border: none;
   margin: 0;
 }
