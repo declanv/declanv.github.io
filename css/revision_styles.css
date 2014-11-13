@@ -1037,8 +1037,12 @@ display:inline-block;
   display: inline-block;
 }
 
+.iconlink,
+.fa.fa-chevron-down {
+  margin: 0 auto;
+}
 .iconlink {
-  margin: 0 5%;
+  color: white;
 }
 
 .rightlink {
