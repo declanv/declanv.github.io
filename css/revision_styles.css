@@ -1039,7 +1039,7 @@ display:inline-block;
 
 .iconlink,
 .fa.fa-chevron-down {
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
 }
 .iconlink {
