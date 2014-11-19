@@ -991,9 +991,9 @@ hr.star-primary:after {
   margin: 0 auto;
 }
 
-.nav.navbar-nav.bottom.center:hover,
-.nav.navbar-nav.bottom.center:active,
-.nav.navbar-nav.bottom.center:focus {
+.nav.navbar-nav.bottom.center > li:hover,
+.nav.navbar-nav.bottom.center > li:active,
+.nav.navbar-nav.bottom.center > li:focus {
   background-color: white;
   color: hotpink;
 }
