@@ -55,4 +55,16 @@ if(window.innerWidth >= 768 && isSafari == false) {
 
 }
 
+// Attempting to add in an animation
+
+  $( ".hi" ).animate({
+    // opacity: .5,
+    // marginTop: "50px",
+    // fontSize: "3em",
+    // borderWidth: "10px"
+      opacity: 1,
+      top: "+=50"
+  // marginTop: "0.01"
+  }, 1500 );
+
 });
