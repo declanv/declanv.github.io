@@ -1051,15 +1051,15 @@ display:inline-block;
   margin-left: 1%;
 }
 
-.container-fluid.bottom {
+/*.container-fluid.bottom {
   margin: 0 5% 15% 5%;
-}
+}*/
 
 .fa.fa-envelope-square,
 .fa.fa-linkedin-square,
 .fa.fa-behance-square,
 .fa.fa-instagram,
-.fa.fa-github-square.fa-2x.bottom {
+.fa.fa-github-square.fa-2x {
   color: RGBA(52, 30, 38, 1);
 }
 
