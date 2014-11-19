@@ -183,6 +183,12 @@ body {
   border: none;
 }
 
+.container-fluid.main {
+  background-color: white;
+  border: none;
+  padding: 0 10px;
+}
+
 .jumbotron {
   background-color: white;
 /*  margin: 0;
@@ -1154,8 +1160,40 @@ min-width: 300px;
 /*  border: 1px solid lightgrey;
   border-top: 3px solid hotpink;*/
   color: white;
+  /*position: relative;*/
+  margin-top: 10px;
+}
+.web-divider {
+  position: relative;
+  height: 80px;
+}
+.web-divider.sightseer:after {
+    border-top: 40px solid white;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    /*bottom: 0px;*/
+    content: "";
+    position: absolute;
+    /*left: 47.5%;*/
+    left: 49.5%;
+    margin-left: -21px;
+    width: 0;
+    height: 0;
 }
 
+.web-divider.yorestory:after {
+    border-top: 40px solid rgb(61, 34, 48);
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    /*bottom: 0px;*/
+    content: "";
+    position: absolute;
+    /*left: 47.5%;*/
+    left: 49.5%;
+    margin-left: -21px;
+    width: 0;
+    height: 0;
+}
 /*.web-content-container:hover {
   color: white;
   background-color: hotpink;
@@ -1166,12 +1204,14 @@ min-width: 300px;
 }
 
 .row.featurette.comb {
+  margin: 0 -10px;
   background-color: #1EBBA6;
-  margin-left: -5%;
-  margin-right: -5%;
+/*  margin-left: -5%;
+  margin-right: -5%;*/
 }
 
 .row.featurette.q {
+  margin: 0 -10px;
   /*hot pink*/
   /*background-color: #F7F7F3;*/
   /*warmer beige*/
@@ -1180,26 +1220,28 @@ min-width: 300px;
   /*background-color: #E9E9E9;*/
   /*near-black*/
   background-color: #333333;
-  margin-left: -5%;
-  margin-right: -5%;
+/*  margin-left: -5%;
+  margin-right: -5%;*/
 }
 
 .row.featurette.yorestory {
+  margin: 0 -10px;
   /*dark violet*/
   background-color: #3D2230;
   /*Grey blue*/
   /*background-color: #627F80;*/
-  margin-left: -5%;
-  margin-right: -5%;
+/*  margin-left: -5%;
+  margin-right: -5%;*/
 }
 
 .row.featurette.sightseer {
+  margin: 0 -10px;
   /*dark violet*/
   background-color: #69D1EE;
   /*Grey blue*/
   /*background-color: #627F80;*/
-  margin-left: -5%;
-  margin-right: -5%;
+/*  margin-left: -5%;
+  margin-right: -5%;*/
 }
 
 .featurette-heading {
