@@ -973,8 +973,8 @@ hr.star-primary:after {
   margin: 0 auto;
 }*/
 
-.navbar.navbar-center {
-  margin: 0 33%;
+#bottom_nav {
+  margin: 0 36%;
   padding: 0;
   display: inline-block;
   float: none;
