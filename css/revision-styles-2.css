@@ -991,7 +991,9 @@ hr.star-primary:after {
   margin: 0 auto;
 }
 
-.nav.navbar-nav.bottom.center:hover {
+.nav.navbar-nav.bottom.center:hover,
+.nav.navbar-nav.bottom.center:active,
+.nav.navbar-nav.bottom.center:focus {
   background-color: white;
   color: hotpink;
 }
@@ -1007,7 +1009,7 @@ hr.star-primary:after {
         text-align: center;
     }
 
-    .nav.navbar-nav.bottom.center {
+.nav.navbar-nav.bottom.center {
   margin: 0 auto;
   display:inline-block;
   float: none;
