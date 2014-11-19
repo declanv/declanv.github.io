@@ -1060,14 +1060,16 @@ display:inline-block;
 .fa.fa-behance-square,
 .fa.fa-instagram,
 .fa.fa-github-square.fa-2x {
-  color: RGBA(52, 30, 38, 1);
+  /*color: RGBA(52, 30, 38, 1);*/
+  color: inherit;
 }
 
 .fa.fa-envelope-square:hover,
 .fa.fa-linkedin-square:hover,
 .fa.fa-behance-square:hover,
 .fa.fa-instagram:hover {
-  color: RGBA(197, 189, 165, 1);
+  /*color: RGBA(197, 189, 165, 1);*/
+  color: inherit;
 }
 
 .styled_link {
