@@ -980,8 +980,20 @@ hr.star-primary:after {
   float: none;
 }
 
+.navbar.navbar-center {
+  margin: 0 36%;
+  padding: 0;
+  display: inline-block;
+  float: none;
+}
+
 .nav.navbar-nav.bottom.center {
   margin: 0 auto;
+}
+
+.nav.navbar-nav.bottom.center:hover {
+  background-color: white;
+  color: hotpink;
 }
 
 @media (max-width: 769px) {
@@ -1001,7 +1013,7 @@ hr.star-primary:after {
   float: none;
 }
 
-.navbar-nav.bottom>li {
+.navbar-nav.bottom > li {
 /*float: left !important;*/
 float: none;
 display:inline-block;
