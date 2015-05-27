@@ -274,6 +274,12 @@ padding: 0;
   background-color: white;
 }
 
+.modal.design .modal-body>h2 {
+  letter-spacing: 2px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
 .modal.design .modal-title {
 
   background-color: white;
