@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7de3bd9-28b9-4088-b8c7-2a1b656773b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/revision-styles-2.css" afterPath="$PROJECT_DIR$/css/revision-styles-2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="declanv.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +70,8 @@
       <file leaf-file-name="revision-styles-2.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/revision-styles-2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3290735" vertical-offset="21381" max-vertical-offset="23205">
-              <caret line="1446" column="30" selection-start-line="1446" selection-start-column="30" selection-end-line="1446" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.20175439" vertical-offset="21446" max-vertical-offset="23220">
+              <caret line="1442" column="39" selection-start-line="1442" selection-start-column="39" selection-end-line="1442" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -451,8 +450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/revision-styles-2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3290735" vertical-offset="21381" max-vertical-offset="23205">
-          <caret line="1446" column="30" selection-start-line="1446" selection-start-column="30" selection-end-line="1446" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.20175439" vertical-offset="21446" max-vertical-offset="23220">
+          <caret line="1442" column="39" selection-start-line="1442" selection-start-column="39" selection-end-line="1442" selection-end-column="39" />
           <folding />
         </state>
       </provider>

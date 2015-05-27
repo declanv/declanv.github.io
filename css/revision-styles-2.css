@@ -1440,7 +1440,7 @@ color: black;
 
 @media screen and (min-width: 300px) and (max-width: 400px) {
 
-    h2.featurette-heading.section-title.illustration {
+    h2.featurette-heading.section-title {
 
         margin: 50px auto 25px -15px;
         font-size: 18px;
@@ -1450,6 +1450,7 @@ color: black;
 
     .lead {
         min-width: 250px;
+        margin-left: -15px;
     }
 
 }
