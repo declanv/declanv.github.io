@@ -70,8 +70,8 @@
       <file leaf-file-name="revision-styles-2.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/revision-styles-2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20175439" vertical-offset="21446" max-vertical-offset="23220">
-              <caret line="1442" column="39" selection-start-line="1442" selection-start-column="39" selection-end-line="1442" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.26813188" vertical-offset="21431" max-vertical-offset="23205">
+              <caret line="1445" column="21" selection-start-line="1445" selection-start-column="21" selection-end-line="1445" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -80,8 +80,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.125" vertical-offset="59820" max-vertical-offset="79500">
-              <caret line="4025" column="16" selection-start-line="4025" selection-start-column="16" selection-end-line="4025" selection-end-column="16" />
+            <state vertical-scroll-proportion="-5.7843137" vertical-offset="60695" max-vertical-offset="79500">
+              <caret line="4066" column="42" selection-start-line="4066" selection-start-column="33" selection-end-line="4066" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -432,14 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.125" vertical-offset="59820" max-vertical-offset="79500">
-          <caret line="4025" column="16" selection-start-line="4025" selection-start-column="16" selection-end-line="4025" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="128.44444" vertical-offset="10023" max-vertical-offset="15270">
@@ -448,10 +440,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.7843137" vertical-offset="60695" max-vertical-offset="79500">
+          <caret line="4066" column="42" selection-start-line="4066" selection-start-column="33" selection-end-line="4066" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/revision-styles-2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20175439" vertical-offset="21446" max-vertical-offset="23220">
-          <caret line="1442" column="39" selection-start-line="1442" selection-start-column="39" selection-end-line="1442" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.26813188" vertical-offset="21431" max-vertical-offset="23205">
+          <caret line="1445" column="21" selection-start-line="1445" selection-start-column="21" selection-end-line="1445" selection-end-column="21" />
           <folding />
         </state>
       </provider>
