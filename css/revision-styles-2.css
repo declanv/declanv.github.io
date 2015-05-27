@@ -1459,6 +1459,12 @@ color: black;
         margin-left: -15px;
     }
 
+    .lead.design {
+        min-width: 250px;
+        margin: 0;
+        margin-left: -10px;
+    }
+
     .hi-intro-wrap {
 
         height: 480px;
