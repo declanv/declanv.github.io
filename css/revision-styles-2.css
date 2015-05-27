@@ -1091,9 +1091,15 @@ display:inline-block;
 .fa.fa-linkedin-square:hover,
 .fa.fa-behance-square:hover,
 .fa.fa-instagram:hover,
-.fa.fa-link:hover {
+.fa.fa-link:hover,
+.fa.fa-envelope-square:active,
+.fa.fa-linkedin-square:active,
+.fa.fa-behance-square:active,
+.fa.fa-instagram:active,
+.fa.fa-link:active {
   /*color: RGBA(197, 189, 165, 1);*/
-  color: inherit;
+  color: hotpink;
+  background-color: transparent;
 }
 
 .styled_link {
