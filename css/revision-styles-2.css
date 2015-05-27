@@ -1438,6 +1438,22 @@ color: black;
   font-size: 50px;
 }
 
+@media screen and (min-width: 300px) and (max-width: 400px) {
+
+    h2.featurette-heading.section-title.illustration {
+
+        margin: 50px auto 25px -15px;
+        font-size: 18px;
+        word-break: break-all;
+
+    }
+
+    .lead {
+        min-width: 250px;
+    }
+
+}
+
 @media screen and (min-width: 400px) and (max-width: 650px) {
 
   .hi-intro-wrap {
