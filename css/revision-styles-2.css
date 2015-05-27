@@ -1102,6 +1102,10 @@ display:inline-block;
   background-color: transparent;
 }
 
+.nav>li>a {
+  text-transform: uppercase;
+}
+
 .nav>li>a:hover {
   color: hotpink;
   background-color: transparent;
