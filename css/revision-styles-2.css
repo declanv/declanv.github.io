@@ -354,6 +354,10 @@ padding: 0;
   width: 100%;
 }
 
+.modal-body hr.star-primary {
+  border-top: solid 1px white;
+}
+
 .path-fast {
   stroke-dasharray: 90;
   stroke-dashoffset: 50;
@@ -906,7 +910,7 @@ a:hover
 
 .portfolio-modal .modal-content h2 {
     margin: 0;
-    font-size: 3em;
+    font-size: 20px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 100;
