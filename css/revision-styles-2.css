@@ -1449,9 +1449,14 @@ color: black;
 
     }
 
+    h2.featurette-heading.chemistry {
+        word-break: break-all;
+    }
+
     .lead {
         min-width: 250px;
         margin: 0;
+        margin-left: -15px;
     }
 
     .hi-intro-wrap {
