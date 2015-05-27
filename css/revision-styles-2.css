@@ -1102,6 +1102,11 @@ display:inline-block;
   background-color: transparent;
 }
 
+.nav>li>a:hover {
+  color: hotpink;
+  background-color: transparent;
+}
+
 .styled_link {
   color: RGBA(52, 30, 38, 1);
 }
