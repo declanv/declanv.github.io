@@ -1453,6 +1453,12 @@ color: black;
         min-width: 250px;
     }
 
+    .hi-intro-wrap {
+
+        height: 480px;
+
+    }
+
 }
 
 @media screen and (min-width: 400px) and (max-width: 650px) {
