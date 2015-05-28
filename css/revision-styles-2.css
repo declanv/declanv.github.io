@@ -1594,7 +1594,7 @@ color: black;
     margin: 0;
   }
 
-  .featurette-divider.web-section {
+  .featurette-divider.web-section.top {
     padding-top: 50px;
     margin: 0;
     margin-left: 5px;
