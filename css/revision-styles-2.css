@@ -1509,6 +1509,90 @@ color: black;
       top: 90px
     }
 
+    .navbar.navbar-center.links {
+      margin: 0;
+    }
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 400px) {
+
+  h2.featurette-heading,
+  .featurette-heading.section-title {
+
+    margin: 30px auto 15px -15px;
+    font-size: 35px;
+    word-break: normal;
+
+  }
+
+  .featurette-heading.section-title.illustration {
+    margin-top: 70px;
+  }
+
+  h2.featurette-heading.chemistry {
+    word-break: break-all;
+  }
+
+  .lead {
+    min-width: 250px;
+    margin: 0;
+    margin-left: -15px;
+  }
+
+  .lead.design {
+    min-width: 250px;
+    margin: 0;
+
+    margin-left: -5px;
+  }
+
+  .lead.about {
+    margin: 0;
+    margin-left: -20px;
+  }
+
+  .hi-intro-wrap {
+
+    height: 480px;
+    margin-bottom: 50px;
+
+  }
+
+  .hi {
+    font-size: 30px;
+  }
+
+  .hi-intro-container {
+    height: 450px;
+  }
+
+  .hi.hi-1 {
+    margin-top: -60px;
+    top: 70px;
+  }
+
+  .hi.hi-2 {
+    margin-top: -120px;
+    top: -60px;
+  }
+
+  .ampersand {
+    margin-top: 35px;
+    top: 0;
+  }
+
+  .hi-intro {
+    top: 90px
+
+  }
+
+  #bottom_nav.navbar.navbar-center {
+    margin: 0;
+  }
+
+
+}
 
 @media screen and (min-width: 400px) and (max-width: 650px) {
 
