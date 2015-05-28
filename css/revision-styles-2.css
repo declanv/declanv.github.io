@@ -1525,10 +1525,12 @@ color: black;
     word-break: normal;
 
   }
+  .featurette-heading.section-title.web {
 
-  .featurette-heading.section-title.illustration {
-    margin-top: 70px;
-    margin-left: -5px;
+    margin: 90px auto 15px -15px;
+    font-size: 35px;
+    word-break: normal;
+
   }
 
   h2.featurette-heading.chemistry {
@@ -1592,6 +1594,14 @@ color: black;
     margin: 0;
   }
 
+  .featurette-divider.web-section {
+    padding-top: 50px;
+    margin: 0;
+    margin-left: 5px;
+    padding-bottom: 0;
+
+  }
+
 
 }
 
@@ -1607,6 +1617,21 @@ color: black;
 
     margin: 90px auto 45px -12px;
 
+  }
+
+
+  h2.featurette-heading {
+
+    margin: 90px auto 45px 0;
+
+  }
+
+  .lead {
+    margin-left: 25px;
+  }
+
+  .lead.design {
+    margin-left: 35px;
   }
 
 
