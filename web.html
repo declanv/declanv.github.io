@@ -1,0 +1,26 @@
+---
+layout: default
+title: Web
+---
+
+{% for web in site.webs %}
+
+	{% assign img_path = "/assets/" | append: web.image %}
+
+	<div class="web-project">
+		<div class="image-container">
+			<img src="{{ img_path | absolute_url}}" alt="{{web.alt}}">
+			<!-- ![My helpful screenshot]({{ "/assets/screenshot.jpg" | absolute_url }}) -->
+		</div>
+		<div class="description-container">
+			<h3 class="title">
+				{{web.title}}
+			</h3>
+			<p class="description">
+				{{web.description}}
+			</p>
+		</div>
+
+	</div>	
+
+{% endfor %}  
