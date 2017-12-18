@@ -1,0 +1,68 @@
+.wrapper {
+	max-width: 100%;
+}
+
+.site-header {
+	background-color: $first;
+
+	.site-title {
+		color: $third;
+	}
+
+	.trigger {
+		.page-link {
+			color: $second;
+		}
+	}
+}
+
+.page-content {
+	background-color: white;
+}
+
+
+.web-project {
+
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	width: 100%;
+
+	.img-container,
+	.description-container {
+		position: relative;
+		display: block;
+		// width: 50%;
+		flex: 1 1 auto;
+		margin: 0 15px;
+	}
+
+	.img-container {
+
+		.image {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.description-container {
+
+		.title {
+			font-size: 12px;
+			color: pink;
+
+		}
+		.description {
+
+		}
+	}
+
+}
+
+.title {
+	color: purple;
+}

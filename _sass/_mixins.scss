@@ -1,0 +1,122 @@
+
+
+@mixin clearfix() {
+  &:after {
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+  }
+}
+
+@mixin border-box() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+// Flexbox prefix mixins
+
+// Parent container properties
+
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-direction-column() {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin flex-direction-row() {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin flex-wrap($property) {
+  -webkit-flex-wrap: $property;
+  -ms-flex-wrap: $property;
+  flex-wrap: $property;
+}
+
+@mixin justify-content-space-between() {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+// Align items (like align content) requires different properties for ms...therefore there must be separate mixins for each property...with the exception of stretch
+@mixin align-items-flex-end() {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+@mixin align-items-flex-start() {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+@mixin align-items($property) {
+  -webkit-box-align: $property;
+  -webkit-align-items: $property;
+  -ms-flex-align: $property;
+  align-items: $property;
+}
+
+// Align content (like align items) requires different properties for ms...therefore there must be separate mixins for each property...with the exception of stretch
+@mixin align-content-flex-end() {
+  -webkit-align-content: flex-end;
+  -ms-flex-line-pack: end;
+  align-content: flex-end;
+}
+
+@mixin align-content($property) {
+  -webkit-align-content: $property;
+  -ms-flex-line-pack: $property;
+  align-content: $property;
+}
+
+// Child properties
+
+@mixin flex($value) {
+  -webkit-box-flex: $value;
+  -webkit-flex: $value;
+  -ms-flex: $value;
+  flex: $value;
+}
+
+@mixin align-self-start() {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+@mixin align-self-end() {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+@mixin flex-grow($value) {
+  -webkit-box-flex: $value;
+  -webkit-flex-grow: $value;
+  -ms-flex-positive: $value;
+  flex-grow: $value;
+}
