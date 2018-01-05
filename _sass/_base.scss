@@ -1,0 +1,128 @@
+@keyframes underline-gradient { 
+  0%{
+    transform: translate3d(0%, 0%, 0);
+  }
+  100%{
+    transform: translate3d(-75%, 0%, 0);
+  }
+}
+
+// Colors
+$colors: (
+  'green': #01FF89,
+  'purple': #7A5FFF,
+  'black': #141414,
+);
+
+
+body {
+	position: relative;
+	display: block;
+}
+
+.content-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+}
+
+.wrapper {
+	max-width: 985px;
+}
+
+.site-header {
+	background-color: white;
+	border-top: 0;
+
+    color: transparent;
+    // display: inline-block;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 
+      0 0 map_get($colors, 'black'), 
+      .08em 0 0 #fff,
+      0 0, 
+      -.08em 0 0 #fff;
+    vertical-align: bottom;
+    z-index: 2;
+
+    &:after {
+	  // background: linear-gradient(
+	  //   to bottom,
+	  //   rgba( map_get($colors, 'black'), 0.8),
+	  //   rgba( map_get($colors, 'black'), 0.8)
+	  // ) center 1.08em / 100% 2px no-repeat;
+
+	  content: "";
+	  height: 1px;
+	  left: 0;
+	  position: absolute;
+	  bottom: 0;
+	  width: 400%;
+	  will-change: transform;
+	  z-index: 1;
+
+	  animation: underline-gradient 6s linear infinite;
+	  background-image: linear-gradient(
+	    90deg, 
+	    rgba( map_get($colors, 'purple'), 0.8) 15%, 
+	    rgba( map_get($colors, 'green'), 0.6) 35%,  
+	    rgba( map_get($colors, 'purple'), 0.8) 85%
+	  );
+	}
+
+	.site-title {
+		// color: $third;
+		font-size: 25px;
+		font-weight: 100;
+		// text-transform: uppercase;
+	}
+
+	.trigger {
+		.page-link {
+			// color: $second;
+			font-size: 18px;
+			font-weight: 900;
+			text-transform: uppercase;
+			padding: 5px;
+			@include border-box();
+
+		    text-decoration: none;
+
+		    &.active {
+		    	// background-color: blue;
+		    	border: 1px solid blue;
+		    }
+		}
+
+
+	}
+}
+
+.page-content {
+	background-color: white;
+	margin-top: 5px;
+
+	// * {
+	// 	border: 1px solid black;
+	// }
+
+	p {
+		font-size: 22px;
+	}
+}
+
+.section-title {
+	font-size: 40px;
+	text-transform: uppercase;
+	h4 {
+		font-weight: 900;
+	}
+}
+
+
+
+

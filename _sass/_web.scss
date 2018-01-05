@@ -1,24 +1,3 @@
-.wrapper {
-	max-width: 100%;
-}
-
-.site-header {
-	background-color: $first;
-
-	.site-title {
-		color: $third;
-	}
-
-	.trigger {
-		.page-link {
-			color: $second;
-		}
-	}
-}
-
-.page-content {
-	background-color: white;
-}
 
 
 .web-project {
@@ -29,6 +8,13 @@
 	justify-content: space-between;
 	align-content: center;
 	width: 100%;
+	padding: 10px;
+	margin: 30px 0;
+
+	// &:hover {
+	// 	outline: 10px solid black;
+	// 	cursor: pointer;
+	// }
 
 	.img-container,
 	.description-container {
@@ -36,10 +22,17 @@
 		display: block;
 		// width: 50%;
 		flex: 1 1 auto;
-		margin: 0 15px;
 	}
 
+
 	.img-container {
+		margin: 0 $default-margin 0 0;
+		position: relative;
+		display: block;
+		max-height: 350px;
+		overflow: hidden;
+
+		width: 65%;
 
 		.image {
 			position: relative;
@@ -50,19 +43,43 @@
 	}
 
 	.description-container {
+		position: relative;
+		display: block;
+
+		width: 35%;
+
+		margin: 0 0 0 $default-margin;
+
+		border: 1px solid blue;
 
 		.title {
-			font-size: 12px;
-			color: pink;
-
+			font-size: 28px;
+			font-weight: 700;
+			text-transform: uppercase;
+			padding: $default-margin;
+			padding-bottom: 0;
+			@include border-box();
 		}
 		.description {
 
+			padding: $default-margin;
+			padding-bottom: 0;
+			@include border-box();
+		}
+
+		.tech-wrapper {
+			padding: $default-margin;
+			padding-bottom: 0;
+			@include border-box();
+			.tech-title {
+				position: relative;
+				display: block;
+				border-bottom: 1px solid blue;
+			}
+			.tech-list {
+
+			}
 		}
 	}
 
-}
-
-.title {
-	color: purple;
 }
