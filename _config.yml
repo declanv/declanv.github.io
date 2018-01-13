@@ -36,12 +36,15 @@ plugins:
 permalink: pretty
 
 collections:
-  projects:   
-    output: false
+  # projects:   
+  #   output: false
     # permalink: /projects/
   webs:
     output: true 
     permalink: /web/:path
+  arts:
+    output: true 
+    permalink: /art/:path
 
 #     webs:
 #        - scope:

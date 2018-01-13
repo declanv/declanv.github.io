@@ -1,0 +1,39 @@
+---
+layout: default
+title: Art
+---
+
+<!-- <div class="section-title">
+	<h4>
+		Art
+	</h4>
+</div>	 -->	
+
+<div class="projects-container">
+
+	{% for art in site.arts %}
+
+		{% assign img_path = "/assets/" | append: art.image %}
+
+		<div class="art-project">
+			<div class="img-container">
+				<img class="image" src="{{ img_path | absolute_url}}" alt="{{art.alt}}">
+				<!-- ![My helpful screenshot]({{ "/assets/screenshot.jpg" | absolute_url }}) -->
+			</div>
+			<div class="description-container">
+				<h3 class="title">
+					{{art.title}}
+				</h3>
+				<p class="description">
+					{{art.description}}
+				</p>
+				<div class="medium">
+					{{art.medium}}
+				</div>
+			</div>
+
+		</div>	
+
+	{% endfor %}  
+
+</div>
