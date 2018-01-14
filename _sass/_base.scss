@@ -51,7 +51,7 @@ body {
     vertical-align: bottom;
     z-index: 2;
 
-	text-shadow: 0px 0px 3px rgba(0,0,0,0.75);
+	text-shadow: 0px 0px 3px map_get($colors-semi-transparent, 'purple');
 	// color: transparent;
 	// -webkit-transition: text-shadow 3s, color 3s;
 	// transition: text-shadow 3s, color 3s;
@@ -88,19 +88,21 @@ body {
 		// color: $third;
 		font-size: 25px;
 		font-weight: 100;
-		color: transparent;
+		// color: transparent;
+		color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
+		text-shadow: none;
 		// text-transform: uppercase;
 		text-decoration: none;
-		-webkit-transition: text-shadow 0.5s, color 0.5s;
-		transition: text-shadow 0.5s, color 0.5s;
+		// -webkit-transition: text-shadow 0.5s, color 0.5s;
+		// transition: text-shadow 0.5s, color 0.5s;
 
-		&:hover,
-		&:active {
-			text-shadow: none;
-			color: rgba(0,0,0,1);
-			-webkit-transition: text-shadow 0.5s, color 0.5s;
-			transition: text-shadow 0.5s, color 0.5s;
-		}
+		// &:hover,
+		// &:active {
+		// 	text-shadow: none;
+		// 	color: rgba(0,0,0,1);
+		// 	-webkit-transition: text-shadow 0.5s, color 0.5s;
+		// 	transition: text-shadow 0.5s, color 0.5s;
+		// }
 
 	}
 
@@ -127,9 +129,15 @@ body {
     		&:hover,
     		&:active {
     			text-shadow: none;
-    			color: rgba(0,0,0,1);
+    			// color: rgba(0,0,0,1);
+    			color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
 				-webkit-transition: text-shadow 0.5s, color 0.5s;
 				transition: text-shadow 0.5s, color 0.5s;
+    		}
+
+    		&.active {
+		    	text-shadow: none;
+		    	color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
     		}
 
 		  //   &.active {

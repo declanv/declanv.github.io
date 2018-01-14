@@ -8,9 +8,15 @@ $fourth: #fee8c6;
 
 // Colors
 $colors: (
-  'green': #01FF89,
-  'purple': #7A5FFF,
-  'black': #141414,
+  'green': rgb(1, 255, 137),
+  'purple': rgb(122, 95, 255),
+  'black': rgb(20, 20, 20)
+);
+
+$colors-semi-transparent: (
+  'green': rgba(1, 255, 137, 0.75),
+  'purple': rgba(122, 95, 255, 0.75),
+  'black': rgba(20, 20, 20, 0.75)
 );
 
 $default-margin: 15px;
