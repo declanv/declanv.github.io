@@ -1,20 +1,3 @@
-@keyframes underline-gradient { 
-  0%{
-    transform: translate3d(0%, 0%, 0);
-  }
-  100%{
-    transform: translate3d(-75%, 0%, 0);
-  }
-}
-
-// Colors
-$colors: (
-  'green': #01FF89,
-  'purple': #7A5FFF,
-  'black': #141414,
-);
-
-
 // overrides
 a:focus {
 	outline: 0;
@@ -23,17 +6,28 @@ a:focus {
 body {
 	position: relative;
 	display: block;
+
+	// @include gradient-border-bottom();
+	// &:before {
+	// 	height: 100%;
+	// }
+	height: 100%;
+	// background-color: transparent;
+	// overflow-x: hidden;
+	// overflow-y: scroll;
+	z-index: 5;
+	background-color: map_get($colors, 'purple');
 }
 
 .content-container {
 	position: relative;
-	// display: block;
+	display: flex;
 	width: 100%;
 	height: 100%;
 	overflow: scroll;
-	display: flex;
+	@include display-flex();
+	@include flex-direction-column();
     min-height: 100vh;
-    flex-direction: column;
 }
 
 .wrapper {
@@ -63,30 +57,32 @@ body {
 	// transition: text-shadow 3s, color 3s;
 	// transition-timing-function: ease;
 
-    &:after {
-	  // background: linear-gradient(
-	  //   to bottom,
-	  //   rgba( map_get($colors, 'black'), 0.8),
-	  //   rgba( map_get($colors, 'black'), 0.8)
-	  // ) center 1.08em / 100% 2px no-repeat;
+ //    &:after {
+	//   // background: linear-gradient(
+	//   //   to bottom,
+	//   //   rgba( map_get($colors, 'black'), 0.8),
+	//   //   rgba( map_get($colors, 'black'), 0.8)
+	//   // ) center 1.08em / 100% 2px no-repeat;
 
-	  content: "";
-	  height: 3px;
-	  left: 0;
-	  position: absolute;
-	  bottom: 0;
-	  width: 400%;
-	  will-change: transform;
-	  z-index: 1;
+	//   content: "";
+	//   height: 3px;
+	//   left: 0;
+	//   position: absolute;
+	//   bottom: 0;
+	//   width: 400%;
+	//   will-change: transform;
+	//   z-index: 1;
 
-	  animation: underline-gradient 6s linear infinite;
-	  background-image: linear-gradient(
-	    90deg, 
-	    rgba( map_get($colors, 'purple'), 0.8) 15%, 
-	    rgba( map_get($colors, 'green'), 0.6) 35%,  
-	    rgba( map_get($colors, 'purple'), 0.8) 85%
-	  );
-	}
+	//   animation: underline-gradient 6s linear infinite;
+	//   background-image: linear-gradient(
+	//     90deg, 
+	//     rgba( map_get($colors, 'purple'), 0.8) 15%, 
+	//     rgba( map_get($colors, 'green'), 0.6) 35%,  
+	//     rgba( map_get($colors, 'purple'), 0.8) 85%
+	//   );
+	// }
+
+	@include gradient-border-bottom();
 
 	.site-title {
 		// color: $third;
@@ -136,38 +132,38 @@ body {
 				transition: text-shadow 0.5s, color 0.5s;
     		}
 
-		    &.active {
-		    	// background-color: blue;
-		    	// border: 1px solid blue;
-		    	text-shadow: none;
-		    	color: black;
+		  //   &.active {
+		  //   	// background-color: blue;
+		  //   	// border: 1px solid blue;
+		  //   	text-shadow: none;
+		  //   	color: black;
 
-			    &:after {
-				  // background: linear-gradient(
-				  //   to bottom,
-				  //   rgba( map_get($colors, 'black'), 0.8),
-				  //   rgba( map_get($colors, 'black'), 0.8)
-				  // ) center 1.08em / 100% 2px no-repeat;
+			 //    &:after {
+				//   // background: linear-gradient(
+				//   //   to bottom,
+				//   //   rgba( map_get($colors, 'black'), 0.8),
+				//   //   rgba( map_get($colors, 'black'), 0.8)
+				//   // ) center 1.08em / 100% 2px no-repeat;
 
-				  content: "";
-				  height: 3px;
-				  left: 0;
-				  position: absolute;
-				  bottom: 0;
-				  width: 400%;
-				  will-change: transform;
-				  z-index: 1;
+				//   content: "";
+				//   height: 3px;
+				//   left: 0;
+				//   position: absolute;
+				//   bottom: 0;
+				//   width: 400%;
+				//   will-change: transform;
+				//   z-index: 1;
 
-				  animation: underline-gradient 6s linear infinite;
-				  background-image: linear-gradient(
-				    90deg, 
-				    rgba( map_get($colors, 'purple'), 0.8) 15%, 
-				    rgba( map_get($colors, 'green'), 0.6) 35%,  
-				    rgba( map_get($colors, 'purple'), 0.8) 85%
-				  );
-				}
+				//   animation: underline-gradient 6s linear infinite;
+				//   background-image: linear-gradient(
+				//     90deg, 
+				//     rgba( map_get($colors, 'purple'), 0.8) 15%, 
+				//     rgba( map_get($colors, 'green'), 0.6) 35%,  
+				//     rgba( map_get($colors, 'purple'), 0.8) 85%
+				//   );
+				// }
 
-		    }
+		  //   }
 		}
 
 
@@ -176,7 +172,8 @@ body {
 
 .page-content {
 	position: relative;
-	flex: 1;
+	@include flex(1);
+	// flex: 1;
 	background-color: white;
 
 
@@ -198,12 +195,36 @@ body {
 }
 
 .site-footer {
+	position: relative;
+	display: block;
 	padding: 15px 0;
+	color: white;
+	background-color: transparent;
+	overflow: hidden;
+	// z-index: 5;
+
+	// a {
+	// 	color: white;
+	// }
+
+	@include gradient-border-top();
+	&:before {
+		height: 200%;
+	}
+
 	.wrapper {
+		position: relative;
+		display: block;
+		z-index: 5;
 		.footer-col-wrapper {
 			.footer-col {
 				margin: 0;
 				padding: 0;
+
+				a {
+					color: white;
+				}
+
 				.social-media-list {
 					margin: 0;
 					padding: 0;

@@ -41,10 +41,10 @@ collections:
     # permalink: /projects/
   webs:
     output: true 
-    permalink: /web/:path
+    permalink: /web/:path/
   arts:
     output: true 
-    permalink: /art/:path
+    permalink: /art/:path/
 
 #     webs:
 #        - scope:
