@@ -1,10 +1,15 @@
 ---
 layout: default
 title: Art
+custom_css:
+- photoswipe
+- default-skin
 custom_js:
 - jquery-3.2.1.min
 - masonry.pkgd.min
-- masonry-custom
+- gallery-custom
+- photoswipe.min
+- photoswipe-ui-default.min
 ---
 
 <!-- <div class="section-title">
@@ -20,24 +25,23 @@ custom_js:
 		{% assign img_path = "/assets/" | append: art.image %}
 
 		<div class="art-project grid-item">
-			<div class="img-container">
-				<img class="image" src="{{ img_path | absolute_url}}" alt="{{art.alt}}">
+			<figure class="img-container">
+				<a href="{{ art.url }}" >
+					<img class="image" src="{{ img_path | absolute_url}}" alt="{{art.alt}}">
+				</a>
 				<!-- ![My helpful screenshot]({{ "/assets/screenshot.jpg" | absolute_url }}) -->
-			</div>
-			<div class="description-container">
-				<h3 class="title">
-					{{art.title}}
-				</h3>
+				<figcaption class="title">{{art.title}}</figcaption>
 				<p class="description">
 					{{art.description}}
 				</p>
-				<div class="medium">
+				<p class="medium">
 					{{art.medium}}
-				</div>
-			</div>
-
+				</p>
+			</figure>
 		</div>	
 
 	{% endfor %}  
 
 </div>
+
+{% include photoswipe.html %}

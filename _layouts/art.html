@@ -4,7 +4,9 @@ layout: default
  
 <h2 class="content">{{page.title}}</h2>
  
-<img src="{{ page.image }}" />
+{% assign img_path = "/assets/" | append: page.image %}
+
+<img class="image" src="{{ img_path | absolute_url}}" alt="{{page.alt}}" />
 
 <p>{{page.description}}</p>
  
