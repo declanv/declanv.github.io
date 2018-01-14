@@ -2,7 +2,9 @@
 layout: default
 title: Art
 custom_js:
+- jquery-3.2.1.min
 - masonry.pkgd.min
+- masonry-custom
 ---
 
 <!-- <div class="section-title">
@@ -11,13 +13,13 @@ custom_js:
 	</h4>
 </div>	 -->	
 
-<div class="projects-container">
+<div class="projects-container grid">
 
 	{% for art in site.arts %}
 
 		{% assign img_path = "/assets/" | append: art.image %}
 
-		<div class="art-project">
+		<div class="art-project grid-item">
 			<div class="img-container">
 				<img class="image" src="{{ img_path | absolute_url}}" alt="{{art.alt}}">
 				<!-- ![My helpful screenshot]({{ "/assets/screenshot.jpg" | absolute_url }}) -->
