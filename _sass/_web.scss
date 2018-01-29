@@ -11,6 +11,8 @@
 	padding: 10px;
 	margin: 30px 0;
 
+	@include section-in-left();
+
 	// &:hover {
 	// 	outline: 10px solid black;
 	// 	cursor: pointer;
@@ -33,6 +35,9 @@
 		overflow: hidden;
 
 		width: 65%;
+		z-index: 5;
+
+		// @include image-in-top();
 
 		.image {
 			position: relative;
@@ -51,6 +56,11 @@
 		margin: 0 0 0 $default-margin;
 
 		border: 1px solid blue;
+		z-index: 1;
+
+		// @include section-in-left;	
+
+		@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));
 
 		.title {
 			font-size: 28px;
@@ -59,22 +69,31 @@
 			padding: $default-margin;
 			padding-bottom: 0;
 			@include border-box();
+			@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));
+			z-index: 1;
+			// @include prefix-animation-delay(0.2s);			
 		}
 		.description {
-
 			padding: $default-margin;
 			padding-bottom: 0;
 			@include border-box();
+			@include text-in-left(1.5s, cubic-bezier(0, 0.58, 0, 1));
+			z-index: 1;
+			// @include prefix-animation-delay(0.5s);			
 		}
 
 		.tech-wrapper {
 			padding: $default-margin;
 			padding-bottom: 0;
 			@include border-box();
+
+			// @include prefix-animation-delay(0.8s);		
 			.tech-title {
 				position: relative;
 				display: block;
 				border-bottom: 1px solid blue;
+				@include text-in-left(2s, cubic-bezier(0, 0.58, 0, 1));	
+				z-index: 1;
 			}
 			.tech-list {
 

@@ -185,6 +185,7 @@
 }
 
 
+
 // .graddynamic {
 //   position: fixed;
 //   top: 0;
@@ -228,5 +229,104 @@
 //   }
 //   /*75 is obtained as 100[1- (100/(height or width written in .gradDynamic:after)). i.e. 75 = 100[1-100/400] */
 // }
+
+// Animations:
+
+@mixin prefix-animation ($properties) {
+  -webkit-animation: $properties;
+  animation: $properties;
+}
+
+@mixin prefix-animation-delay ($properties) {
+  -webkit-animation-delay: $properties;
+  animation-delay: $properties;
+}
+
+@keyframes section-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes section-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes text-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes text-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes textbox-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes textbox-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@mixin section-in-left {
+  @include prefix-animation(section-in-left 1s cubic-bezier(0.37, 0.01, 0.49, 1.21) forwards);
+}
+
+@mixin textbox-in-left {
+  @include prefix-animation(text-in-left 2s cubic-bezier(0.42, 0, 0.06, 1.03) forwards);
+}
+
+@mixin text-in-left($timing, $curve) {
+  @include prefix-animation(text-in-left $timing $curve forwards);
+}
+
 
 
