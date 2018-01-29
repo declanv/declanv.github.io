@@ -30,7 +30,10 @@ title: Web
 				<div class="tech-wrapper">
 					<h6 class="tech-title">Technologies Used:</h6>
 					<p class="tech-list">
-						{{web.technologies}}
+
+						{% for technology in web.technologies %}
+							<span class="tech-item tech-{{ forloop.index }}">{{technology}}</span>
+						{% endfor %}
 					</p>
 				</div>
 			</div>

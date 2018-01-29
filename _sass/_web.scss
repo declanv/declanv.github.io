@@ -97,6 +97,19 @@
 			}
 			.tech-list {
 
+				// $colors-list: #111 #222 #333 #444 #555;
+
+				$techs: 10;
+
+				@each $tech in $techs {
+				    $i: index($techs, $tech);
+				    $timeCalc: 1 * $i;
+				    $time: #{$timeCalc}s;
+				    .tech-#{$i} { 
+				       @include tech-in-left($time, cubic-bezier(0, 0.58, 0, 1));	
+				    }
+				}
+
 			}
 		}
 	}
