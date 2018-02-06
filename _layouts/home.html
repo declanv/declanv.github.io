@@ -2,4 +2,12 @@
 layout: default
 ---
  
- 
+ {% assign intro = "Hello" | split: "" %}
+
+ <h3 class="introduction">
+
+ 	{% for letter in intro %}
+ 		<span class="letter">{{ letter }}</span>
+ 	{% endfor %}
+ 	
+ </h3>

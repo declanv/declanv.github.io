@@ -92,21 +92,29 @@
 				position: relative;
 				display: block;
 				border-bottom: 1px solid blue;
-				@include text-in-left(2s, cubic-bezier(0, 0.58, 0, 1));	
+				@include text-in-left(1.5s, cubic-bezier(0, 0.58, 0, 1));	
 				z-index: 1;
 			}
 			.tech-list {
-
+				position: relative;
+				display: block;
+				z-index: 1;
+				overflow: hidden;
+				// @include tech-in-left(2s, cubic-bezier(1, 0.04, 0.46, 0.75));
 				// $colors-list: #111 #222 #333 #444 #555;
 
 				$techs: 10;
 
-				@each $tech in $techs {
-				    $i: index($techs, $tech);
-				    $timeCalc: 1 * $i;
-				    $time: #{$timeCalc}s;
+				@for $i from 1 through $techs {
+				    // $i: index($techs, $tech);
+				    // $timeCalc: .05 * $i;
+				    $time: #{$i*.25+1}s;
 				    .tech-#{$i} { 
-				       @include tech-in-left($time, cubic-bezier(0, 0.58, 0, 1));	
+				    	position: relative;
+				    	display: inline-block;
+				    	background-color: transparent;
+				    	// opacity: 0;
+				       @include tech-in-left($time, cubic-bezier(0, 0.38, 0.21, 0.99));	
 				    }
 				}
 

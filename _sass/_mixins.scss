@@ -319,10 +319,12 @@
 @keyframes tech-in-left {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    // transform: translateX(-100px);
+    transform: translateY(-200px);
   }
-  75% {
-    opacity: 0;
+  90% {
+    opacity: 0.5;
+    transform: translateY(-100px);
   }
   100% {
     opacity: 1;
@@ -330,19 +332,19 @@
   }
 }
 
-@-webkit-keyframes tech-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
+// @-webkit-keyframes tech-in-left {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(-100px);
+//   }
+//   75% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: none;
+//   }
+// }
 
 @mixin section-in-left {
   @include prefix-animation(section-in-left 1s cubic-bezier(0.37, 0.01, 0.49, 1.21) forwards);
