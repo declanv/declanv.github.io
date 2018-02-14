@@ -1,6 +1,9 @@
 ---
 layout: default
 title: Web
+custom_js:
+- jquery-3.2.1.min
+- scroll-into-view
 ---
 
 <!-- <div class="section-title">
@@ -15,7 +18,7 @@ title: Web
 
 		{% assign img_path = "/assets/" | append: web.image %}
 
-		<div class="web-project">
+		<div class="web-project {% if forloop.first == true %}first{% else %}show-on-scroll{% endif %}">
 			<div class="img-container">
 				<img class="image" src="{{ img_path | absolute_url}}" alt="{{web.alt}}">
 				<!-- ![My helpful screenshot]({{ "/assets/screenshot.jpg" | absolute_url }}) -->
