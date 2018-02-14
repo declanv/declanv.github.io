@@ -22,12 +22,14 @@ custom_js:
 
 	{% for art in site.arts %}
 
-		{% assign sm_img_path = "/assets/" | append: art.small-image %}
+		{% assign small_img_path = "/assets/images/art/small/" | append: art.small-image %}
+		{% assign large_img_path = "/assets/images/art/large/" | append: art.large-image %}
 
 		<!-- <div class="art-project grid-item"> -->
 			<figure class="img-container art-project grid-item">
-				<a href="/assets/{{ art.large-image }}" data-size="{{ art.size }}">
-					<img class="image" src="{{ sm_img_path | absolute_url}}" alt="{{art.alt}}">
+				<!-- <a href="/assets/{{ art.large-image }}" data-size="{{ art.size }}"> -->
+				<a href="{{ large_img_path | absolute_url}}" data-size="{{ art.size }}">
+					<img class="image" src="{{ small_img_path | absolute_url}}" alt="{{art.alt}}">
 				</a>
 				<!-- ![My helpful screenshot]({{ "/assets/screenshot.jpg" | absolute_url }}) -->
 				<figcaption class="title">{{art.title}}</figcaption>
