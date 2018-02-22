@@ -1,6 +1,10 @@
 $(function() {
 	$('.grid').masonry({
-		columnWidth: 200,
-		itemSelector: '.grid-item'
+		// itemSelector: '.grid-item',
+		// columnWidth: '.grid-sizer',
+		// columnWidth: 100,
+		percentPosition: true,
+		fitwidth: true,
+		gutter: 30
 	});
 });

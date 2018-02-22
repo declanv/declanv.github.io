@@ -1,10 +1,10 @@
 $(function() {
 
 
-	$('.grid').masonry({
-		columnWidth: 200,
-		itemSelector: '.grid-item'
-	});
+	// $('.grid').masonry({
+	// 	columnWidth: 200,
+	// 	itemSelector: '.grid-item'
+	// });
 
 	// PHOTOSWIPE INIT BEGIN
 
@@ -63,6 +63,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             }
 
             linkEl = figureEl.children[0]; // <a> element
+
+            console.log('here is the linkEl: ', linkEl);
 
             size = linkEl.getAttribute('data-size').split('x');
 
