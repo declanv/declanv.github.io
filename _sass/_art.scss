@@ -25,6 +25,11 @@
 		position: relative;
 		display: block;
 		width: 48%;
+		@media (max-width: 756px) {
+			width: 100%;
+		}
+
+		// width: 300px;
 
 		// margin: 5%;
 		// float: left;

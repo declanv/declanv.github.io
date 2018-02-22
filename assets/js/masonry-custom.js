@@ -2,9 +2,9 @@ $(function() {
 	$('.grid').masonry({
 		// itemSelector: '.grid-item',
 		// columnWidth: '.grid-sizer',
-		// columnWidth: 100,
+		// columnWidth: 300,
 		percentPosition: true,
-		fitwidth: true,
+		// fitWidth: true,
 		gutter: 30
 	});
 });
