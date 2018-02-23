@@ -1,3 +1,58 @@
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+// Fonts
+@include font-face("NunitoSans-ExtraLight", "../fonts/NunitoSans-ExtraLight", 100, normal, ttf);
+@include font-face("NunitoSans", "../fonts/NunitoSans-Regular", 400, normal, ttf);
+@include font-face("NunitoSans-Italic", "../fonts/NunitoSans-Italic", 400, italic, ttf);
+@include font-face("NunitoSans-ExtraBold", "../fonts/NunitoSans-ExtraBold", 800, normal, ttf);
+@include font-face("EBGaramond-Medium", "../fonts/EBGaramond-Medium", 400, normal, ttf);
+@include font-face("EBGaramond-MediumItalic", "../fonts/EBGaramond-MediumItalic", 400, italic, ttf);
+@include font-face("EBGaramond-Bold", "../fonts/EBGaramond-Bold", 800, normal, ttf);
+@include font-face("EBGaramond-BoldItalic", "../fonts/EBGaramond-BoldItalic", 800, italic, ttf);
+@include font-face("MedulaOne", "../fonts/MedulaOne-Regular", 800, italic, ttf);
 
 
 @mixin clearfix() {
@@ -348,6 +403,54 @@
   }
 }
 
+@keyframes bounceLetter {
+  
+  0% {
+    // opacity: 0;
+    transform: none;
+  }
+  // 25% {
+  //   transform: translateY(-10%);
+  //   // transform: translate(-10%, 0);
+  // }
+  // 50% {
+  //   transform: translateY(-20%);
+  //   // transform: translate(-10%, 0);
+  // }
+  75% {
+    transform: translateY(-10%);
+  }
+  100% {
+    // opacity: 1;
+    transform: none;
+  }
+  /*75 is obtained as 100[1- (100/(height or width written in .gradDynamic:after)). i.e. 75 = 100[1-100/400] */
+}
+
+@keyframes revealLetters {
+  
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  // 25% {
+  //   transform: translateY(-10%);
+  //   // transform: translate(-10%, 0);
+  // }
+  // 50% {
+  //   // transform: translate(-10%, 0);
+  // }
+  70% {
+    opacity: 0;
+    // transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+  /*75 is obtained as 100[1- (100/(height or width written in .gradDynamic:after)). i.e. 75 = 100[1-100/400] */
+}
+
 // @-webkit-keyframes tech-in-left {
 //   0% {
 //     opacity: 0;
@@ -375,11 +478,19 @@
 //   }
 // }
 
-@mixin section-in-left {
+@mixin bounceLetter ($timing) {
+  @include prefix-animation(bounceLetter $timing cubic-bezier(0.5, 0, 0.5, 1) forwards);
+}
+
+@mixin revealLetters ($timing) {
+  @include prefix-animation(revealLetters $timing cubic-bezier(0.58, 0.33, 0.35, 0.99) forwards);
+}
+
+@mixin section-in-left () {
   @include prefix-animation(section-in-left 1s cubic-bezier(0.37, 0.01, 0.49, 1.21) forwards);
 }
 
-@mixin textbox-in-left {
+@mixin textbox-in-left () {
   @include prefix-animation(text-in-left 2s cubic-bezier(0.42, 0, 0.06, 1.03) forwards);
 }
 

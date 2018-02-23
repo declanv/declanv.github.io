@@ -81,8 +81,11 @@
 		// @include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));
 
 		.title {
+			font-family: NunitoSans-ExtraBold, sans-serif;
+			// font-family: MedulaOne, sans-serif;
+			// font-family: EBGaramond-Bold, serif;
 			font-size: 28px;
-			font-weight: 700;
+			font-weight: 800;
 			text-transform: uppercase;
 			padding: $default-margin;
 			padding-bottom: 0;
@@ -92,6 +95,10 @@
 			// @include prefix-animation-delay(0.2s);			
 		}
 		.description {
+			// font-family: EBGaramond-Medium, serif;
+
+			font-family: NunitoSans, sans-serif;
+			font-weight: 400;
 			padding: $default-margin;
 			padding-bottom: 0;
 			@include border-box();
@@ -107,6 +114,11 @@
 
 			// @include prefix-animation-delay(0.8s);		
 			.tech-title {
+				font-family: NunitoSans-ExtraBold, sans-serif;
+				// font-family: NunitoSans, sans-serif;
+				// font-family: EBGaramond-Bold, serif;
+
+				// font-weight: 800;
 				position: relative;
 				display: block;
 				border-bottom: 1px solid blue;
@@ -118,6 +130,19 @@
 				display: block;
 				z-index: 1;
 				overflow: hidden;
+				font-family: NunitoSans-ExtraLight, sans-serif;
+				font-weight: 100;
+				&:after {
+					content: ', ';
+					position: relative;
+					color: black;
+					display: inline-block
+				}
+				&:last-of-type {
+					&:after {
+						content: '';
+					}
+				}
 				// @include tech-in-left(2s, cubic-bezier(1, 0.04, 0.46, 0.75));
 				// $colors-list: #111 #222 #333 #444 #555;
 

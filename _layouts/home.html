@@ -1,13 +1,14 @@
 ---
 layout: default
+pageId: home
 ---
  
- {% assign intro = "Hello" | split: "" %}
+ {% assign intro = "Oh, Hey There" | split: "" %}
 
  <h3 class="introduction">
 
  	{% for letter in intro %}
- 		<span class="letter">{{ letter }}</span>
+ 		<span class="intro-letter-{{ forloop.index }}">{{ letter }}</span>
  	{% endfor %}
  	
  </h3>

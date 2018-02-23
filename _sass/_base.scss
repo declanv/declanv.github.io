@@ -17,6 +17,10 @@ body {
 	// overflow-y: scroll;
 	z-index: 5;
 	background-color: map_get($colors, 'purple');
+
+	p {
+		font-family: NunitoSans-Regular, sans-serif;
+	}
 }
 
 .content-container {
@@ -32,6 +36,11 @@ body {
 
 .wrapper {
 	max-width: 985px;
+
+	.site-nav {
+		position: relative;
+		display: block;
+	}
 }
 
 .site-header {
@@ -50,8 +59,10 @@ body {
     //   -.08em 0 0 #fff;
     vertical-align: bottom;
     z-index: 2;
-
-	text-shadow: 0px 0px 3px map_get($colors-semi-transparent, 'purple');
+    text-shadow: none;
+    border-bottom: none;
+	// @include gradient-border-bottom();
+	// text-shadow: 0px 0px 3px map_get($colors-semi-transparent, 'purple');
 	// color: transparent;
 	// -webkit-transition: text-shadow 3s, color 3s;
 	// transition: text-shadow 3s, color 3s;
@@ -82,17 +93,43 @@ body {
 	//   );
 	// }
 
-	@include gradient-border-bottom();
 
 	.site-title {
+		// font-family: NunitoSans-ExtraLight, sans-serif;
+		// font-family: EBGaramond-Bold, serif;
+		font-family: MedulaOne, serif;
+		text-transform: uppercase;
 		// color: $third;
-		font-size: 25px;
+		font-size: 40px;
+		// letter-spacing: 0;
 		font-weight: 100;
 		// color: transparent;
 		color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
 		text-shadow: none;
 		// text-transform: uppercase;
 		text-decoration: none;
+		position: relative;
+		display: inline-block;
+
+	    &:hover {
+
+    		$letters: 30;
+
+			@for $i from 1 through $letters {
+			    // $i: index($techs, $tech);
+			    // $timeCalc: .05 * $i;
+			    $time: #{$i*.2}s;
+			    .site-title-letter-#{$i} { 
+			    	position: relative;
+			    	display: inline-block;
+			    	// background-color: transparent;
+					// letter-spacing: 0;
+
+			    	// opacity: 0;
+			       @include bounceLetter($time);	
+			    }
+			}
+	    }	
 		// -webkit-transition: text-shadow 0.5s, color 0.5s;
 		// transition: text-shadow 0.5s, color 0.5s;
 
@@ -107,38 +144,63 @@ body {
 	}
 
 	.trigger {
-		.page-link {
-			// color: $second;
-			font-size: 18px;
-			font-weight: 900;
-			text-transform: uppercase;
-			padding: 5px;
-			@include border-box();
-			color: transparent;
 
+
+		.page-link {
+			position: relative;
+			display: inline-block;
+
+			// color: $second;
+			font-family: MedulaOne, serif;
+			// font-family: NunitoSans-ExtraLight, serif;
+			font-size: 32px;
+			letter-spacing: 0;
+			// font-size: 18px;
+			font-weight: 100;
+			text-transform: uppercase;
+			padding: 4px;
+			@include border-box();
+			color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
 		    text-decoration: none;
 		    z-index: 2;
+
+		    &:hover {
+	    		$letters: 30;
+
+				@for $i from 1 through $letters {
+				    // $i: index($techs, $tech);
+				    // $timeCalc: .05 * $i;
+				    $time: #{$i*.2}s;
+				    .letter-#{$i} { 
+				    	position: relative;
+				    	display: inline-block;
+				    	background-color: transparent;
+				    	// opacity: 0;
+				       @include bounceLetter($time);	
+				    }
+				}
+		    }
 		    // text-shadow: 0px 0px 2px rgba(0,0,0,0.75);
 		    // color: transparent;
 	     //    -webkit-transition: text-shadow 0.75s, color 0.75s;
     		// transition: text-shadow 0.75s, color 0.75s;
     		// transition-timing-function: ease-in-back;
-			-webkit-transition: text-shadow 0.5s, color 0.5s;
-			transition: text-shadow 0.5s, color 0.5s;
+			// -webkit-transition: text-shadow 0.5s, color 0.5s;
+			// transition: text-shadow 0.5s, color 0.5s;
 
-    		&:hover,
-    		&:active {
-    			text-shadow: none;
-    			// color: rgba(0,0,0,1);
-    			color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
-				-webkit-transition: text-shadow 0.5s, color 0.5s;
-				transition: text-shadow 0.5s, color 0.5s;
-    		}
+   //  		&:hover,
+   //  		&:active {
+   //  			text-shadow: none;
+   //  			// color: rgba(0,0,0,1);
+   //  			color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
+			// 	-webkit-transition: text-shadow 0.5s, color 0.5s;
+			// 	transition: text-shadow 0.5s, color 0.5s;
+   //  		}
 
-    		&.active {
-		    	text-shadow: none;
-		    	color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
-    		}
+   //  		&.active {
+		 //    	text-shadow: none;
+		 //    	color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
+   //  		}
 
 		  //   &.active {
 		  //   	// background-color: blue;
@@ -207,18 +269,19 @@ body {
 	display: block;
 	padding: 15px 0;
 	color: white;
-	background-color: transparent;
+	background-color: white;
 	overflow: hidden;
+	border-top: none;
 	// z-index: 5;
 
 	// a {
 	// 	color: white;
 	// }
 
-	@include gradient-border-top();
-	&:before {
-		height: 200%;
-	}
+	// @include gradient-border-top();
+	// &:before {
+	// 	height: 200%;
+	// }
 
 	.wrapper {
 		position: relative;

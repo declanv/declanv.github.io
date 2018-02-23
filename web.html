@@ -35,7 +35,7 @@ custom_js:
 					<p class="tech-list">
 
 						{% for technology in web.technologies %}
-							<span class="tech-item tech-{{ forloop.index }}">{{technology}}</span>
+							<span class="tech-item tech-{{ forloop.index }}">{{technology}}{% if forloop.last != true %}, {% endif %}</span>
 						{% endfor %}
 					</p>
 				</div>
