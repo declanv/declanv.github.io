@@ -6,7 +6,7 @@
     <a class="site-title" href="{{ "/" | relative_url }}">
       {% assign site_title_split = site.title | split: "" %}
       {% for letter in site_title_split %}
-        <span class="site-title-letter-{{ forloop.index }}">{{ letter }}</span>
+        <span class="site-title-letter-{{ forloop.index }}{% if letter == '' %}space{% endif %}">{{ letter }}</span>
       {% endfor %}
       <!-- {{ site.title | escape }} -->
     </a>

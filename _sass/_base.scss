@@ -111,6 +111,7 @@ body {
 		position: relative;
 		display: inline-block;
 
+
 	    &:hover {
 
     		$letters: 30;
@@ -163,6 +164,34 @@ body {
 			color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
 		    text-decoration: none;
 		    z-index: 2;
+		    // border-left: 1px solid black;
+		    // border-right: 1px solid black;
+
+		    // &:after {
+		    // 	position: relative;
+		    // 	display: block;
+		    // 	height: 1px;
+		    // 	width: 100%;
+		    // 	// background-color: black;
+		    // 	border-bottom: 1px solid black;
+		    // 	content: '';
+		    // 	// margin-left: -10px;
+		    // 	margin-right: 90%;
+		    // 	width: 25%;
+		    // }
+
+		    // &:before {
+		    // 	position: relative;
+		    // 	display: block;
+		    // 	height: 1px;
+		    // 	// width: 100%;
+		    // 	// background-color: black;
+		    // 	border-bottom: 4px solid black;
+		    // 	content: '';
+		    // 	margin-left: -18%;
+		    // 	// margin-right: 10px;
+		    // 	width: 25%;
+		    // }
 
 		    &:hover {
 	    		$letters: 30;
