@@ -39,7 +39,42 @@
 // }
 
 
-.intro-container {
+.art-intro-container {
+	position: absolute;
+	top: 20vh;
+	left: 25vw;
+	display: block;
+	// margin-top: 20vh;
+	opacity: 0;
+	animation: reveal-art 2s 5s forwards;
+
+	.art-intro, .art-intro-line-2 {
+		color: #FBB53C;
+		font-size: 400px;
+		line-height: 120px;
+		font-family: Majesti-Heavy-Italic, serif;
+	}
+	.art-intro-line-2 {
+		font-size: 50px;
+	}
+
+}
+
+@keyframes reveal-art {
+	0% {
+		opacity: 0;
+		transform: translateY(-200%);
+	}
+	80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.web-intro-container {
 	position: relative;
 	display: block;
 	margin-top: 20vh;
@@ -47,8 +82,9 @@
 
 
 .web-intro {
+	font-family: NunitoSans-Regular, sans-serif;	
 	color: #030043;
-	width: 800px;
+	width: 790px;
 	font-size: 50px;
 	overflow: hidden; /* Ensures the content is not revealed until the animation */
 	border-right: .15em solid transparent; /* The typwriter cursor */
@@ -66,8 +102,9 @@
 }
 
 .web-intro-line-2 {
+	float: right;
 	color: #030043;
-
+	font-family: NunitoSans-Regular, sans-serif;
 	width: 200px;
 	visibility: hidden;
 	font-size: 50px;
@@ -129,8 +166,8 @@
 /* The typing effect */
 @keyframes typing {
   from, to  { width: 0; border-color: orange; }
-  98% { width: 800px; border-color: orange; }
-  100% {width: 800px; border-color: transparent;}
+  98% { width: 790px; border-color: orange; }
+  100% {width: 790px; border-color: transparent;}
 }
 
 /* The typewriter cursor effect */

@@ -59,6 +59,9 @@
 @include font-face("Tofino-Light", "../fonts/TofinoProPersonalCond-Light", 100, bold, otf);
 @include font-face("Tofino-Medium", "../fonts/TofinoProPersonalCond-Medium", 300, bold, otf);
 
+@include font-face("Majesti-Heavy", "../fonts/Majesti-Banner-Heavy", 800, bold, otf);
+@include font-face("Majesti-Heavy-Italic", "../fonts/Majesti-Banner-HeavyItalic", 800, bold, otf);
+
 
 @mixin clearfix() {
   &:after {
