@@ -4,10 +4,11 @@
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
     <a class="site-title" href="{{ "/" | relative_url }}">
-      {% assign site_title_split = site.title | split: "" %}
+<!--       {% assign site_title_split = site.title | split: "" %}
       {% for letter in site_title_split %}
         <span class="site-title-letter-{{ forloop.index }}{% if letter == '' %}space{% endif %}">{{ letter }}</span>
-      {% endfor %}
+      {% endfor %} -->
+      Declan Van Welie
       <!-- {{ site.title | escape }} -->
     </a>
   
@@ -34,11 +35,11 @@
               {% if my_page.title  %}
                 {% unless my_page.exclude %}
                   <a {% if page.url contains my_page.url %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ my_page.url | relative_url }}" >
-                    {% assign my_page_split = my_page.title | split: "" %}
+<!--                     {% assign my_page_split = my_page.title | split: "" %}
                     {% for letter in my_page_split %}
                       <span class="letter-{{ forloop.index }}">{{ letter }}</span>
-                    {% endfor %}
-                    <!-- {{ my_page.title | downcase }} -->
+                    {% endfor %} -->
+                    {{ my_page.title | downcase }}
                   </a>
                 {% endunless %}
               {% endif %} 

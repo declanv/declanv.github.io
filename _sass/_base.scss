@@ -32,6 +32,7 @@ body {
 	@include display-flex();
 	@include flex-direction-column();
     min-height: 100vh;
+    background: linear-gradient(to left top, #FDB170, #9DF4FE);
 }
 
 .wrapper {
@@ -44,60 +45,26 @@ body {
 }
 
 .site-header {
-	background-color: white;
+	// background-color: white;
 	border-top: 0;
+	background-color: transparent;
 
     color: transparent;
     // display: inline-block;
     overflow: hidden;
     position: relative;
     text-decoration: none;
-    // text-shadow: 
-    //   0 0 map_get($colors, 'black'), 
-    //   .08em 0 0 #fff,
-    //   0 0, 
-    //   -.08em 0 0 #fff;
+
     vertical-align: bottom;
     z-index: 2;
     text-shadow: none;
     border-bottom: none;
-	// @include gradient-border-bottom();
-	// text-shadow: 0px 0px 3px map_get($colors-semi-transparent, 'purple');
-	// color: transparent;
-	// -webkit-transition: text-shadow 3s, color 3s;
-	// transition: text-shadow 3s, color 3s;
-	// transition-timing-function: ease;
-
- //    &:after {
-	//   // background: linear-gradient(
-	//   //   to bottom,
-	//   //   rgba( map_get($colors, 'black'), 0.8),
-	//   //   rgba( map_get($colors, 'black'), 0.8)
-	//   // ) center 1.08em / 100% 2px no-repeat;
-
-	//   content: "";
-	//   height: 3px;
-	//   left: 0;
-	//   position: absolute;
-	//   bottom: 0;
-	//   width: 400%;
-	//   will-change: transform;
-	//   z-index: 1;
-
-	//   animation: underline-gradient 6s linear infinite;
-	//   background-image: linear-gradient(
-	//     90deg, 
-	//     rgba( map_get($colors, 'purple'), 0.8) 15%, 
-	//     rgba( map_get($colors, 'green'), 0.6) 35%,  
-	//     rgba( map_get($colors, 'purple'), 0.8) 85%
-	//   );
-	// }
 
 
 	.site-title {
 		// font-family: NunitoSans-ExtraLight, sans-serif;
 		// font-family: EBGaramond-Bold, serif;
-		font-family: MedulaOne, serif;
+		font-family: Tofino-Medium, sans-serif;
 		text-transform: uppercase;
 		// color: $third;
 		font-size: 40px;
@@ -112,25 +79,25 @@ body {
 		display: inline-block;
 
 
-	    &:hover {
+	  //   &:hover {
 
-    		$letters: 30;
+   //  		$letters: 30;
 
-			@for $i from 1 through $letters {
-			    // $i: index($techs, $tech);
-			    // $timeCalc: .05 * $i;
-			    $time: #{$i*.2}s;
-			    .site-title-letter-#{$i} { 
-			    	position: relative;
-			    	display: inline-block;
-			    	// background-color: transparent;
-					// letter-spacing: 0;
+			// @for $i from 1 through $letters {
+			//     // $i: index($techs, $tech);
+			//     // $timeCalc: .05 * $i;
+			//     $time: #{$i*.2}s;
+			//     .site-title-letter-#{$i} { 
+			//     	position: relative;
+			//     	display: inline-block;
+			//     	// background-color: transparent;
+			// 		// letter-spacing: 0;
 
-			    	// opacity: 0;
-			       @include bounceLetter($time);	
-			    }
-			}
-	    }	
+			//     	// opacity: 0;
+			//        @include bounceLetter($time);	
+			//     }
+			// }
+	  //   }	
 		// -webkit-transition: text-shadow 0.5s, color 0.5s;
 		// transition: text-shadow 0.5s, color 0.5s;
 
@@ -152,7 +119,7 @@ body {
 			display: inline-block;
 
 			// color: $second;
-			font-family: MedulaOne, serif;
+			font-family: Tofino-Medium, sans-serif;
 			// font-family: NunitoSans-ExtraLight, serif;
 			font-size: 32px;
 			letter-spacing: 0;
@@ -273,7 +240,7 @@ body {
 	position: relative;
 	@include flex(1);
 	// flex: 1;
-	background-color: white;
+	// background-color: white;
 
 
 	// * {
@@ -298,7 +265,7 @@ body {
 	display: block;
 	padding: 15px 0;
 	color: white;
-	background-color: white;
+	// background-color: white;
 	overflow: hidden;
 	border-top: none;
 	// z-index: 5;
@@ -322,7 +289,7 @@ body {
 				padding: 0;
 
 				a {
-					color: white;
+					// color: white;
 				}
 
 				.social-media-list {

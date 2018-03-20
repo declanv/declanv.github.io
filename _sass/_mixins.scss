@@ -54,6 +54,11 @@
 @include font-face("EBGaramond-BoldItalic", "../fonts/EBGaramond-BoldItalic", 800, italic, ttf);
 @include font-face("MedulaOne", "../fonts/MedulaOne-Regular", 800, italic, ttf);
 
+@include font-face("Tofino-Regular", "../fonts/TofinoProPersonalWide-Regular", 400, normal, otf);
+@include font-face("Tofino-Semibold", "../fonts/TofinoProPersonalCond-Semibold", 800, bold, otf);
+@include font-face("Tofino-Light", "../fonts/TofinoProPersonalCond-Light", 100, bold, otf);
+@include font-face("Tofino-Medium", "../fonts/TofinoProPersonalCond-Medium", 300, bold, otf);
+
 
 @mixin clearfix() {
   &:after {
