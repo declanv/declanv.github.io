@@ -3,19 +3,19 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="{% if page.title %}{{page.title|downcase}}{% else %}home{% endif %}">
     <!-- <div class="graddynamic"> -->
       <div class="content-container">
 
         {% include header.html %}
     
         <main class="page-content" aria-label="Content">
-          <div class="wrapper">
+          <div class="wrapper content">
             {{ content }}
           </div>
         </main>
     
-        {% include footer.html %}
+      {%comment%}  {% include footer.html %} {%endcomment%}
 
       </div>
     <!-- </div> -->

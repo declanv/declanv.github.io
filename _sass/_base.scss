@@ -21,66 +21,7 @@ body {
 	p {
 		font-family: NunitoSans-Regular, sans-serif;
 	}
-}
 
-
-@mixin gradient-animation( $start1, $end1, $start2, $end2 ){
-  background-size: 100%;
-  background-image: linear-gradient($start1, $end1);
-  position: relative;
-  z-index: 100;
-  &:before {
-    background-image: linear-gradient($end2, $start2);
-    content: '';    
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0; left: 0;
-    opacity: 0;
-    width: 100%;
-    z-index: -100;
-    // transition: opacity $transTime;
-  }
-
-  // &:hover {
-  //    &:before {
-  //      opacity: 1; 
-  //    }
-  // }
-}
-
-.content-container {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: 100%;
-	overflow: scroll;
-	@include display-flex();
-	@include flex-direction-column();
-    min-height: 100vh;
-    // background: linear-gradient(to left top, #FDB170, #9DF4FE);
-    @include gradient-animation(#FDB170, #9DF4FE, #FA2466, #350941);
-
-    &:before {
-    	animation: sunrise 2s 5s forwards;
-    }
-}
-
-
-
-@keyframes sunrise {
-	0% {
-		// backround: white;
-
-			opacity: 0;
-
-	}
-	100% {
-   		// background: linear-gradient(to left top, #FDB170, #9DF4FE);
- 
-   			opacity: 1;
-
-	}
 }
 
 .wrapper {
@@ -116,7 +57,7 @@ body {
 		text-transform: uppercase;
 		// color: $third;
 		font-size: 40px;
-		// letter-spacing: 0;
+		letter-spacing: 0.75px;
 		font-weight: 100;
 		// color: transparent;
 		color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));

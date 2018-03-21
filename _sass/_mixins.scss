@@ -121,6 +121,12 @@
   justify-content: space-between;
 }
 
+@mixin justify-content-center() {
+  -webkit-box-pack: center; 
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 // Align items (like align content) requires different properties for ms...therefore there must be separate mixins for each property...with the exception of stretch
 @mixin align-items-flex-end() {
   -webkit-box-align: end;
