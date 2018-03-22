@@ -4,12 +4,15 @@
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
     <a class="site-title" href="{{ "/" | relative_url }}">
-<!--       {% assign site_title_split = site.title | split: "" %}
-      {% for letter in site_title_split %}
-        <span class="site-title-letter-{{ forloop.index }}{% if letter == '' %}space{% endif %}">{{ letter }}</span>
-      {% endfor %} -->
-      Declan Van Welie
+      {%comment%}
+        {% assign site_title_split = site.title | split: "" %}
+        {% for letter in site_title_split %}
+          <span class="site-title-letter-{{ forloop.index }}{% if letter == '' %}space{% endif %}">{{ letter }}</span>
+        {% endfor %}
+      {%endcomment%}
       <!-- {{ site.title | escape }} -->
+      Declan Van Welie
+
     </a>
   
     {% if page_paths %}
@@ -29,7 +32,7 @@
 
 
 
-        <div class="trigger">
+        <div class="trigger box curmudgeon">
           {% for path in page_paths %}
               {% assign my_page = site.pages | where: "path", path | first %}
               {% if my_page.title  %}

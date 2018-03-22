@@ -96,14 +96,16 @@
 	    @include gradient-animation(#FDB170, #9DF4FE, #FA2466, #350941, transparent, black);
 
 	    &:before {
-	    	animation: sunrise 2s 5s forwards;
+	    	// animation: 	
+	    		// sunrise 2s 5s forwards,
+	    		// hide 1s 5s forwards;
 	    }
 
 	    &:after {
-	    	animation: art-reveal 2s 10s forwards;
+	    	animation: nighttime 3s 5s forwards;
 	    }
 
-	    animation: remove-background 2s 15s forwards; 	
+	    animation: remove-background 3s 7s forwards; 	
 
 	    .page-content {
 	    	position: relative;
@@ -115,7 +117,6 @@
 					@include display-flex();
 					@include flex-direction-column();
 					@include align-items(center);
-
 	    		}
 	    	}
 	    }
@@ -130,7 +131,9 @@
 		height: 100%;
 		width: 100%;
 		opacity: 0;
-		animation: reveal-art 3s 3s forwards;
+		animation: 
+			reveal-art 3s 3s forwards,
+			hide 2s 6s forwards;
 
 		.art-intro, .art-intro-line-2 {
 			@include flex(2 1 100%);
@@ -214,20 +217,7 @@
 		}
 	}
 
-	@keyframes sunrise {
-		0% {
-			opacity: 0;
-		}
-		99% {
-			opacity: 1
-		}
-		100% {
-			opacity: 0;
-		}
-	}
-
-
-	@keyframes remove-art {
+	@keyframes hide {
 		0% {
 			opacity: 1;
 		}
@@ -236,7 +226,7 @@
 		}
 	}
 
-	@keyframes reveal-art {
+	@keyframes nighttime {
 		0% {
 			// position: relative;
 			opacity: 0;
