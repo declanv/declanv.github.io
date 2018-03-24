@@ -84,6 +84,7 @@
     @include gradient-animation(#FDB170, #9DF4FE, #FA2466, #350941, transparent, black);
 
     &:before {
+    	animation: hide 1s 5s forwards;
     	// animation: 	
     		// sunrise 2s 5s forwards,
     		// hide 1s 5s forwards;
@@ -93,7 +94,7 @@
     	animation: nighttime 3s 5s forwards;
     }
 
-    animation: remove-background 3s 7s forwards; 	
+    // animation: remove-background 3s 7s forwards; 	
 
 
     .art-background-wrapper {
@@ -121,6 +122,7 @@
 		height: 100%;
 		width: 100%;
 		z-index: 200;
+		animation: remove-intro .75s 5s forwards;
 		.background-container {
 			position: relative;
 			display: block;
