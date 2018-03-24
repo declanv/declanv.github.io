@@ -34,6 +34,8 @@ body {
 }
 
 .site-header {
+	position: relative;
+	display: block;
 	// background-color: white;
 	border-top: 0;
 	background-color: transparent;
@@ -73,6 +75,8 @@ body {
 			display: inline-block;
 		    z-index: 2;
 		    @include button($site-blue, white);
+
+		    
 		}
 	}
 }

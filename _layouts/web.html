@@ -2,9 +2,11 @@
 layout: default
 ---
  
+{% assign img_path = "/assets/" | append: page.image %}
+
 <h2 class="content">{{page.title}}</h2>
  
-<img src="{{ page.image }}" />
+<img src="{{ img_path }}" />
 
 <p>{{page.description}}</p>
  
