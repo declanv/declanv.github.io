@@ -165,7 +165,8 @@
 	.web-intro {
 		position: relative;
 		@include flex(2 1 auto);		
-		font-family: NunitoSans-Regular, sans-serif;	
+		@include body-font();
+		// font-family: NunitoSans-Regular, sans-serif;	
 		color: #030043;
 		width: 790px;
 		font-size: 50px;
@@ -184,7 +185,8 @@
 		position: relative;
 		@include flex(1 1 auto);
 		color: #030043;
-		font-family: NunitoSans-Regular, sans-serif;
+		@include body-font();
+		// font-family: NunitoSans-Regular, sans-serif;
 		width: 200px;
 		visibility: hidden;
 		font-size: 50px;

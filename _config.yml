@@ -35,6 +35,12 @@ plugins:
   - jekyll-feed
 permalink: pretty
 
+header_pages:
+  - web.html
+  - art.html
+  - photography.html
+  - about.html
+
 collections:
   # projects:   
   #   output: false
