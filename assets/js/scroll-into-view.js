@@ -14,8 +14,8 @@ $(document).ready(function(){
 	    return (
 	           (rect.left >= 0)
 	        && (rect.top >= 0)
-	        && ((rect.left + rect.width) <= windowWidth)
-	        && ((rect.top + rect.height) <= windowHeight)
+	        && ((rect.left + rect.width/2) <= windowWidth)
+	        && ((rect.top + rect.height/2) <= windowHeight)
 	    );
 
 	}
@@ -23,24 +23,31 @@ $(document).ready(function(){
 	var scroll = window.requestAnimationFrame ||
             function(callback){window.setTimeout(callback, 1000/60)};
     var elementsToShow = document.querySelectorAll('.show-on-scroll');
-	seenYet = false;
+	// seenYet = false;
 
     function loop() {
 
 	  elementsToShow.forEach(function (element) {
-	  	console.log('seenYet: ', seenYet);
+	  	// console.log('seenYet: ', seenYet);
+
+	  	// elementSeenYet  = $(element).data('seen-yet');
+	  	// console.log('elementSeenYet: ', elementSeenYet);
 	    if (isElementInViewport(element)) {
 	    	console.log('visible')
+
 	      element.classList.add('visible');
-	      if (seenYet == false) {
+	      if ($(element).data('seen-yet') == false) {
+	      	console.log("hey, this thing hasn't been seen yet")
 	      	element.classList.add('play');
 	      	// seenYet = true;
+	      	$(element).data('seen-yet', true);
+
 	      } else {
-	      	element.classList.remove('play');
+	      	// element.classList.remove('play');
 	      }
 	    } else {
 	    	console.log('invisible')
-	      element.classList.remove('visible');
+	      // element.classList.remove('visible');
      	  element.classList.remove('play');
      	  // seenYet = true;
 	    }
