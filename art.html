@@ -31,7 +31,7 @@ custom_js:
 		<!-- <div class="art-project grid-item"> -->
 			<figure class="img-container art-project grid-item">
 				<!-- <a href="/assets/{{ art.large-image }}" data-size="{{ art.size }}"> -->
-				<a href="{{ large_img_path | absolute_url}}" data-size="{{ art.size }}">
+				<a href="{{ large_img_path | absolute_url}}" data-size="{{ art.size }}" class="no-barba">
 					<img class="image" src="{{ small_img_path | absolute_url}}" alt="{{art.alt}}">
 				</a>
 				<!-- ![My helpful screenshot]({{ "/assets/screenshot.jpg" | absolute_url }}) -->

@@ -4,7 +4,7 @@
   {% include head.html %}
 
   {% if page.title %}
-    {% assign pageName = {{page.title|downcase}} %}
+    {% assign pageName = page.title|downcase %}
   {% else %}
     {% assign pageName = 'home' %}
   {% endif %}
