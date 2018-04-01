@@ -3,35 +3,37 @@
 
   {% include head.html %}
 
-  <body class="{% if page.title %}{{page.title|downcase}}{% else %}home{% endif %}">
+  <body id="barba-wrapper" class="{% if page.title %}{{page.title|downcase}}{% else %}home{% endif %}">
+    <div class="barba-container">
 
-    {% if page.layout == "home" %}
-      <div class="web-background-wrapper">
-         <div class="background-container">
-          {% include  web-intro.svg %}
-         </div>
-      </div>
-      <div class="art-background-wrapper">
-      </div>
+      {% if page.layout == "home" %}
+        <div class="web-background-wrapper">
+           <div class="background-container">
+            {% include  web-intro.svg %}
+           </div>
+        </div>
+        <div class="art-background-wrapper">
+        </div>
 
-    {% endif %}
+      {% endif %}
 
-    <!-- <div class="graddynamic"> -->
-      <div class="content-container">
+      <!-- <div class="graddynamic"> -->
+        <div class="content-container">
 
-        {% include header.html %}
-    
-        <main class="page-content" aria-label="Content">
-          <div class="wrapper content">
-            {{ content }}
-          </div>
-        </main>
-    
-      {%comment%}  {% include footer.html %} {%endcomment%}
+          {% include header.html %}
+      
+          <main class="page-content" aria-label="Content">
+            <div class="wrapper content">
+              {{ content }}
+            </div>
+          </main>
+      
+        {%comment%}  {% include footer.html %} {%endcomment%}
 
-      </div>
-    <!-- </div> -->
+        </div>
+      <!-- </div> -->
 
+    </div>
   </body>
 
 </html>
