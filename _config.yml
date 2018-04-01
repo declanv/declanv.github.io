@@ -52,6 +52,11 @@ collections:
     output: true 
     permalink: /art/:path
 
+exclude:
+  - package.json
+  - node_modules
+  - gulpfile.js
+
 #     webs:
 #        - scope:
 #           path: "web"
