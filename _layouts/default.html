@@ -3,8 +3,14 @@
 
   {% include head.html %}
 
-  <body id="barba-wrapper" class="{% if page.title %}{{page.title|downcase}}{% else %}home{% endif %}">
-    <div class="barba-container">
+  {% if page.title %}
+    {% assign pageName = {{page.title|downcase}} %}
+  {% else %}
+    {% assign pageName = 'home' %}
+  {% endif %}
+
+  <body id="barba-wrapper" class="{{pageName}}" >
+    <div class="barba-container" data-namespace="{{pageName}}">
 
       {% if page.layout == "home" %}
         <div class="web-background-wrapper">

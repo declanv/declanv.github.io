@@ -16,6 +16,8 @@ var assets = 'assets/',
 	js = assets + 'js/',
 	jsVendor = js + 'vendor/',
 	allJs = js + '**/*.js',
+	compiled = assets + 'compiled/',
+	compiledJs = compiled + 'js/',
 	css = assets + 'css/**/*.?(s)css';
 
 var files = {
@@ -64,8 +66,10 @@ gulp.task('serve', () => {
       baseDir: siteRoot
     }
   });
+});
 
-  // gulp.watch(allJs, ['js']);
+gulp.task('watch', () => {
+  gulp.watch(allJs, ['js']);	
 });
 
 gulp.task('jekyll', () => {
@@ -101,7 +105,7 @@ gulp.task('js', function () {
       .pipe(uglify())
       .pipe(concat('site.min.js'))
       // .pipe(cache('js'))
-      .pipe(gulp.dest(js));
+      .pipe(gulp.dest(compiledJs));
 });
 
 // Uglify the SVA JS files and sourcemap them
@@ -115,4 +119,4 @@ gulp.task('jsSourcemap', function () {
       .pipe(gulp.dest(files.dest.js));
 });
 
-gulp.task('default', ['js', 'jekyll', 'serve']);
+gulp.task('default', ['js', 'jekyll', 'serve', 'watch']);
