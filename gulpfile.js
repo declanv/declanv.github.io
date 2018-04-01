@@ -27,11 +27,13 @@ var files = {
 		 	 	jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe-ui-default.min.js',
+	 	 		jsVendor + 'barba.min.js'
  	 		],
 			custom: [
 				js + 'gallery-custom.js',
 				js + 'masonry-custom.js',
-				js + 'scroll-into-view.js'
+				js + 'scroll-into-view.js',
+				js + 'page-transitions.js'
 			],
 			all: [
 				jsVendor + 'jquery-3.2.1.min.js',
@@ -39,9 +41,11 @@ var files = {
 		 	 	jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe-ui-default.min.js',
+	 	 		jsVendor + 'barba.min.js',
 				js + 'gallery-custom.js',
 				js + 'masonry-custom.js',
-				js + 'scroll-into-view.js'
+				js + 'scroll-into-view.js',
+				js + 'page-transitions.js'
 			]
 		}
 	},
