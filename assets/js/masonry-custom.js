@@ -7,4 +7,5 @@ $(function() {
 		// fitWidth: true,
 		gutter: 30
 	});
+	
 });
