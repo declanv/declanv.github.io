@@ -2,12 +2,70 @@
 layout: default
 ---
  
-{% assign img_path = "/assets/" | append: page.image %}
+{% assign img_path = "/assets/images/web/" %}
 
-<h2 class="content">{{page.title}}</h2>
- 
-<img src="{{ img_path }}" />
+<div class="web-project-container">
+	<div class="background-color-1"></div>
+	<div class="content-container intro">
 
-<p>{{page.description}}</p>
- 
-<!-- {{ content }} -->
+		<div class="title-container">
+			<h2 class="title">
+				{{page.title}}
+			</h2>
+		</div>
+
+		<div class="intro-image">
+			<img src="{{img_path | append: page.image1}}" />
+		</div>
+
+		<div class="intro-text-container">
+			<div class="intro-text-description">
+				{{page.description1}}
+			</div>
+			<div class="tech-wrapper">
+				<h6 class="tech-title">Technologies:</h6>
+				<p class="tech-list">
+
+					{% for technology in page.technologies %}
+						<span class="tech-item tech-{{ forloop.index }}">{{technology}}{% if forloop.last != true %}, {% endif %}</span>
+					{% endfor %}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	{% comment %}
+		<div class="isolated-wrapper">
+			<div class="isolated-container">
+				<p class="isolated-statement">
+					{{page.description2}}
+				</p>
+			</div>
+		</div>
+	{% endcomment %}
+
+	<div class="objective-container">
+		<div class="title">
+			Objective
+		</div>
+		<p class="objective">
+			{{ page.objective }}
+		</p>
+	</div>
+
+	<div class="content-container outro">
+		<div class="intro-image">
+			<img src="{{img_path | append: page.image2}}" />
+		</div>
+		<div class="full-width-text-container">
+			{{ page.description3 }}
+		</div>
+		<div class="isolated-text">
+			<p>
+				{{ page.description4 }}
+			</p>
+		</div>
+
+	</div>
+</div>
+
