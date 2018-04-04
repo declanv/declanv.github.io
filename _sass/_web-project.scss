@@ -1,16 +1,27 @@
 .web-project-container {
 
-	.background-color-1 {
+	.background-color {
 		position: absolute;
 		display: block;
-		background-color: $relay-red;
 		width: 100%;
 		height: 50%;
 		left: 0;
 		top: 100px;
 		right: 0;
-		z-index: 1;
-		transform: skewY(-12deg);
+
+		&.one {
+			background-color: $relay-red;
+			transform: skewY(-12deg);
+			z-index: 2;
+			top: 100px;
+		}
+
+		&.two {
+			background-color: $relay-blue;
+			transform: skewY(12deg);
+			z-index: 1;
+			top: 60%;
+		}
 	}
 
 	.content-container {
