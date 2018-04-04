@@ -48,9 +48,13 @@ layout: default
 	{% endcomment %}
 
 	<div class="objective-container">
-		<div class="title">
-			Objective
+
+		<div class="title-container">
+			<div class="title">
+				Objective
+			</div>
 		</div>
+
 		<p class="objective">
 			{{ page.objective }}
 		</p>
@@ -61,11 +65,11 @@ layout: default
 			<img src="{{img_path | append: page.image2}}" />
 		</div>
 		<div class="full-width-text-container">
-			{{ page.description3 }}
+			{{ page.description2 }}
 		</div>
 		<div class="isolated-text">
 			<p>
-				{{ page.description4 }}
+				{{ page.description3 }}
 			</p>
 		</div>
 

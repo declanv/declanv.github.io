@@ -27,7 +27,7 @@
 	.content-container {
 		position: relative;
 		display: block;
-		z-index: 2;
+		z-index: 3;
 		background-color: white;
 		border: 5px solid $relay-blue;
 		padding: 75px 30px 30px 30px;
@@ -141,6 +141,59 @@
 				}
 			}
 
+		}
+
+	}
+
+	.objective-container {
+		position: relative;
+		display: block;
+		z-index: 3;
+		width: 75%;
+		margin: 50px auto;
+		background-color: white;
+		border: 5px solid $relay-blue;
+		@include border-box();
+		padding: 70px 30px 50px 30px;
+
+		.title-container {
+			position: absolute;
+			display: block;
+			background-color: $relay-blue;
+			color: white;
+			@include border-box();
+			padding: 15px 15px 15px 30px;
+			top: -30px;
+			left: 35%;
+			text-transform: uppercase;
+			
+			// transform: skewX(-6deg);
+  	// 		transform-origin: top right;
+
+			&:after {
+			    content:"";
+			    position:absolute;
+			    top:0;
+			    left: 100%;
+			    width: 0; 
+			    height: 0; 
+			    border-bottom: 60px solid transparent; 
+			    border-left: 50px solid $relay-blue; 
+			}
+
+  			.title {
+				// transform: skewX(6deg);
+				@include header-font();
+				font-size: 30px;
+				line-height: 30px;
+				margin-bottom: 0;
+
+				@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));	
+  			}
+		}
+
+		.objective {
+			@include body-font();
 		}
 
 	}
