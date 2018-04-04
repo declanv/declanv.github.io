@@ -7,9 +7,10 @@
 		width: 100%;
 		height: 50%;
 		left: 0;
-		top: 0;
+		top: 100px;
 		right: 0;
 		z-index: 1;
+		transform: skewY(-12deg);
 	}
 
 	.content-container {
@@ -53,8 +54,82 @@
 				line-height: 30px;
 				margin-bottom: 0;
 
-
+				@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));	
   			}
+		}
+
+		.intro-image {
+			position: relative;
+			display: block;
+			height: 500px;
+			overflow: hidden;
+		}
+
+		.intro-text-container {
+
+			position: relative;
+			@include display-flex();
+			@include justify-content-center();
+			@include align-items(center);
+			@include flex-direction-row();
+
+			margin: 30px 0;
+
+			.intro-text-description {
+
+				position: relative;
+				display: block;
+				@include flex(2 2 auto);
+				@include display-flex();
+				@include flex-direction-column();
+				@include align-items(center);
+
+				padding-right: 10px;
+
+				.intro-text {
+					@include body-font();
+				}
+
+			}
+
+			.tech-wrapper {
+
+				position: relative;
+				display: block;
+				@include flex(1 1 auto);
+
+				padding-left: 10px;
+		
+				.tech-title {
+
+					@include header-font();
+					font-size: 30px;
+					@include text-in-left(1.75s, cubic-bezier(0, 0.58, 0, 1));	
+				}
+				.tech-list {
+
+					@include body-light();
+					// font-family: NunitoSans-ExtraLight, sans-serif;
+					font-weight: 100;
+
+					$techs: 10;
+
+					@for $i from 1 through $techs {
+					    // $i: index($techs, $tech);
+					    // $timeCalc: .05 * $i;
+					    $time: #{$i*.33+1}s;
+					    .tech-#{$i} { 
+					    	position: relative;
+					    	display: inline-block;
+					    	background-color: transparent;
+					    	// opacity: 0;
+					       @include text-in-left($time, cubic-bezier(0, 0.38, 0.21, 0.99));	
+					    }
+					}
+
+				}
+			}
+
 		}
 
 	}
