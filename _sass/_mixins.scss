@@ -652,3 +652,7 @@
   @include border-box();
 }
 
+@mixin gradient-shadow() {
+  box-shadow: 27px 23px 107px -6px rgba(0,0,0,0.32);
+}
+

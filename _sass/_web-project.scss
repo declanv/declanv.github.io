@@ -8,6 +8,7 @@
 		left: 0;
 		top: 100px;
 		right: 0;
+		@include gradient-shadow();
 
 		&.one {
 			background-color: $relay-red;
@@ -33,6 +34,7 @@
 		padding: 75px 30px 30px 30px;
 		@include border-box();
 		margin-top: 30px;
+		@include gradient-shadow();
 
 		.title-container {
 			position: absolute;
@@ -43,6 +45,8 @@
 			padding: 15px 15px 15px 30px;
 			top: -30px;
 			text-transform: uppercase;
+			@include gradient-shadow();
+			
 			
 			// transform: skewX(-6deg);
   	// 		transform-origin: top right;
@@ -150,11 +154,13 @@
 		display: block;
 		z-index: 3;
 		width: 75%;
-		margin: 50px auto;
+		margin: 100px auto 80px auto;
 		background-color: white;
 		border: 5px solid $relay-blue;
 		@include border-box();
-		padding: 70px 30px 50px 30px;
+		padding: 80px 40px 60px 40px;
+
+		@include gradient-shadow();
 
 		.title-container {
 			position: absolute;
@@ -166,7 +172,8 @@
 			top: -30px;
 			left: 35%;
 			text-transform: uppercase;
-			
+			@include gradient-shadow();
+
 			// transform: skewX(-6deg);
   	// 		transform-origin: top right;
 
@@ -194,6 +201,7 @@
 
 		.objective {
 			@include body-font();
+			font-size: 26px;
 		}
 
 	}
