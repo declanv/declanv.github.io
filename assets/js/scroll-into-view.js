@@ -36,18 +36,20 @@ $(document).ready(function(){
 	    	console.log('visible')
 
 	      element.classList.add('visible');
-	      if ($(element).data('seen-yet') == false) {
-	      	console.log("hey, this thing hasn't been seen yet")
-	      	element.classList.add('play');
-	      	// seenYet = true;
-	      	$(element).data('seen-yet', true);
+	      element.classList.add('play');
 
-	      } else {
-	      	// element.classList.remove('play');
-	      }
+	      // if ($(element).data('seen-yet') == false) {
+	      // 	console.log("hey, this thing hasn't been seen yet")
+	      // 	element.classList.add('play');
+	      // 	seenYet = true;
+	      // 	$(element).data('seen-yet', true);
+
+	      // } else {
+	      // 	element.classList.remove('play');
+	      // }
 	    } else {
 	    	console.log('invisible')
-	      // element.classList.remove('visible');
+	      element.classList.remove('visible');
      	  element.classList.remove('play');
      	  // seenYet = true;
 	    }
