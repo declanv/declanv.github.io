@@ -49,7 +49,7 @@ $(document).ready(function(){
 	      // }
 	    } else {
 	    	console.log('invisible')
-	      element.classList.remove('visible');
+	      // element.classList.remove('visible');
      	  element.classList.remove('play');
      	  // seenYet = true;
 	    }
