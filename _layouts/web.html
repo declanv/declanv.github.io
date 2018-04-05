@@ -27,12 +27,16 @@ layout: default
 			</div>
 			<div class="tech-wrapper">
 				<h6 class="tech-title">Technologies:</h6>
-				<p class="tech-list">
+				<div class="tech-list">
 
 					{% for technology in page.technologies %}
-						<span class="tech-item tech-{{ forloop.index }}">{{technology}}{% if forloop.last != true %}, {% endif %}</span>
+						<p class="tech-item tech-{{ forloop.index }}">
+							<span>
+								{{technology}}{% if forloop.last != true %}, {% endif %}
+							</span>
+						</p>
 					{% endfor %}
-				</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -65,11 +69,13 @@ layout: default
 			<img src="{{img_path | append: page.image2}}" />
 		</div>
 		<div class="full-width-text-container">
-			{{ page.description2 }}
+			<p class="text">
+				{{ page.description3 }}
+			</p>
 		</div>
 		<div class="isolated-text">
-			<p>
-				{{ page.description3 }}
+			<p class='text'>
+				{{ page.description2 }}
 			</p>
 		</div>
 
