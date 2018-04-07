@@ -47,7 +47,10 @@
     border-bottom: none;
     width: 100%;
     top: 0;
-    box-shadow: 5px 10px 40px 10px rgba(0, 0, 0, 0.1);
+    @include border-box();
+    padding: 10px 0;
+    // If I decide I want a shadow under the header, here is the best option:
+    // box-shadow: 5px 10px 40px 10px rgba(0, 0, 0, 0.1);
     // @include gradient-shadow();
 
   	background-image: linear-gradient(white, transparent);
@@ -80,11 +83,10 @@
 	.site-title {
 
 		@include nav-font();
-		@include button($site-blue, white);
 		// font-family: Tofino-Medium, sans-serif;
 		text-transform: uppercase;
-		font-size: 40px;
-		letter-spacing: 0.75px;
+		// font-size: 40px;
+		// letter-spacing: 0.75px;
 		font-weight: 100;
 		// color: mix(map_get($colors, 'purple'), map_get($colors, 'green'));
 		text-shadow: none;
@@ -99,7 +101,49 @@
 			position: relative;
 			display: inline-block;
 		    z-index: 2;
-		    @include button($site-blue, white);
 		}
 	}
+
+	.site-title,
+	.trigger .page-link {
+		@include nav-button($site-blue, white);
+
+	}
+
+	.site-nav {
+		line-height: 25px;
+	}
+
+
+}
+
+// Page-specific header styles:
+
+.home {
+	.site-header {
+
+  		background-image: linear-gradient($site-orange, transparent);
+
+		.site-title,
+		.trigger .page-link {
+			@include nav-button($site-blue, white);
+		}
+	}
+}
+
+.web,
+.art,
+.photo,
+.about {
+	.site-header {
+
+  		background-image: linear-gradient(white, transparent);
+
+		.site-title,
+		.trigger .page-link {
+			@include nav-button($site-blue, $site-orange);
+		}
+
+	}
+
 }

@@ -60,19 +60,6 @@ $sva-today-grey: #4c4d4f;
 
 
 .web {
-	.site-header {
-
-		.site-title {
-
-			@include button($site-blue, $site-orange);
-		}
-
-		.trigger {
-			.page-link {
-				@include button($site-blue, $site-orange);
-			}
-		}
-	}
 
 	.web-project {
 

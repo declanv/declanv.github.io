@@ -714,6 +714,39 @@
 
 }
 
+@mixin nav-button($color, $color-hover) {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  font-family: $button-font;
+  font-size: 25px;
+  text-transform: uppercase;
+  @include border-box();
+  letter-spacing: 0.75px;
+  line-height: 25px;
+  padding: 4px 5px 8px 5px;
+  // margin: 5px;
+  // padding: 2px 5px 5px 5px;
+  // padding: 0;
+  margin: 2px 5px 5px 5px;
+  border-bottom: 5px solid transparent;
+  text-decoration: none;
+  color: $color;
+
+  @include expand-underline($color-hover);
+
+
+  &.active {
+    &:before {
+      border-bottom: 3px solid $color-hover;
+      border-left: 0;
+      @include transform-origin(0% 100%);
+    }
+    color: $color-hover;
+  }
+  @include border-box();
+}
+
 @mixin button($color, $color-hover) {
   position: relative;
   display: inline-block;
@@ -721,7 +754,10 @@
   font-family: $button-font;
   font-size: 25px;
   text-transform: uppercase;
-  padding: 2px 5px 5px 5px;
+  @include border-box();
+  // padding: 2px 5px 5px 5px;
+  padding: 0;
+  margin: 2px 5px 5px 5px;
   border-bottom: 5px solid transparent;
   text-decoration: none;
   color: $color;
