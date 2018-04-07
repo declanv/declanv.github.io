@@ -241,7 +241,7 @@
 		@include body-font();
 		// font-family: NunitoSans-Regular, sans-serif;	
 		color: #030043;
-		width: 790px;
+		width: 100%;
 		font-size: 50px;
 		overflow: hidden; /* Ensures the content is not revealed until the animation */
 		border-right: .15em solid transparent; /* The typwriter cursor */
@@ -260,7 +260,7 @@
 		color: #030043;
 		@include body-font();
 		// font-family: NunitoSans-Regular, sans-serif;
-		width: 200px;
+		width: auto;
 		visibility: hidden;
 		font-size: 50px;
 		overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -352,15 +352,15 @@
 	/* The typing effect */
 	@keyframes typing-line-2 {
 	  from, to  { width: 0; border-color: orange; visibility: hidden;}
-	  98% { width: 200px; border-color: orange; }
-	  100% {width: 200px; border-color: transparent; visibility: visible;}
+	  98% { width: 25%; border-color: orange; }
+	  100% {width: 25%; border-color: transparent; visibility: visible;}
 	}
 
 	/* The typing effect */
 	@keyframes typing {
 	  from, to  { width: 0; border-color: orange; }
-	  98% { width: 790px; border-color: orange; }
-	  100% {width: 790px; border-color: transparent;}
+	  98% { width: 100%; border-color: orange; }
+	  100% {width: 100%; border-color: transparent;}
 	}
 
 	/* The typewriter cursor effect */

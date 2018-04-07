@@ -22,6 +22,7 @@ $(document).ready(function(){
 
 	var scroll = window.requestAnimationFrame ||
             function(callback){window.setTimeout(callback, 1000/60)};
+
     var elementsToShow = document.querySelectorAll('.show-on-scroll');
 	// seenYet = false;
 
@@ -56,7 +57,24 @@ $(document).ready(function(){
 	  });
 
 	  scroll(loop);
+
 	}
 
 	loop();
+
+	function fadeHeader() {
+		if ($(window).scrollTop() >= $('.site-header').outerHeight() * 2) {
+	      $('header').addClass('scroll-away');
+	      $('header').removeClass('scroll-in');
+	      $('header').removeClass('initial');
+	    } else if ($(window).scrollTop() >= $('.site-header').outerHeight()) {
+	      $('header').removeClass('scroll-away');
+	      $('header').addClass('scroll-in');
+	    };
+
+	    scroll(fadeHeader);
+	}
+
+	fadeHeader();
+
 });
