@@ -660,11 +660,6 @@
   cursor: pointer;
   border: 2px solid transparent;
 
-  &:hover {
-
-    color: $color-hover;
-  }
-
   &:before,
   &:after {
     width: 100%;
@@ -674,33 +669,50 @@
     top:0;
     left:0;
     @include border-box();
-    @include transform(scale(0));
-    @include transition(0.5s);
   }
 
   &:before {
     border-bottom: 3px solid $color-hover;
     border-left: 0;
-    @include transform-origin(0% 100%);
   }
 
   &:after {
     border-top: 0;
     border-right: 0;
-    @include transform-origin(50% 50%);
   }
 
-  &:hover {
-    &:after,
+  &.active {
+    color: $color-hover;
+  }
+
+  &:not(.active) {
+    &:hover {
+      color: $color-hover;
+    }
+
+    &:before,
+    &:after {
+      @include transform(scale(0));
+      @include transition(0.5s);
+    }
+
     &:before {
-      @include transform(scale(1));
+      @include transform-origin(0% 100%);
+    }
+
+    &:after {
+      @include transform-origin(50% 50%);
+    }
+
+    &:hover {
+      &:after,
+      &:before {
+        @include transform(scale(1));
+      }
     }
   }
+
 }
-
-
-
-
 
 @mixin button($color, $color-hover) {
   position: relative;
@@ -713,7 +725,18 @@
   border-bottom: 5px solid transparent;
   text-decoration: none;
   color: $color;
+
   @include expand-underline($color-hover);
+
+
+  &.active {
+    &:before {
+      border-bottom: 3px solid $color-hover;
+      border-left: 0;
+      @include transform-origin(0% 100%);
+    }
+    color: $color-hover;
+  }
   @include border-box();
 }
 

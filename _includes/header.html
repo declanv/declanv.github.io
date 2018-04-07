@@ -3,7 +3,8 @@
   <div class="wrapper">
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths | sort: "weight" %}
-    <a class="site-title" href="{{ "/" | relative_url }}">
+    <a {% if page.url == '/' %} class="site-title active" {% else %} class="site-title" {% endif %} href="{{ "/" | relative_url }}">
+
       {%comment%}
         {% assign site_title_split = site.title | split: "" %}
         {% for letter in site_title_split %}
@@ -32,7 +33,7 @@
 
 
 
-        <div class="trigger box curmudgeon">
+        <div class="trigger box">
 
           {% for path in page_paths %}
               {% assign my_page = site.pages | where: "path", path | first %}

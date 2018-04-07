@@ -51,7 +51,7 @@ $(document).ready(function(){
 	    } else {
 	    	console.log('invisible')
 	      // element.classList.remove('visible');
-     	  element.classList.remove('play');
+     	  // element.classList.remove('play');
      	  // seenYet = true;
 	    }
 	  });
@@ -67,7 +67,11 @@ $(document).ready(function(){
 	      $('header').addClass('scroll-away');
 	      $('header').removeClass('scroll-in');
 	      $('header').removeClass('initial');
-	    } else if ($(window).scrollTop() >= $('.site-header').outerHeight()) {
+	      console.log('we are scrolling out');
+
+	    } else if ($(window).scrollTop() <= $('.site-header').outerHeight() * 2 && !$('.siteheader').hasClass('initial')) {
+
+	    	console.log('we are scrolling in');
 	      $('header').removeClass('scroll-away');
 	      $('header').addClass('scroll-in');
 	    };
