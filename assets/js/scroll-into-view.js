@@ -1,84 +1,85 @@
-//http://tobiasahlin.com/moving-letters/# --> Out Now animation		
-$(document).ready(function(){
+// //http://tobiasahlin.com/moving-letters/# --> Out Now animation		
+// $(document).ready(function(){
 
-	// http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-	function isElementInViewport (el) 
-	{
-	    //special bonus for those using jQuery
-	    if (typeof jQuery !== 'undefined' && el instanceof jQuery) el = el[0];
+// 	// http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+// 	function isElementInViewport (el) 
+// 	{
+// 	    //special bonus for those using jQuery
+// 	    if (typeof jQuery !== 'undefined' && el instanceof jQuery) el = el[0];
 
-	    var rect = el.getBoundingClientRect();
-	    var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-	    var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+// 	    var rect = el.getBoundingClientRect();
+// 	    var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+// 	    var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
 
-	    return (
-	           (rect.left >= 0)
-	        && (rect.top >= 0)
-	        && ((rect.left + rect.width/2) <= windowWidth)
-	        && ((rect.top + rect.height/2) <= windowHeight)
-	    );
+// 	    return (
+// 	           (rect.left >= 0)
+// 	        && (rect.top >= 0)
+// 	        && ((rect.left + rect.width/2) <= windowWidth)
+// 	        && ((rect.top + rect.height/2) <= windowHeight)
+// 	    );
 
-	}
+// 	}
 
-	var scroll = window.requestAnimationFrame ||
-            function(callback){window.setTimeout(callback, 1000/60)};
+// 	var scroll = window.requestAnimationFrame ||
+//             function(callback){window.setTimeout(callback, 1000/60)};
 
-    var elementsToShow = document.querySelectorAll('.show-on-scroll');
-	// seenYet = false;
+// 	// seenYet = false;
 
-    function loop() {
+//     function scrollToShow() {
 
-	  elementsToShow.forEach(function (element) {
-	  	// console.log('seenYet: ', seenYet);
+// 	  var elementsToShow = document.querySelectorAll('.show-on-scroll');
 
-	  	// elementSeenYet  = $(element).data('seen-yet');
-	  	// console.log('elementSeenYet: ', elementSeenYet);
-	    if (isElementInViewport(element)) {
-	    	console.log('visible')
+// 	  elementsToShow.forEach(function (element) {
+// 	  	// console.log('seenYet: ', seenYet);
 
-	      element.classList.add('visible');
-	      element.classList.add('play');
+// 	  	// elementSeenYet  = $(element).data('seen-yet');
+// 	  	// console.log('elementSeenYet: ', elementSeenYet);
+// 	    if (isElementInViewport(element)) {
+// 	    	console.log('visible')
 
-	      // if ($(element).data('seen-yet') == false) {
-	      // 	console.log("hey, this thing hasn't been seen yet")
-	      // 	element.classList.add('play');
-	      // 	seenYet = true;
-	      // 	$(element).data('seen-yet', true);
+// 	      element.classList.add('visible');
+// 	      element.classList.add('play');
 
-	      // } else {
-	      // 	element.classList.remove('play');
-	      // }
-	    } else {
-	    	console.log('invisible')
-	      // element.classList.remove('visible');
-     	  // element.classList.remove('play');
-     	  // seenYet = true;
-	    }
-	  });
+// 	      // if ($(element).data('seen-yet') == false) {
+// 	      // 	console.log("hey, this thing hasn't been seen yet")
+// 	      // 	element.classList.add('play');
+// 	      // 	seenYet = true;
+// 	      // 	$(element).data('seen-yet', true);
 
-	  scroll(loop);
+// 	      // } else {
+// 	      // 	element.classList.remove('play');
+// 	      // }
+// 	    } else {
+// 	    	console.log('invisible')
+// 	      // element.classList.remove('visible');
+//      	  // element.classList.remove('play');
+//      	  // seenYet = true;
+// 	    }
+// 	  });
 
-	}
+// 	  scroll(scrollToShow);
 
-	loop();
+// 	}
 
-	function fadeHeader() {
-		if ($(window).scrollTop() >= $('.site-header').outerHeight() * 2) {
-	      $('header').addClass('scroll-away');
-	      $('header').removeClass('scroll-in');
-	      $('header').removeClass('initial');
-	      console.log('we are scrolling out');
+// 	scrollToShow();
 
-	    } else if ($(window).scrollTop() <= $('.site-header').outerHeight() * 2 && !$('.siteheader').hasClass('initial')) {
+// 	function fadeHeader() {
+// 		if ($(window).scrollTop() >= $('.site-header').outerHeight() * 2) {
+// 	      $('header').addClass('scroll-away');
+// 	      $('header').removeClass('scroll-in');
+// 	      $('header').removeClass('initial');
+// 	      console.log('we are scrolling out');
 
-	    	console.log('we are scrolling in');
-	      $('header').removeClass('scroll-away');
-	      $('header').addClass('scroll-in');
-	    };
+// 	    } else if ($(window).scrollTop() <= $('.site-header').outerHeight() * 2 && !$('.siteheader').hasClass('initial')) {
 
-	    scroll(fadeHeader);
-	}
+// 	    	console.log('we are scrolling in');
+// 	      $('header').removeClass('scroll-away');
+// 	      $('header').addClass('scroll-in');
+// 	    };
 
-	fadeHeader();
+// 	    scroll(fadeHeader);
+// 	}
 
-});
+// 	fadeHeader();
+
+// });
