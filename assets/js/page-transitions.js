@@ -310,6 +310,7 @@ $( document ).ready(function() {
       /**
        * this.oldContainer is the HTMLElement of the old Container
        */
+      // $('body').removeClass('transition');
 
       return $(this.oldContainer).animate({ opacity: 0 }).promise();
     },
@@ -326,6 +327,9 @@ $( document ).ready(function() {
 
       $(this.oldContainer).hide();
 
+      // $('body').addClass('transition');
+
+
       $el.css({
         visibility : 'visible',
         opacity : 0
@@ -337,7 +341,8 @@ $( document ).ready(function() {
          * .done() will automatically remove from the DOM the old Container
          */
 
-        _this.done();
+        _this.done(function() {
+        });
       });
     }
   });

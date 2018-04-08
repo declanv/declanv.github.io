@@ -53,7 +53,8 @@
     // box-shadow: 5px 10px 40px 10px rgba(0, 0, 0, 0.1);
     // @include gradient-shadow();
 
-  	background-image: linear-gradient(white, transparent);
+  	// background-image: linear-gradient(white, transparent);
+  	background-color: transparent;
     // background-image: linear-gradient(blue, transparent);
 
 
@@ -114,7 +115,6 @@
 		line-height: 25px;
 	}
 
-
 }
 
 // Page-specific header styles:
@@ -122,7 +122,7 @@
 .home {
 	.site-header {
 
-  		background-image: linear-gradient($site-orange, transparent);
+  		// background-image: linear-gradient($site-orange, transparent);
 
 		.site-title,
 		.trigger .page-link {
@@ -137,7 +137,7 @@
 .about {
 	.site-header {
 
-  		background-image: linear-gradient(white, transparent);
+  		// background-image: linear-gradient(white, transparent);
 
 		.site-title,
 		.trigger .page-link {

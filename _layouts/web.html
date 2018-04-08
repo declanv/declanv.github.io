@@ -20,25 +20,35 @@ layout: default
 		</div>
 
 		<div class="intro-text-container">
-			<div class="intro-text-description">
-				<div class="intro-text">
-					{{page.description1}}
+			<div class="description-container">
+				<div class="intro-text-description">
+					<div class="intro-text">
+						{{page.description1}}
+					</div>
+				</div>
+				<div class="tech-wrapper">
+					<h6 class="tech-title">Technologies:</h6>
+					<div class="tech-list">
+
+						{% for technology in page.technologies %}
+							<p class="tech-item tech-{{ forloop.index }}">
+								<span>
+									{{technology}}{% if forloop.last != true %}, {% endif %}
+								</span>
+							</p>
+						{% endfor %}
+					</div>
 				</div>
 			</div>
-			<div class="tech-wrapper">
-				<h6 class="tech-title">Technologies:</h6>
-				<div class="tech-list">
-
-					{% for technology in page.technologies %}
-						<p class="tech-item tech-{{ forloop.index }}">
-							<span>
-								{{technology}}{% if forloop.last != true %}, {% endif %}
-							</span>
-						</p>
-					{% endfor %}
+			<div class="link-container">
+				<div class="link-wrapper">
+					<a class="link" href="{{ page.externalUrl }}">
+						View Live Site
+					</a>
 				</div>
 			</div>
 		</div>
+
 	</div>
 
 	{% comment %}

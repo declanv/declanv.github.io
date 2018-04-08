@@ -166,6 +166,18 @@
   justify-content: center;
 }
 
+@mixin justify-content-flex-end() {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+@mixin justify-content-flex-start() {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
 // Align items (like align content) requires different properties for ms...therefore there must be separate mixins for each property...with the exception of stretch
 @mixin align-items-flex-end() {
   -webkit-box-align: end;
@@ -175,10 +187,10 @@
 }
 
 @mixin align-items-flex-start() {
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 @mixin align-items($property) {
@@ -519,6 +531,8 @@
   /*75 is obtained as 100[1- (100/(height or width written in .gradDynamic:after)). i.e. 75 = 100[1-100/400] */
 }
 
+
+
 @mixin expand-ruleline($color, $timing) {
   &:before{
     overflow: hidden; 
@@ -561,6 +575,27 @@
       // @include transform(scale(1));
   }
 }
+
+@keyframes pageTransition {
+  0% {
+    background-color: white;
+  }
+
+  50% {
+    background-color: black;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+@mixin pageTransition() {
+
+  @include prefix-animation(pageTransition 1s cubic-bezier(0.5, 0, 0.5, 1) forwards);
+
+}
+
 
 // @-webkit-keyframes tech-in-left {
 //   0% {

@@ -5,6 +5,17 @@ a:focus {
 
 
 
+html {
+
+	.transition {
+		@include pageTransition();	
+
+		body {
+			@include pageTransition();
+		}
+	}
+
+}
 
 
 body {
@@ -25,6 +36,15 @@ body {
 	p {
 		font-family: NunitoSans-Regular, sans-serif;
 	}
+
+
+	.transition {
+		@include pageTransition();
+
+	}
+
+
+
 
 }
 
