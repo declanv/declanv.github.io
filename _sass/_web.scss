@@ -19,6 +19,12 @@ $sva-today-red: #dc0032;
 
 $sva-today-grey: #4c4d4f;
 
+$sightseer-red: #E91C30;
+
+$sightseer-blue: #69D1EE;
+
+$sightseer-grey: $relay-grey;
+
 @mixin web-project-colors($color-1, $color-2, $color-3) {
 	// blue 
 	border-color: $color-2;
@@ -326,6 +332,10 @@ $sva-today-grey: #4c4d4f;
 
 		&.relay {
 			@include web-project-colors($relay-red, $relay-blue, $relay-grey);
+		}
+
+		&.sightseer {
+			@include web-project-colors($sightseer-red, $sightseer-blue, $sightseer-grey);
 		}
 
 	}

@@ -1,0 +1,118 @@
+@mixin web-project($color1, $color2, $color3) {
+
+	.background-color {
+
+		&.one {
+			background-color: $color1;
+		}
+
+		&.two {
+			background-color: $color2;
+		}
+	}
+
+	.content-container {
+
+		border: 5px solid $color2;
+
+		.title-container {
+
+			background-color: $color2;
+
+
+			&:after {
+			    border-left: 50px solid $color2; 
+			}
+		}
+
+		.intro-image {
+
+			border: 5px solid $color1;
+		}
+
+		.intro-text-container {
+
+			.description-container {
+
+				.tech-wrapper {
+			
+					.tech-title {
+
+						@include expand-ruleline($color2, 2s);	
+					}
+				}
+			}
+
+			.link-container {
+
+				.link-wrapper {
+
+					&:before {
+						background-color: $color2;
+						border: 3px solid $color2;
+					}
+
+					&:after {
+					    border: 3px solid $color1;
+					}
+
+					&:hover,
+					&:active {
+
+						&:after {
+							background-color: $color1;
+						}
+					}
+
+					.link {
+
+						color: $color2;
+
+					}
+
+				}
+			}
+
+		}
+
+		.full-width-text-container {
+
+			background-color: $color1;
+
+		}
+
+		.isolated-text {
+
+			&:before {
+
+				background-color: $color2;
+
+			}
+
+			&:after {
+
+			    background-color: $color1;
+
+			}
+
+		}
+
+	}
+
+	.objective-container {
+
+		border: 5px solid $color2;
+
+
+		.title-container {
+
+			background-color: $color2;
+
+			&:after {
+
+			    border-left: 50px solid $color2; 
+			}
+		}
+	}
+}
+
