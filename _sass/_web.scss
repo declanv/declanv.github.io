@@ -2,6 +2,8 @@ $relay-red: #E6464C;
 $relay-blue: #18518f;
 $relay-grey: #1E1E1E;
 
+// ritandeclan
+
 // blue
 $ritandeclan-blue: #75d0bb;
 // pink
@@ -13,11 +15,14 @@ $ritandeclan-grey: #656478;
 // red
 $ritandeclan-red: #e9243c;
 
-$svatoday-blue: #00add3;
+// sva
+$sva-today-blue: #00add3;
 
 $sva-today-red: #dc0032;
 
 $sva-today-grey: #4c4d4f;
+
+// sightseer
 
 $sightseer-red: #E91C30;
 
@@ -327,7 +332,7 @@ $sightseer-grey: $relay-grey;
 		}
 
 		&.sva-today-builder {
-			@include web-project-colors($sva-today-red, $svatoday-blue, $sva-today-grey);
+			@include web-project-colors($sva-today-red, $sva-today-blue, $sva-today-grey);
 		}
 
 		&.relay {

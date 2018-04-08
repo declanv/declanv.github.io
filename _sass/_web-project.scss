@@ -453,6 +453,15 @@
 		@include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
 	}
 
+	&.ritandeclan {
+		@include web-project($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
+	}
+
+	&.sva-today-builder {
+		@include web-project($sva-today-red, $sva-today-blue, $sva-today-grey);
+	}
+
+	
 
 }	
 
