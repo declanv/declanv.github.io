@@ -53,6 +53,7 @@
 		height: 33px;
 		width: 60px;
 		border: 5px solid $relay-blue;
+		opacity: 0.75;
 
 		@include header-font();
 		text-transform: uppercase;
@@ -60,7 +61,6 @@
 		@include display-flex();
 		@include flex-direction-column();
 		@include justify-content-center();
-		@include gradient-shadow();
 
 		.arrow-link-container {
 
@@ -123,6 +123,7 @@
 
 		&.prev {
 			left: -60px;
+		 	box-shadow: -12px 23px 100px 8px rgba(0, 0, 0, 0.25);
 
 			.arrow-link-container {
 
@@ -169,7 +170,7 @@
 
 		&.next {
 			right: -60px;
-		 	border-shadow: 12px 13px 83px 8px rgba(0, 0, 0, 0.25);
+		 	box-shadow: 12px 13px 83px 8px rgba(0, 0, 0, 0.25);
 
 			&:hover,
 			&:active {

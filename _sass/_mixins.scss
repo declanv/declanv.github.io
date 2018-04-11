@@ -541,20 +541,24 @@
 @keyframes openRightArrow {
   0% {
     right: -60px;
+    opacity: 0.75;
   }
 
   100% {
     right: 0px;
+    opacity: 1;
   }
 }
 
 @keyframes openLeftArrow {
   0% {
     left: -60px;
+    opacity: 0.75;
   }
 
   100% {
     left: 0px;
+    opacity: 1;
   }
 }
 

@@ -11,6 +11,46 @@
 		}
 	}
 
+	.page-nav {
+		background-color: $color2;
+		border: 5px solid $color2;
+
+		.arrow-link-container {
+
+			.arrow {
+
+				&:before {
+
+					border-left-color: $color1;
+
+				}
+
+			}
+			.link {
+
+				.one,
+				.two {
+
+					border-bottom-color: $color1;
+
+				}
+			}
+
+		}
+
+		&.prev {
+			.arrow-link-container {
+				.arrow {
+					&:before {
+						border-right-color: $color1;
+					}
+
+				}
+			}
+		}
+
+	}
+
 	.content-container {
 
 		border: 5px solid $color2;
