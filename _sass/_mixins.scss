@@ -147,6 +147,13 @@
   flex-direction: row;
 }
 
+@mixin flex-direction-row-reverse() {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
 @mixin flex-wrap($property) {
   -webkit-flex-wrap: $property;
   -ms-flex-wrap: $property;
@@ -531,7 +538,45 @@
   /*75 is obtained as 100[1- (100/(height or width written in .gradDynamic:after)). i.e. 75 = 100[1-100/400] */
 }
 
+@keyframes openRightArrow {
+  0% {
+    right: -70px;
+  }
 
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes showSecondArrowText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showFirstArrowText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin showFirstArrowText() {
+  @include prefix-animation(showFirstArrowText 0.5s cubic-bezier(0.5, 0, 0.5, 1) forwards);
+}
+
+@mixin showSecondArrowText() {
+  @include prefix-animation(showSecondArrowText 0.5s 0.5s cubic-bezier(0.5, 0, 0.5, 1) forwards);
+}
+
+@mixin openRightArrow() {
+  @include prefix-animation(openRightArrow 0.5s cubic-bezier(0.5, 0, 0.5, 1) forwards);
+}
 
 @mixin expand-ruleline($color, $timing) {
   &:before{

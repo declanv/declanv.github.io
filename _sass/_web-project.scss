@@ -40,6 +40,195 @@
 		}
 	}
 
+
+
+
+	.page-nav {
+
+		position: fixed;
+		display: block;
+		bottom: 100px;
+		z-index: 5;
+		background-color: $relay-blue;
+		height: 33px;
+		width: 80px;
+		border-radius: 0;
+
+		@include header-font();
+		text-transform: uppercase;
+
+		@include display-flex();
+		@include flex-direction-column();
+		@include justify-content-center();
+		border: 5px solid $relay-blue;
+		@include gradient-shadow();
+
+		.arrow-link-container {
+
+			// @include display-flex();
+			// @include flex-direction-row();
+			// @include justify-content-flex-start();
+			// margin-top: 10px;
+
+
+			.arrow {
+				position: absolute;
+				display: block;
+				width: auto;
+				color: white;
+				// @include flex(1 1 auto);
+				// margin: 0 10px 0 20px;
+				@include header-font();
+				font-size: 10px;
+
+				width: 0; 
+				height: 0; 
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+
+				border-left: 20px solid white;
+				top: -4px;
+				left: -18px;
+				z-index: 2;
+
+				&:before {
+					position: absolute;
+					display: block;
+					width: auto;
+					color: white;
+					content: '';
+					// @include flex(1 1 auto);
+					// margin: 0 10px 0 20px;
+					@include header-font();
+					font-size: 10px;
+
+					width: 0; 
+					height: 0; 
+					border-top: 20px solid transparent;
+					border-bottom: 20px solid transparent;
+
+					border-left: 20px solid $relay-red;
+					top: -20px;
+					left: -30px;
+					z-index: 1;
+				}
+
+				// &:before {
+				// 	border-left: 30px solid $relay-blue;
+				// }
+
+			}
+			.link {
+				position: relative;
+				display: block;
+				width: 50px;
+				margin: 0 0 0 10px;
+				color: white;
+				// @include flex(3 3 auto);
+				@include header-font();
+				font-size: 10px;
+
+				.one,
+				.two {
+					position: relative;
+					display: block;
+					width: 200px;
+					opacity: 0;
+					margin-left: -18px;
+					border-bottom: 1px solid $relay-red;
+					text-transform: uppercase;
+					padding-left: 25px;
+					@include border-box();
+					letter-spacing: 1px;
+				}
+				.one {
+					padding-bottom: 2px;
+				}
+				.two {
+					border-bottom: none;
+					padding-top: 2px;
+
+				}
+			}
+
+		}
+
+		&.prev {
+			left: -100px;
+
+			.arrow-link-container {
+				@include justify-content-flex-end();
+				@include flex-direction-row-reverse();
+			}
+
+			.arrow {
+				border-right: 20px solid $relay-red;
+				border-left: none;
+				margin: 0 20px 0 10px;
+			}
+
+
+			&:hover,
+			&:active {
+
+				left: -50px;
+
+				&:before {
+
+				}
+			}
+		}
+
+		&.next {
+			right: -90px;
+		 	border-shadow: 12px 13px 83px 8px rgba(0, 0, 0, 0.25);
+
+
+			// &:before {
+			// 	content: '>';
+			// 	position: relative;
+			// 	display: block;
+			// 	color: white;
+			// 	// top: 40%;
+			// 	// left: 25%;
+			// }
+
+			&:hover,
+			&:active {
+
+				cursor: pointer;
+
+				@include openRightArrow();
+
+				.arrow {
+					margin-right: 100px;
+				}
+
+				.link {
+
+					text-decoration: none;
+
+					.one,
+					.two {
+						text-decoration: none;
+					}
+
+					.one {
+						@include showFirstArrowText();
+					}
+					.two {
+						@include showSecondArrowText();
+					}
+				}
+
+				&:before {
+
+				}
+			}
+		}
+
+	}
+
 	.content-container {
 		position: relative;
 		display: block;

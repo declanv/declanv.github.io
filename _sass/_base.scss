@@ -6,6 +6,7 @@ a:focus {
 
 
 html {
+	overflow-x: hidden;
 
 	.transition {
 		@include pageTransition();	
