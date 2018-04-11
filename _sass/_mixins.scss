@@ -540,11 +540,21 @@
 
 @keyframes openRightArrow {
   0% {
-    right: -70px;
+    right: -60px;
   }
 
   100% {
     right: 0px;
+  }
+}
+
+@keyframes openLeftArrow {
+  0% {
+    left: -60px;
+  }
+
+  100% {
+    left: 0px;
   }
 }
 
@@ -576,6 +586,10 @@
 
 @mixin openRightArrow() {
   @include prefix-animation(openRightArrow 0.5s cubic-bezier(0.5, 0, 0.5, 1) forwards);
+}
+
+@mixin openLeftArrow() {
+  @include prefix-animation(openLeftArrow 0.5s cubic-bezier(0.5, 0, 0.5, 1) forwards);
 }
 
 @mixin expand-ruleline($color, $timing) {
