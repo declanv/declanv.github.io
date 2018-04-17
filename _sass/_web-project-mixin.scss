@@ -99,9 +99,20 @@
 					&:hover,
 					&:active {
 
+						.link {
+							color: white;
+						}
+
 						&:after {
 							background-color: $color1;
 						}
+
+						&:before {
+							background-color: white;
+							border: 3px solid $color2;
+						}
+
+
 					}
 
 					.link {
