@@ -289,7 +289,7 @@
 
 					position: relative;
 					display: block;
-					@include flex(2 2 auto);
+					@include flex(1 1 auto);
 					@include display-flex();
 					@include flex-direction-column();
 					@include align-items(center);
