@@ -113,12 +113,26 @@ layout: default
 				{{ page.description3 }}
 			</p>
 		</div>
-		<div class="isolated-text">
-			<p class='text'>
-				{{ page.description2 }}
-			</p>
-		</div>
-
+		{% if page.image4 == nil %}
+			<div class="isolated-text">
+				<p class='text'>
+					{{ page.description2 }}
+				</p>
+			</div>
+		{% endif %}
 	</div>
+
+	{% if page.image4 %}
+		<div class="content-container outro show-on-scroll">
+			<div class="intro-image">
+				<img src="{{img_path | append: page.image4}}" />
+			</div>
+			<div class="isolated-text">
+				<p class='text'>
+					{{ page.description2 }}
+				</p>
+			</div>
+		</div>
+	{% endif %}
 </div>
 
