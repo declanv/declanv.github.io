@@ -525,8 +525,14 @@ $sightseer-grey: $relay-grey;
 
 		@media (max-width: 500px) {
 			.description-container {
-				.tech-wrapper {
 
+				.title-container {
+					&:before {
+						left: -12%;
+					}
+				}
+
+				.tech-wrapper {
 
 					.tech-list {
 
