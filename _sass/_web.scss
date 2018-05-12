@@ -508,6 +508,9 @@ $sightseer-grey: $relay-grey;
 					.tech-list {
 
 						margin-bottom: 0;
+						overflow: hidden;
+						display: inline-block;
+						overflow: hidden;
 
 						.tech-item {
 							padding: 0 1px 0 0;
@@ -523,9 +526,9 @@ $sightseer-grey: $relay-grey;
 		@media (max-width: 500px) {
 			.description-container {
 				.tech-wrapper {
-					.tech-list {
 
-						display: inline;
+
+					.tech-list {
 
 						.tech-item {
 
