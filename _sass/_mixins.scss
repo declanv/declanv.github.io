@@ -82,6 +82,20 @@
   font-family: Tofino-Light, sans-serif;
 }
 
+// mobile variables
+
+@mixin header-font-mid() {
+  font-size: 18px;
+}
+
+@mixin body-font-mid() {
+  font-size: 16px; 
+}
+
+@mixin body-font-small() {
+  font-size: 14px; 
+}
+
 @mixin clearfix() {
   &:after {
     content:".";
