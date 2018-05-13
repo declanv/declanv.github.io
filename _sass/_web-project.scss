@@ -359,6 +359,21 @@
 								}
 
 						    }
+
+						    .tech-item {
+								&:after {
+									content: ', ';
+									position: relative;
+									color: black;
+									display: inline-block
+								}
+								&:last-of-type {
+									&:after {
+									content: '';
+									}
+								}
+						    }
+
 						}
 
 					}
@@ -634,6 +649,47 @@
 
 	}
 
+	// Responsive Styles
+
+
+	@media(max-width: 850px) {
+
+		.content-container {
+			.intro-text-container {
+
+				.description-container {
+					@include flex-direction-column();
+
+					.tech-wrapper {
+						width: 100%;
+						margin-top: 20px;
+
+						.tech-list {
+							@include display-flex();
+							@include flex-direction-row();
+							@include justify-content-space-between();
+
+							.tech-item {
+								padding: 0 10px;
+								flex: 1 1 auto;
+								&:after {
+									display: none;
+								}
+							}
+						}
+				
+					}
+				}
+
+			}
+		}
+
+
+
+	}
+
+
+	// Dynamic Colors 
 
 	&.sightseer {
 		@include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);

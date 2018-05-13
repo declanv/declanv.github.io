@@ -60,7 +60,11 @@ layout: default
 						{% for technology in page.technologies %}
 							<p class="tech-item tech-{{ forloop.index }}">
 								<span>
-									{{technology}}{% if forloop.last != true %}, {% endif %}
+									{{technology}}
+
+									{% comment %}
+										{{technology}}{% if forloop.last != true %}, {% endif %}
+									{% endcomment %}
 								</span>
 							</p>
 						{% endfor %}
