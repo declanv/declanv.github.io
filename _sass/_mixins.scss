@@ -631,6 +631,12 @@
     // @include transform-origin(0% 100%);
   }
 
+  @media (max-width: 850px) {
+    &:before {
+      top: 28px;
+    }
+  }
+
 }
 
 
