@@ -1,3 +1,64 @@
+// context-specific mixins
+
+@mixin angled-title () {
+
+	position: absolute;
+	display: block;
+	background-color: $relay-blue;
+	color: white;
+	@include border-box();
+	padding: 15px 15px 15px 30px;
+	top: -30px;
+	text-transform: uppercase;
+	@include gradient-shadow();
+
+
+	// transform: skewX(-6deg);
+	// 		transform-origin: top right;
+
+	&:after {
+		content:"";
+		position:absolute;
+		top:0;
+		left: 100%;
+		width: 0; 
+		height: 0; 
+		border-bottom: 60px solid transparent; 
+		border-left: 50px solid $relay-blue; 
+	}
+
+	.title {
+		// transform: skewX(6deg);
+		@include header-font();
+		font-size: 30px;
+		line-height: 30px;
+		margin-bottom: 0;
+		letter-spacing: 1px;
+
+		@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));	
+	}
+
+	@media (max-width: 650px) {
+
+			padding: 5px 5px 5px 30px;
+			.title {
+				font-size: 20px;
+			}
+
+			&:after {
+				border-bottom: 40px solid transparent;
+				border-left: 40px solid transparent;
+			}
+		
+	}
+
+}
+
+@mixin angled-title-mobile () {
+
+}
+
+
 .web-project-container {
 
 	.show-on-scroll {
@@ -222,40 +283,7 @@
 		@include gradient-shadow();
 
 		.title-container {
-			position: absolute;
-			display: block;
-			background-color: $relay-blue;
-			color: white;
-			@include border-box();
-			padding: 15px 15px 15px 30px;
-			top: -30px;
-			text-transform: uppercase;
-			@include gradient-shadow();
-
-			
-			// transform: skewX(-6deg);
-			// 		transform-origin: top right;
-
-			&:after {
-				content:"";
-				position:absolute;
-				top:0;
-				left: 100%;
-				width: 0; 
-				height: 0; 
-				border-bottom: 60px solid transparent; 
-				border-left: 50px solid $relay-blue; 
-			}
-
-			.title {
-				// transform: skewX(6deg);
-				@include header-font();
-				font-size: 30px;
-				line-height: 30px;
-				margin-bottom: 0;
-
-				@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));	
-			}
+			@include angled-title();
 		}
 
 		.intro-image {
@@ -600,40 +628,8 @@
 		@include gradient-shadow();
 
 		.title-container {
-			position: absolute;
-			display: block;
-			background-color: $relay-blue;
-			color: white;
-			@include border-box();
-			padding: 15px 15px 15px 30px;
-			top: -30px;
+			@include angled-title();
 			left: 35%;
-			text-transform: uppercase;
-			@include gradient-shadow();
-
-			// transform: skewX(-6deg);
-			// 		transform-origin: top right;
-
-			&:after {
-				content:"";
-				position:absolute;
-				top:0;
-				left: 100%;
-				width: 0; 
-				height: 0; 
-				border-bottom: 60px solid transparent; 
-				border-left: 50px solid $relay-blue; 
-			}
-
-			.title {
-				// transform: skewX(6deg);
-				@include header-font();
-				font-size: 30px;
-				line-height: 30px;
-				margin-bottom: 0;
-
-				@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));	
-			}
 		}
 
 		.objective-wrapper {
@@ -661,10 +657,10 @@
 
 	// Responsive Styles
 
-
 	@media(max-width: 850px) {
 
 		.content-container {
+
 			.intro-text-container {
 
 				.description-container {
@@ -719,11 +715,22 @@
 				}
 
 			}
+
+			.full-width-text-container {
+
+				margin-top: 50px;
+				margin-bottom: 50px;
+				
+				.text {
+					font-size: 16px;
+				}
+			}
+
 		}
 
 		.objective-container {
 			.title-container {
-				left: 28%;
+				left: 25%;
 				.title {
 
 				}
@@ -767,14 +774,26 @@
 	}
 
 	@media (max-width: 650px) {
+
+		.content-container,
 		.objective-container {
+			padding: 40px 30px 30px 30px;
+		}
+		.objective-container {
+			// padding: 40px 30px 30px 30px;
 
-			padding: 50px 22px 30px 22px;
+			// padding: 50px 22px 30px 22px;
 			.title-container {
-				left: 20%;
-				.title {
+				left: 28%;
+				// padding: 5px 5px 5px 30px;
+				// .title {
+				// 	font-size: 20px;
+				// }
 
-				}
+				// &:after {
+				// 	border-bottom: 40px solid transparent;
+				// 	border-left: 40px solid transparent;
+				// }
 			}
 
 			.objective-wrapper {
@@ -785,10 +804,10 @@
 			}
 		}
 	}
-	@media (max-width: 550px) {
+	@media (max-width: 500px) {
 		.objective-container {
 			.title-container {
-				left: 15%;
+				left: 25%;
 				.title {
 
 				}
@@ -799,7 +818,7 @@
 	@media (max-width: 450px) {
 		.objective-container {
 			.title-container {
-				left: 5%;
+				left: 18%;
 				.title {
 
 				}
