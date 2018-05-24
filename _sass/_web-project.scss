@@ -720,7 +720,16 @@
 
 				margin-top: 50px;
 				margin-bottom: 50px;
-				
+
+				.text {
+					font-size: 16px;
+				}
+			}
+
+			.isolated-text {
+				// margin: 50px auto 60px auto;
+				margin: 50px 5% 60px 2.5%;
+				width: 90%;
 				.text {
 					font-size: 16px;
 				}
@@ -731,9 +740,7 @@
 		.objective-container {
 			.title-container {
 				left: 25%;
-				.title {
 
-				}
 			}
 		}
 
