@@ -21,12 +21,43 @@ $( document ).ready(function() {
 
   }
 
+
+  var last_known_scroll_position = 0;
+  var ticking = false;
+
+  function doSomething(scroll_pos) {
+    // do something with the scroll position
+    console.log('scrolling');
+  }
+
+  window.addEventListener('scroll', function(e) {
+
+    last_known_scroll_position = window.scrollY;
+
+    if (!ticking) {
+
+      window.requestAnimationFrame(function() {
+
+        scrollToShow();
+        fadeHeader();
+        // doSomething(last_known_scroll_position);
+        ticking = false;
+      });
+       
+      ticking = true;
+
+    }
+    
+  });
+
+
+
   var scroll = window.requestAnimationFrame ||
             function(callback){window.setTimeout(callback, 1000/60)};
 
   // seenYet = false;
 
-    function scrollToShow() {
+  function scrollToShow() {
 
     var elementsToShow = document.querySelectorAll('.show-on-scroll');
 
@@ -58,30 +89,47 @@ $( document ).ready(function() {
       }
     });
 
-    scroll(scrollToShow);
+    // scroll(scrollToShow);
 
   }
 
-  scrollToShow();
+  // scrollToShow();
 
   function fadeHeader() {
+
+
     if ($(window).scrollTop() >= $('.site-header').outerHeight() * 2) {
-        $('header').addClass('scroll-away');
-        $('header').removeClass('scroll-in');
-        $('header').removeClass('initial');
-        // console.log('we are scrolling out');
+      $('header').addClass('scroll-away');
+      $('header').removeClass('scroll-in');
+      $('header').removeClass('initial');
+      // console.log('we are scrolling out');
 
-      } else if ($(window).scrollTop() <= $('.site-header').outerHeight() * 2 && !$('.siteheader').hasClass('initial')) {
+    } else if ($(window).scrollTop() <= $('.site-header').outerHeight() * 2 && !$('.siteheader').hasClass('initial')) {
 
-        // console.log('we are scrolling in');
-        $('header').removeClass('scroll-away');
-        $('header').addClass('scroll-in');
-      };
+      // console.log('we are scrolling in');
+      $('header').removeClass('scroll-away');
+      $('header').addClass('scroll-in');
 
-      scroll(fadeHeader);
+    }; 
+
+    if ($('.page-nav.next').length && $(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+        console.log("you're at the bottom of the page");
+        $('.page-nav.next').addClass('open');
+    } else if ($('.page-nav.next').length && $(window).scrollTop() + $(window).height() < $(document).height() - 300) {
+        $('.page-nav.next').removeClass('open');
+    };
+
+    // else if ($('.page-nav.next').length && $(window).scrollTop() >= $('.page-nav.next').outerHeight() * 2 && !$('.page-nav.next').hasClass('initial')) {
+
+    //   console.log("scrolled near the bottom");
+    //   $('.page-nav.next').addClass('.scroll-in');
+
+    // };
+
+      // scroll(fadeHeader);
   }
 
-  fadeHeader();
+  // fadeHeader();
 
 
   var initPhotoSwipeFromDOM = function(gallerySelector) {
