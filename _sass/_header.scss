@@ -139,10 +139,53 @@
 
   		// background-image: linear-gradient(white, transparent);
 
+
+
 		.site-title,
 		.trigger .page-link {
 			@include nav-button($site-blue, $site-orange);
 		}
+
+
+		&.relay {
+
+			.site-title,
+			.trigger .page-link {
+				@include nav-button($relay-red, $relay-blue);
+			}
+
+		}
+
+		&.sightseer {
+
+			.site-title,
+			.trigger .page-link {
+				// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
+				@include nav-button($sightseer-red, $sightseer-blue);
+			}
+
+		}
+
+		&.ritandeclan {
+
+			.site-title,
+			.trigger .page-link {
+				// @include web-project($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
+				@include nav-button($ritandeclan-pink, $ritandeclan-blue);
+			}
+
+		}
+
+		&.sva-today-builder {
+
+			.site-title,
+			.trigger .page-link {
+				// @include web-project($sva-today-red, $sva-today-blue, $sva-today-grey);
+				@include nav-button($sva-today-red, $sva-today-blue);
+			}
+
+		}
+
 
 	}
 
