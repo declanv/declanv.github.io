@@ -8,31 +8,31 @@ layout: default
 	<div class="background-color one"></div>
 	<div class="background-color two"></div>
 	{% if page.previous.url %}
-		<div class='page-nav prev'>
+		<a class='page-nav prev' href="{{page.previous.url}}.html">
 			<div class="arrow-link-container">
 				<div class="arrow">
 				</div>
-			    <a class="link" href="{{page.previous.url}}.html">
+			    <div class="text-container" >
 			    	<span class='one'>Previous</span> 
 			    	<span class='two'>Project</span>
 			    	<!-- {{page.previous.title}} -->
-			    </a>
+			    </div>
 			</div>
-		</div>
+		</a>
 	{% endif %}
 	{% if page.next.url %}
-		<div class="page-nav next">
+		<a class="page-nav next" href="{{page.next.url}}.html">
 			<div class="arrow-link-container">
 
-		    	<a class="link" href="{{page.next.url}}.html">
+		    	<div class="text-container" >
 		    		<span class='one'>Next</span> 
 		    		<span class='two'>Project</span>
 		    		<!-- {{page.next.title}} -->
-		    	</a>
+		    	</div>
 				<div class="arrow">
 				</div>
 			</div>
-		</div>
+		</a>
 	{% endif %}
 	<div class="content-container intro">
 
