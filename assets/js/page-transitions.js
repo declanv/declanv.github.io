@@ -15,8 +15,8 @@ $( document ).ready(function() {
       return (
              (rect.left >= 0)
           && (rect.top >= 0)
-          && ((rect.left + rect.width/1.75) <= windowWidth)
-          && ((rect.top + rect.height/1.75) <= windowHeight)
+          && ((rect.left + rect.width/2.75) <= windowWidth)
+          && ((rect.top + rect.height/2.75) <= windowHeight)
       );
 
   }
