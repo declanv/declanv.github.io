@@ -3,27 +3,28 @@
   <div class="wrapper">
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths | sort: "weight" %}
-    <a {% if page.url == '/' %} class="site-title active" {% else %} class="site-title" {% endif %} href="{{ "/" | relative_url }}">
 
-      {%comment%}
-        {% assign site_title_split = site.title | split: "" %}
-        {% for letter in site_title_split %}
-          <span class="site-title-letter-{{ forloop.index }}{% if letter == '' %}space{% endif %}">{{ letter }}</span>
-        {% endfor %}
-      {%endcomment%}
-      <!-- {{ site.title | escape }} -->
-      Declan Van Welie
-
-    </a>
   
     {% if page_paths %}
       <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu">
+
+        <span class='site-title-wrapper'>
+          <a {% if page.url == '/' %} class="site-title active" {% else %} class="site-title" {% endif %} href="{{ "/" | relative_url }}">
+
+            {%comment%}
+            {% assign site_title_split = site.title | split: "" %}
+            {% for letter in site_title_split %}
+            <span class="site-title-letter-{{ forloop.index }}{% if letter == '' %}space{% endif %}">{{ letter }}</span>
+            {% endfor %}
+            {%endcomment%}
+            <!-- {{ site.title | escape }} -->
+            Declan Van Welie
+
+          </a>
+          <span id="menu">
             <span class="hamburger"></span>
           </span>
-        </label>
+        </span>
 
         <div class="trigger box">
 
@@ -42,6 +43,7 @@
               {% endif %} 
           {% endfor %}
         </div>
+
       </nav>
     {% endif %}
   </div>

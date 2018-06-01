@@ -1,5 +1,10 @@
 $( document ).ready(function() {
     console.log( "something!" );
+
+    $('#menu').on('click', function(){
+      $('.site-header').toggleClass('open-mobile');
+      console.log("clicked nav trigger");
+    });
     // Barba.Pjax.Dom.containerClass = 'body';
 
       // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport

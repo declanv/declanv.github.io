@@ -105,15 +105,28 @@
 		}
 	}
 
-	.site-title,
-	.trigger .page-link {
-		@include nav-button($site-blue, white);
 
-	}
 
 	.site-nav {
 		line-height: 25px;
+		float: none;
+		@include display-flex();
+		@include flex-direction-row();
+
+
+		.site-title-wrapper,
+		.trigger .page-link {
+			@include flex(1 0 auto);
+		}
+
+		.site-title,
+		.trigger .page-link {
+			// @include flex(1 0 auto);
+			@include nav-button($site-blue, white);
+		}
+
 	}
+
 
 }
 

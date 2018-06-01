@@ -1,64 +1,134 @@
 
 @media screen and (max-width: 600px) {
-	.site-nav {
 
-		border: none;
-		float: none;
+	.site-header {
 
-		label {
+		// transform: scaleY(0);
 
-			.menu {
-				.hamburger {
-					position: absolute;
-					top: 18px;
-					// left: 50px;
-					width: 30px;
-					height: 2px;
-					background: blue;
+		.site-nav {
+
+			border: none;
+			float: none;
+			// position: absolute;
+			position: relative;
+			right: initial;
+			top: initial;
+			// background-color: black;
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+
+			.site-title-wrapper {
+
+				@include display-flex();
+				@include flex-direction-row();
+
+				.site-title {
+					@incude flex(2 1 auto);
+				}
+
+
+				#menu {
+					// position: absolute;
 					display: block;
-					transform-origin: center;
-					transition: .5s ease-in-out;
-					&:after,
-					&:before {
-						transition: .5s ease-in-out;
-						content: "";
-						position: absolute;
-						display: block;
-						width: 100%;
-						height: 100%;
-						background: blue;
+					// right: 30px;
+					@include flex(1 0 auto);
+					width: 30px;
+
+					&:hover,
+					&:active {
+						cursor: pointer;
 					}
-					&:before {
-						top: -10px;
-					} 
-					&:after {
-						bottom: -10px;
+
+					.hamburger {
+						position: absolute;
+						top: 18px;
+						// left: 50px;
+						width: 30px;
+						height: 2px;
+						background: white;
+						display: block;
+						transform-origin: center;
+						transition: .5s ease-in-out;
+						&:after,
+						&:before {
+							transition: .5s ease-in-out;
+							content: "";
+							position: absolute;
+							display: block;
+							width: 100%;
+							height: 100%;
+							background: white;
+						}
+						&:before {
+							top: -10px;
+						} 
+						&:after {
+							bottom: -10px;
+						}
 					}
 				}
 			}
 
-			input {
+			.trigger.box {
 				display: none;
 			}
 
-			input:checked + .nav-trigger {
-				.menu {
-					.hamburger {
-						transform: rotate(45deg);
-						&:after {
-							transform: rotate(90deg);
-							bottom: 0;
-						}
-						&:before {
-							transform: rotate(90deg);
-							top: 0;
-						}
-					}	
-				}
-			}
 		}
 
-	}	
+		&.open-mobile {
+			background-color: black;
+			height: 100%;
+			// transform: scaleY(1);
+			// transition: transform 2s ease-in-out;
+
+			.wrapper {
+
+				height: 100%;
+
+				.site-nav {
+					@include flex-direction-column();
+
+					.site-title-wrapper {
+						max-height: 50px;
+						#menu {
+							.hamburger {
+								transform: rotate(45deg);
+								&:after {
+									transform: rotate(90deg);
+									bottom: 0;
+								}
+								&:before {
+									transform: rotate(90deg);
+									top: 0;
+								}
+							}	
+						}
+
+					}
+
+					.trigger.box {
+						@include flex(2 1 auto);
+						display: block;
+						// @include display-flex();
+						// @include flex-direction-column();
+						// @include justify-content-space-between();
+
+						.page-link {
+							// @include flex(1 0 auto);
+							display: block;
+							margin: 20% 0;
+							text-align: center;
+						}
+					}
+				}
+
+			}
+
+		}
+
+	}
+
 }
 
 
