@@ -3,6 +3,7 @@
 
 	.site-header {
 
+
 		// transform: scaleY(0);
 
 		.site-nav {
@@ -22,18 +23,33 @@
 
 				@include display-flex();
 				@include flex-direction-row();
+				@include justify-content-space-between();
 
 				.site-title {
 					@incude flex(2 1 auto);
+					// position: relative;
+					// display: inline-block;
+					@include align-self-start();
+					justify-self: start;
 				}
 
 
 				#menu {
 					// position: absolute;
-					display: block;
+					// position: relative;
+					// display: inline-block;
 					// right: 30px;
-					@include flex(1 0 auto);
+					@include flex(0 0 auto);
 					width: 30px;
+					height: 100%;
+					min-height: 50px;
+					@include align-self-end();
+					justify-self: end;
+
+					transition: box-shadow .5s ease-in-out;
+					border-radius: 50% 50% 50% 50%;
+					box-shadow: 0 0 0 0 black, 0 0 0 0 black;
+
 
 					&:hover,
 					&:active {
@@ -41,11 +57,13 @@
 					}
 
 					.hamburger {
-						position: absolute;
-						top: 18px;
+						position: relative;
+						// top: 18px;
+						// margin: 40% 0;
 						// left: 50px;
 						width: 30px;
 						height: 2px;
+						margin: 70% 0 30% 0;
 						background: white;
 						display: block;
 						transform-origin: center;
@@ -77,8 +95,9 @@
 		}
 
 		&.open-mobile {
-			background-color: black;
+			// background-color: black;
 			height: 100%;
+
 			// transform: scaleY(1);
 			// transition: transform 2s ease-in-out;
 
@@ -92,16 +111,19 @@
 					.site-title-wrapper {
 						max-height: 50px;
 						#menu {
+							background-color: black;
+							box-shadow: 0 0 0 110vw black, 0 0 0 110vh black;
+
 							.hamburger {
-								transform: rotate(45deg);
-								&:after {
-									transform: rotate(90deg);
-									bottom: 0;
-								}
-								&:before {
-									transform: rotate(90deg);
-									top: 0;
-								}
+								// transform: rotate(45deg);
+								// &:after {
+								// 	transform: rotate(90deg);
+								// 	bottom: 0;
+								// }
+								// &:before {
+								// 	transform: rotate(90deg);
+								// 	top: 0;
+								// }
 							}	
 						}
 
