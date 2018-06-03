@@ -54,6 +54,7 @@
 		border: 2px solid $site-purple;
 		text-decoration:  none;
 		color: $site-purple;
+		background-color: white;
 
 		@include border-box();
 		&.first {
@@ -79,6 +80,17 @@
 			&.visible {
 				opacity: 1;
 				transform: rotateZ(0deg);
+
+				&:after {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 200%;
+					margin-left: -25%;
+					height: 10%;
+					background-color: black;
+				}
+
 			} 
 		}
 
