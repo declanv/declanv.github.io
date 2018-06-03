@@ -622,19 +622,14 @@
 
 @keyframes closeMobileNav {
   0% {
-    // border-radius: 0 0 0 0;
     background-color: black;
     box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
-
   }
 
   80% {
     box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
   }
   100% {
-    // border-radius: 50% 50% 50% 50%;
-    // border-radius: 0;
-    // transform: skewY(45deg);
     background-color: transparent;
   }
 }
@@ -663,7 +658,6 @@
 
 @mixin closeMobileNav() {
   @include prefix-animation(closeMobileNav 0.5s ease-in-out forwards);
-  // @include prefix-animation(mobileMenuIconFade 0.5s 0.25s ease-in-out forwards);
 }
 
 @mixin openMobileNav() {

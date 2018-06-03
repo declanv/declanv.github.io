@@ -133,6 +133,8 @@ $( document ).ready(function() {
     // };
 
       // scroll(fadeHeader);
+
+      console.log("fading in header");
   }
 
   // fadeHeader();
@@ -365,8 +367,8 @@ $( document ).ready(function() {
        * this.oldContainer is the HTMLElement of the old Container
        */
       // $('body').removeClass('transition');
-
       return $(this.oldContainer).animate({ opacity: 0 }).promise();
+
     },
 
     fadeIn: function() {
@@ -379,15 +381,21 @@ $( document ).ready(function() {
       var _this = this;
       var $el = $(this.newContainer);
 
+
       $(this.oldContainer).hide();
 
-      // $('body').addClass('transition');
+      $(window).scrollTop(0);
+      $('header').addClass('initial');
 
+
+      // $('body').addClass('transition');
 
       $el.css({
         visibility : 'visible',
         opacity : 0
       });
+      console.log("in the fadein")
+
 
       $el.animate({ opacity: 1 }, 400, function() {
         /**
@@ -395,7 +403,9 @@ $( document ).ready(function() {
          * .done() will automatically remove from the DOM the old Container
          */
 
+
         _this.done(function() {
+
         });
       });
     }
