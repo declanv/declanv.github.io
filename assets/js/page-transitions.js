@@ -1,14 +1,21 @@
 $( document ).ready(function() {
-    console.log( "something!" );
-
-    $('#menu').on('click', function(){
-      $(this).addClass('touched');
-      $('.site-header').toggleClass('open-mobile');
-      console.log("clicked nav trigger");
-    });
-    // Barba.Pjax.Dom.containerClass = 'body';
+      // Barba.Pjax.Dom.containerClass = 'body';
 
       // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+ 
+
+
+  var mobileMenuClick = function() {
+
+    console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
+
+    $('#menu').on('click', function(){
+      console.log("menu is clicked");
+      $(this).addClass('touched');
+      $('.site-header').toggleClass('open-mobile');
+    });
+  }
+
   function isElementInViewport (el) 
   {
       //special bonus for those using jQuery
@@ -30,11 +37,6 @@ $( document ).ready(function() {
 
   var last_known_scroll_position = 0;
   var ticking = false;
-
-  function doSomething(scroll_pos) {
-    // do something with the scroll position
-    console.log('scrolling');
-  }
 
   window.addEventListener('scroll', function(e) {
 
@@ -104,15 +106,21 @@ $( document ).ready(function() {
   function fadeHeader() {
 
 
-    if ($(window).scrollTop() >= $('.site-header').outerHeight() * 2) {
+    if ($(window).scrollTop() > $('.site-header').outerHeight() * 2) {
+
+
       $('header').addClass('scroll-away');
       $('header').removeClass('scroll-in');
       $('header').removeClass('initial');
-      // console.log('we are scrolling out');
+      console.log('we are scrolling out. Here is the window scrollTop: ', 
+        $(window).scrollTop(),
+        ' and here is the siteheader outerHeight * 2: ',
+        $('.site-header').outerHeight() * 2
+        );
 
     } else if ($(window).scrollTop() <= $('.site-header').outerHeight() * 2 && !$('.siteheader').hasClass('initial')) {
 
-      // console.log('we are scrolling in');
+      console.log('we are scrolling in');
       $('header').removeClass('scroll-away');
       $('header').addClass('scroll-in');
 
@@ -135,6 +143,7 @@ $( document ).ready(function() {
       // scroll(fadeHeader);
 
       console.log("fading in header");
+
   }
 
   // fadeHeader();
@@ -381,12 +390,13 @@ $( document ).ready(function() {
       var _this = this;
       var $el = $(this.newContainer);
 
-
       $(this.oldContainer).hide();
 
+      // $('header').addClass('initial');
       $(window).scrollTop(0);
-      $('header').addClass('initial');
 
+      fadeHeader();
+      // mobileMenuClick();  
 
       // $('body').addClass('transition');
 
@@ -396,7 +406,6 @@ $( document ).ready(function() {
       });
       console.log("in the fadein")
 
-
       $el.animate({ opacity: 1 }, 400, function() {
         /**
          * Do not forget to call .done() as soon your transition is finished!
@@ -405,9 +414,11 @@ $( document ).ready(function() {
 
 
         _this.done(function() {
-
         });
       });
+    },
+    finish: function() {
+
     }
   });
 
@@ -436,8 +447,9 @@ $( document ).ready(function() {
   Barba.Dispatcher.on('newPageReady', function() {
     scrollToShow();
     fadeHeader();
-
     updateBodyLink(this.namespace);
+
+    // mobileMenuClick();
     // $('.grid').masonry({
     //   // itemSelector: '.grid-item',
     //   // columnWidth: '.grid-sizer',
@@ -469,7 +481,7 @@ $( document ).ready(function() {
     onEnterCompleted: function(namespace) {
         // The Transition has just finished.
       console.log("alright, the homepage view enter has completed. here is the namespace: ", this.namespace);
-
+      mobileMenuClick();
 
     },
     onLeave: function() {
@@ -495,6 +507,8 @@ $( document ).ready(function() {
     onEnterCompleted: function() {
         // The Transition has just finished.
       console.log("alright, the about view enter has completed")
+      mobileMenuClick();
+
     },
     onLeave: function() {
 
@@ -519,6 +533,8 @@ $( document ).ready(function() {
     onEnterCompleted: function() {
         // The Transition has just finished.
       console.log("alright, the web view enter has completed")
+      mobileMenuClick();
+
     },
     onLeave: function() {
 
@@ -543,6 +559,8 @@ $( document ).ready(function() {
     onEnterCompleted: function() {
         // The Transition has just finished.
       console.log("alright, the photo view enter has completed")
+      mobileMenuClick();
+
     },
     onLeave: function() {
 
@@ -583,6 +601,7 @@ $( document ).ready(function() {
 
       // For some reason, just the art namespace needs to be added in onEnterCompleted 
       updateBodyLink(this.namespace);
+      // mobileMenuClick();
 
       $('.grid').masonry({
         // itemSelector: '.grid-item',
@@ -593,6 +612,8 @@ $( document ).ready(function() {
         gutter: 30
       });
       initPhotoSwipeFromDOM('.projects-container');
+      mobileMenuClick();
+      
 
     },
     onLeave: function() {
@@ -613,6 +634,7 @@ Photo.init();
 About.init();
 
 Barba.Pjax.start();
+// mobileMenuClick();
 
 
 });
