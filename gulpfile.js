@@ -60,6 +60,7 @@ var files = {
 
 gulp.task('serve', () => {
   browserSync.init({
+    notify: false,
     files: [siteRoot + '/**'],
     port: 4000,
     server: {

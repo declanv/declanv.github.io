@@ -2,6 +2,7 @@ $( document ).ready(function() {
     console.log( "something!" );
 
     $('#menu').on('click', function(){
+      $(this).addClass('touched');
       $('.site-header').toggleClass('open-mobile');
       console.log("clicked nav trigger");
     });

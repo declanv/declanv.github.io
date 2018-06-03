@@ -3,7 +3,7 @@
 
 	.site-header {
 
-
+		overflow: visible;
 		// transform: scaleY(0);
 
 		.site-nav {
@@ -21,6 +21,7 @@
 
 			.site-title-wrapper {
 
+				max-height: 50px;
 				@include display-flex();
 				@include flex-direction-row();
 				@include justify-content-space-between();
@@ -31,24 +32,33 @@
 					// display: inline-block;
 					@include align-self-start();
 					justify-self: start;
+					z-index: 200;
 				}
 
 
 				#menu {
+					@include flex(0 0 auto);
+					@include align-self-end();
+					justify-self: end;
+
+
 					// position: absolute;
 					// position: relative;
 					// display: inline-block;
 					// right: 30px;
-					@include flex(0 0 auto);
-					width: 30px;
-					height: 100%;
-					min-height: 50px;
-					@include align-self-end();
-					justify-self: end;
+					// width: 30px;
+					// height: 100%;
+					// min-height: 50px;
 
-					transition: box-shadow .5s ease-in-out;
+					// transition: box-shadow .5s ease-in-out, border-radius .5s ease-in-out, background-color .5s ease-in-out;
 					border-radius: 50% 50% 50% 50%;
-					box-shadow: 0 0 0 0 black, 0 0 0 0 black;
+					// transform: skewY(45deg);
+					box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+					background-color: transparent;
+
+					&.touched {
+						@include closeMobileNav();
+					}
 
 
 					&:hover,
@@ -58,12 +68,13 @@
 
 					.hamburger {
 						position: relative;
+						// transform: skewY(-45deg);
 						// top: 18px;
 						// margin: 40% 0;
 						// left: 50px;
 						width: 30px;
 						height: 2px;
-						margin: 70% 0 30% 0;
+						margin: 20% 0 80% 0;
 						background: white;
 						display: block;
 						transform-origin: center;
@@ -77,6 +88,8 @@
 							width: 100%;
 							height: 100%;
 							background: white;
+							// transform: skewY(-45deg);
+
 						}
 						&:before {
 							top: -10px;
@@ -109,21 +122,26 @@
 					@include flex-direction-column();
 
 					.site-title-wrapper {
-						max-height: 50px;
 						#menu {
+
 							background-color: black;
-							box-shadow: 0 0 0 110vw black, 0 0 0 110vh black;
+
+							@include openMobileNav();
+
+							// border-radius: 0 0 0 0;
+							// background-color: black;
+							// box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
 
 							.hamburger {
-								// transform: rotate(45deg);
-								// &:after {
-								// 	transform: rotate(90deg);
-								// 	bottom: 0;
-								// }
-								// &:before {
-								// 	transform: rotate(90deg);
-								// 	top: 0;
-								// }
+								transform: rotate(45deg);
+								&:after {
+									transform: rotate(90deg);
+									bottom: 0;
+								}
+								&:before {
+									transform: rotate(90deg);
+									top: 0;
+								}
 							}	
 						}
 
@@ -139,8 +157,14 @@
 						.page-link {
 							// @include flex(1 0 auto);
 							display: block;
-							margin: 20% 0;
+							margin: 15% 0;
+							padding-bottom: 5%;
 							text-align: center;
+
+							opacity: 0;
+							@include fadeInMobileLinks();
+
+
 						}
 					}
 				}

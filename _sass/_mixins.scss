@@ -594,6 +594,82 @@
   }
 }
 
+@keyframes openMobileNav {
+  0% {
+    // border-radius: 50% 50% 50% 50%;
+    // border-radius: 0;
+    // transform: skewY(45deg);
+
+    background-color: transparent;
+
+  }
+
+  10% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+  }
+
+  80% {
+    background-color: black;
+
+  }
+  100% {
+
+    // border-radius: 0 0 0 0;
+    // background-color: black;
+    box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
+  }
+}
+
+@keyframes closeMobileNav {
+  0% {
+    // border-radius: 0 0 0 0;
+    background-color: black;
+    box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
+
+  }
+
+  80% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+  }
+  100% {
+    // border-radius: 50% 50% 50% 50%;
+    // border-radius: 0;
+    // transform: skewY(45deg);
+    background-color: transparent;
+  }
+}
+
+@keyframes mobileMenuIconFade {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes fadeInMobileLinks {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin fadeInMobileLinks() {
+  @include prefix-animation(fadeInMobileLinks 0.2s 0.5s ease-in-out forwards);
+}
+
+@mixin closeMobileNav() {
+  @include prefix-animation(closeMobileNav 0.5s ease-in-out forwards);
+  // @include prefix-animation(mobileMenuIconFade 0.5s 0.25s ease-in-out forwards);
+}
+
+@mixin openMobileNav() {
+  @include prefix-animation(openMobileNav 0.75s ease-in-out forwards);
+}
+
 @mixin showFirstArrowText() {
   @include prefix-animation(showFirstArrowText 0.5s cubic-bezier(0.5, 0, 0.5, 1) forwards);
 }
