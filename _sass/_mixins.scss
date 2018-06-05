@@ -652,6 +652,43 @@
   }
 }
 
+@mixin webProjectDiagonal() {
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    // width: 200%;
+    width: 200%;
+    // margin-left: -25%;
+    left: -300%;
+    height: 150%;
+    background-color: black;
+    transform: skewY(-15deg);
+    @include diagonalAcross();
+  }
+
+  &.even {
+    &:after {
+      transform: skewY(15deg);
+    }
+  }
+}
+
+@keyframes diagonalAcross {
+  0% {
+    width: 200%;
+    left: -300%;
+  }
+  100% {
+    // width: 200%;
+    left: -25%;
+  }
+}
+
+@mixin diagonalAcross() {
+  @include prefix-animation(diagonalAcross 0.5s ease-in-out forwards);
+}
+
 @mixin fadeInMobileLinks() {
   @include prefix-animation(fadeInMobileLinks 0.2s 0.5s ease-in-out forwards);
 }

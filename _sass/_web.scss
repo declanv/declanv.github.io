@@ -59,6 +59,7 @@
 		@include border-box();
 		&.first {
 			@include section-in-left();
+			// @include webProjectDiagonal();
 		}
 
 		&:hover {
@@ -80,17 +81,7 @@
 			&.visible {
 				opacity: 1;
 				transform: rotateZ(0deg);
-
-				&:after {
-					content: '';
-					position: absolute;
-					display: block;
-					width: 200%;
-					margin-left: -25%;
-					height: 10%;
-					background-color: black;
-				}
-
+				// @include webProjectDiagonal();
 			} 
 		}
 
