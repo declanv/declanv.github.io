@@ -126,7 +126,23 @@
 							padding-bottom: 5%;
 							text-align: center;
 							opacity: 0;
-							@include fadeInMobileLinks();
+							color: white;
+
+							// the delay was originally 0.2s for all of them
+							// @include fadeInMobileLinks(0.2s);
+
+
+							$navLinks: 4;
+
+							@for $i from 1 through $navLinks {
+								$time: #{$i/2.5}s;
+								&.link-#{$i} { 
+
+									@include fadeInMobileLinks($time);
+
+								}
+
+							}
 
 						}
 					}
