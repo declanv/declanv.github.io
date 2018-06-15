@@ -939,6 +939,31 @@
 
 }
 
+@mixin hamburger($color, $hover-color) {
+
+  #menu {
+    .hamburger {
+      background: $color;
+      &:before,
+      &:after {
+        background: $color;
+      }
+    }
+    &:hover,
+    &:active {
+
+      .hamburger {
+        background: $hover-color;
+        &:before,
+        &:after {
+          background: $hover-color;
+        }
+      }
+
+    }
+  }
+}
+
 @mixin nav-button($color, $color-hover) {
   position: relative;
   display: inline-block;

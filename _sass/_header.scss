@@ -200,6 +200,13 @@
 
 		}
 
+		.site-nav {
+			.site-title-wrapper {
+				@include hamburger($site-blue, $site-orange);
+					
+				}
+		}
+		
 
 	}
 
