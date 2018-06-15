@@ -30,53 +30,66 @@
 					z-index: 200;
 				}
 
-
-				#menu {
+				.menu-wrapper {
 					@include flex(0 0 auto);
 					@include align-self-end();
 					justify-self: end;
-					border-radius: 50% 50% 50% 50%;
-					box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
-					background-color: transparent;
+					position: relative;
+					@include display-flex();
+					@include flex-direction-column();
+					height: 100%;
+					#menu {
 
-					&.touched {
-						@include closeMobileNav();
-					}
-
-
-					&:hover,
-					&:active {
-						cursor: pointer;
-					}
-
-					.hamburger {
 						position: relative;
-						width: 30px;
-						height: 2px;
-						margin: 20% 0 80% 0;
-						background: white;
-						display: block;
-						transform-origin: center;
-						transition: .5s ease-in-out;
-						&:after,
-						&:before {
-							transition: .5s ease-in-out;
-							content: "";
-							position: absolute;
-							display: block;
-							width: 100%;
-							height: 100%;
-							background: white;
+						height: 100%;
+						padding: 5px 12px;
+						border-radius: 50% 50% 50% 50%;
+						box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+						background-color: transparent;
 
+						&.touched {
+							@include closeMobileNav();
 						}
-						&:before {
-							top: -10px;
-						} 
-						&:after {
-							bottom: -10px;
+
+
+						&:hover,
+						&:active {
+							cursor: pointer;
+						}
+
+						.hamburger {
+							position: relative;
+							width: 30px;
+							height: 2px;
+							margin: 50% 0;
+							// margin: 20% 0 80% 0;
+							background: white;
+							display: block;
+							transform-origin: center;
+							transition: .5s ease-in-out;
+							&:after,
+							&:before {
+								transition: .5s ease-in-out;
+								content: "";
+								position: absolute;
+								display: block;
+								width: 100%;
+								height: 100%;
+								background: white;
+
+							}
+							&:before {
+								top: -10px;
+							} 
+							&:after {
+								bottom: -10px;
+							}
 						}
 					}
 				}
+
+
+
 			}
 
 			.trigger.box {
@@ -96,10 +109,10 @@
 
 					.site-title-wrapper {
 						#menu {
-
 							background-color: black;
 
 							@include openMobileNav();
+							padding: 13px 12px;
 
 							.hamburger {
 								transform: rotate(45deg);
@@ -135,7 +148,7 @@
 							$navLinks: 4;
 
 							@for $i from 1 through $navLinks {
-								$time: #{$i/2.5}s;
+								$time: #{$i*.25}s;
 								&.link-#{$i} { 
 
 									@include fadeInMobileLinks($time);
@@ -152,7 +165,9 @@
 
 		}
 
+
 	}
+
 
 }
 
