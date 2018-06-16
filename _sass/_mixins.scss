@@ -690,7 +690,7 @@
 }
 
 @mixin fadeInMobileLinks($time) {
-  @include prefix-animation(fadeInMobileLinks $time 0.5s ease-in-out forwards);
+  @include prefix-animation(fadeInMobileLinks $time 0.5s cubic-bezier(1, 0.01, 0.71, 1) forwards);
 }
 
 @mixin closeMobileNav() {
