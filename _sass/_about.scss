@@ -1,4 +1,7 @@
 .about-container {
+	// @include display-flex();
+	// @include flex-direction-column();
+	// @include justify-content-flex-end();
 	// position: relative;
 	// display: block;
 
@@ -15,103 +18,224 @@
 		right: 0;
 		@include gradient-shadow();
 
+
 		&.one {
 			background-color: $about-yellow;
-			transform: skewY(-12deg);
-			z-index: 2;
-			top: 100px;
-		}
-
-		&.two {
-			background-color: $about-light-blue;
 			transform: skewY(12deg);
-			z-index: 1;
-			top: 54%;
+			z-index: 2;
 			height: 46%;
 		}
+		&.two {
+			background-color: $about-light-blue;
+			transform: skewY(-12deg);
+			z-index: 1;
+			top: 100px;
+			top: 54%;
+		}
+
+
+	}
+
+	.vertical {
+		position: absolute;
+		display: block;
+		width: 140px;
+		height: 950px;
+		background-color: $about-light-blue;
+		margin-left: 28%;
+		z-index: 300;
+		top: 0;
+		opacity: 0.6;
+	}
+
+	.horizontal {
+		position: absolute;
+		display: block;
+		width: 40%;
+		height: 80px;
+		right: 0;
+		background-color: $about-light-blue;
+		margin-left: 30%;
+		z-index: 300;
+		top: 0;
+		opacity: 0.6;
+
+		&.pink {
+			width: 20%;
+			height: 20%;
+			right: initial;
+			background-color: $about-pink;
+			margin-left: 35%;
+			z-index: 200;
+			top: 30%;
+			opacity: 1;
+		}
+
+		&.yellow {
+
+			background-color: $about-yellow;
+			right: initial;
+			left: 15%;
+			bottom: -100px;
+			height: 160px;
+			top: initial;
+			right: initial;
+
+		}
+	}
+
+	.circle {
+		position: absolute;
+		display: block;
+		width: 175px;
+		height: 175px;
+		border-radius: 100%;
+		left: 40%;
+		background-color: $about-pink;
+		opacity: 0.6;
+		top: 20%;
+		z-index: 300;
+	}
+
+	// .horizontal {
+	// 	position: absolute;
+	// 	display: block;
+	// 	width: 20%;
+	// 	height: 10%;
+	// 	// right: 0;
+	// 	background-color: $about-pink;
+	// 	margin-left: 35%;
+	// 	z-index: 300;
+	// 	// top: 0;
+	// 	opacity: 1;
+	// }
+
+	.portrait-container,
+	.art-container,
+	.photo-container {
+		position: absolute;
+		display: inline-block;
+		width: 250px;
+		height: auto;
+		z-index: 200;
+		// margin: 0 auto;
+	}
+
+	.portrait-container {
+		margin-left: 30%;
+		z-index: 200;
+		top: 0;
+	}
+
+	.art-container {
+		margin-left: 45%;
+		top: 50%;
+		z-index: 100;
+		.art {
+			margin-top: 0;
+		}
+	}
+
+	.photo-container {
+		position: absolute;
+		top: 0;
+		left: 25%;
+		border: 20px solid white;
+		top: 20%;
+		z-index: 100;
 	}
 
 	.intro-container {
 
 		position: relative;
 		display: block;
-		z-index: 100;
+		z-index: 400;
+		// @include flex(1 0 auto);
+		margin-top: 25%;
 
-		.hey-container,
-		.intro-text {
-			position: relative;
+
+		.intro-text-container {
+			position: absolute;
 			display: block;
-		}
+			z-index: 300;
+			top: 90%;
 
-		.intro-text {
-			width: 100%;
-			@include border-box();
-			padding: 50px;
-			color: white;
-			@include body-font();
-			border: 10px solid white;
-		}
-
-		.hey-container {
-			position: relative;
-			display: block;
-
-			width: 100%;
-			background-color: white;
-			padding: 10px 50px 10px 25%;
-			// height: 100%;	
-			height: 140px;
-			@include border-box();	
-
-			transform: translateX(-25%);
-			border-right: 1px solid white;
-			&:after {
-				content:"";
-				position:absolute;
-				top:0;
-				left: 100%;
-				width: 0; 
-				height: 0; 
-				border-top: 140px solid transparent; 
-				border-left: 80px solid white; 
-			}
-
-
-			.hey {
-
+			.hey-container,
+			.intro-text {
 				position: relative;
 				display: block;
-	
-				font-size: 80px;
-				color: transparent;
+			}
 
-				@include header-font();
-				z-index: 100;
+			.intro-text {
 				width: 100%;
-				height: 100%;
+				@include border-box();
+				padding: 50px;
+				color: white;
+				@include body-font();
+				border: 10px solid white;
+			}
 
-				// box-shadow: 2px 2px 2px 2px $about-dark-blue;
+			.hey-container {
+				position: relative;
+				display: block;
 
-				&:before,
+				width: 100%;
+				background-color: white;
+				padding: 10px 50px 10px 25%;
+				// height: 100%;	
+				height: 140px;
+				@include border-box();	
+
+				transform: translateX(-25%);
+				border-right: 1px solid white;
 				&:after {
-					content: "Oh, hey!";
-					position: absolute;
-					left: 0.6%;
-					top: 2%;
-					z-index: 200;
-					color: $about-dark-blue;
+					content:"";
+					position:absolute;
+					top:0;
+					left: 100%;
+					width: 0; 
+					height: 0; 
+					border-top: 140px solid transparent; 
+					border-left: 80px solid white; 
 				}
 
-				&:before {
-					color: $about-light-blue;
-					z-index: 500;
-					left: 0;
-					top: 0;
+
+				.hey {
+
+					position: relative;
+					display: block;
+
+					font-size: 80px;
+					color: transparent;
+
+					@include header-font();
+					z-index: 100;
+					width: 100%;
+					height: 100%;
+
+					// box-shadow: 2px 2px 2px 2px $about-dark-blue;
+
+					&:before,
+					&:after {
+						content: "Oh, hey!";
+						position: absolute;
+						left: 0.6%;
+						top: 2%;
+						z-index: 200;
+						color: $about-dark-blue;
+					}
+
+					&:before {
+						color: $about-light-blue;
+						z-index: 500;
+						left: 0;
+						top: 0;
+					}
 				}
 			}
+
+			@include fancyBtn($about-pink, $about-light-blue, 0);
 		}
-
-
 
 	}
 
