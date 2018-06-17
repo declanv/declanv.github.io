@@ -7,6 +7,7 @@ body.about {
 }
 
 .about-container {
+	// overflow-y: hidden;
 	// @include display-flex();
 	// @include flex-direction-column();
 	// @include justify-content-flex-end();
@@ -50,6 +51,9 @@ body.about {
 		display: block;
 		
 		width: 100vw;
+		max-width: 960px;
+		margin: 0 auto 0 auto;
+		// top: -25%;
 
 		.collage-grid {
 
@@ -70,18 +74,27 @@ body.about {
 				@include flex-direction-row();
 				@include justify-content-center();
 				min-height: 100px;
+				width: 100%;
+				// transform: translateZ(-1.5px) scale(1);
+				// z-index: 500;
 
 				.collage-col {
 					position: relative;
 					@include flex(1 0 auto);
-					min-width: 33.33%;
+					// min-width: 33.33%;
+					// width: 33.33%;
+
+
+					&.portrait {
+						// max-width: 250px;
+					}
 
 					.art,
 					.photo,
 					.portrait {
 						position: absolute;
 						display: inline-block;
-						width: 250px;
+						width: 100%;
 						height: auto;
 						z-index: 200;
 						// transform: translateZ(-1px) scale(2);
@@ -90,18 +103,22 @@ body.about {
 					.photo {
 						border: 20px solid white;
 						z-index: 100;
-						top: -100%;
-						left: -30%;
+						right: -20%;
+						// top: -100%;
+						// left: -30%;
 					}
 
 					.portrait {
-						top: -150%;
+						// top: -150%;
 						z-index: 300;
+						top: -20%;
 					}
 
 					.art {
-						top: 20%;
-						right: 0;
+						// top: 20%;
+						// right: 0;
+						left: -15%;
+						top: -30%;
 					}
 
 
@@ -113,10 +130,18 @@ body.about {
 						background-color: $about-light-blue;
 						// margin-left: 28%;
 						z-index: 300;
-						top: -250%;
-						left: -100%;
+						// top: -250%;
+						// left: -100%;
 						opacity: 0.6;
 						// transform: translateZ(-2px) scale(3);
+
+						&.pink {
+							width: 5%;
+							height: 1200%;
+							background-color: $about-pink;
+							right: 20%;
+							top: -200%;
+						}
 					}
 
 					.horizontal {
@@ -124,7 +149,7 @@ body.about {
 						display: block;
 						width: 40%;
 						height: 80%;
-						right: 0;
+						// right: 0;
 						background-color: $about-light-blue;
 						// margin-left: 30%;
 						z-index: 300;
@@ -132,42 +157,52 @@ body.about {
 						opacity: 0.6;
 						// transform: translateZ(-3px) scale(4);
 						&.pink {
-							width: 80%;
+							width: 50%;
+							left: 0;
 							height: 50%;
-							right: -20%;
+							// right: -20%;
 							background-color: $about-pink;
 							z-index: 200;
 							opacity: 1;
+							top: 20%;
+
 							// transform: translateZ(-4px) scale(5);
-							top: -450%;
+							// top: -450%;
 						}
 
 						&.yellow {
 
 							background-color: $about-yellow;
-							right: -100%;
-							top: 200%;
-							height: 200%;
-							width: 100%;
+							// right: -100%;
+							// top: 200%;
+							height: 100%;
+							width: 150%;
+							top: 75%;
+							left: 10%;
 
 							&.thin {
-								left: -450%;
+								// left: -450%;
 								width: 100%;
 								opacity: 1;
 								height: 10%;
-								top: -50%;
+								left: -40%;
+								top: 50%;
+								// top: -50%;
 								border-top: 10px solid $about-yellow;
-								margin-top: 20px;
+								// margin-top: 20px;
 								@include border-box();
 							}
 						}
 
 						&.blue {
-							top: -850%;
+							// top: -850%;
 							width: 300%;
+							z-index: 400;
+							left: -50%;
+							bottom: 0;
 							// aligned with portrait
 							// right: -422%;
-							right: -550%;
+							// right: -550%;
 						}
 					}
 
@@ -180,9 +215,20 @@ body.about {
 						background-color: $about-pink;
 						opacity: 0.6;
 						z-index: 400;
-						// transform: translateZ(-1px) scale(2);
-						top: -200%;
-						left: 30%;
+						right: -20%;
+						// top: 0;
+						top: 40%;
+						// transform: translateZ(-0.25px) scale(2);
+						// top: -200%;
+						// left: 30%;
+
+						// &.white {
+						// 	width: 300px;
+						// 	height: 300px;
+						// 	border: 50px solid white;
+						// 	background-color: transparent;
+						// 	top: 100%;
+						// }
 					}
 
 
@@ -209,13 +255,20 @@ body.about {
 	// 	opacity: 1;
 	// }
 
+
+
+
+}
+
+
+.wrapper.content {
 	.intro-wrapper {
 
 		position: absolute;
 		display: block;
 		z-index: 500;
 		width: 100%;
-		top: 10%;
+		bottom: 10%;
 
 		.intro-container {
 
@@ -223,7 +276,7 @@ body.about {
 			display: block;
 			z-index: 400;
 			// @include flex(1 0 auto);
-			margin-top: 20%;
+			// margin-top: 20%;
 
 
 			.intro-text-container {
@@ -231,6 +284,9 @@ body.about {
 				display: block;
 				z-index: 300;
 				top: 50%;
+
+				padding: 0 20%;
+				@include border-box();
 
 				.hey-container,
 				.intro-text {
@@ -251,14 +307,14 @@ body.about {
 					position: relative;
 					display: block;
 
-					width: 100%;
+					width: 150%;
 					background-color: white;
-					padding: 10px 50px 10px 25%;
+					padding: 10px 50px 10px 50%;
 					// height: 100%;	
 					height: 140px;
 					@include border-box();	
 
-					transform: translateX(-25%);
+					transform: translateX(-50%);
 					border-right: 1px solid white;
 					&:after {
 						content:"";
@@ -274,7 +330,7 @@ body.about {
 
 					.hey {
 
-						position: relative;
+						position: absolute;
 						display: block;
 
 						font-size: 80px;
@@ -312,7 +368,5 @@ body.about {
 		}
 
 	}
-
-
-
 }
+

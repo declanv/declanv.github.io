@@ -30,11 +30,18 @@
 
           {% include header.html %}
       
+          {% unless page.title == 'About' %}
           <main class="page-content" aria-label="Content">
             <div class="wrapper content">
               {{ content }}
             </div>
           </main>
+
+          {% else %}
+
+          {{content}}
+
+          {% endunless %}
       
         {%comment%}  {% include footer.html %} {%endcomment%}
 
