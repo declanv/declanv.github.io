@@ -97,6 +97,7 @@ body.about {
 						width: 100%;
 						height: auto;
 						z-index: 200;
+						@include gradient-shadow();
 						// transform: translateZ(-1px) scale(2);
 					}
 
@@ -182,15 +183,18 @@ body.about {
 
 							&.thin {
 								// left: -450%;
-								width: 100%;
+								width: 200%;
 								opacity: 1;
 								height: 10%;
-								left: -40%;
+								left: -150%;
 								top: 50%;
 								// top: -50%;
-								border-top: 10px solid $about-yellow;
+								// border-top: 10px solid $about-yellow;
 								// margin-top: 20px;
 								@include border-box();
+
+								// @include gradient-shadow();
+							 	 box-shadow: -10px 5px 20px 2px rgba(0, 0, 0, 0.2)	
 							}
 						}
 
@@ -218,6 +222,8 @@ body.about {
 						right: -20%;
 						// top: 0;
 						top: 40%;
+
+						// @include gradient-shadow();
 						// transform: translateZ(-0.25px) scale(2);
 						// top: -200%;
 						// left: 30%;
