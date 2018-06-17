@@ -46,6 +46,11 @@ body.about {
 
 	.collage-container {
 
+		position: relative;
+		display: block;
+		
+		width: 100vw;
+
 		.collage-grid {
 
 			position: relative;
@@ -79,7 +84,7 @@ body.about {
 						width: 250px;
 						height: auto;
 						z-index: 200;
-						transform: translateZ(-1px) scale(2);
+						// transform: translateZ(-1px) scale(2);
 					}
 
 					.photo {
@@ -111,7 +116,7 @@ body.about {
 						top: -250%;
 						left: -100%;
 						opacity: 0.6;
-						transform: translateZ(-2px) scale(3);
+						// transform: translateZ(-2px) scale(3);
 					}
 
 					.horizontal {
@@ -125,7 +130,7 @@ body.about {
 						z-index: 300;
 						top: 0;
 						opacity: 0.6;
-						transform: translateZ(-3px) scale(4);
+						// transform: translateZ(-3px) scale(4);
 						&.pink {
 							width: 80%;
 							height: 50%;
@@ -133,7 +138,7 @@ body.about {
 							background-color: $about-pink;
 							z-index: 200;
 							opacity: 1;
-							transform: translateZ(-4px) scale(5);
+							// transform: translateZ(-4px) scale(5);
 							top: -450%;
 						}
 
@@ -175,7 +180,7 @@ body.about {
 						background-color: $about-pink;
 						opacity: 0.6;
 						z-index: 400;
-						transform: translateZ(-1px) scale(2);
+						// transform: translateZ(-1px) scale(2);
 						top: -200%;
 						left: 30%;
 					}
