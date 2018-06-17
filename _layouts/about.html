@@ -8,30 +8,45 @@ layout: default
 	<div class="background-color one"></div>
 	<div class="background-color two"></div>
 
-	<div class="vertical blue"></div>
-	<div class="horizontal blue"></div>
-	<div class="horizontal pink"></div>
-	<div class="horizontal yellow"></div>
-	<div class="circle pink"></div>
-
-	<div class="photo-container">
-		<img class="photo" src="{{ img_path | append: 'peony.jpg' }}" alt="A close-cropped portrait of a man with a beard and brown hair, wearing a suit">
+	<div class="collage-grid">
+		<div class="collage-row">
+			<div class="collage-col">
+				<div class="circle pink"></div>
+			</div>
+			<div class="collage-col">
+				<div class="vertical blue"></div>
+			</div>
+			<div class="collage-col">
+				<div class="horizontal blue"></div>
+			</div>
+		</div>
+		<div class="collage-row">
+			<div class="collage-col">
+				<img class="photo" src="{{ img_path | append: 'peony.jpg' }}" alt="A close-cropped portrait of a man with a beard and brown hair, wearing a suit">
+			</div>
+			<div class="collage-col">
+				<img class="portrait" src="{{ img_path | append: 'picture-of-me-b-w.jpg' }}" alt="A close-cropped portrait of a man with a beard and brown hair, wearing a suit">
+			</div>
+			<div class="collage-col">
+				<div class="horizontal yellow"></div>	
+			</div>
+		</div>
+		<div class="collage-row">
+			<div class="collage-col"></div>
+			<div class="collage-col">
+					<div class="horizontal pink"></div>
+			</div>
+			<div class="collage-col">
+				<img class="art" src="{{ img_path | append: 'ayesha-crop.jpg' }}" alt="A drawing of a nude woman wearing a headscarf">
+			</div>
+		</div>
 	</div>
 
-	<div class="portrait-container">
-		<img class="portrait" src="{{ img_path | append: 'picture-of-me-b-w.jpg' }}" alt="A close-cropped portrait of a man with a beard and brown hair, wearing a suit">
-	</div>
-	<div class="art-container">
-		<img class="art" src="{{ img_path | append: 'ayesha-crop.jpg' }}" alt="A drawing of a nude woman wearing a headscarf">
-	</div>
 	<div class="intro-container">
 
-
-
-	{% comment %} 
+		{% comment %} 
 		The art and photo images should be randomized, and therefore should be defined as a list, probably at the top of this file
-	{% endcomment %}
-
+		{% endcomment %}
 
 		<div class="intro-text-container">
 			<div class="hey-container">

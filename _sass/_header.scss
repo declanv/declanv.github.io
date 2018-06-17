@@ -147,8 +147,7 @@
 
 .web,
 .art,
-.photo,
-.about {
+.photo {
 	.site-header {
 
   		// background-image: linear-gradient(white, transparent);
@@ -230,4 +229,21 @@
 
 	}
 
+}
+
+.about {
+	.site-header {
+		.site-nav {
+			.site-title-wrapper {
+				@include hamburger($about-pink, $about-dark-blue);	
+			}	
+		}
+
+
+		.site-title,
+		.trigger .page-link {
+			@include nav-button($about-pink, $about-dark-blue);
+		}
+
+	}
 }
