@@ -685,6 +685,97 @@
   }
 }
 
+@keyframes portraitIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes photoIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes artIn {
+  0% {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shapeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  90% {
+    opactiy: 0;
+  }
+  100% {
+    opacity: 0.6;
+    transform: none;
+  }
+}
+
+@keyframes shapeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  90% {
+    opactiy: 0;
+  }
+  100% {
+    opacity: 0.6;
+    transform: none;
+  }
+}
+
+@mixin shapeInTop() {
+  @include prefix-animation(shapeInTop 4s cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
+}
+
+@mixin shapeInLeft() {
+  @include prefix-animation(shapeInLeft 4s cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
+}
+
+@mixin artIn() {
+  @include prefix-animation(artIn 3s ease-in-out forwards);
+}
+
+@mixin photoIn() {
+  @include prefix-animation(photoIn 2s cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
+}
+
+@mixin portraitIn() {
+  @include prefix-animation(portraitIn 1s cubic-bezier(1, 0.5, 1, 1) forwards);
+}
+
 @mixin diagonalAcross() {
   @include prefix-animation(diagonalAcross 0.5s ease-in-out forwards);
 }

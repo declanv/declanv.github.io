@@ -83,10 +83,24 @@ body.about {
 					@include flex(1 0 auto);
 					// min-width: 33.33%;
 					// width: 33.33%;
+					// @include display-flex();
 
 
 					&.portrait {
+						// overflow-y: hidden;
 						// max-width: 250px;
+
+					}
+
+					.portrait-wrapper {
+						// position: absolute;
+
+						display: block;
+						// @include flex(1 0 auto);
+						// height: 500px;
+						width: 100%;
+						overflow-y: hidden;
+
 					}
 
 					.art,
@@ -105,6 +119,7 @@ body.about {
 						border: 20px solid white;
 						z-index: 100;
 						right: -20%;
+						@include photoIn();
 						// top: -100%;
 						// left: -30%;
 					}
@@ -113,6 +128,7 @@ body.about {
 						// top: -150%;
 						z-index: 300;
 						top: -20%;
+						@include portraitIn();
 					}
 
 					.art {
@@ -120,6 +136,7 @@ body.about {
 						// right: 0;
 						left: -15%;
 						top: -30%;
+						@include artIn();
 					}
 
 
@@ -143,6 +160,8 @@ body.about {
 							right: 20%;
 							top: -200%;
 						}
+
+						@include shapeInTop();
 					}
 
 					.horizontal {
@@ -156,6 +175,7 @@ body.about {
 						z-index: 300;
 						top: 0;
 						opacity: 0.6;
+						@include shapeInLeft();
 						// transform: translateZ(-3px) scale(4);
 						&.pink {
 							width: 50%;
@@ -222,6 +242,8 @@ body.about {
 						right: -20%;
 						// top: 0;
 						top: 40%;
+
+						@include shapeInTop();
 
 						// @include gradient-shadow();
 						// transform: translateZ(-0.25px) scale(2);
