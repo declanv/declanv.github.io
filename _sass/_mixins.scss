@@ -688,10 +688,9 @@
 @keyframes portraitIn {
   0% {
     opacity: 0;
-    transform: translateY(-50%);
-
+    transform: translateY(-200%);
   }
-  85% {
+  70% {
     opacity: 0;
   }
   100% {
@@ -703,9 +702,9 @@
 @keyframes photoIn {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
-  90% {
+  80% {
     opacity: 0;
   }
   100% {
@@ -733,11 +732,25 @@
     opacity: 0;
     transform: translateX(-100%);
   }
-  90% {
-    opactiy: 0;
+  50% {
+    opacity: 0;
   }
   100% {
     opacity: 0.6;
+    transform: none;
+  }
+}
+
+@keyframes shapeInLeftFullOpacity {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
     transform: none;
   }
 }
@@ -747,8 +760,8 @@
     opacity: 0;
     transform: translateY(-100%);
   }
-  90% {
-    opactiy: 0;
+  30% {
+    opacity: 0;
   }
   100% {
     opacity: 0.6;
@@ -756,12 +769,23 @@
   }
 }
 
-@mixin shapeInTop() {
-  @include prefix-animation(shapeInTop 4s cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
+@mixin shapeInTop($delay, $time) {
+  opacity: 0;
+  transform: translateY(-100%);
+  @include prefix-animation(shapeInTop $delay $time cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
 }
 
-@mixin shapeInLeft() {
-  @include prefix-animation(shapeInLeft 4s cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
+@mixin shapeInLeft($delay, $time) {
+  opacity: 0;
+  transform: translateX(-100%);
+  @include prefix-animation(shapeInLeft $delay $time cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
+}
+
+@mixin shapeInLeftFullOpacity($delay, $time) {
+
+  opacity: 0;
+  transform: translateX(-100%);
+  @include prefix-animation(shapeInLeftFullOpacity $delay $time cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
 }
 
 @mixin artIn() {
@@ -773,7 +797,8 @@
 }
 
 @mixin portraitIn() {
-  @include prefix-animation(portraitIn 1s cubic-bezier(1, 0.5, 1, 1) forwards);
+  // @include prefix-animation(portraitIn 1s cubic-bezier(1, 0.5, 1, 1) forwards);
+  @include prefix-animation(portraitIn 1.5s cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
 }
 
 @mixin diagonalAcross() {

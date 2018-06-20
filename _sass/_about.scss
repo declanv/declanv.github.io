@@ -161,7 +161,7 @@ body.about {
 							top: -200%;
 						}
 
-						@include shapeInTop();
+						@include shapeInTop(4s, 1s);
 					}
 
 					.horizontal {
@@ -175,7 +175,7 @@ body.about {
 						z-index: 300;
 						top: 0;
 						opacity: 0.6;
-						@include shapeInLeft();
+						@include shapeInLeft(4s, 0s);
 						// transform: translateZ(-3px) scale(4);
 						&.pink {
 							width: 50%;
@@ -186,7 +186,7 @@ body.about {
 							z-index: 200;
 							opacity: 1;
 							top: 20%;
-
+							@include shapeInLeftFullOpacity(2s, 2.5s);
 							// transform: translateZ(-4px) scale(5);
 							// top: -450%;
 						}
@@ -214,7 +214,8 @@ body.about {
 								@include border-box();
 
 								// @include gradient-shadow();
-							 	 box-shadow: -10px 5px 20px 2px rgba(0, 0, 0, 0.2)	
+							 	 box-shadow: -10px 5px 20px 2px rgba(0, 0, 0, 0.2);
+							 	 @include shapeInLeftFullOpacity(2s, 2s);
 							}
 						}
 
@@ -243,7 +244,7 @@ body.about {
 						// top: 0;
 						top: 40%;
 
-						@include shapeInTop();
+						@include shapeInTop(4s, 0.5s);
 
 						// @include gradient-shadow();
 						// transform: translateZ(-0.25px) scale(2);
