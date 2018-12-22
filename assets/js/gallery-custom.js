@@ -173,6 +173,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
     };
 
     var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+        console.log("open photoswipe is firing");
         var pswpElement = document.querySelectorAll('.pswp')[0],
             gallery,
             options,

@@ -2,7 +2,7 @@ $( document ).ready(function() {
       // Barba.Pjax.Dom.containerClass = 'body';
 
       // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
- 
+
 
 
   var mobileMenuClick = function() {
@@ -112,15 +112,15 @@ $( document ).ready(function() {
       $('header').addClass('scroll-away');
       $('header').removeClass('scroll-in');
       $('header').removeClass('initial');
-      console.log('we are scrolling out. Here is the window scrollTop: ', 
-        $(window).scrollTop(),
-        ' and here is the siteheader outerHeight * 2: ',
-        $('.site-header').outerHeight() * 2
-        );
+      // console.log('we are scrolling out. Here is the window scrollTop: ',
+      //   $(window).scrollTop(),
+      //   ' and here is the siteheader outerHeight * 2: ',
+      //   $('.site-header').outerHeight() * 2
+      //   );
 
     } else if ($(window).scrollTop() <= $('.site-header').outerHeight() * 2 && !$('.siteheader').hasClass('initial')) {
 
-      console.log('we are scrolling in');
+      // console.log('we are scrolling in');
       $('header').removeClass('scroll-away');
       $('header').addClass('scroll-in');
 
@@ -142,7 +142,7 @@ $( document ).ready(function() {
 
       // scroll(fadeHeader);
 
-      console.log("fading in header");
+      // console.log("fading in header");
 
   }
 
@@ -150,6 +150,8 @@ $( document ).ready(function() {
 
 
   var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+    console.log('init photo swipe is actually happening')
 
     // parse slide data (url, title, size ...) from DOM elements 
     // (children of gallerySelector)
@@ -166,7 +168,7 @@ $( document ).ready(function() {
 
             figureEl = thumbElements[i]; // <figure> element
 
-            console.log('here is the figureEl', figureEl);
+            // console.log('here is the figureEl', figureEl);
 
             // include only element nodes 
             if(figureEl.nodeType !== 1) {
@@ -175,7 +177,7 @@ $( document ).ready(function() {
 
             linkEl = figureEl.children[0]; // <a> element
 
-            console.log('here is the linkEl: ', linkEl);
+            // console.log('here is the linkEl: ', linkEl);
 
             size = linkEl.getAttribute('data-size').split('x');
 
@@ -212,6 +214,8 @@ $( document ).ready(function() {
 
     // triggers when user clicks on thumbnail
     var onThumbnailsClick = function(e) {
+
+        console.log('in onthumbnails click');
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
@@ -250,6 +254,8 @@ $( document ).ready(function() {
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
+            console.log('open photoswipe bc valid index found');
+
             openPhotoSwipe( index, clickedGallery );
         }
         return false;
@@ -284,6 +290,8 @@ $( document ).ready(function() {
     };
 
     var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+
+        console.log("open photoswipe is actually happening");
         var pswpElement = document.querySelectorAll('.pswp')[0],
             gallery,
             options,
@@ -320,6 +328,7 @@ $( document ).ready(function() {
                     }
                 }
             } else {
+
                 // in URL indexes start from 1
                 options.index = parseInt(index, 10) - 1;
             }
@@ -336,13 +345,19 @@ $( document ).ready(function() {
             options.showAnimationDuration = 0;
         }
 
+        console.log("photoswipe, here is the element ", pswpElement, "here are the items: ", items, "here are the options: ", options);
+
+
         // Pass data to PhotoSwipe and initialize it
         gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        console.log('here is the gallery: ', gallery);
         gallery.init();
     };
 
     // loop through all gallery elements and bind events
     var galleryElements = document.querySelectorAll( gallerySelector );
+
+    console.log("here are the galleryElements", galleryElements);
 
     for(var i = 0, l = galleryElements.length; i < l; i++) {
         galleryElements[i].setAttribute('data-pswp-uid', i+1);
@@ -467,6 +482,8 @@ $( document ).ready(function() {
     $('body').removeClass();
     $('body').addClass(name);
 
+    console.log("body link updated to: ", name);
+
   }
 
   var Homepage = Barba.BaseView.extend({
@@ -577,9 +594,10 @@ $( document ).ready(function() {
     namespace: 'art',
     onEnter: function() {
 
-
-
       console.log("alright, the art view is ready")
+        updateBodyLink(this.namespace);
+
+    console.log('here is what the body currently looks like: ', $('body'));
       // updateBodyLink(this.namespace);
       // $('.grid').masonry({
       //   // itemSelector: '.grid-item',
@@ -600,18 +618,57 @@ $( document ).ready(function() {
       // initPhotoSwipeFromDOM('.projects-container');
 
       // For some reason, just the art namespace needs to be added in onEnterCompleted 
-      updateBodyLink(this.namespace);
       // mobileMenuClick();
 
-      $('.grid').masonry({
-        // itemSelector: '.grid-item',
-        // columnWidth: '.grid-sizer',
-        // columnWidth: 300,
-        percentPosition: true,
-        // fitWidth: true,
-        gutter: 30
-      });
-      initPhotoSwipeFromDOM('.projects-container');
+        initPhotoSwipeFromDOM('.projects-container');
+
+
+        $('.grid').masonry({
+            // itemSelector: '.grid-item',
+            // columnWidth: '.grid-sizer',
+            // columnWidth: 300,
+            percentPosition: true,
+            // fitWidth: true,
+            gutter: 30
+        });
+
+        // $('.grid').imagesLoaded().done( function( instance ) {
+        //     console.log('all images successfully loaded');
+        //
+        //     initPhotoSwipeFromDOM('.projects-container');
+        //
+        //
+        //     $('.grid').masonry({
+        //         // itemSelector: '.grid-item',
+        //         // columnWidth: '.grid-sizer',
+        //         // columnWidth: 300,
+        //         percentPosition: true,
+        //         // fitWidth: true,
+        //         gutter: 30
+        //     });
+        //
+        // })
+        // .always( function( instance ) {
+        //     console.log('all images loaded');
+        // })
+
+        // .fail( function() {
+        //     console.log('all images loaded, at least one is broken');
+        // })
+        // .progress( function( instance, image ) {
+        //     var result = image.isLoaded ? 'loaded' : 'broken';
+        //     console.log( 'image is ' + result + ' for ' + image.img.src );
+        // });
+
+      // $('.grid').masonry({
+      //   // itemSelector: '.grid-item',
+      //   // columnWidth: '.grid-sizer',
+      //   // columnWidth: 300,
+      //   percentPosition: true,
+      //   // fitWidth: true,
+      //   gutter: 30
+      // });
+      // initPhotoSwipeFromDOM('.projects-container');
       mobileMenuClick();
       
 

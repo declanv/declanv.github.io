@@ -26,7 +26,7 @@ var files = {
 			vendor: [
 				jsVendor + 'jquery-3.2.1.min.js',
 			 	jsVendor + 'masonry.pkgd.min.js',
-		 	 	jsVendor + 'photoswipe.min.js',
+		 	 	// jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe-ui-default.min.js',
 	 	 		jsVendor + 'barba.min.js'
@@ -39,8 +39,8 @@ var files = {
 			],
 			all: [
 				jsVendor + 'jquery-3.2.1.min.js',
+			 	// jsVendor + 'imagesloaded.pkgd.min.js',
 			 	jsVendor + 'masonry.pkgd.min.js',
-		 	 	jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe-ui-default.min.js',
 	 	 		jsVendor + 'barba.min.js',
