@@ -403,6 +403,19 @@ $( document ).ready(function() {
        */
 
       var _this = this;
+
+
+      var transitionContainer = $("#transition-shape");
+
+      transitionContainer.show();
+
+      console.log('here is what the background color will look like: ', '#' + currentTransitionColor);
+      transitionContainer.css('background-color', '#' + currentTransitionColor);
+
+      // the view could contain the hex value we'll use for the background color of the transition container.
+      //  Then we'll animate it over, using css. Since the animation will be the same each time, hopefully we can make it work with css
+      //  and avoid needing to use js to manipulate an svg or something...
+
       var $el = $(this.newContainer);
 
       $(this.oldContainer).hide();
@@ -453,9 +466,18 @@ $( document ).ready(function() {
 
   };
 
-  Barba.Dispatcher.on('linkClicked', function() {
+  currentTransitionColor = '';
 
-    console.log('link clicked: ', this);
+  Barba.Dispatcher.on('linkClicked', function(el) {
+
+
+
+    console.log('link clicked: ', el);
+
+    if (el.dataset.hex !== null) {
+
+        currentTransitionColor = el.dataset.hex
+    }
 
   });
 
