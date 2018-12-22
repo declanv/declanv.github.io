@@ -373,6 +373,23 @@ $( document ).ready(function() {
 
   var transitionContainer = $("#transition-shape");  
 
+  defaultTransitionColor = '#ffffff';
+  currentTransitionColor = defaultTransitionColor;
+
+  Barba.Dispatcher.on('linkClicked', function(el) {
+
+    currentTransitionColor = defaultTransitionColor;
+
+    console.log("here is the el being clicked: ", el);
+
+    if (el.dataset.hex !== null && el.dataset.hex !== undefined) {
+      currentTransitionColor = el.dataset.hex;
+    } else {
+      currentTransitionColor = defaultTransitionColor;
+    }
+
+  });
+
   var FadeTransition = Barba.BaseTransition.extend({
     start: function() {
       /**
@@ -397,7 +414,7 @@ $( document ).ready(function() {
       transitionContainer.addClass('transition-in');
       transitionContainer.css('background-color', '#' + currentTransitionColor);
 
-      return $(this.oldContainer).animate({ opacity: 0 }).promise();
+      return $(this.oldContainer).animate({ opacity: 0 }, 800, function() {}).promise();
 
     },
 
@@ -435,7 +452,7 @@ $( document ).ready(function() {
       });
       // transitionContainer.addClass('.transition-in');
 
-      $el.animate({ opacity: 1 }, 600, function() {
+      $el.animate({ opacity: 1 }, 800, function() {
         /**
          * Do not forget to call .done() as soon your transition is finished!
          * .done() will automatically remove from the DOM the old Container
@@ -471,21 +488,6 @@ $( document ).ready(function() {
     return FadeTransition;
 
   };
-
-  currentTransitionColor = '';
-
-  Barba.Dispatcher.on('linkClicked', function(el) {
-
-
-
-    console.log('link clicked: ', el);
-
-    if (el.dataset.hex !== null) {
-
-        currentTransitionColor = el.dataset.hex
-    }
-
-  });
 
   Barba.Dispatcher.on('newPageReady', function() {
     scrollToShow();

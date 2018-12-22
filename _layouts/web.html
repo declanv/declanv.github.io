@@ -8,7 +8,7 @@ layout: default
 	<div class="background-color one"></div>
 	<div class="background-color two"></div>
 	{% if page.previous.url %}
-		<a class='page-nav prev' href="{{page.previous.url}}.html">
+		<a class='page-nav prev' href="{{page.previous.url}}.html" data-hex="{{page.previous.hex}}">
 			<div class="arrow-link-container">
 				<div class="arrow">
 				</div>
@@ -21,7 +21,7 @@ layout: default
 		</a>
 	{% endif %}
 	{% if page.next.url %}
-		<a class="page-nav next" href="{{page.next.url}}.html">
+		<a class="page-nav next" href="{{page.next.url}}.html" data-hex="{{page.next.hex}}">
 			<div class="arrow-link-container">
 
 		    	<div class="text-container" >

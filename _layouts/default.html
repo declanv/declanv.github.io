@@ -12,6 +12,7 @@
   {% endif %}
 
   <body id="barba-wrapper" class="{{pageName}}" >
+    {% include shape-overlays.html %}
     <div class="barba-container" data-namespace="{{pageName}}">
 
       {% if page.layout == "home" %}
@@ -49,7 +50,6 @@
       <!-- </div> -->
 
     </div>
-    {% include shape-overlays.html %}
   </body>
 
 </html>

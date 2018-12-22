@@ -600,51 +600,57 @@
     // border-radius: 0;
     // transform: skewY(45deg);
     // display: block;
-    // opacity: 0;
-    background-color: transparent;
+    // opacity: 100%;
+    // background-color: transparent;
 
   }
 
   10% {
     // box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
-    height: 0;
-    width: 0;
+    height: 1px;
+    width: 1px;
+    transform: scaleX(0);
+    
   }
 
   80% {
-    background-color: black;
+    // background-color: black;
 
   }
   100% {
-    opacity: 100%;
+    // opacity: 100%;
     display: block;
     // border-radius: 0 0 0 0;
     // background-color: black;
     // box-shadow: 0 0 0 300vw black, 0 0 0 300vh black;
-    height: 300vh;
-    width: 300vw;
+    // height: 300vh;
+    // width: 300vw;
+    transform: scale(30000);
   }
 }
 
 @keyframes pageTransitionAnimateOut {
   0% {
-    background-color: black;
+    // background-color: black;
     // box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
     // display: block;
-    opacity: 100%;
-    height: 300vh;
-    width: 300vw;
+    // opacity: 100%;
+    transform: scale(30000);
+    // height: 300vh;
+    // width: 300vw;
   }
 
   80% {
     // box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
-    height: 0;
-    width: 0;
+    // height: 0;
+    // width: 0;
+    transform: scale(0);
   }
   100% {
-    opacity: 0%;
+    // opacity: 100%;
     display: none;
-    background-color: transparent;
+
+    // background-color: transparent;
   }
 }
 
@@ -872,11 +878,11 @@
 }
 
 @mixin pageTransitionAnimateIn() {
-  @include prefix-animation(pageTransitionAnimateIn 0.75s ease-in-out forwards);
+  @include prefix-animation(pageTransitionAnimateIn 1.5s ease-in-out forwards);
 }
 
 @mixin pageTransitionAnimateOut() {
-  @include prefix-animation(pageTransitionAnimateOut 0.75s ease-in-out forwards);
+  @include prefix-animation(pageTransitionAnimateOut 1.5s ease-in-out forwards);
 }
 
 @mixin showFirstArrowText() {
