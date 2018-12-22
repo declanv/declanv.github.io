@@ -371,6 +371,7 @@ $( document ).ready(function() {
     }
   };
 
+  var transitionContainer = $("#transition-shape");  
 
   var FadeTransition = Barba.BaseTransition.extend({
     start: function() {
@@ -391,6 +392,11 @@ $( document ).ready(function() {
        * this.oldContainer is the HTMLElement of the old Container
        */
       // $('body').removeClass('transition');
+      console.log('here is what the background color will look like: ', '#' + currentTransitionColor);
+      transitionContainer.removeClass('transition-out');
+      transitionContainer.addClass('transition-in');
+      transitionContainer.css('background-color', '#' + currentTransitionColor);
+
       return $(this.oldContainer).animate({ opacity: 0 }).promise();
 
     },
@@ -405,17 +411,6 @@ $( document ).ready(function() {
       var _this = this;
 
 
-      var transitionContainer = $("#transition-shape");
-
-      transitionContainer.show();
-
-      console.log('here is what the background color will look like: ', '#' + currentTransitionColor);
-      transitionContainer.css('background-color', '#' + currentTransitionColor);
-
-      // the view could contain the hex value we'll use for the background color of the transition container.
-      //  Then we'll animate it over, using css. Since the animation will be the same each time, hopefully we can make it work with css
-      //  and avoid needing to use js to manipulate an svg or something...
-
       var $el = $(this.newContainer);
 
       $(this.oldContainer).hide();
@@ -428,13 +423,19 @@ $( document ).ready(function() {
 
       // $('body').addClass('transition');
 
+
+
+      // transitionContainer.show();
+      transitionContainer.removeClass('transition-in');
+      transitionContainer.addClass('transition-out');
+
       $el.css({
         visibility : 'visible',
         opacity : 0
       });
-      console.log("in the fadein")
+      // transitionContainer.addClass('.transition-in');
 
-      $el.animate({ opacity: 1 }, 400, function() {
+      $el.animate({ opacity: 1 }, 600, function() {
         /**
          * Do not forget to call .done() as soon your transition is finished!
          * .done() will automatically remove from the DOM the old Container
@@ -444,6 +445,11 @@ $( document ).ready(function() {
         _this.done(function() {
         });
       });
+
+      // the view could contain the hex value we'll use for the background color of the transition container.
+      //  Then we'll animate it over, using css. Since the animation will be the same each time, hopefully we can make it work with css
+      //  and avoid needing to use js to manipulate an svg or something...
+
     },
     finish: function() {
 

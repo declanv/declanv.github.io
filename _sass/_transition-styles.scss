@@ -1,8 +1,27 @@
 #transition-shape {
   position: static;
   display: none;
-  height: 100vh;
-  width: 100vw;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
   z-index: 2000;
   background-color: black;
+  border-radius: 0 100% 100% 0;
+
+  &.transition-in {
+  	display: block;
+  	// background-color: black;
+  	// opacity: 100%;
+  	// box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
+  	@include pageTransitionAnimateIn();
+  }
+
+  &.transition-out {
+  	// display: none;
+  	// background-color: transparent;
+  	// opacity: 0;
+  	// box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+  	@include pageTransitionAnimateOut();
+  }
 }

@@ -594,6 +594,60 @@
   }
 }
 
+@keyframes pageTransitionAnimateIn {
+  0% {
+    // border-radius: 50% 50% 50% 50%;
+    // border-radius: 0;
+    // transform: skewY(45deg);
+    // display: block;
+    // opacity: 0;
+    background-color: transparent;
+
+  }
+
+  10% {
+    // box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+    height: 0;
+    width: 0;
+  }
+
+  80% {
+    background-color: black;
+
+  }
+  100% {
+    opacity: 100%;
+    display: block;
+    // border-radius: 0 0 0 0;
+    // background-color: black;
+    // box-shadow: 0 0 0 300vw black, 0 0 0 300vh black;
+    height: 300vh;
+    width: 300vw;
+  }
+}
+
+@keyframes pageTransitionAnimateOut {
+  0% {
+    background-color: black;
+    // box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
+    // display: block;
+    opacity: 100%;
+    height: 300vh;
+    width: 300vw;
+  }
+
+  80% {
+    // box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+    height: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 0%;
+    display: none;
+    background-color: transparent;
+  }
+}
+
 @keyframes openMobileNav {
   0% {
     // border-radius: 50% 50% 50% 50%;
@@ -815,6 +869,14 @@
 
 @mixin openMobileNav() {
   @include prefix-animation(openMobileNav 0.75s ease-in-out forwards);
+}
+
+@mixin pageTransitionAnimateIn() {
+  @include prefix-animation(pageTransitionAnimateIn 0.75s ease-in-out forwards);
+}
+
+@mixin pageTransitionAnimateOut() {
+  @include prefix-animation(pageTransitionAnimateOut 0.75s ease-in-out forwards);
 }
 
 @mixin showFirstArrowText() {
