@@ -276,13 +276,14 @@
 	.subpages {
 
 		position: absolute;
-		display: block;
+		display: none;
 		left: 0;
 		top: 45px;
 		height: auto;
 		width: auto;
 		z-index: 300;	
 		margin: 0;
+		opacity: 0;
 
 		.subpage {
 
@@ -297,6 +298,11 @@
 	&:hover {
 
 		.subpages {
+			display: block;
+			background-color: rgba(0,0,0,0.2);
+			border: 1.5px solid white;
+			@include animate-in-subnav();
+
 			.subpage {
 				$subNavLinks: 4;
 
