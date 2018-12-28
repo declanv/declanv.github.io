@@ -55,7 +55,7 @@
                     <ul class="subpages">
                       {% for subpage in subpages %}
                         <li> 
-                          <a class="subpage" href="{{ my_page.url | relative_url }}">
+                          <a class="subpage link-{{ forloop.index }}" href="{{ my_page.url | relative_url }}">
                               {{ subpage }}
                           </a>
                         </li>

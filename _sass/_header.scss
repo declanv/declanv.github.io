@@ -232,6 +232,43 @@
 
 }
 
+
+// Here's the idea:
+// The user will hover over the art link and the subnav links will reveal one by one below
+// Meanwhile, the initial underline will animate around the outskirts of the subnav until it's outlined
+// Then, we'll use a little js (or maybe we can get away with a hover state) to detect when the user is no longer hovering over the subnav items and we'll then close them 
+
+
+@keyframes openSubNav {
+  0% {
+    // border-radius: 50% 50% 50% 50%;
+    // border-radius: 0;
+    // transform: skewY(45deg);
+
+    background-color: transparent;
+
+  }
+
+  10% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+  }
+
+  80% {
+    background-color: black;
+
+  }
+  100% {
+
+    // border-radius: 0 0 0 0;
+    // background-color: black;
+    box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
+  }
+}
+
+@mixin openSubNav() {
+  @include prefix-animation(openSubNav 0.75s ease-in-out forwards);
+}
+
 .nav-w-children {
 	position: relative;
 	display: inline-block;
@@ -241,7 +278,7 @@
 		position: absolute;
 		display: block;
 		left: 0;
-		top: 50px;
+		top: 45px;
 		height: auto;
 		width: auto;
 		z-index: 300;	
@@ -252,8 +289,30 @@
 			@include subnav-button($site-blue, white);
 			position: relative;
 			display: block;
+			opacity: 0;
 			// min-height: 50px;
 		}
+	}
+
+	&:hover {
+
+		.subpages {
+			.subpage {
+				$subNavLinks: 4;
+
+				@for $i from 1 through $subNavLinks {
+					$time: #{$i*.2}s;
+					&.link-#{$i} { 
+
+						@include fadeInSubNavLinks($time);
+
+					}
+
+				}
+			}
+		}
+
+
 	}
 }
 

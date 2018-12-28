@@ -869,6 +869,10 @@
   @include prefix-animation(fadeInMobileLinks $time 0.5s cubic-bezier(1, 0.01, 0.71, 1) forwards);
 }
 
+@mixin fadeInSubNavLinks($time) {
+  @include prefix-animation(fadeInMobileLinks $time cubic-bezier(1, 0.01, 0.71, 1) forwards);
+}
+
 @mixin closeMobileNav() {
   @include prefix-animation(closeMobileNav 0.5s ease-in-out forwards);
 }
@@ -1063,7 +1067,7 @@
 // }
 
 
-@mixin expand-underline($color-hover) {
+@mixin expand-underline($color-hover, $border-width) {
 
   position:relative;
   cursor: pointer;
@@ -1081,7 +1085,7 @@
   }
 
   &:before {
-    border-bottom: 3px solid $color-hover;
+    border-bottom: $border-width solid $color-hover;
     border-left: 0;
   }
 
@@ -1167,7 +1171,7 @@
   text-decoration: none;
   color: $color;
 
-  @include expand-underline($color-hover);
+  @include expand-underline($color-hover, 3px);
 
 
   &.active {
@@ -1200,7 +1204,7 @@
   text-decoration: none;
   color: $color;
 
-  @include expand-underline($color-hover);
+  @include expand-underline($color-hover, 1.5px);
 
 
   &.active {
@@ -1229,7 +1233,7 @@
   text-decoration: none;
   color: $color;
 
-  @include expand-underline($color-hover);
+  @include expand-underline($color-hover, 3px);
 
 
   &.active {
