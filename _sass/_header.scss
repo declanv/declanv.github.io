@@ -49,6 +49,7 @@
     top: 0;
     @include border-box();
     padding: 10px 0;
+    overflow: visible;
     // If I decide I want a shadow under the header, here is the best option:
     // box-shadow: 5px 10px 40px 10px rgba(0, 0, 0, 0.1);
     // @include gradient-shadow();
@@ -229,6 +230,31 @@
 
 	}
 
+}
+
+.nav-w-children {
+	position: relative;
+	display: inline-block;
+
+	.subpages {
+
+		position: absolute;
+		display: block;
+		left: 0;
+		top: 50px;
+		height: auto;
+		width: auto;
+		z-index: 300;	
+		margin: 0;
+
+		.subpage {
+
+			@include subnav-button($site-blue, white);
+			position: relative;
+			display: block;
+			// min-height: 50px;
+		}
+	}
 }
 
 .about {

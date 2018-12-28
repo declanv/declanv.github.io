@@ -43,23 +43,25 @@
                   </a>
                 {% else unless my_page.exclude %}
                   {% assign subpages = my_page.subpages | split: ", " %}
-                  <a {% if page.url contains my_page.url %} class="page-link active link-{{ forloop.index }}" {% else %} class="page-link link-{{ forloop.index }}" {% endif %} href="{{ my_page.url | relative_url }}" >
-                  <!--                     {% assign my_page_split = my_page.title | split: "" %}
-                  {% for letter in my_page_split %}
-                  <span class="letter-{{ forloop.index }}">{{ letter }}</span>
-                  {% endfor %} -->
-                    <!-- {{ my_page.title | downcase }} -->
-                    {{ my_page.title | downcase }}
-                  </a>
-                  <ul class="subpages">
-                    {% for subpage in subpages %}
-                      <li class="subpage"> 
-                        <a href="{{ my_page.url | relative_url }}">
-                            {{ subpage }}
-                        </a>
-                      </li>
-                    {% endfor %}
-                  </ul>    
+                  <div class="nav-w-children">
+                    <a {% if page.url contains my_page.url %} class="page-link active link-{{ forloop.index }}" {% else %} class="page-link link-{{ forloop.index }}" {% endif %} href="{{ my_page.url | relative_url }}" >
+                    <!--                     {% assign my_page_split = my_page.title | split: "" %}
+                    {% for letter in my_page_split %}
+                    <span class="letter-{{ forloop.index }}">{{ letter }}</span>
+                    {% endfor %} -->
+                      <!-- {{ my_page.title | downcase }} -->
+                      {{ my_page.title | downcase }}
+                    </a>
+                    <ul class="subpages">
+                      {% for subpage in subpages %}
+                        <li> 
+                          <a class="subpage" href="{{ my_page.url | relative_url }}">
+                              {{ subpage }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>    
+                </div>
                 {% endunless %}
               {% endif %} 
           {% endfor %}

@@ -1181,6 +1181,39 @@
   @include border-box();
 }
 
+@mixin subnav-button($color, $color-hover) {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  font-family: $button-font;
+  font-size: 18px;
+  text-transform: uppercase;
+  @include border-box();
+  letter-spacing: 0.5px;
+  line-height: 18px;
+  padding: 3px 4px 7px 4px;
+  // margin: 5px;
+  // padding: 2px 5px 5px 5px;
+  // padding: 0;
+  margin: 1px 4px 4px 4px;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  color: $color;
+
+  @include expand-underline($color-hover);
+
+
+  &.active {
+    &:before {
+      border-bottom: 3px solid $color-hover;
+      border-left: 0;
+      @include transform-origin(0% 100%);
+    }
+    color: $color-hover;
+  }
+  @include border-box();
+}
+
 @mixin button($color, $color-hover) {
   position: relative;
   display: inline-block;
