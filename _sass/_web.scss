@@ -78,6 +78,9 @@
 			will-change: transform, opacity;
 			// @include reveal-on-scroll();
 
+			@include animate-in-diagonal();
+
+
 			&.visible {
 				opacity: 1;
 				transform: rotateZ(0deg);
