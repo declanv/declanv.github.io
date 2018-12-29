@@ -103,11 +103,13 @@
 			.wrapper {
 
 				height: 100%;
+				padding: 0;
 
 				.site-nav {
 					@include flex-direction-column();
 
 					.site-title-wrapper {
+						padding: 0 15px;
 						#menu {
 							background-color: black;
 
@@ -133,6 +135,13 @@
 						@include flex(2 1 auto);
 						display: block;
 
+						&.subnav-open {
+							.page-link {
+								// padding-bottom: 2.5%;
+								margin: 10% 0;
+							}
+						}
+
 						.page-link,
 						.nav-w-children {
 							display: block;
@@ -147,12 +156,13 @@
 							opacity: 1;
 							padding: 0;
 							margin: 0;
+
 							.subpages {
 								display: none;
 								opacity: 0;
+								// border: none;
 
-								border: 3px solid white;
-
+								// border: 3px solid white;
 
 								// This will need to open the subnav and fade in each of the links 
 								// it should also scale down the other links, and scale up the subnav links
@@ -188,11 +198,22 @@
 
 								}
 							}
+
+							&:hover {
+
+								.subpages {
+									border: none;
+								}
+							}
+
+
 						}
 
 
 
 						.page-link {
+
+							padding: 4px 0 5% 0;
 
 							&.active {
 								margin-bottom: 0;
@@ -218,7 +239,9 @@
 							// .page-link:not(.selected) {
 							.page-link {
 
-								transform: scale(0.8);
+								font-size: 20px;
+								line-height: 20px;
+								// transform: scale(0.8);
 								transition: 0.5s;
 							}
 						}

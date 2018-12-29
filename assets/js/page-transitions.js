@@ -1,8 +1,43 @@
 $( document ).ready(function() {
       // Barba.Pjax.Dom.containerClass = 'body';
-
+  mobileMenuOpen = false;
       // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  var clickOutsideClose = function() {
 
+    var navWChildren = $('.nav-w-children');  
+
+    $(document).on("click.document", function (e) {
+
+      if ($(window).width() < 650 && mobileMenuOpen) {
+
+        if (!navWChildren.is(e.target) // if the target of the click isn't the container...
+                && navWChildren.has(e.target).length === 0) // ... nor a descendant of the container
+        {
+
+
+        console.log('inside the clickOutsideClose and here is the element: ', e.target);
+
+        navWChildren.find('.page-link').removeClass('selected');
+        $('.trigger.box').removeClass('subnav-open');
+
+        navWChildren.find('.subpages').removeClass('open');
+
+          // courseFinder.hide(
+          //   function () {
+          //     courseFinderBtn.find("#course-search-label").html("Show Course Finder");
+          //     courseFinderBtnClick();
+          //     courseFinderOpen = false;
+          //     removeWindowListeners();
+          //   }
+          // );
+
+        }
+
+      }
+
+    });
+
+  }
 
 
   var mobileMenuClick = function() {
@@ -13,6 +48,13 @@ $( document ).ready(function() {
       console.log("menu is clicked");
       $(this).addClass('touched');
       $('.site-header').toggleClass('open-mobile');
+      console.log("here is the mobileMenuOpen value: ", mobileMenuOpen);
+      if (!mobileMenuOpen) {
+        mobileMenuOpen = true;
+        clickOutsideClose();
+      } else {
+        mobileMenuOpen = false;
+      }
     });
 
     $('.nav-w-children .page-link').on('click', function(e) {

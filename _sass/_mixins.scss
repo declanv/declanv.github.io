@@ -654,6 +654,17 @@
   }
 }
 
+@keyframes fadeInOpenSubnav {
+  0% {
+    opacity: 0;
+    border: 3px solid transparent;
+  }
+  100% {
+    opacity: 1;
+    border: 3px solid white;
+  }
+}
+
 @keyframes openMobileNav {
   0% {
     // border-radius: 50% 50% 50% 50%;
@@ -661,7 +672,6 @@
     // transform: skewY(45deg);
 
     background-color: transparent;
-
   }
 
   10% {
@@ -673,7 +683,6 @@
 
   }
   100% {
-
     // border-radius: 0 0 0 0;
     // background-color: black;
     box-shadow: 0 0 0 150vw black, 0 0 0 150vh black;
@@ -879,6 +888,11 @@
 
 @mixin openMobileNav() {
   @include prefix-animation(openMobileNav 0.75s ease-in-out forwards);
+
+  .trigger.box .nav-w-children .subpages.open {
+    @include prefix-animation(fadeInOpenSubnav 0.5s 1s ease-in-out forwards);
+  }
+
 }
 
 @mixin pageTransitionAnimateIn() {
