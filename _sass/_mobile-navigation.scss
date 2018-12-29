@@ -151,6 +151,8 @@
 								display: none;
 								opacity: 0;
 
+								border: 3px solid white;
+
 
 								// This will need to open the subnav and fade in each of the links 
 								// it should also scale down the other links, and scale up the subnav links
@@ -158,10 +160,13 @@
 								// Also, if you're on a page with a subnav, it should automatically be opened 
 
 								&.open {
+									position: relative;
 									opacity: 1;
 									display: block;
 									transform: scale(1.2);
 									margin: 10px 0;
+									padding: 5% 0;
+									top: initial;
 									transition: 0.5s;
 
 									.subpage {
@@ -188,6 +193,10 @@
 
 
 						.page-link {
+
+							&.active {
+								margin-bottom: 0;
+							}
 
 							// the delay was originally 0.2s for all of them
 							// @include fadeInMobileLinks(0.2s);
