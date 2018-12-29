@@ -14,6 +14,16 @@ $( document ).ready(function() {
       $(this).addClass('touched');
       $('.site-header').toggleClass('open-mobile');
     });
+
+    $('.nav-w-children .page-link').on('click', function(e) {
+      e.preventDefault();
+
+      $(this).addClass('selected');
+
+      $('.trigger.box').addClass('subnav-open');
+
+      $(this).siblings('.subpages').addClass('open');
+    })
   }
 
   function isElementInViewport (el) 
