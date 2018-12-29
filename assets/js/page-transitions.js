@@ -5,13 +5,16 @@ $( document ).ready(function() {
   var clickOutsideClose = function() {
 
     var navWChildren = $('.nav-w-children');  
+    var subpages = navWChildren.find('.subpages');
 
     $(document).on("click.document", function (e) {
 
       if ($(window).width() < 650 && mobileMenuOpen) {
 
         if (!navWChildren.is(e.target) // if the target of the click isn't the container...
-                && navWChildren.has(e.target).length === 0) // ... nor a descendant of the container
+                && navWChildren.has(e.target).length === 0
+                  && !$('#menu').is(e.target)
+                ) // ... nor a descendant of the container
         {
 
 
@@ -20,7 +23,10 @@ $( document ).ready(function() {
         navWChildren.find('.page-link').removeClass('selected');
         $('.trigger.box').removeClass('subnav-open');
 
-        navWChildren.find('.subpages').removeClass('open');
+        subpages.removeClass('open');
+        subpages.addClass('closing-subnav');
+
+
 
           // courseFinder.hide(
           //   function () {
@@ -65,6 +71,7 @@ $( document ).ready(function() {
       $('.trigger.box').addClass('subnav-open');
 
       $(this).siblings('.subpages').addClass('open');
+      $(this).siblings('.subpages').removeClass('closing-subnav');
     })
   }
 
