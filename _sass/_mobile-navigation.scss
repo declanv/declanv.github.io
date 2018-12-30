@@ -158,8 +158,20 @@
 							padding: 0;
 							margin: 0;
 
+							&:hover {
+
+								.subpages {
+									border: none;
+									visibility: hidden;
+									opacity: 0;
+									display: none;
+								}
+							}
+
+
 							.subpages {
-								display: none;
+								visibility: hidden;
+								// display: none;
 								opacity: 0;
 								// border: none;
 
@@ -172,12 +184,14 @@
 
 								&.open {
 									position: relative;
-									opacity: 1;
 									display: block;
+									opacity: 1;
+									visibility: visible;
 									transform: scale(1.2);
 									margin: 10px 0;
 									padding: 5% 0;
 									top: initial;
+									height: initial;
 									transition: 0.5s;
 
 									.subpage {
@@ -199,18 +213,12 @@
 
 								}
 
+								
 								&.closing-subnav {
 									@include closeSubnav();
 								}
+
 							}
-
-							&:hover {
-
-								.subpages {
-									border: none;
-								}
-							}
-
 
 						}
 

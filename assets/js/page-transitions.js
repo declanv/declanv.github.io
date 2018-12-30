@@ -18,15 +18,15 @@ $( document ).ready(function() {
         {
 
 
-        console.log('inside the clickOutsideClose and here is the element: ', e.target);
+          console.log('inside the clickOutsideClose and here is the element: ', e.target);
 
-        navWChildren.find('.page-link').removeClass('selected');
-        $('.trigger.box').removeClass('subnav-open');
+          navWChildren.find('.page-link').removeClass('selected');
+          $('.trigger.box').removeClass('subnav-open');
 
-        subpages.removeClass('open');
-        subpages.addClass('closing-subnav');
+          subpages.addClass('closing-subnav');
+          // subpages.removeClass('open');
 
-
+          window.setTimeout(function() {subpages.removeClass('open')}, 100);
 
           // courseFinder.hide(
           //   function () {
@@ -57,7 +57,7 @@ $( document ).ready(function() {
       console.log("here is the mobileMenuOpen value: ", mobileMenuOpen);
       if (!mobileMenuOpen) {
         mobileMenuOpen = true;
-        clickOutsideClose();
+
       } else {
         mobileMenuOpen = false;
       }
@@ -72,6 +72,8 @@ $( document ).ready(function() {
 
       $(this).siblings('.subpages').addClass('open');
       $(this).siblings('.subpages').removeClass('closing-subnav');
+      clickOutsideClose();
+
     })
   }
 

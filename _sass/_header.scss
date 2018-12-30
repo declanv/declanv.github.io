@@ -276,7 +276,8 @@
 	.subpages {
 
 		position: absolute;
-		display: none;
+		visibility: hidden;
+		// display: none;
 		left: 0;
 		top: 45px;
 		height: auto;
