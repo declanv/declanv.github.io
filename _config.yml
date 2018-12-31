@@ -48,12 +48,12 @@ collections:
   webs:
     output: true 
     permalink: /web/:path
-  arts:
-    output: true 
-    permalink: /art/:path
-  illustrations:
-    output: true 
-    permalink: /illustration/:path
+  # arts:
+  #   output: true 
+  #   permalink: /art/:path
+  # illustrations:
+  #   output: true 
+  #   permalink: /illustration/:path
 
 #     webs:
 #        - scope:

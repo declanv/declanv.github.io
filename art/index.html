@@ -1,0 +1,35 @@
+---
+layout: default
+title: Art
+weight: 2
+subpages: 
+- title: Illustration
+  href: /illustration
+- title: Figure Drawings
+  href: /figure-drawings
+- title: Other Art
+  href: /other-art
+custom_css:
+- photoswipe
+- default-skin
+custom_js:
+- jquery-3.2.1.min
+- imagesloaded.pkgd.min.js
+- masonry.pkgd.min
+- masonry-custom
+- gallery-custom
+- photoswipe.min
+- photoswipe-ui-default.min
+---
+
+<div class="section-title">
+	<h4>
+		Art
+	</h4>
+</div>	
+
+<div class="projects-container grid">
+	{% include art-list.html type='art' %}
+</div>
+
+{% include photoswipe.html %}

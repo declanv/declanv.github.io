@@ -1,6 +1,7 @@
 ---
 layout: illustration
 title: The Job Market
+type: art, illustration
 description: Personal Illustration
 alt: illustration of dogs watching ball
 medium: Watercolor, Graphite, and Digital 

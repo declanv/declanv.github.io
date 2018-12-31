@@ -1,6 +1,8 @@
 ---
 layout: art
 title: Reindeer
+type: art, illustration
+isDoc: true
 description: Personal Illustration
 alt: Illustration of caribou afraid of power lines
 medium: Ink and Digital 

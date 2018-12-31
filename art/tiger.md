@@ -1,6 +1,8 @@
 ---
 layout: art
 title: Tiger
+type: art, illustration
+isDoc: true
 description: Personal Illustration
 alt: Illustration of a tiger's face
 medium: Watercolor, Ink, and Digital 

@@ -1,4 +1,4 @@
-{% assign url_parts = page.url | split: '/' %}
+<!-- {% assign url_parts = page.url | split: '/' %}
 {% assign url_parts_size = url_parts | size %}
 {% assign rm = url_parts | last %}
 {% assign base_url = page.url | replace: rm %}
@@ -14,7 +14,7 @@
     {% endif %}
   {% endif %}
 {% endfor %}
-</ul>
+</ul> -->
 
 <!-- <ul>
 {% for node in site.pages %}
@@ -22,3 +22,13 @@
   <li><a href='{{node.url}}'>{{node.title}}</a></li>
 {% endfor %}
 </ul> -->
+
+<nav>
+  <ul class="nav {{include.navclass}}">
+    <li><a href="{{site.baseurl}}/" class="{% if page.url == '/' %}current{% endif %}">Home</a></li>
+    <li><a href="{{site.baseurl}}/art/" class="{% if page.url contains 'art' %}current{% endif %}">Art</a></li>
+    <li><a href="{{site.baseurl}}/web/" class="{% if page.url contains 'web' %}current{% endif %}">Web</a></li>
+    <li><a href="{{site.baseurl}}/photography/" class="{% if page.url contains 'photography' %}current{% endif %}">Photo</a></li>
+    <li><a href="{{site.baseurl}}/about/" class="{% if page.url contains 'about' %}current{% endif %}">About</a></li>
+  </ul>
+</nav>

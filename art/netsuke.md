@@ -1,6 +1,8 @@
 ---
 layout: art
 title: Netsuke
+type: art, illustration
+isDoc: true
 description: Personal Illustration
 alt: Illustration of Wolverine sipping tea
 medium: Watercolor, Graphite, and Digital 
