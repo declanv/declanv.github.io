@@ -1,29 +1,31 @@
-<!-- {% assign url_parts = page.url | split: '/' %}
-{% assign url_parts_size = url_parts | size %}
-{% assign rm = url_parts | last %}
-{% assign base_url = page.url | replace: rm %}
-
+{% capture html %}
 <ul>
-{% for node in site.pages %}
-  {% if node.url contains base_url %}
-    {% assign node_url_parts = node.url | split: '/' %}
-    {% assign node_url_parts_size = node_url_parts | size %}
-    {% assign filename = node_url_parts | last %}
-    {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
-      <li><a href='{{node.url}}'>{{node.title}}</a></li>
+    {% if include.context == "/" %}
+        <li class="{% if page.url == "/" %}active{% endif %}">
+            <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+        </li>
     {% endif %}
-  {% endif %}
-{% endfor %}
-</ul> -->
 
-<!-- <ul>
-{% for node in site.pages %}
+    {% assign entries = site.pages | sort: "path" %}
+    {% for entry in entries %}
 
-  <li><a href='{{node.url}}'>{{node.title}}</a></li>
-{% endfor %}
-</ul> -->
+        {% capture slug    %}{{ entry.url | split: "/"   | last                       }}{% endcapture %}
+        {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
+        {% assign depth = entry.url | split: '/' | size %}
+		<!-- This will prevent anything deeper than one level of subcategory from showing -->
+        {% if current == include.context and depth < 4 %}
+            <li class="{% if page.url contains entry.url %}active{% endif %}">
+    			
+                <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+                {% include navigation.html context=entry.url %}
+            </li>
+        {% endif %}
 
-<nav>
+    {% endfor %}
+</ul>
+{% endcapture %}{{ html | strip_newlines | replace:'    ','' | replace:'    ','' | replace:'  ',' ' }}
+
+<!-- <nav>
   <ul class="nav {{include.navclass}}">
     <li><a href="{{site.baseurl}}/" class="{% if page.url == '/' %}current{% endif %}">Home</a></li>
     <li><a href="{{site.baseurl}}/art/" class="{% if page.url contains 'art' %}current{% endif %}">Art</a></li>
@@ -31,4 +33,4 @@
     <li><a href="{{site.baseurl}}/photography/" class="{% if page.url contains 'photography' %}current{% endif %}">Photo</a></li>
     <li><a href="{{site.baseurl}}/about/" class="{% if page.url contains 'about' %}current{% endif %}">About</a></li>
   </ul>
-</nav>
+</nav> -->
