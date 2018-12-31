@@ -1,5 +1,5 @@
 ---
-layout: art
+layout: illustration
 title: Curtains
 description: Personal Illustration
 alt: Illustration of woman's silhouette in front of baroquely patterned curtain

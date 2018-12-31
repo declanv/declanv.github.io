@@ -1,5 +1,7 @@
 ---
 layout: art
+categories: illustration
+<!-- type: illustration -->
 title: Just Disappointed
 description: Personal Illustration
 alt: Illustration of Thomas Jefferson face-palming about the current state of politics

@@ -1,14 +1,8 @@
 ---
 layout: default
-title: Art
+title: Illustration
 weight: 2
-subpages: 
-- title: Illustration
-  href: /art/illustration
-- title: Figure Drawings
-  href: /art/figure-drawings
-- title: Other Art
-  href: /art/other-art
+<!-- subpages: Illustration, Figure Drawings, Other Art -->
 custom_css:
 - photoswipe
 - default-skin
@@ -31,8 +25,6 @@ custom_js:
 <div class="projects-container grid">
 
 	<!-- <div class="grid-sizer"></div> -->
-
-
 	{% for art in site.illustrations %}
 
 		{% assign small_img_path = "/assets/images/art/small/" | append: art.small-image %}
