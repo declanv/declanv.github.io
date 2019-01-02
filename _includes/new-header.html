@@ -1,0 +1,13 @@
+<header class="site-header initial {{ page.title | replace: ' ','-' | downcase }}" role="banner">
+
+  <div class="wrapper">
+  
+      <nav class="site-nav">
+      	<ul>
+			{% include site-link.html %}
+			{% include navigation.html context="/" i=0 loopNumber=0 subnav=false lastDepth=0 %}
+      	</ul>
+      </nav>
+  </div>
+
+</header>

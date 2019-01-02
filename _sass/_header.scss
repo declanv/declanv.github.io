@@ -99,15 +99,13 @@
 
 	}
 
-	.trigger {
-		.page-link {
-			position: relative;
-			display: inline-block;
-		    z-index: 2;
-		}
+
+	.page-link {
+		position: relative;
+		display: inline-block;
+	    z-index: 2;
 	}
-
-
+	
 
 	.site-nav {
 		line-height: 25px;
@@ -117,14 +115,22 @@
 
 
 		.site-title-wrapper,
-		.trigger .page-link {
+		.page-link {
 			@include flex(1 0 auto);
 		}
 
 		.site-title,
-		.trigger .page-link {
+		.page-link {
 			// @include flex(1 0 auto);
 			@include nav-button($site-blue, white);
+		}
+
+		.site-title-wrapper {
+			align-self: flex-start;
+		}
+
+		.page-link {
+			align-self: flex-end;
 		}
 
 	}
@@ -140,7 +146,7 @@
   		// background-image: linear-gradient($site-orange, transparent);
 
 		.site-title,
-		.trigger .page-link {
+		.page-link {
 			@include nav-button($site-blue, white);
 		}
 	}
@@ -160,7 +166,7 @@
 
 
 		.site-title,
-		.trigger .page-link {
+		.page-link {
 			@include nav-button($site-blue, $site-orange);
 		}
 
@@ -168,7 +174,7 @@
 		&.relay {
 
 			.site-title,
-			.trigger .page-link {
+			.page-link {
 				@include nav-button($relay-red, $relay-blue);
 			}
 
@@ -183,7 +189,7 @@
 		&.sightseer {
 
 			.site-title,
-			.trigger .page-link {
+			.page-link {
 				// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
 				@include nav-button($sightseer-red, $sightseer-blue);
 			}
@@ -199,7 +205,7 @@
 		&.ritandeclan {
 
 			.site-title,
-			.trigger .page-link {
+			.page-link {
 				// @include web-project($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
 				@include nav-button($ritandeclan-pink, $ritandeclan-blue);
 			}
@@ -214,7 +220,7 @@
 		&.sva-today-builder {
 
 			.site-title,
-			.trigger .page-link {
+			.page-link {
 				// @include web-project($sva-today-red, $sva-today-blue, $sva-today-grey);
 				@include nav-button($sva-today-red, $sva-today-blue);
 			}
@@ -269,7 +275,9 @@
   @include prefix-animation(openSubNav 0.75s ease-in-out forwards);
 }
 
-.nav-w-children {
+
+
+.site-nav li {
 	position: relative;
 	display: inline-block;
 
@@ -333,7 +341,7 @@
 
 
 		.site-title,
-		.trigger .page-link {
+		.page-link {
 			@include nav-button($about-pink, $about-dark-blue);
 		}
 

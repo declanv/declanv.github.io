@@ -1,38 +1,45 @@
 {% capture html %}
-<ul>
-    {% if include.context == "/" %}
-        <li class="{% if page.url == "/" %}active{% endif %}">
-            <a href="{{ site.baseurl }}/">{{ site.title }}</a>
-        </li>
-    {% endif %}
 
-    {% assign entries = site.pages | sort: "weight" %}
+    {% assign entries = site.html_pages | sort: "weight" %}
+
     {% for entry in entries %}
 
-        {% capture slug    %}{{ entry.url | split: "/"   | last                       }}{% endcapture %}
+        {% capture slug %}{{ entry.url | split: "/"   | last }}{% endcapture %}
         {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
         {% assign depth = entry.url | split: '/' | size %}
-		<!-- This will prevent anything deeper than one level of subcategory from showing -->
         {% if current == include.context and depth < 4 %}
             {% unless entry.exclude %}
-                <li class="{% if page.url contains entry.url %}active{% endif %}">
-        			
-                    <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
-                    {% include navigation.html context=entry.url %}
-                </li>
-                {% endunless %}
+                {% assign loopNumber = loopNumber | plus:1 %}
+                {% if depth < 3 %}
+                    {% assign i = i | plus:1 %}
+                    {% if lastDepth == 0 %}
+                        <li>
+                            <a class="page-link link-{{i}} {% if page.url contains entry.url %} active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
+                    {% else if lastDepth > depth %}
+                            </ul> 
+                        </li>
+                        <li>
+                            <a class="page-link link-{{i}} {% if page.url contains entry.url %} active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
+                    {% else if lastDepth == depth %}
+                        </li>
+                        <li>
+                            <a class="page-link link-{{i}} {% if page.url contains entry.url %} active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
+                    {% endif %}         
+                    {% include navigation.html context=entry.url i=i loopNumber=loopNumber subnav=true lastDepth=lastDepth %}
+                {% else %}
+                    {% if lastDepth < depth %}
+                        <ul class="subpages">
+                            <li>
+                                <a class="page-link {% if page.url contains entry.url %}active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
+                            </li>
+                    {% else if lastDepth == depth %}
+                        <li>
+                            <a class="page-link {% if page.url contains entry.url %}active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+                {% assign lastDepth = depth %}
+            {% endunless %}
         {% endif %}
-
     {% endfor %}
-</ul>
 {% endcapture %}{{ html | strip_newlines | replace:'    ','' | replace:'    ','' | replace:'  ',' ' }}
-
-<!-- <nav>
-  <ul class="nav {{include.navclass}}">
-    <li><a href="{{site.baseurl}}/" class="{% if page.url == '/' %}current{% endif %}">Home</a></li>
-    <li><a href="{{site.baseurl}}/art/" class="{% if page.url contains 'art' %}current{% endif %}">Art</a></li>
-    <li><a href="{{site.baseurl}}/web/" class="{% if page.url contains 'web' %}current{% endif %}">Web</a></li>
-    <li><a href="{{site.baseurl}}/photography/" class="{% if page.url contains 'photography' %}current{% endif %}">Photo</a></li>
-    <li><a href="{{site.baseurl}}/about/" class="{% if page.url contains 'about' %}current{% endif %}">About</a></li>
-  </ul>
-</nav> -->
