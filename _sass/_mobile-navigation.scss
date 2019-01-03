@@ -22,6 +22,7 @@
 				@include display-flex();
 				@include flex-direction-row();
 				@include justify-content-space-between();
+				width: 100%;
 
 				.site-title {
 					@incude flex(2 1 auto);
@@ -42,7 +43,8 @@
 
 						position: relative;
 						height: 100%;
-						padding: 5px 12px;
+						// padding: 5px 12px;
+						padding: 6px 14px 12px 5px;
 						border-radius: 50% 50% 50% 50%;
 						box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
 						background-color: transparent;
@@ -50,7 +52,6 @@
 						&.touched {
 							@include closeMobileNav();
 						}
-
 
 						&:hover,
 						&:active {
@@ -100,6 +101,8 @@
 
 		&.open-mobile {
 			height: 100%;
+			padding-top: 0;
+
 			.wrapper {
 
 				height: 100%;
@@ -109,12 +112,13 @@
 					@include flex-direction-column();
 
 					.site-title-wrapper {
-						padding: 0 15px;
+						padding: 10px 15px 0 15px;
 						#menu {
 							background-color: black;
+							display: inline-block;
 
 							@include openMobileNav();
-							padding: 13px 12px;
+							padding: 12px 46px 0 0;
 
 							.hamburger {
 								transform: rotate(45deg);
@@ -133,7 +137,8 @@
 
 					.trigger.box {
 						@include flex(2 1 auto);
-						display: block;
+						@include display-flex();
+						@include flex-direction-column();
 
 						&.subnav-open {
 							.page-link {
@@ -145,7 +150,7 @@
 						.page-link,
 						.nav-w-children {
 							display: block;
-							margin: 15% 0;
+							margin: 9% 0;
 							padding-bottom: 5%;
 							text-align: center;
 							opacity: 0;
