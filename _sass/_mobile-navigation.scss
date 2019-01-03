@@ -111,6 +111,19 @@
 				.site-nav {
 					@include flex-direction-column();
 
+
+					li {
+
+						&:hover {
+							.subpages {
+								display: none;
+								// visibility: none;
+								// opacity: 0;									
+							}
+						}
+
+					}
+
 					.site-title-wrapper {
 						padding: 10px 15px 0 15px;
 						#menu {
