@@ -63,7 +63,8 @@ $( document ).ready(function() {
       }
     });
 
-    $('.nav-w-children .page-link').on('click', function(e) {
+    $('.subpages').siblings('.page-link').on('click', function(e) {
+
       e.preventDefault();
 
       $(this).addClass('selected');
@@ -72,7 +73,7 @@ $( document ).ready(function() {
 
       $(this).siblings('.subpages').addClass('open');
       $(this).siblings('.subpages').removeClass('closing-subnav');
-      clickOutsideClose();
+      // clickOutsideClose();
 
     })
   }
