@@ -1,9 +1,11 @@
+  {% assign type = include.type %}
+
   {% for art in site.pages %}
 
     {% if art.type contains include.type | split: ", " %}
 
-      {% assign small_img_path = "/assets/images/art/small/" | append: art.small-image %}
-      {% assign large_img_path = "/assets/images/art/large/" | append: art.large-image %}
+      {% assign small_img_path = "/assets/images/art/" | append: type | append: "/small/" | append: art.small-image %}
+      {% assign large_img_path = "/assets/images/art/" | append: type | append: "/large/" | append: art.large-image %}
 
       <!-- <div class="art-project grid-item"> -->
         <figure class="img-container art-project grid-item">
