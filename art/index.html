@@ -22,14 +22,17 @@ custom_js:
 - photoswipe-ui-default.min
 ---
 
-<div class="section-title">
+<!-- <div class="section-title">
 	<h4>
 		Art
 	</h4>
 </div>	
-
+ -->
 <div class="projects-container grid">
-	{% include art-list.html type='art' %}
+
+	{% include art-list.html type='figure-drawing' %}	
+	{% include art-list.html type='illustration' %}	
+	
 </div>
 
 {% include photoswipe.html %}
