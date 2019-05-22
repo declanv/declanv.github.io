@@ -433,356 +433,365 @@ $( document ).ready(function() {
     }
   };
 
-  var transitionContainer = $("#transition-shape");  
-
-  defaultTransitionColor = '#ffffff';
-  currentTransitionColor = defaultTransitionColor;
-
-  Barba.Dispatcher.on('linkClicked', function(el) {
-
-    currentTransitionColor = defaultTransitionColor;
-
-    console.log("here is the el being clicked: ", el);
-
-    if (el.dataset.hex !== null && el.dataset.hex !== undefined) {
-      currentTransitionColor = el.dataset.hex;
-    } else {
-      currentTransitionColor = defaultTransitionColor;
-    }
-
+  $('.grid').masonry({
+    // itemSelector: '.grid-item',
+    // columnWidth: '.grid-sizer',
+    // columnWidth: 300,
+    percentPosition: true,
+    // fitWidth: true,
+    gutter: 30
   });
 
-  var FadeTransition = Barba.BaseTransition.extend({
-    start: function() {
-      /**
-       * This function is automatically called as soon the Transition starts
-       * this.newContainerLoading is a Promise for the loading of the new container
-       * (Barba.js also comes with an handy Promise polyfill!)
-       */
+  // var transitionContainer = $("#transition-shape");
+  //
+  // defaultTransitionColor = '#ffffff';
+  // currentTransitionColor = defaultTransitionColor;
+  //
+  // Barba.Dispatcher.on('linkClicked', function(el) {
+  //
+  //   currentTransitionColor = defaultTransitionColor;
+  //
+  //   console.log("here is the el being clicked: ", el);
+  //
+  //   if (el.dataset.hex !== null && el.dataset.hex !== undefined) {
+  //     currentTransitionColor = el.dataset.hex;
+  //   } else {
+  //     currentTransitionColor = defaultTransitionColor;
+  //   }
+  //
+  // });
 
-      // As soon the loading is finished and the old page is faded out, let's fade the new page
-      Promise
-        .all([this.newContainerLoading, this.fadeOut()])
-        .then(this.fadeIn.bind(this));
-    },
-
-    fadeOut: function() {
-      /**
-       * this.oldContainer is the HTMLElement of the old Container
-       */
-      // $('body').removeClass('transition');
-      console.log('here is what the background color will look like: ', '#' + currentTransitionColor);
-      transitionContainer.removeClass('transition-out');
-      transitionContainer.addClass('transition-in');
-      transitionContainer.css('background-color', '#' + currentTransitionColor);
-
-      return $(this.oldContainer).animate({ opacity: 0 }, 800, function() {}).promise();
-
-    },
-
-    fadeIn: function() {
-      /**
-       * this.newContainer is the HTMLElement of the new Container
-       * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-       * Please note, newContainer is available just after newContainerLoading is resolved!
-       */
-
-      var _this = this;
-
-
-      var $el = $(this.newContainer);
-
-      $(this.oldContainer).hide();
-
-      // $('header').addClass('initial');
-      $(window).scrollTop(0);
-
-      fadeHeader();
-      // mobileMenuClick();  
-
-      // $('body').addClass('transition');
-
-
-
-      // transitionContainer.show();
-      transitionContainer.removeClass('transition-in');
-      transitionContainer.addClass('transition-out');
-
-      $el.css({
-        visibility : 'visible',
-        opacity : 0
-      });
-      // transitionContainer.addClass('.transition-in');
-
-      $el.animate({ opacity: 1 }, 800, function() {
-        /**
-         * Do not forget to call .done() as soon your transition is finished!
-         * .done() will automatically remove from the DOM the old Container
-         */
-
-
-        _this.done(function() {
-        });
-      });
-
-      // the view could contain the hex value we'll use for the background color of the transition container.
-      //  Then we'll animate it over, using css. Since the animation will be the same each time, hopefully we can make it work with css
-      //  and avoid needing to use js to manipulate an svg or something...
-
-    },
-    finish: function() {
-
-    }
-  });
+  // var FadeTransition = Barba.BaseTransition.extend({
+  //   start: function() {
+  //     /**
+  //      * This function is automatically called as soon the Transition starts
+  //      * this.newContainerLoading is a Promise for the loading of the new container
+  //      * (Barba.js also comes with an handy Promise polyfill!)
+  //      */
+  //
+  //     // As soon the loading is finished and the old page is faded out, let's fade the new page
+  //     Promise
+  //       .all([this.newContainerLoading, this.fadeOut()])
+  //       .then(this.fadeIn.bind(this));
+  //   },
+  //
+  //   fadeOut: function() {
+  //     /**
+  //      * this.oldContainer is the HTMLElement of the old Container
+  //      */
+  //     // $('body').removeClass('transition');
+  //     console.log('here is what the background color will look like: ', '#' + currentTransitionColor);
+  //     transitionContainer.removeClass('transition-out');
+  //     transitionContainer.addClass('transition-in');
+  //     transitionContainer.css('background-color', '#' + currentTransitionColor);
+  //
+  //     return $(this.oldContainer).animate({ opacity: 0 }, 800, function() {}).promise();
+  //
+  //   },
+  //
+  //   fadeIn: function() {
+  //     /**
+  //      * this.newContainer is the HTMLElement of the new Container
+  //      * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+  //      * Please note, newContainer is available just after newContainerLoading is resolved!
+  //      */
+  //
+  //     var _this = this;
+  //
+  //
+  //     var $el = $(this.newContainer);
+  //
+  //     $(this.oldContainer).hide();
+  //
+  //     // $('header').addClass('initial');
+  //     $(window).scrollTop(0);
+  //
+  //     fadeHeader();
+  //     // mobileMenuClick();
+  //
+  //     // $('body').addClass('transition');
+  //
+  //
+  //
+  //     // transitionContainer.show();
+  //     transitionContainer.removeClass('transition-in');
+  //     transitionContainer.addClass('transition-out');
+  //
+  //     $el.css({
+  //       visibility : 'visible',
+  //       opacity : 0
+  //     });
+  //     // transitionContainer.addClass('.transition-in');
+  //
+  //     $el.animate({ opacity: 1 }, 800, function() {
+  //       /**
+  //        * Do not forget to call .done() as soon your transition is finished!
+  //        * .done() will automatically remove from the DOM the old Container
+  //        */
+  //
+  //
+  //       _this.done(function() {
+  //       });
+  //     });
+  //
+  //     // the view could contain the hex value we'll use for the background color of the transition container.
+  //     //  Then we'll animate it over, using css. Since the animation will be the same each time, hopefully we can make it work with css
+  //     //  and avoid needing to use js to manipulate an svg or something...
+  //
+  //   },
+  //   finish: function() {
+  //
+  //   }
+  // });
 
   /**
    * Next step, you have to tell Barba to use the new Transition
    */
 
-  Barba.Pjax.getTransition = function() {
-    /**
-     * Here you can use your own logic!
-     * For example you can use different Transition based on the current page or link...
-     */
-
-    console.log('in transition');
-
-    return FadeTransition;
-
-  };
-
-  Barba.Dispatcher.on('newPageReady', function() {
-    scrollToShow();
-    fadeHeader();
-    updateBodyLink(this.namespace);
-
-    // mobileMenuClick();
-    // $('.grid').masonry({
-    //   // itemSelector: '.grid-item',
-    //   // columnWidth: '.grid-sizer',
-    //   // columnWidth: 300,
-    //   percentPosition: true,
-    //   // fitWidth: true,
-    //   gutter: 30
-    // });
-    // initPhotoSwipeFromDOM('.projects-container');
-  })
-
-
-  var updateBodyLink = function (name) {
-
-    $('body').removeClass();
-    $('body').addClass(name);
-
-    console.log("body link updated to: ", name);
-
-  }
-
-  var Homepage = Barba.BaseView.extend({
-    namespace: 'home',
-    onEnter: function() {
-
-      console.log("alright, the homepage view is ready")
-      updateBodyLink(this.namespace);
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function(namespace) {
-        // The Transition has just finished.
-      console.log("alright, the homepage view enter has completed. here is the namespace: ", this.namespace);
-      mobileMenuClick();
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the homepage view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-  var About = Barba.BaseView.extend({
-    namespace: 'about',
-    onEnter: function() {
-
-      console.log("alright, the about view is ready")
-      updateBodyLink(this.namespace);
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function() {
-        // The Transition has just finished.
-      console.log("alright, the about view enter has completed")
-      mobileMenuClick();
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the about view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-  var Web = Barba.BaseView.extend({
-    namespace: 'web',
-    onEnter: function() {
-
-      console.log("alright, the web view is ready")
-      updateBodyLink(this.namespace);
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function() {
-        // The Transition has just finished.
-      console.log("alright, the web view enter has completed")
-      mobileMenuClick();
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the web view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-  var Photo = Barba.BaseView.extend({
-    namespace: 'photo',
-    onEnter: function() {
-
-      console.log("alright, the photo view is ready")
-      updateBodyLink(this.namespace);
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function() {
-        // The Transition has just finished.
-      console.log("alright, the photo view enter has completed")
-      mobileMenuClick();
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the photo view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-  var Art = Barba.BaseView.extend({
-    namespace: 'art',
-    onEnter: function() {
-
-      console.log("alright, the art view is ready")
-        updateBodyLink(this.namespace);
-
-    console.log('here is what the body currently looks like: ', $('body'));
-      // updateBodyLink(this.namespace);
-      // $('.grid').masonry({
-      //   // itemSelector: '.grid-item',
-      //   // columnWidth: '.grid-sizer',
-      //   // columnWidth: 300,
-      //   percentPosition: true,
-      //   // fitWidth: true,
-      //   gutter: 30
-      // });
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function() {
-        // The Transition has just finished.
-      console.log("alright, the art view enter has completed")
-      console.log("here is the namespace", this.namespace);
-
-      // initPhotoSwipeFromDOM('.projects-container');
-
-      // For some reason, just the art namespace needs to be added in onEnterCompleted 
-      // mobileMenuClick();
-
-        initPhotoSwipeFromDOM('.projects-container');
+  // Barba.Pjax.getTransition = function() {
+  //   /**
+  //    * Here you can use your own logic!
+  //    * For example you can use different Transition based on the current page or link...
+  //    */
+  //
+  //   console.log('in transition');
+  //
+  //   return FadeTransition;
+  //
+  // };
+  //
+  // Barba.Dispatcher.on('newPageReady', function() {
+  //   scrollToShow();
+  //   fadeHeader();
+  //   updateBodyLink(this.namespace);
+  //
+  //   // mobileMenuClick();
+  //   // $('.grid').masonry({
+  //   //   // itemSelector: '.grid-item',
+  //   //   // columnWidth: '.grid-sizer',
+  //   //   // columnWidth: 300,
+  //   //   percentPosition: true,
+  //   //   // fitWidth: true,
+  //   //   gutter: 30
+  //   // });
+  //   // initPhotoSwipeFromDOM('.projects-container');
+  // })
 
 
-        $('.grid').masonry({
-            // itemSelector: '.grid-item',
-            // columnWidth: '.grid-sizer',
-            // columnWidth: 300,
-            percentPosition: true,
-            // fitWidth: true,
-            gutter: 30
-        });
+  // var updateBodyLink = function (name) {
+  //
+  //   $('body').removeClass();
+  //   $('body').addClass(name);
+  //
+  //   console.log("body link updated to: ", name);
+  //
+  // }
 
-        // $('.grid').imagesLoaded().done( function( instance ) {
-        //     console.log('all images successfully loaded');
-        //
-        //     initPhotoSwipeFromDOM('.projects-container');
-        //
-        //
-        //     $('.grid').masonry({
-        //         // itemSelector: '.grid-item',
-        //         // columnWidth: '.grid-sizer',
-        //         // columnWidth: 300,
-        //         percentPosition: true,
-        //         // fitWidth: true,
-        //         gutter: 30
-        //     });
-        //
-        // })
-        // .always( function( instance ) {
-        //     console.log('all images loaded');
-        // })
+  // var Homepage = Barba.BaseView.extend({
+  //   namespace: 'home',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the homepage view is ready")
+  //     updateBodyLink(this.namespace);
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function(namespace) {
+  //       // The Transition has just finished.
+  //     console.log("alright, the homepage view enter has completed. here is the namespace: ", this.namespace);
+  //     mobileMenuClick();
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the homepage view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
 
-        // .fail( function() {
-        //     console.log('all images loaded, at least one is broken');
-        // })
-        // .progress( function( instance, image ) {
-        //     var result = image.isLoaded ? 'loaded' : 'broken';
-        //     console.log( 'image is ' + result + ' for ' + image.img.src );
-        // });
+  // var About = Barba.BaseView.extend({
+  //   namespace: 'about',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the about view is ready")
+  //     updateBodyLink(this.namespace);
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function() {
+  //       // The Transition has just finished.
+  //     console.log("alright, the about view enter has completed")
+  //     mobileMenuClick();
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the about view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
 
-      // $('.grid').masonry({
-      //   // itemSelector: '.grid-item',
-      //   // columnWidth: '.grid-sizer',
-      //   // columnWidth: 300,
-      //   percentPosition: true,
-      //   // fitWidth: true,
-      //   gutter: 30
-      // });
-      // initPhotoSwipeFromDOM('.projects-container');
-      mobileMenuClick();
-      
+  // var Web = Barba.BaseView.extend({
+  //   namespace: 'web',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the web view is ready")
+  //     updateBodyLink(this.namespace);
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function() {
+  //       // The Transition has just finished.
+  //     console.log("alright, the web view enter has completed")
+  //     mobileMenuClick();
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the web view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
 
-    },
-    onLeave: function() {
+  // var Photo = Barba.BaseView.extend({
+  //   namespace: 'photo',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the photo view is ready")
+  //     updateBodyLink(this.namespace);
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function() {
+  //       // The Transition has just finished.
+  //     console.log("alright, the photo view enter has completed")
+  //     mobileMenuClick();
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the photo view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
 
-      console.log("alright, we are leaving the art view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-Homepage.init();
-Art.init();
-Web.init();
-Photo.init();
-About.init();
-
-Barba.Pjax.start();
+//   var Art = Barba.BaseView.extend({
+//     namespace: 'art',
+//     onEnter: function() {
+//
+//       console.log("alright, the art view is ready")
+//         updateBodyLink(this.namespace);
+//
+//     console.log('here is what the body currently looks like: ', $('body'));
+//       // updateBodyLink(this.namespace);
+//       // $('.grid').masonry({
+//       //   // itemSelector: '.grid-item',
+//       //   // columnWidth: '.grid-sizer',
+//       //   // columnWidth: 300,
+//       //   percentPosition: true,
+//       //   // fitWidth: true,
+//       //   gutter: 30
+//       // });
+//
+//         // The new Container is ready and attached to the DOM.
+//     },
+//     onEnterCompleted: function() {
+//         // The Transition has just finished.
+//       console.log("alright, the art view enter has completed")
+//       console.log("here is the namespace", this.namespace);
+//
+//       // initPhotoSwipeFromDOM('.projects-container');
+//
+//       // For some reason, just the art namespace needs to be added in onEnterCompleted
+//       // mobileMenuClick();
+//
+//         initPhotoSwipeFromDOM('.projects-container');
+//
+//
+//         $('.grid').masonry({
+//             // itemSelector: '.grid-item',
+//             // columnWidth: '.grid-sizer',
+//             // columnWidth: 300,
+//             percentPosition: true,
+//             // fitWidth: true,
+//             gutter: 30
+//         });
+//
+//         // $('.grid').imagesLoaded().done( function( instance ) {
+//         //     console.log('all images successfully loaded');
+//         //
+//         //     initPhotoSwipeFromDOM('.projects-container');
+//         //
+//         //
+//         //     $('.grid').masonry({
+//         //         // itemSelector: '.grid-item',
+//         //         // columnWidth: '.grid-sizer',
+//         //         // columnWidth: 300,
+//         //         percentPosition: true,
+//         //         // fitWidth: true,
+//         //         gutter: 30
+//         //     });
+//         //
+//         // })
+//         // .always( function( instance ) {
+//         //     console.log('all images loaded');
+//         // })
+//
+//         // .fail( function() {
+//         //     console.log('all images loaded, at least one is broken');
+//         // })
+//         // .progress( function( instance, image ) {
+//         //     var result = image.isLoaded ? 'loaded' : 'broken';
+//         //     console.log( 'image is ' + result + ' for ' + image.img.src );
+//         // });
+//
+//       // $('.grid').masonry({
+//       //   // itemSelector: '.grid-item',
+//       //   // columnWidth: '.grid-sizer',
+//       //   // columnWidth: 300,
+//       //   percentPosition: true,
+//       //   // fitWidth: true,
+//       //   gutter: 30
+//       // });
+//       // initPhotoSwipeFromDOM('.projects-container');
+//       mobileMenuClick();
+//
+//
+//     },
+//     onLeave: function() {
+//
+//       console.log("alright, we are leaving the art view")
+//
+//         // A new Transition toward a new page has just started.
+//     },
+//     onLeaveCompleted: function() {
+//         // The Container has just been removed from the DOM.
+//     }
+//   });
+//
+// Homepage.init();
+// Art.init();
+// Web.init();
+// Photo.init();
+// About.init();
+//
+// Barba.Pjax.start();
 // mobileMenuClick();
 
 
