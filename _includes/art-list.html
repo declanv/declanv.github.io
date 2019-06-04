@@ -1,4 +1,5 @@
   {% assign type = include.type %}
+  {% assign section = include.section | append: "/" %}
 <!--   <div class="section-title">
     <h4>
       {{type | replace: "-", " "}}
@@ -9,8 +10,8 @@
 
     {% if art.type contains include.type | split: ", " %}
 
-      {% assign small_img_path = "/assets/images/art/" | append: type | append: "/small/" | append: art.small-image %}
-      {% assign large_img_path = "/assets/images/art/" | append: type | append: "/large/" | append: art.large-image %}
+      {% assign small_img_path = "/assets/images/" | append: section | append: type | append: "/small/" | append: art.small-image %}
+      {% assign large_img_path = "/assets/images/" | append: section | append: type | append: "/large/" | append: art.large-image %}
 
       <!-- <div class="art-project grid-item"> -->
         <figure class="img-container art-project grid-item">
