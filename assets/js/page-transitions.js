@@ -682,6 +682,60 @@ $( document ).ready(function() {
     }
   });
 
+  var Holga = Barba.BaseView.extend({
+    namespace: 'holga',
+    onEnter: function() {
+
+      console.log("alright, the holga view is ready")
+      updateBodyLink(this.namespace);
+
+        // The new Container is ready and attached to the DOM.
+    },
+    onEnterCompleted: function() {
+        // The Transition has just finished.
+      console.log("alright, the photo view enter has completed")
+      mobileMenuClick();
+
+        $('.grid').imagesLoaded().done( function( instance ) {
+            console.log('all images successfully loaded');
+
+        })
+            .always( function( instance ) {
+                console.log('all images loaded');
+                initPhotoSwipeFromDOM('.projects-container');
+
+
+                $('.grid').masonry({
+                    // itemSelector: '.grid-item',
+                    // columnWidth: '.grid-sizer',
+                    // columnWidth: 300,
+                    percentPosition: true,
+                    // fitWidth: true,
+                    gutter: 30
+                });
+            })
+
+            .fail( function() {
+                console.log('all images loaded, at least one is broken');
+            })
+            .progress( function( instance, image ) {
+                var result = image.isLoaded ? 'loaded' : 'broken';
+                console.log( 'image is ' + result + ' for ' + image.img.src );
+
+            });
+
+    },
+    onLeave: function() {
+
+      console.log("alright, we are leaving the holga view")
+
+        // A new Transition toward a new page has just started.
+    },
+    onLeaveCompleted: function() {
+        // The Container has just been removed from the DOM.
+    }
+  });
+
   var Art = Barba.BaseView.extend({
     namespace: 'art',
     onEnter: function() {
@@ -871,7 +925,7 @@ $( document ).ready(function() {
   });
 
   var FigureDrawings = Barba.BaseView.extend({
-    namespace: 'figuredrawings',
+    namespace: 'figure drawings',
     onEnter: function() {
 
       console.log("alright, the figureDrawings view is ready")
@@ -970,6 +1024,7 @@ Illustration.init();
 FigureDrawings.init();
 Web.init();
 Photo.init();
+Holga.init();
 About.init();
 
 Barba.Pjax.start();
