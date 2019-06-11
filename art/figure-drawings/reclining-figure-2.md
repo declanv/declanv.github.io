@@ -7,6 +7,6 @@ alt: Drawing of a nude reclining woman.
 medium: Vine Charcoal and white Nupastel on grey paper
 large-image: reclining-figure-3-13-14-large.jpg
 small-image: reclining-figure-3-13-14-small.jpg
-size: 1981×1371
+size: 1981x1371
 ---
 

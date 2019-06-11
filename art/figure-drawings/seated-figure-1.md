@@ -7,5 +7,5 @@ alt: Drawing of a nude seated woman.
 medium: Vine Charcoal and white Nupastel on grey paper
 large-image: seated-figure-2014-large.jpg
 small-image: seated-figure-2014-small.jpg
-size: 1546×2035
+size: 1546x2035
 ---
