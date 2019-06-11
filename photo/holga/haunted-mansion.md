@@ -7,5 +7,5 @@ alt: Double exposure of a bright yellow flowering bush over a dark blue sky with
 medium: Medium Format Photograph Print
 large-image: haunted-mansion-large.jpg
 small-image: haunted-mansion-small.jpg
-size: 1006×1000
+size: 1000x1006
 ---

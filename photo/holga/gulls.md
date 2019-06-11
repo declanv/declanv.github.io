@@ -7,5 +7,5 @@ alt: A double exposure of seagulls flying
 medium: Medium Format Photograph Print 
 large-image: gulls.jpg
 small-image: gulls.jpg
-size: 1000x1005
+size: 1005x1000
 ---
