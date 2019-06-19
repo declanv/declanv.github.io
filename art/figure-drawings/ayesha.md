@@ -1,7 +1,9 @@
 ---
-layout: illustration
+layout: art
 title: Reclining Figure
-type: art, figure-drawing
+section: art
+type: figure-drawing
+home: true
 description: Figure Drawing of Ayesha from April 26th, 2014.
 alt: Drawing of a nude seated woman.
 medium: Vine Charcoal and white Nupastel on grey paper

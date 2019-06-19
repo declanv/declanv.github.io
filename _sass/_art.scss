@@ -44,6 +44,14 @@
 			display: block;
 			// max-width: 50%;
 			// max-height: 50%;
+
+
+			&.lazy {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: auto;
+			}
 		}
 	}
 }

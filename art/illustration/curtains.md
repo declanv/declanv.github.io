@@ -1,7 +1,7 @@
 ---
 layout: illustration
 title: Curtains
-type: art, illustration
+type: art, illustration, home
 description: Personal Illustration
 alt: Illustration of woman's silhouette in front of baroquely patterned curtain
 medium: Silkscreen print 

@@ -75,8 +75,6 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 h: parseInt(size[1], 10)
             };
 
-
-
             if(figureEl.children.length > 1) {
                 // <figcaption> content
                 item.title = figureEl.children[1].innerHTML; 
@@ -228,6 +226,16 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         // Pass data to PhotoSwipe and initialize it
         gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+
+        gallery.listen('gettingData', function(index, item) {
+            console.log("okay, i'm inside the gallery listen function");
+            if(index === 0) {
+                console.log('here is the item in the gallery listen function:', item);
+                item.html = '<div>Dynamically generated HTML ' + Math.random() + '</div>';
+            }
+
+        });
+
         gallery.init();
     };
 

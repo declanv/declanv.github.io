@@ -689,6 +689,9 @@ $( document ).ready(function() {
       console.log("alright, the holga view is ready")
       updateBodyLink(this.namespace);
 
+        $('.grid').css("background-color: black;");
+
+
         // The new Container is ready and attached to the DOM.
     },
     onEnterCompleted: function() {
@@ -696,8 +699,13 @@ $( document ).ready(function() {
       console.log("alright, the photo view enter has completed")
       mobileMenuClick();
 
+        //Begin loading animation:
+
+
         $('.grid').imagesLoaded().done( function( instance ) {
             console.log('all images successfully loaded');
+
+            $('.grid').show();
 
         })
             .always( function( instance ) {
