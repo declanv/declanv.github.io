@@ -39,18 +39,21 @@
 		// height: auto;
 		// padding: 9px;
 		@include border-box();
+
+		overflow: hidden;
 		.image {
 			position: relative;
 			display: block;
 			// max-width: 50%;
 			// max-height: 50%;
 
-
 			&.lazy {
 				position: relative;
 				display: block;
 				width: 100%;
 				height: auto;
+				filter: blur(18px);
+				transform: scale(1.1);
 			}
 		}
 	}
