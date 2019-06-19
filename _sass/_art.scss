@@ -41,6 +41,8 @@
 		@include border-box();
 
 		overflow: hidden;
+
+
 		.image {
 			position: relative;
 			display: block;
@@ -56,8 +58,15 @@
 				transform: scale(1.1);
 			}
 
+		}
+
+		a {
 			&.unblur {
-				@include unBlur(0s, 0s);
+				padding-bottom: 0;
+				.image {
+					@include unBlur(0s, 0s);
+				}
+
 			}
 		}
 	}

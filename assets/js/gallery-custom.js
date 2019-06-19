@@ -14,7 +14,9 @@ $(function() {
                     if (entry.isIntersecting) {
                         var lazyImage = entry.target;
                         lazyImage.src = lazyImage.dataset.src;
-                        lazyImage.classList.add('unblur');
+                        $lazyImage = $(lazyImage);
+                        $lazyImage.parent().addClass('unblur');
+                        // lazyImage.classList.add('unblur');
                         lazyImageObserver.unobserve(lazyImage);
                     }
                 });
