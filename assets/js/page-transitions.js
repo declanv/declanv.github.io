@@ -705,13 +705,11 @@ $( document ).ready(function() {
         $('.grid').imagesLoaded().done( function( instance ) {
             console.log('all images successfully loaded');
 
-            $('.grid').show();
+            $('.grid').addClass("fade-in-grid");
 
         })
             .always( function( instance ) {
                 console.log('all images loaded');
-                initPhotoSwipeFromDOM('.projects-container');
-
 
                 $('.grid').masonry({
                     // itemSelector: '.grid-item',
@@ -721,6 +719,10 @@ $( document ).ready(function() {
                     // fitWidth: true,
                     gutter: 30
                 });
+
+                imageOptimizer();
+                initPhotoSwipeFromDOM('.projects-container');
+
             })
 
             .fail( function() {

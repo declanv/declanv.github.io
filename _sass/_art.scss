@@ -6,9 +6,18 @@
 
 .grid {
 	position: relative;
-	display: block;
+	display: none;
+	opacity: 0;
 	margin: 0 auto;
 	width: 100%;
+
+	//&.hide {
+	//	display: none;
+	//}
+
+	&.fade-in-grid {
+		@include fadeInGrid(1s, 1s);
+	}
 
 	@media (min-width: 985px) {
 		max-width: 985px;
