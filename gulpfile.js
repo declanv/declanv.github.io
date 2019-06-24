@@ -32,7 +32,7 @@ var files = {
 	 	 		jsVendor + 'barba.min.js'
  	 		],
 			custom: [
-				js + 'gallery-custom.js',
+				// js + 'gallery-custom.js',
 				js + 'masonry-custom.js',
 				js + 'scroll-into-view.js',
 				js + 'image-optimizer.js',
@@ -45,7 +45,7 @@ var files = {
 	 	 		jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe-ui-default.min.js',
 	 	 		jsVendor + 'barba.min.js',
-				js + 'gallery-custom.js',
+				// js + 'gallery-custom.js',
 				js + 'masonry-custom.js',
 				js + 'scroll-into-view.js',
 				js + 'image-optimizer.js',

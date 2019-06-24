@@ -257,8 +257,6 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 initPhotoSwipeFromDOM('.projects-container');
 
 
-
-
 });
 
 

@@ -1,6 +1,6 @@
 ---
 layout: illustration
-title: Stump
+title: Tomatoes
 type: photo, holga
 description: Personal Photograph
 alt: Double exposure of tomatoes in containers
