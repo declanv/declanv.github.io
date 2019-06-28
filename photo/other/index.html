@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Other
-weight: 3
+weight: 2
 <!-- subpages: Illustration, Figure Drawings, Other Art -->
 custom_css:
 - photoswipe
@@ -16,14 +16,8 @@ custom_js:
 - photoswipe-ui-default.min
 ---
 
-<!-- <div class="section-title">
-	<h4>
-		Illustration
-	</h4>
-</div>	 -->
-
-<div class="projects-container grid">
-	{% include art-list.html type='illustration' %}
+<div class="projects-container grid hide">
+	{% include art-list.html section='photo' type='other' %}
 </div>
 
 {% include photoswipe.html %}

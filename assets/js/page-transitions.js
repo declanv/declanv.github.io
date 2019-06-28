@@ -844,8 +844,9 @@ $( document ).ready(function() {
 
 var galleryViews  = {
       'Holga': 'holga',
-      'FigureDrawings': 'figure-drawings',
-      'Illustration': 'illustration'
+      'FigureDrawings': 'figure drawings',
+      'Illustration': 'illustration',
+      'Other': 'other'
 }
 
 $.each(galleryViews, function(galleryView, galleryNamespace){
