@@ -4,11 +4,11 @@ title: Art
 weight: 2
 subpages: 
 - title: Illustration
+  type: illustration
   href: /illustration
 - title: Figure Drawings
+  type: figure-drawing
   href: /figure-drawings
-- title: Other Art
-  href: /other-art
 custom_css:
 - photoswipe
 - default-skin
@@ -22,17 +22,41 @@ custom_js:
 - photoswipe-ui-default.min
 ---
 
-<!-- <div class="section-title">
+<div class="section-title">
 	<h4>
 		Art
 	</h4>
-</div>	
- -->
+</div>
+
+<h5>
+    Illustration
+</h5>
+
 <div class="projects-container grid">
 
-	{% include art-list.html type='figure-drawing' %}	
-	{% include art-list.html type='illustration' %}	
-	
+    {% include art-list.html section='art' type='illustration' %}
+</div>
+
+<h5>
+    Figure Drawings
+</h5>
+
+<div class="projects-container grid">
+
+    {% include art-list.html section='art' type='figure-drawing' %}
+</div>
+
+
+<div class="projects-container grid">
+{% comment %}
+    {% for subpage in page.subpages %}-->
+        <h3>{{ subpage.title }}</h3>
+            {% include art-list.html section='art' type='{{subpage.type}}' %}
+    {% endfor %}
+{% endcomment %}
+
+
+
 </div>
 
 {% include photoswipe.html %}
