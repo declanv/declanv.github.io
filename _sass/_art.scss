@@ -85,5 +85,44 @@
 			display: none;
 		}
 
+		&.project {
+			overflow: hidden;
+			figcaption {
+				position: absolute;
+				display: block;
+				@include body-font();
+				bottom: 0;
+				width: 100%;
+				background-color: white;
+				color: #fff;
+				text-align: center;
+				transform: translateY(200%);
+			}
+			&:hover {
+				figcaption {
+					@include raiseProjectLink(0.1s, 0.2s);
+				}
+
+				.project-link {
+					padding: 10px;
+					@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));
+
+					&:hover {
+						background-color: darkgrey;
+						color: white;
+						cursor: pointer;
+						a {
+							color: white;
+							cursor: pointer;
+						}
+					}
+					a:hover {
+						text-decoration: none;
+					}
+				}
+
+			}
+		}
+
 	}
 }

@@ -55,6 +55,7 @@
 @include font-face("MedulaOne", "../fonts/MedulaOne-Regular", 800, italic, ttf);
 
 @include font-face("Tofino-Regular", "../fonts/TofinoProPersonalWide-Regular", 400, normal, otf);
+@include font-face("Tofino-Wide", "../fonts/TofinoProPersonalWide-Thin", 400, normal, otf);
 @include font-face("Tofino-Semibold", "../fonts/TofinoProPersonalCond-Semibold", 800, bold, otf);
 @include font-face("Tofino-Light", "../fonts/TofinoProPersonalCond-Light", 100, bold, otf);
 @include font-face("Tofino-Medium", "../fonts/TofinoProPersonalCond-Medium", 300, bold, otf);
@@ -75,6 +76,11 @@
 
 @mixin body-font() {
   font-family: Tofino-Regular, sans-serif;
+  font-size: 19px;
+}
+
+@mixin body-font-wide() {
+  font-family: Tofino-Wide, sans-serif;
   font-size: 19px;
 }
 
@@ -868,6 +874,29 @@
     transform: scale(1);
     opacity: 1;
   }
+}
+
+@keyframes raiseProjectLink {
+  0% {
+    transform: translateY(200%);
+  }
+  50% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+
+//@mixin fadeInGrid($delay, $time) {
+//  display: block;
+//  opacity: 0;
+//  @include prefix-animation(fadeInGrid $delay $time cubic-bezier(0.65,.01, 0.26, 0.98) forwards);
+//}
+
+@mixin raiseProjectLink($delay, $time) {
+  @include prefix-animation(raiseProjectLink $delay $time cubic-bezier(0.01, 0.97, 0.45, 1) forwards);
 }
 
 @mixin fadeInGrid($delay, $time) {

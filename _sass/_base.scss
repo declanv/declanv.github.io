@@ -71,10 +71,39 @@ body {
 }
 
 .section-title {
+	@include body-font-wide();
 	font-size: 40px;
 	text-transform: uppercase;
+	text-align: left;
+	letter-spacing: 2px;
+	color: grey;
 	h4 {
 		font-weight: 900;
+	}
+}
+
+hr {
+	margin: 10px -100% 20px;
+	border: none;
+	//border-top: 3px double lightgrey;
+	border-top: 2px solid lightgrey;
+	color: lightgrey;
+	overflow: visible;
+	text-align: center;
+	height: 10px;
+}
+
+.subsection-title {
+	@include body-font-wide();
+	text-align: left;
+	margin: 150px 0 25px;
+
+	&:first-of-type {
+		margin-top: 50px;
+	}
+	a:hover,
+	a:active {
+		text-decoration: none;
 	}
 }
 

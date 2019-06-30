@@ -285,6 +285,8 @@ $( document ).ready(function() {
 
         // find root element of slide
         var clickedListItem = closest(eTarget, function(el) {
+            // add check to see whether the thing clicked was a project page link
+            debugger;
             return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
         });
 
