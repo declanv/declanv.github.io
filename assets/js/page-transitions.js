@@ -287,8 +287,11 @@ $( document ).ready(function() {
         var clickedListItem = closest(eTarget, function(el) {
             // add check to see whether the thing clicked was a project page link
             debugger;
-            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+            console.log('here is the element in clickedListItem function: ', el, "and here is the eTarget: ", eTarget);
+            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE' && eTarget.className !== "project-link-text");
         });
+
+        console.log("here is the clickedListItem: ", clickedListItem);
 
         if(!clickedListItem) {
             return;
