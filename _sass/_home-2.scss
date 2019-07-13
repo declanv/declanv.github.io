@@ -1,0 +1,29 @@
+.web-pattern-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  rect {
+    stroke-dasharray: 5000;
+    stroke-dashoffset: 5000;
+    animation: dash 20s linear alternate infinite;
+
+    .slower {
+      animation: dash 50s linear alternate infinite;
+    }
+
+    // .faster {
+    // 	animation: dash 5s linear alternate infinite;
+    // }
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 5000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}

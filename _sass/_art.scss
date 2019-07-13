@@ -104,17 +104,10 @@
 				}
 
 				.project-link {
-					//padding: 0;
 					height: 100%;
 					width: 100%;
 					@include text-in-left(1s, cubic-bezier(0, 0.58, 0, 1));
 
-					$site-yellow: #FBB53C;
-					$site-orange: #FDB170;
-					$site-pink: #FA2466;
-					$site-purple: #350941;
-					$site-blue: #3EAFC4;
-					$site-light-blue: #9DF4FE;
 					a {
 						position: relative;
 						display: block;
@@ -122,8 +115,11 @@
 						width: 100%;
 						margin: 0;
 
+						&:hover {
+							text-decoration: none;
+						}
+
 						span {
-							//@include nav-button($site-purple, $site-pink);
 							text-transform: none;
 							position: relative;
 							display: inline-block;
@@ -134,12 +130,8 @@
 							letter-spacing: 0.75px;
 							line-height: 25px;
 							padding: 4px 5px 8px 5px;
-							// margin: 5px;
-							// padding: 2px 5px 5px 5px;
-							// padding: 0;
 							margin: 2px 5px 5px 5px;
 							border: 2px solid transparent;
-							//border-bottom: 5px solid transparent;
 							text-decoration: none;
 							color: $site-purple;
 							@include border-box();
@@ -168,9 +160,7 @@
 						}
 
 					}
-					a:hover {
-						text-decoration: none;
-					}
+
 				}
 
 			}

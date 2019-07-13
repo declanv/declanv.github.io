@@ -1,6 +1,6 @@
 ---
 layout: art
-title: Reclining Figure
+title: Ayesha
 section: art
 type: figure-drawing
 home: true
