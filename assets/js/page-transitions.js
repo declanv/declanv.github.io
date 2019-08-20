@@ -784,7 +784,7 @@ $( document ).ready(function() {
   });
 
 
-  var setupGalleryView = function(viewName, viewNamespace) {
+  var setupGalleryView = function(parent, viewName, viewNamespace) {
 
       // var viewNameLowerCase = viewName.replace(/\W+/g, '-').toLowerCase();
 
@@ -794,7 +794,7 @@ $( document ).ready(function() {
               // The new Container is ready and attached to the DOM.
               console.log('here is the viewNamespace in right before the updateBodyLInk call: ', viewNamespace);
               console.log('here I am in the setupGalleryView, and here is the viewName:', viewName);
-              updateBodyLink(viewNamespace);
+              updateBodyLink(parent);
           },
           onEnterCompleted: function() {
               // The Transition has just finished.
@@ -847,18 +847,54 @@ $( document ).ready(function() {
       viewName.init();
   }
 
-var galleryViews  = {
-      'Holga': 'holga',
-      'FigureDrawings': 'figure drawings',
-      'Illustration': 'illustration',
-      'Other': 'other',
-      'Home': 'home',
-      'Art': 'art',
-      'Photo': 'photo'
-}
+// var galleryViews  = {
+//       'Holga': 'holga',
+//       'FigureDrawings': 'figure drawings',
+//       'Illustration': 'illustration',
+//       'Other': 'other',
+//       'Home': 'home',
+//       'Art': 'art',
+//       'Photo': 'photo'
+// }
 
-$.each(galleryViews, function(galleryView, galleryNamespace){
-    setupGalleryView(galleryView, galleryNamespace);
+var galleryViews  = [
+
+    {
+        'parent':'art',
+        'namespace':'art',
+        'view':'Art'
+    },
+    {
+        'parent':'art',
+        'namespace':'figure drawings',
+        'view':'FigureDrawings'
+    },
+    {
+        'parent':'art',
+        'namespace':'illustration',
+        'view':'Illustration'
+    },
+    {
+        'parent':'photo',
+        'namespace':'photo',
+        'view':'Photo'
+    },
+    {
+        'parent':'photo',
+        'namespace':'holga',
+        'view':'Holga'
+    },
+    {
+        'parent':'photo',
+        'namespace':'other',
+        'view':'Other'
+    }
+];
+
+
+
+$.each(galleryViews, function(i, galleryView){
+    setupGalleryView(galleryView.parent, galleryView.view, galleryView.namespace);
 })
 
 Homepage.init();
