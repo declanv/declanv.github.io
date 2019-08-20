@@ -152,14 +152,7 @@
 	}
 }
 
-.web,
-.art,
-.photo,
-.figure-drawings,
-.illustration,
-.editorial,
-.holga,
-.other {
+.web {
 	.site-header {
 
   		// background-image: linear-gradient(white, transparent);
@@ -352,5 +345,54 @@
 			@include nav-button($about-pink, $about-dark-blue);
 		}
 
+	}
+}
+
+// Page-specific header styles:
+.art {
+	.site-header {
+
+		// background-image: linear-gradient(white, transparent);
+		.site-nav {
+			li:hover {
+				.subpages {
+					border: 1.5px solid $site-blue;
+					border-top: none;
+				}
+			}
+			.site-title-wrapper {
+				@include hamburger($site-pink, $site-blue);
+			}
+		}
+
+
+		.site-title,
+		.page-link {
+			@include nav-button($site-pink, $site-blue);
+		}
+	}
+}
+
+.photo {
+	.site-header {
+
+		// background-image: linear-gradient(white, transparent);
+		.site-nav {
+			li:hover {
+				.subpages {
+					border: 1.5px solid $site-blue;
+					border-top: none;
+				}
+			}
+			.site-title-wrapper {
+				@include hamburger($site-purple, $site-yellow);
+			}
+		}
+
+
+		.site-title,
+		.page-link {
+			@include nav-button($site-purple, $site-yellow);
+		}
 	}
 }
