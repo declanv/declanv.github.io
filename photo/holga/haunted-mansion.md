@@ -2,6 +2,7 @@
 layout: illustration
 title: Haunted Mansion
 type: photo, holga
+section: photo 
 description: Personal Photograph
 alt: Double exposure of a bright yellow flowering bush over a dark blue sky with a mansion in the background
 medium: Medium Format Photograph Print

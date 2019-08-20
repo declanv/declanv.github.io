@@ -147,7 +147,7 @@
 
 		.site-title,
 		.page-link {
-			@include nav-button($site-blue, white);
+			@include nav-button($site-blue, $site-pink);
 		}
 	}
 }
@@ -288,6 +288,7 @@
 		// display: none;
 		left: 0;
 		top: 45px;
+		padding-top: 10px;
 		height: auto;
 		width: auto;
 		z-index: 300;	
@@ -308,8 +309,9 @@
 
 		.subpages {
 			display: block;
-			background-color: rgba(0,0,0,0.2);
-			border: 1.5px solid white;
+			background-color: white;
+			border: 1.5px solid $site-pink;
+			border-top: none;
 			@include animate-in-subnav();
 
 			.subpage {

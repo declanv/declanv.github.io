@@ -1,29 +1,149 @@
-.web-pattern-container {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
+.home {
+  .wrapper.content {
+    position: relative;
+    @include display-flex();
+    @include flex-direction-row();
+    @include align-items('center');
+    .section-link {
 
-  rect {
-    stroke-dasharray: 5000;
-    stroke-dashoffset: 5000;
-    animation: dash 20s linear alternate infinite;
 
-    .slower {
-      animation: dash 50s linear alternate infinite;
+      position: relative;
+      display: inline;
+      @include flex(1 1 0);
+      @include display-flex();
+      @include align-items('center');
+
+      width: 32%;
+      height: 80vh;
+      min-height: 80vh;
+      margin: 0 0.5%;
+      background-color: #00add3;
+      overflow: hidden;
+
+      .section-title {
+        position: absolute;
+        @include flex(0 1 auto);
+        @include display-flex();
+        @include flex-direction-row();
+        //@include align-items('center');
+        top: 70%;
+        align-self: center;
+        z-index: 1000;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        //height: 50px;
+        //max-height: 100%;
+        justify-content: center;
+        align-content: center;
+
+        &:hover,
+        &:active {
+          text-decoration: none;
+
+        }
+
+        .title-wrapper {
+          position: relative;
+          display: block;
+          @include flex(0 1 auto);
+          height: 20%;
+          width: 100%;
+
+          h1 {
+            position: relative;
+            display: block;
+            @include flex(0 1 auto);
+            @include expand-underline($site-purple, 3px);
+            padding: 0;
+            margin: 0;
+            line-height: 40px;
+            background-color: white;
+            height: 80%;
+
+            span {
+              position: relative;
+              display: inline-block;
+              margin: 0;
+              padding: 0;
+              @include header-font-mid();
+              //@include header-font-mid();
+              //@include nav-font();
+              font-size: 40px;
+              line-height: 40px;
+              color: $site-purple;
+            }
+
+          }
+        }
+
+
+
+
+        //top: 50%;
+        //left: 30%;
+      }
+
+      .img-container {
+
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+
+        a {
+          position: relative;
+          display: block;
+          overflow: hidden;
+
+
+          .image {
+            position: relative;
+            display: block;
+            height: 80vh;
+            width: 100%;
+            object-fit: cover;
+            //opacity: 0.5;
+          }
+        }
+        figcaption {
+          display: none;
+        }
+      }
+
     }
 
-    // .faster {
-    // 	animation: dash 5s linear alternate infinite;
-    // }
+
+    .web-pattern-container {
+      position: relative;
+      display: block;
+      //width: 100%;
+      //height: 100%;
+
+      rect {
+        stroke-dasharray: 5000;
+        stroke-dashoffset: 5000;
+        animation: dash 20s linear alternate infinite;
+
+        .slower {
+          animation: dash 50s linear alternate infinite;
+        }
+
+        // .faster {
+        // 	animation: dash 5s linear alternate infinite;
+        // }
+      }
+
+      @keyframes dash {
+        from {
+          stroke-dashoffset: 5000;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
   }
 
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 5000;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
 }
+
