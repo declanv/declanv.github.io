@@ -152,90 +152,6 @@
 	}
 }
 
-.web {
-	.site-header {
-
-  		// background-image: linear-gradient(white, transparent);
-		.site-nav {
-			.site-title-wrapper {
-				@include hamburger($site-blue, $site-orange);	
-			}	
-		}
-
-
-		.site-title,
-		.page-link {
-			@include nav-button($site-blue, $site-orange);
-		}
-
-
-		&.relay {
-
-			.site-title,
-			.page-link {
-				@include nav-button($relay-red, $relay-blue);
-			}
-
-			.site-nav {
-				.site-title-wrapper {
-					@include hamburger($relay-red, $relay-blue);	
-				}	
-			}
-
-		}
-
-		&.sightseer {
-
-			.site-title,
-			.page-link {
-				// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
-				@include nav-button($sightseer-red, $sightseer-blue);
-			}
-
-			.site-nav {
-				.site-title-wrapper {
-					@include hamburger($sightseer-red, $sightseer-blue);	
-				}	
-			}
-
-		}
-
-		&.ritandeclan {
-
-			.site-title,
-			.page-link {
-				// @include web-project($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
-				@include nav-button($ritandeclan-pink, $ritandeclan-blue);
-			}
-
-			.site-nav {
-				.site-title-wrapper {
-					@include hamburger($ritandeclan-pink, $ritandeclan-blue);	
-				}	
-			}
-		}
-
-		&.sva-today-builder {
-
-			.site-title,
-			.page-link {
-				// @include web-project($sva-today-red, $sva-today-blue, $sva-today-grey);
-				@include nav-button($sva-today-red, $sva-today-blue);
-			}
-
-			.site-nav {
-				.site-title-wrapper {
-					@include hamburger($sva-today-red, $sva-today-blue);	
-				}	
-			}
-
-		}
-		
-
-	}
-
-}
-
 
 // Here's the idea:
 // The user will hover over the art link and the subnav links will reveal one by one below
@@ -395,4 +311,118 @@
 			@include nav-button($site-purple, $site-yellow);
 		}
 	}
+}
+
+.web {
+	.site-header {
+
+		// background-image: linear-gradient(white, transparent);
+		.site-nav {
+			li:hover {
+				.subpages {
+					border: 1.5px solid $site-blue;
+					border-top: none;
+				}
+			}
+			.site-title-wrapper {
+				@include hamburger($site-blue, $site-orange);
+			}
+		}
+
+
+		.site-title,
+		.page-link {
+			@include nav-button($site-blue, $site-orange);
+		}
+
+
+		&.relay {
+
+			.site-title,
+			.page-link {
+				@include nav-button($relay-red, $relay-blue);
+			}
+
+			.site-nav {
+				li:hover {
+					.subpages {
+						border: 1.5px solid $relay-blue;
+						border-top: none;
+					}
+				}
+				.site-title-wrapper {
+					@include hamburger($relay-red, $relay-blue);
+				}
+			}
+
+		}
+
+		&.sightseer {
+
+			.site-title,
+			.page-link {
+				// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
+				@include nav-button($sightseer-red, $sightseer-blue);
+			}
+
+			.site-nav {
+				li:hover {
+					.subpages {
+						border: 1.5px solid $sightseer-blue;
+						border-top: none;
+					}
+				}
+				.site-title-wrapper {
+					@include hamburger($sightseer-red, $sightseer-blue);
+				}
+			}
+
+		}
+
+		&.ritandeclan {
+
+			.site-title,
+			.page-link {
+				// @include web-project($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
+				@include nav-button($ritandeclan-pink, $ritandeclan-blue);
+			}
+
+			.site-nav {
+				li:hover {
+					.subpages {
+						border: 1.5px solid $ritandeclan-blue;
+						border-top: none;
+					}
+				}
+				.site-title-wrapper {
+					@include hamburger($ritandeclan-pink, $ritandeclan-blue);
+				}
+			}
+		}
+
+		&.sva-today-builder {
+
+			.site-title,
+			.page-link {
+				// @include web-project($sva-today-red, $sva-today-blue, $sva-today-grey);
+				@include nav-button($sva-today-red, $sva-today-blue);
+			}
+
+			.site-nav {
+				li:hover {
+					.subpages {
+						border: 1.5px solid $sva-today-blue;
+						border-top: none;
+					}
+				}
+				.site-title-wrapper {
+					@include hamburger($sva-today-red, $sva-today-blue);
+				}
+			}
+
+		}
+
+
+	}
+
 }
