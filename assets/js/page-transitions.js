@@ -45,22 +45,35 @@ $( document ).ready(function() {
 
   }
 
+    var closeMobileMenu = function() {
+        mobileMenuOpen = false;
+        $('.site-header').removeClass('open-mobile');
+        console.log('closing mobile menu.');
+    }
+
+  var openMobileMenu = function() {
+      mobileMenuOpen = true;
+      $('.site-header').addClass('open-mobile');
+      console.log('opening mobile menu.');
+  }
 
   var mobileMenuClick = function() {
 
     console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
+    $('#menu').off('click');
 
     $('#menu').on('click', function(){
       console.log("menu is clicked");
       $(this).addClass('touched');
-      $('.site-header').toggleClass('open-mobile');
-      console.log("here is the mobileMenuOpen value: ", mobileMenuOpen);
       if (!mobileMenuOpen) {
-        mobileMenuOpen = true;
-
+          openMobileMenu();
       } else {
-        mobileMenuOpen = false;
+          closeMobileMenu();
       }
+    });
+
+    $('.page-link, .site-title').on('click', function(){
+        closeMobileMenu();
     });
 
     $('.subpages').siblings('.page-link').on('click', function(e) {
@@ -77,6 +90,8 @@ $( document ).ready(function() {
 
     })
   }
+
+
 
   function isElementInViewport (el) 
   {

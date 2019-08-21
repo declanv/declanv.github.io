@@ -64,7 +64,7 @@
 							height: 2px;
 							margin: 50% 0;
 							// margin: 20% 0 80% 0;
-							background: white;
+							background: $site-blue;
 							display: block;
 							transform-origin: center;
 							transition: .5s ease-in-out;
@@ -76,13 +76,17 @@
 								display: block;
 								width: 100%;
 								height: 100%;
-								background: white;
+								background: $site-blue;
 							}
 							&:before {
 								top: -10px;
 							} 
 							&:after {
 								bottom: -10px;
+							}
+
+							&:hover {
+								cursor:pointer;
 							}
 						}
 					}
@@ -110,7 +114,6 @@
 				.site-nav {
 					@include flex-direction-column();
 
-
 					li {
 
 						&:hover {
@@ -133,6 +136,11 @@
 							padding: 12px 46px 0 0;
 
 							.hamburger {
+								background-color: white;
+								&:before,
+								&:after {
+									background-color: white;
+								}
 								transform: rotate(45deg);
 								&:after {
 									transform: rotate(90deg);
