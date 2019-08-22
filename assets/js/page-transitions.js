@@ -873,7 +873,11 @@ $( document ).ready(function() {
 // }
 
 var galleryViews  = [
-
+    {
+      'parent':'home',
+      'namespace':'home',
+      'view':'Home'
+    },
     {
         'parent':'art',
         'namespace':'art',
@@ -905,8 +909,6 @@ var galleryViews  = [
         'view':'Other'
     }
 ];
-
-
 
 $.each(galleryViews, function(i, galleryView){
     setupGalleryView(galleryView.parent, galleryView.view, galleryView.namespace);
