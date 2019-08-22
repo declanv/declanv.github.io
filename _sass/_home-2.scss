@@ -89,22 +89,19 @@
         display: block;
         width: 100%;
         height: auto;
+        overflow: hidden;
+        margin: 0;
 
-        a {
+        .image {
           position: relative;
           display: block;
-          overflow: hidden;
-
-
-          .image {
-            position: relative;
-            display: block;
-            height: 80vh;
-            width: 100%;
-            object-fit: cover;
-            //opacity: 0.5;
-          }
+          height: 80vh;
+          width: 100%;
+          object-fit: cover;
+          //opacity: 0.5;
+          margin: 0;
         }
+
         figcaption {
           display: none;
         }
