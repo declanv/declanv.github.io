@@ -9,44 +9,40 @@ weight: 2
 {% assign art-cover = site.pages | where: "title", "Ayesha" | first %}
 {% assign photo-cover = site.pages | where: "title", "Haunted Mansion" | first %}
 
-
-<div class="section-link" id="web">
+<a href="/web" class="section-link" id="web">
     <div class="image-container web-pattern-container">{% include web-intro.svg %}</div>
-    <a href="/web" class="section-title">
+    <div class="section-title">
         <span class="title-wrapper">
             <h1>
                 <span class="fade-in-letter">W</span><span class="fade-in-letter">e</span><span class="fade-in-letter">b</span>
             </h1>
         </span>
-    </a>
-</div>
-<div class="section-link" id="art">
+    </div>
+</a>
+<a href="{{'/' | append: art-cover.section}}" class="section-link" id="art">
     {% include homepage-lazy-image.html art=art-cover section=art-cover.section type='figure-drawing' %}
-
-    <a href="{{'/' | append: art-cover.section}}" class="section-title">
+    <div class="section-title">
         <span class="title-wrapper">
             <h1>
                 <span class="fade-in-letter">A</span><span class="fade-in-letter">r</span><span class="fade-in-letter">t</span>
             </h1>
         </span>
-    </a>
-</div>
-<div class="section-link" id="photo">
+    </div>
+</a>
+<a href="{{'/' | append: photo-cover.section}}" class="section-link" id="photo">
     {% include homepage-lazy-image.html art=photo-cover section=photo-cover.section type='holga' %}
-
-    <a href="{{'/' | append: photo-cover.section}}" class="section-title">
+    <div class="section-title">
         <span class="title-wrapper">
             <h1>
                 <span class="fade-in-letter">P</span><span class="fade-in-letter">h</span><span class="fade-in-letter">o</span><span class="fade-in-letter">t</span><span class="fade-in-letter">o</span>
             </h1>
         </span>
-    </a>
-</div>
+    </div>
+</a>
 
 {% comment %}
     <div class="projects-container grid">
         {% include home-list.html %}
     </div>
-
     {% include photoswipe.html %}
 {% endcomment %}
