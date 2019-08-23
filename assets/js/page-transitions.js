@@ -600,203 +600,203 @@ $( document ).ready(function() {
 
   }
 
-  var Homepage = Barba.BaseView.extend({
-    namespace: 'home',
-    onEnter: function() {
-
-      console.log("alright, the homepage view is ready")
-      updateBodyLink(this.namespace);
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function(namespace) {
-        // The Transition has just finished.
-      console.log("alright, the homepage view enter has completed. here is the namespace: ", this.namespace);
-      mobileMenuClick();
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the homepage view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-  var About = Barba.BaseView.extend({
-    namespace: 'about',
-    onEnter: function() {
-
-      console.log("alright, the about view is ready")
-      updateBodyLink(this.namespace);
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function() {
-        // The Transition has just finished.
-      console.log("alright, the about view enter has completed")
-      mobileMenuClick();
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the about view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-  var Web = Barba.BaseView.extend({
-    namespace: 'web',
-    onEnter: function() {
-
-      console.log("alright, the web view is ready")
-      updateBodyLink(this.namespace);
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function() {
-        // The Transition has just finished.
-      console.log("alright, the web view enter has completed")
-      mobileMenuClick();
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the web view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-  var Photo = Barba.BaseView.extend({
-    namespace: 'photo',
-    onEnter: function() {
-
-      console.log("alright, the photo view is ready")
-      updateBodyLink(this.namespace);
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function() {
-        // The Transition has just finished.
-      console.log("alright, the photo view enter has completed")
-      mobileMenuClick();
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the photo view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
-
-  var Art = Barba.BaseView.extend({
-    namespace: 'art',
-    onEnter: function() {
-
-      console.log("alright, the art view is ready")
-        updateBodyLink(this.namespace);
-
-    console.log('here is what the body currently looks like: ', $('body'));
-      // updateBodyLink(this.namespace);
-      // $('.grid').masonry({
-      //   // itemSelector: '.grid-item',
-      //   // columnWidth: '.grid-sizer',
-      //   // columnWidth: 300,
-      //   percentPosition: true,
-      //   // fitWidth: true,
-      //   gutter: 30
-      // });
-
-        // The new Container is ready and attached to the DOM.
-    },
-    onEnterCompleted: function() {
-        // The Transition has just finished.
-      console.log("alright, the art view enter has completed")
-      console.log("here is the namespace", this.namespace);
-
-      // initPhotoSwipeFromDOM('.projects-container');
-
-      // For some reason, just the art namespace needs to be added in onEnterCompleted 
-      // mobileMenuClick();
-
-        // initPhotoSwipeFromDOM('.projects-container');
-
-
-        // $('.grid').masonry({
-        //     // itemSelector: '.grid-item',
-        //     // columnWidth: '.grid-sizer',
-        //     // columnWidth: 300,
-        //     percentPosition: true,
-        //     // fitWidth: true,
-        //     gutter: 30
-        // });
-
-        $('.grid').imagesLoaded().done( function( instance ) {
-            console.log('all images successfully loaded');
-
-        })
-        .always( function( instance ) {
-            console.log('all images loaded');
-            initPhotoSwipeFromDOM('.projects-container');
-
-
-            $('.grid').masonry({
-                // itemSelector: '.grid-item',
-                // columnWidth: '.grid-sizer',
-                // columnWidth: 300,
-                percentPosition: true,
-                // fitWidth: true,
-                gutter: 30
-            });
-        })
-
-        .fail( function() {
-            console.log('all images loaded, at least one is broken');
-        })
-        .progress( function( instance, image ) {
-            var result = image.isLoaded ? 'loaded' : 'broken';
-            console.log( 'image is ' + result + ' for ' + image.img.src );
-
-        });
-
-      // $('.grid').masonry({
-      //   // itemSelector: '.grid-item',
-      //   // columnWidth: '.grid-sizer',
-      //   // columnWidth: 300,
-      //   percentPosition: true,
-      //   // fitWidth: true,
-      //   gutter: 30
-      // });
-      // initPhotoSwipeFromDOM('.projects-container');
-      mobileMenuClick();
-      
-
-    },
-    onLeave: function() {
-
-      console.log("alright, we are leaving the art view")
-
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
-    }
-  });
+  // var Homepage = Barba.BaseView.extend({
+  //   namespace: 'home',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the homepage view is ready")
+  //     updateBodyLink(this.namespace);
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function(namespace) {
+  //       // The Transition has just finished.
+  //     console.log("alright, the homepage view enter has completed. here is the namespace: ", this.namespace);
+  //     mobileMenuClick();
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the homepage view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
+  //
+  // var About = Barba.BaseView.extend({
+  //   namespace: 'about',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the about view is ready")
+  //     updateBodyLink(this.namespace);
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function() {
+  //       // The Transition has just finished.
+  //     console.log("alright, the about view enter has completed")
+  //     mobileMenuClick();
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the about view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
+  //
+  // var Web = Barba.BaseView.extend({
+  //   namespace: 'web',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the web view is ready")
+  //     updateBodyLink(this.namespace);
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function() {
+  //       // The Transition has just finished.
+  //     console.log("alright, the web view enter has completed")
+  //     mobileMenuClick();
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the web view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
+  //
+  // var Photo = Barba.BaseView.extend({
+  //   namespace: 'photo',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the photo view is ready")
+  //     updateBodyLink(this.namespace);
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function() {
+  //       // The Transition has just finished.
+  //     console.log("alright, the photo view enter has completed")
+  //     mobileMenuClick();
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the photo view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
+  //
+  // var Art = Barba.BaseView.extend({
+  //   namespace: 'art',
+  //   onEnter: function() {
+  //
+  //     console.log("alright, the art view is ready")
+  //       updateBodyLink(this.namespace);
+  //
+  //   console.log('here is what the body currently looks like: ', $('body'));
+  //     // updateBodyLink(this.namespace);
+  //     // $('.grid').masonry({
+  //     //   // itemSelector: '.grid-item',
+  //     //   // columnWidth: '.grid-sizer',
+  //     //   // columnWidth: 300,
+  //     //   percentPosition: true,
+  //     //   // fitWidth: true,
+  //     //   gutter: 30
+  //     // });
+  //
+  //       // The new Container is ready and attached to the DOM.
+  //   },
+  //   onEnterCompleted: function() {
+  //       // The Transition has just finished.
+  //     console.log("alright, the art view enter has completed")
+  //     console.log("here is the namespace", this.namespace);
+  //
+  //     // initPhotoSwipeFromDOM('.projects-container');
+  //
+  //     // For some reason, just the art namespace needs to be added in onEnterCompleted
+  //     // mobileMenuClick();
+  //
+  //       // initPhotoSwipeFromDOM('.projects-container');
+  //
+  //
+  //       // $('.grid').masonry({
+  //       //     // itemSelector: '.grid-item',
+  //       //     // columnWidth: '.grid-sizer',
+  //       //     // columnWidth: 300,
+  //       //     percentPosition: true,
+  //       //     // fitWidth: true,
+  //       //     gutter: 30
+  //       // });
+  //
+  //       $('.grid').imagesLoaded().done( function( instance ) {
+  //           console.log('all images successfully loaded');
+  //
+  //       })
+  //       .always( function( instance ) {
+  //           console.log('all images loaded');
+  //           initPhotoSwipeFromDOM('.projects-container');
+  //
+  //
+  //           $('.grid').masonry({
+  //               // itemSelector: '.grid-item',
+  //               // columnWidth: '.grid-sizer',
+  //               // columnWidth: 300,
+  //               percentPosition: true,
+  //               // fitWidth: true,
+  //               gutter: 30
+  //           });
+  //       })
+  //
+  //       .fail( function() {
+  //           console.log('all images loaded, at least one is broken');
+  //       })
+  //       .progress( function( instance, image ) {
+  //           var result = image.isLoaded ? 'loaded' : 'broken';
+  //           console.log( 'image is ' + result + ' for ' + image.img.src );
+  //
+  //       });
+  //
+  //     // $('.grid').masonry({
+  //     //   // itemSelector: '.grid-item',
+  //     //   // columnWidth: '.grid-sizer',
+  //     //   // columnWidth: 300,
+  //     //   percentPosition: true,
+  //     //   // fitWidth: true,
+  //     //   gutter: 30
+  //     // });
+  //     // initPhotoSwipeFromDOM('.projects-container');
+  //     mobileMenuClick();
+  //
+  //
+  //   },
+  //   onLeave: function() {
+  //
+  //     console.log("alright, we are leaving the art view")
+  //
+  //       // A new Transition toward a new page has just started.
+  //   },
+  //   onLeaveCompleted: function() {
+  //       // The Container has just been removed from the DOM.
+  //   }
+  // });
 
 
   var setupGalleryView = function(parent, viewName, viewNamespace) {
@@ -879,6 +879,11 @@ var galleryViews  = [
       'view':'Home'
     },
     {
+      'parent':'web',
+      'namespace':'web',
+      'view':'Web'
+    },
+    {
         'parent':'art',
         'namespace':'art',
         'view':'Art'
@@ -912,16 +917,17 @@ var galleryViews  = [
 
 $.each(galleryViews, function(i, galleryView){
     setupGalleryView(galleryView.parent, galleryView.view, galleryView.namespace);
+//     Home.init();
+//     Art.init();
+// // Illustration.init();
+// // FigureDrawings.init();
+//     Web.init();
+//     Photo.init();
+// // Holga.init();
+//     About.init();
 })
 
-Homepage.init();
-Art.init();
-// Illustration.init();
-// FigureDrawings.init();
-Web.init();
-Photo.init();
-// Holga.init();
-About.init();
+
 
 Barba.Pjax.start();
 // mobileMenuClick();
