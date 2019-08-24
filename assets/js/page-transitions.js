@@ -496,7 +496,11 @@ $( document ).ready(function() {
 	  transitionContainer.addClass('transition-in');
 	  transitionContainer.css('background-color', '#' + currentTransitionColor);
 
-	  return $(this.oldContainer).animate({ opacity: 0 }, 800, function() {}).promise();
+	  return $(this.oldContainer).animate({ opacity: 0 }, 800, function() {}).promise().then(
+	  	function() {
+			removePreviousBodyClass()
+		}
+	  );
 
 	},
 
@@ -511,7 +515,7 @@ $( document ).ready(function() {
 
 
 	  var $el = $(this.newContainer);
-
+	  addCurrentBodyClass();
 	  $(this.oldContainer).hide();
 
 	  // $('header').addClass('initial');
@@ -814,11 +818,10 @@ $( document ).ready(function() {
 		  onEnter: function() {
 			  // The new Container is ready and attached to the DOM.
 			  currentBodyClass = parent;
-			  addCurrentBodyClass();
+
 		  },
 		  onEnterCompleted: function() {
 			  // The Transition has just finished.
-			  removePreviousBodyClass();
 			  mobileMenuClick();
 
 			  $('.grid').imagesLoaded().done( function( instance ) {
@@ -827,31 +830,31 @@ $( document ).ready(function() {
 				  $('.grid').addClass("fade-in-grid");
 
 			  })
-				  .always( function( instance ) {
-					  // console.log('all images loaded');
+			  .always( function( instance ) {
+				  // console.log('all images loaded');
 
-					  $('.grid').masonry({
-						  // itemSelector: '.grid-item',
-						  // columnWidth: '.grid-sizer',
-						  // columnWidth: 300,
-						  percentPosition: true,
-						  // fitWidth: true,
-						  gutter: 30
-					  });
-
-					  imageOptimizer();
-					  initPhotoSwipeFromDOM('.projects-container');
-
-				  })
-
-				  .fail( function() {
-					  console.log('all images loaded, at least one is broken');
-				  })
-				  .progress( function( instance, image ) {
-					  var result = image.isLoaded ? 'loaded' : 'broken';
-					  console.log( 'image is ' + result + ' for ' + image.img.src );
-
+				  $('.grid').masonry({
+					  // itemSelector: '.grid-item',
+					  // columnWidth: '.grid-sizer',
+					  // columnWidth: 300,
+					  percentPosition: true,
+					  // fitWidth: true,
+					  gutter: 30
 				  });
+
+				  imageOptimizer();
+				  initPhotoSwipeFromDOM('.projects-container');
+
+			  })
+
+			  .fail( function() {
+				  console.log('all images loaded, at least one is broken');
+			  })
+			  .progress( function( instance, image ) {
+				  var result = image.isLoaded ? 'loaded' : 'broken';
+				  console.log( 'image is ' + result + ' for ' + image.img.src );
+
+			  });
 
 		  },
 		  onLeave: function() {
