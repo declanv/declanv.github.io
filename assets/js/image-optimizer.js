@@ -1,8 +1,8 @@
 var imageOptimizer = function() {
     var lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
-    console.log("here are the lazyImages: ", lazyImages);
+    // console.log("here are the lazyImages: ", lazyImages);
     if ('IntersectionObserver' in window) {
-        console.log('the intersection observer check works');
+        // console.log('the intersection observer check works');
         config = {
             // If the image gets within 250px of the browser's viewport,
             // start the download:

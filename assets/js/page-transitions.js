@@ -59,7 +59,7 @@ $( document ).ready(function() {
 
   var mobileMenuClick = function() {
 
-	console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
+	// console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
 	$('#menu').off('click');
 
 	$('#menu').on('click', function(){
@@ -228,7 +228,7 @@ $( document ).ready(function() {
 
   var initPhotoSwipeFromDOM = function(gallerySelector) {
 
-	console.log('init photo swipe is actually happening')
+	// console.log('init photo swipe is actually happening')
 
 	// parse slide data (url, title, size ...) from DOM elements
 	// (children of gallerySelector)
@@ -438,9 +438,7 @@ $( document ).ready(function() {
 
 	// loop through all gallery elements and bind events
 	var galleryElements = document.querySelectorAll( gallerySelector );
-
-	console.log("here are the galleryElements", galleryElements);
-
+	
 	for(var i = 0, l = galleryElements.length; i < l; i++) {
 		galleryElements[i].setAttribute('data-pswp-uid', i+1);
 		galleryElements[i].onclick = onThumbnailsClick;
@@ -825,7 +823,7 @@ $( document ).ready(function() {
 			  mobileMenuClick();
 
 			  $('.grid').imagesLoaded().done( function( instance ) {
-				  console.log('all images successfully loaded');
+				  // console.log('all images successfully loaded');
 
 				  $('.grid').addClass("fade-in-grid");
 
@@ -848,11 +846,11 @@ $( document ).ready(function() {
 			  })
 
 			  .fail( function() {
-				  console.log('all images loaded, at least one is broken');
+				  // console.log('all images loaded, at least one is broken');
 			  })
 			  .progress( function( instance, image ) {
 				  var result = image.isLoaded ? 'loaded' : 'broken';
-				  console.log( 'image is ' + result + ' for ' + image.img.src );
+				  // console.log( 'image is ' + result + ' for ' + image.img.src );
 
 			  });
 
