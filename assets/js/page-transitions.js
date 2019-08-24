@@ -794,11 +794,14 @@ $( document ).ready(function() {
 
 	}
 
-    var removePreviousBodyLink = function () {
+	previousBodyClass = '';
+    var removePreviousBodyClass = function () {
+		console.log('removing the previousBodyLink: ', previousBodyClass);
         $('body').removeClass(previousBodyClass);
     }
 
-    var addCurrentBodyLink = function () {
+    var addCurrentBodyClass = function () {
+		console.log('adding the currentBodyClass: ', currentBodyClass);
         $('body').addClass(currentBodyClass);
     }
 
@@ -810,16 +813,12 @@ $( document ).ready(function() {
 		  namespace: viewName,
 		  onEnter: function() {
 			  // The new Container is ready and attached to the DOM.
-			  console.log('here is the viewName in right before the updateBodyLInk call: ', viewName);
-			  console.log('here I am in the setupGalleryView, and here is the viewName:', viewName);
-
 			  currentBodyClass = parent;
-			  addCurrentBodyLink();
-
-			  // updateBodyLink(parent);
+			  addCurrentBodyClass();
 		  },
 		  onEnterCompleted: function() {
 			  // The Transition has just finished.
+			  removePreviousBodyClass();
 			  mobileMenuClick();
 
 			  $('.grid').imagesLoaded().done( function( instance ) {
@@ -856,16 +855,12 @@ $( document ).ready(function() {
 
 		  },
 		  onLeave: function() {
-
+			  previousBodyClass = parent;
 			  console.log("alright, we are leaving the " + this.namespace + " view")
-
 			  // A new Transition toward a new page has just started.
 		  },
 		  onLeaveCompleted: function() {
 			  // The Container has just been removed from the DOM.
-			  previousBodyClass = parent;
-			  removePreviousBodyLink();
-
 		  }
 	  })
 
