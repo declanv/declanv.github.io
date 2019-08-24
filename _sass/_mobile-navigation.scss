@@ -167,8 +167,7 @@
 							}
 						}
 
-						.page-link,
-						.nav-w-children {
+						.page-link {
 							display: block;
 							margin: 9% 0;
 							padding-bottom: 5%;
@@ -228,10 +227,11 @@
 										color: white;
 										margin: 5% 0;
 										padding: 4px 0 2% 0;
+										opacity: 0;
 										$navLinks: 3;
 
 										@for $i from 1 through $navLinks {
-											$time: #{$i*.25}s;
+											$time: #{$i*.2}s;
 											&.link-#{$i} {
 
 												@include fadeInMobileLinks($time);
@@ -283,11 +283,13 @@
 						&.subnav-open {
 							// .page-link:not(.selected) {
 							.page-link {
-
-								font-size: 20px;
+								font-size: 16px;
 								line-height: 20px;
-								// transform: scale(0.8);
+								//transform: scale(0.8);
 								transition: 0.5s;
+								margin: 7% 0;
+								padding: 4px 0 4% 0;
+								opacity: 0.8;
 							}
 						}
 

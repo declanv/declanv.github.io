@@ -7,9 +7,6 @@ $( document ).ready(function() {
 	var navWChildren = $('.subpages').prev('.page-link');
 	var subpages = navWChildren.find('.subpages');
 
-	navWChildren.on('click', function(e){
-	    e.preventDefault();
-    });
 
 	$(document).on("click.document", function (e) {
 
@@ -28,18 +25,9 @@ $( document ).ready(function() {
 		  $('.trigger.box').removeClass('subnav-open');
 
 		  subpages.addClass('closing-subnav');
-		  // subpages.removeClass('open');
+		  subpages.removeClass('open');
 
-		  window.setTimeout(function() {subpages.removeClass('open')}, 100);
-
-		  // courseFinder.hide(
-		  //   function () {
-		  //     courseFinderBtn.find("#course-search-label").html("Show Course Finder");
-		  //     courseFinderBtnClick();
-		  //     courseFinderOpen = false;
-		  //     removeWindowListeners();
-		  //   }
-		  // );
+		  // window.setTimeout(function() {subpages.removeClass('open')}, 100);
 
 		}
 
@@ -77,8 +65,12 @@ $( document ).ready(function() {
 	var mobileSubpageClick = function($link) {
 		$link.addClass('selected');
 		$('.trigger.box').addClass('subnav-open');
-		$link.siblings('.subpages').addClass('open');
-		$link.siblings('.subpages').removeClass('closing-subnav');
+		currentSubPageSet = $link.siblings('.subpages');
+		// I will likely need to add another class here which will enable a reverse transition (like a fadeout)
+		$('.subpages').addClass('closing-subnav');
+		$('.subpages').not(currentSubPageSet).removeClass('open');
+		currentSubPageSet.addClass('open');
+		currentSubPageSet.removeClass('closing-subnav');
 		clickOutsideClose();
   	}
 
@@ -707,6 +699,10 @@ var galleryViews  = [
 	{
 		'parent':'photo',
 		'namespace':'holga'
+	},
+	{
+		'parent':'photo',
+		'namespace':'editorial'
 	},
 	{
 		'parent':'photo',
