@@ -4,8 +4,12 @@ $( document ).ready(function() {
 	  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
   var clickOutsideClose = function() {
 
-	var navWChildren = $('.nav-w-children');
+	var navWChildren = $('.subpages').prev('.page-link');
 	var subpages = navWChildren.find('.subpages');
+
+	navWChildren.on('click', function(e){
+	    e.preventDefault();
+    });
 
 	$(document).on("click.document", function (e) {
 
@@ -54,16 +58,14 @@ $( document ).ready(function() {
   var openMobileMenu = function() {
 	  mobileMenuOpen = true;
 	  $('.site-header').addClass('open-mobile');
-	  console.log('opening mobile menu.');
   }
 
   var mobileMenuClick = function() {
 
-	// console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
+	console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
 	$('#menu').off('click');
 
 	$('#menu').on('click', function(){
-	  console.log("menu is clicked");
 	  $(this).addClass('touched');
 	  if (!mobileMenuOpen) {
 		  openMobileMenu();
@@ -72,23 +74,37 @@ $( document ).ready(function() {
 	  }
 	});
 
-	$('.page-link, .site-title').on('click', function(){
-		closeMobileMenu();
+	var mobileSubpageClick = function($link) {
+		$link.addClass('selected');
+		$('.trigger.box').addClass('subnav-open');
+		$link.siblings('.subpages').addClass('open');
+		$link.siblings('.subpages').removeClass('closing-subnav');
+		clickOutsideClose();
+  	}
+
+	$('.page-link, .site-title').on('click', function(e){
+		if ($(this).siblings('.subpages').length > 0) {
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			mobileSubpageClick($(this));
+		} else {
+			closeMobileMenu();
+		}
 	});
 
-	$('.subpages').siblings('.page-link').on('click', function(e) {
-
-	  e.preventDefault();
-
-	  $(this).addClass('selected');
-
-	  $('.trigger.box').addClass('subnav-open');
-
-	  $(this).siblings('.subpages').addClass('open');
-	  $(this).siblings('.subpages').removeClass('closing-subnav');
-	  // clickOutsideClose();
-
-	})
+	// $('.subpages').siblings('.page-link').on('click', function(e) {
+	//
+	//   e.preventDefault();
+	//
+	//   $(this).addClass('selected');
+	//
+	//   $('.trigger.box').addClass('subnav-open');
+	//
+	//   $(this).siblings('.subpages').addClass('open');
+	//   $(this).siblings('.subpages').removeClass('closing-subnav');
+	//   clickOutsideClose();
+	//
+	// })
   }
 
 
@@ -438,7 +454,7 @@ $( document ).ready(function() {
 
 	// loop through all gallery elements and bind events
 	var galleryElements = document.querySelectorAll( gallerySelector );
-	
+
 	for(var i = 0, l = galleryElements.length; i < l; i++) {
 		galleryElements[i].setAttribute('data-pswp-uid', i+1);
 		galleryElements[i].onclick = onThumbnailsClick;
@@ -459,8 +475,6 @@ $( document ).ready(function() {
   Barba.Dispatcher.on('linkClicked', function(el) {
 
 	currentTransitionColor = defaultTransitionColor;
-
-	console.log("here is the el being clicked: ", el);
 
 	if (el.dataset.hex !== null && el.dataset.hex !== undefined) {
 	  currentTransitionColor = el.dataset.hex;
@@ -567,8 +581,6 @@ $( document ).ready(function() {
 	 * For example you can use different Transition based on the current page or link...
 	 */
 
-	console.log('in transition');
-
 	return FadeTransition;
 
   };
@@ -593,204 +605,6 @@ $( document ).ready(function() {
   // });
 
 
-  // var Homepage = Barba.BaseView.extend({
-  //   namespace: 'home',
-  //   onEnter: function() {
-  //
-  //     console.log("alright, the homepage view is ready")
-  //     updateBodyLink(this.namespace);
-  //
-  //       // The new Container is ready and attached to the DOM.
-  //   },
-  //   onEnterCompleted: function(namespace) {
-  //       // The Transition has just finished.
-  //     console.log("alright, the homepage view enter has completed. here is the namespace: ", this.namespace);
-  //     mobileMenuClick();
-  //
-  //   },
-  //   onLeave: function() {
-  //
-  //     console.log("alright, we are leaving the homepage view")
-  //
-  //       // A new Transition toward a new page has just started.
-  //   },
-  //   onLeaveCompleted: function() {
-  //       // The Container has just been removed from the DOM.
-  //   }
-  // });
-  //
-  // var About = Barba.BaseView.extend({
-  //   namespace: 'about',
-  //   onEnter: function() {
-  //
-  //     console.log("alright, the about view is ready")
-  //     updateBodyLink(this.namespace);
-  //
-  //       // The new Container is ready and attached to the DOM.
-  //   },
-  //   onEnterCompleted: function() {
-  //       // The Transition has just finished.
-  //     console.log("alright, the about view enter has completed")
-  //     mobileMenuClick();
-  //
-  //   },
-  //   onLeave: function() {
-  //
-  //     console.log("alright, we are leaving the about view")
-  //
-  //       // A new Transition toward a new page has just started.
-  //   },
-  //   onLeaveCompleted: function() {
-  //       // The Container has just been removed from the DOM.
-  //   }
-  // });
-  //
-  // var Web = Barba.BaseView.extend({
-  //   namespace: 'web',
-  //   onEnter: function() {
-  //
-  //     console.log("alright, the web view is ready")
-  //     updateBodyLink(this.namespace);
-  //
-  //       // The new Container is ready and attached to the DOM.
-  //   },
-  //   onEnterCompleted: function() {
-  //       // The Transition has just finished.
-  //     console.log("alright, the web view enter has completed")
-  //     mobileMenuClick();
-  //
-  //   },
-  //   onLeave: function() {
-  //
-  //     console.log("alright, we are leaving the web view")
-  //
-  //       // A new Transition toward a new page has just started.
-  //   },
-  //   onLeaveCompleted: function() {
-  //       // The Container has just been removed from the DOM.
-  //   }
-  // });
-  //
-  // var Photo = Barba.BaseView.extend({
-  //   namespace: 'photo',
-  //   onEnter: function() {
-  //
-  //     console.log("alright, the photo view is ready")
-  //     updateBodyLink(this.namespace);
-  //
-  //       // The new Container is ready and attached to the DOM.
-  //   },
-  //   onEnterCompleted: function() {
-  //       // The Transition has just finished.
-  //     console.log("alright, the photo view enter has completed")
-  //     mobileMenuClick();
-  //
-  //   },
-  //   onLeave: function() {
-  //
-  //     console.log("alright, we are leaving the photo view")
-  //
-  //       // A new Transition toward a new page has just started.
-  //   },
-  //   onLeaveCompleted: function() {
-  //       // The Container has just been removed from the DOM.
-  //   }
-  // });
-  //
-  // var Art = Barba.BaseView.extend({
-  //   namespace: 'art',
-  //   onEnter: function() {
-  //
-  //     console.log("alright, the art view is ready")
-  //       updateBodyLink(this.namespace);
-  //
-  //   console.log('here is what the body currently looks like: ', $('body'));
-  //     // updateBodyLink(this.namespace);
-  //     // $('.grid').masonry({
-  //     //   // itemSelector: '.grid-item',
-  //     //   // columnWidth: '.grid-sizer',
-  //     //   // columnWidth: 300,
-  //     //   percentPosition: true,
-  //     //   // fitWidth: true,
-  //     //   gutter: 30
-  //     // });
-  //
-  //       // The new Container is ready and attached to the DOM.
-  //   },
-  //   onEnterCompleted: function() {
-  //       // The Transition has just finished.
-  //     console.log("alright, the art view enter has completed")
-  //     console.log("here is the namespace", this.namespace);
-  //
-  //     // initPhotoSwipeFromDOM('.projects-container');
-  //
-  //     // For some reason, just the art namespace needs to be added in onEnterCompleted
-  //     // mobileMenuClick();
-  //
-  //       // initPhotoSwipeFromDOM('.projects-container');
-  //
-  //
-  //       // $('.grid').masonry({
-  //       //     // itemSelector: '.grid-item',
-  //       //     // columnWidth: '.grid-sizer',
-  //       //     // columnWidth: 300,
-  //       //     percentPosition: true,
-  //       //     // fitWidth: true,
-  //       //     gutter: 30
-  //       // });
-  //
-  //       $('.grid').imagesLoaded().done( function( instance ) {
-  //           console.log('all images successfully loaded');
-  //
-  //       })
-  //       .always( function( instance ) {
-  //           console.log('all images loaded');
-  //           initPhotoSwipeFromDOM('.projects-container');
-  //
-  //
-  //           $('.grid').masonry({
-  //               // itemSelector: '.grid-item',
-  //               // columnWidth: '.grid-sizer',
-  //               // columnWidth: 300,
-  //               percentPosition: true,
-  //               // fitWidth: true,
-  //               gutter: 30
-  //           });
-  //       })
-  //
-  //       .fail( function() {
-  //           console.log('all images loaded, at least one is broken');
-  //       })
-  //       .progress( function( instance, image ) {
-  //           var result = image.isLoaded ? 'loaded' : 'broken';
-  //           console.log( 'image is ' + result + ' for ' + image.img.src );
-  //
-  //       });
-  //
-  //     // $('.grid').masonry({
-  //     //   // itemSelector: '.grid-item',
-  //     //   // columnWidth: '.grid-sizer',
-  //     //   // columnWidth: 300,
-  //     //   percentPosition: true,
-  //     //   // fitWidth: true,
-  //     //   gutter: 30
-  //     // });
-  //     // initPhotoSwipeFromDOM('.projects-container');
-  //     mobileMenuClick();
-  //
-  //
-  //   },
-  //   onLeave: function() {
-  //
-  //     console.log("alright, we are leaving the art view")
-  //
-  //       // A new Transition toward a new page has just started.
-  //   },
-  //   onLeaveCompleted: function() {
-  //       // The Container has just been removed from the DOM.
-  //   }
-  // });
-
 	// I'll need a function that fades out the content section before I futz with the body class
 	var fadeOutContent = function() {
 
@@ -798,12 +612,10 @@ $( document ).ready(function() {
 
 	previousBodyClass = '';
     var removePreviousBodyClass = function () {
-		console.log('removing the previousBodyLink: ', previousBodyClass);
         $('body').removeClass(previousBodyClass);
     }
 
     var addCurrentBodyClass = function () {
-		console.log('adding the currentBodyClass: ', currentBodyClass);
         $('body').addClass(currentBodyClass);
     }
 
@@ -857,7 +669,6 @@ $( document ).ready(function() {
 		  },
 		  onLeave: function() {
 			  previousBodyClass = parent;
-			  console.log("alright, we are leaving the " + this.namespace + " view")
 			  // A new Transition toward a new page has just started.
 		  },
 		  onLeaveCompleted: function() {
@@ -900,6 +711,10 @@ var galleryViews  = [
 	{
 		'parent':'photo',
 		'namespace':'other'
+	},
+	{
+		'about':'about',
+		'namespace':'about'
 	}
 ];
 

@@ -26,13 +26,15 @@
                 {% include navigation.html context=entry.url i=i loopNumber=loopNumber subnav=true lastDepth=lastDepth %}
             {% else %}
                 {% if lastDepth < depth %}
+                    {% assign subI = 1 %}
                     <ul class="subpages">
-                        <li>
-                            <a class="page-link {% if page.url contains entry.url %}active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
-                        </li>
-                {% else if lastDepth == depth %}
                     <li>
-                        <a class="page-link {% if page.url contains entry.url %}active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
+                        <a class="page-link link-1 {% if page.url contains entry.url %}active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
+                    </li>
+                {% else if lastDepth == depth %}
+                    {% assign subI = subI | plus:1 %}
+                    <li>
+                        <a class="page-link link-{{subI}} {% if page.url contains entry.url %}active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title | downcase }}</a>
                     </li>
                 {% endif %}
             {% endif %}

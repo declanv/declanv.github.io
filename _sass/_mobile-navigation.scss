@@ -177,75 +177,82 @@
 							color: white;
 						}
 
-						.nav-w-children {
-
-							opacity: 1;
-							padding: 0;
-							margin: 0;
-
-							&:hover {
-
-								.subpages {
-									border: none;
-									visibility: hidden;
-									opacity: 0;
-									display: none;
-								}
-							}
 
 
-							.subpages {
-								visibility: hidden;
-								// display: none;
-								opacity: 0;
-								// border: none;
+							//opacity: 1;
+							//padding: 0;
+							//margin: 0;
+							//
+							//&:hover {
+							//
+							//	.subpages {
+							//		border: none;
+							//		visibility: hidden;
+							//		opacity: 0;
+							//		display: none;
+							//	}
+							//}
 
-								// border: 3px solid white;
 
-								// This will need to open the subnav and fade in each of the links 
-								// it should also scale down the other links, and scale up the subnav links
-								// Clicking elsewhere should then reverse the whole process.
-								// Also, if you're on a page with a subnav, it should automatically be opened 
+						.subpages {
+							visibility: hidden;
+							// display: none;
+							opacity: 0;
+							// border: none;
 
-								&.open {
-									position: relative;
+							// border: 3px solid white;
+
+							// This will need to open the subnav and fade in each of the links
+							// it should also scale down the other links, and scale up the subnav links
+							// Clicking elsewhere should then reverse the whole process.
+							// Also, if you're on a page with a subnav, it should automatically be opened
+
+							&.open {
+								position: relative;
+								display: block;
+								background-color: black;
+								opacity: 1;
+								visibility: visible;
+								transform: scale(1.2);
+								margin: 10px 0;
+								padding: 5% 0;
+								top: initial;
+								height: initial;
+								transition: 0.5s;
+
+								li {
 									display: block;
-									opacity: 1;
-									visibility: visible;
-									transform: scale(1.2);
-									margin: 10px 0;
-									padding: 5% 0;
-									top: initial;
-									height: initial;
-									transition: 0.5s;
 
-									.subpage {
+									.page-link {
 
-
+										color: white;
+										margin: 5% 0;
+										padding: 4px 0 2% 0;
 										$navLinks: 3;
 
 										@for $i from 1 through $navLinks {
 											$time: #{$i*.25}s;
-											&.link-#{$i} { 
+											&.link-#{$i} {
 
 												@include fadeInMobileLinks($time);
 
 											}
 
 										}
-
 									}
 
 								}
 
-								
-								&.closing-subnav {
-									@include closeSubnav();
-								}
+							}
 
+
+							&.closing-subnav {
+								@include closeSubnav();
 							}
 
 						}
+
+
 
 
 
