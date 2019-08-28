@@ -75,7 +75,7 @@ $( document ).ready(function() {
   	}
 
 	$('.page-link, .site-title').on('click', function(e){
-		if ($(this).siblings('.subpages').length > 0) {
+		if (window.innerWidth < 600 && $(this).siblings('.subpages').length > 0) {
 			e.preventDefault();
 			e.stopImmediatePropagation();
 			mobileSubpageClick($(this));
@@ -612,13 +612,11 @@ $( document ).ready(function() {
     }
 
   var setupGalleryView = function(parent, viewName) {
-
-	  // var viewNameLowerCase = viewName.replace(/\W+/g, '-').toLowerCase();
 	  var camelCasedView = viewName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
-	  console.log('here is the camelCasedView', camelCasedView);
+	  var nameSpace = viewName.replace(/-/g, ' ');
 
 	  var viewName = Barba.BaseView.extend({
-		  namespace: camelCasedView,
+		  namespace: nameSpace,
 		  onEnter: function() {
 			  // The new Container is ready and attached to the DOM.
 			  currentBodyClass = parent;
@@ -688,7 +686,7 @@ var galleryViews  = [
 	},
 	{
 		'parent':'art',
-		'namespace':'figure-drawing'
+		'namespace':'figure-drawings'
 	},
 	{
 		'parent':'art',
