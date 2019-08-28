@@ -614,9 +614,11 @@ $( document ).ready(function() {
   var setupGalleryView = function(parent, viewName) {
 
 	  // var viewNameLowerCase = viewName.replace(/\W+/g, '-').toLowerCase();
+	  var camelCasedView = viewName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+	  console.log('here is the camelCasedView', camelCasedView);
 
 	  var viewName = Barba.BaseView.extend({
-		  namespace: viewName,
+		  namespace: camelCasedView,
 		  onEnter: function() {
 			  // The new Container is ready and attached to the DOM.
 			  currentBodyClass = parent;
@@ -686,7 +688,7 @@ var galleryViews  = [
 	},
 	{
 		'parent':'art',
-		'namespace':'figureDrawings'
+		'namespace':'figure-drawing'
 	},
 	{
 		'parent':'art',
