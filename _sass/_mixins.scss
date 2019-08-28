@@ -1235,32 +1235,46 @@
 
 }
 
-@mixin expand-underline-home($color-hover) {
-  &:hover {
-    color: $color-hover;
-  }
+@mixin setup-underline-home($color-hover, $border-width) {
+  position:relative;
+  cursor: pointer;
+  border: 2px solid transparent;
 
   &:before,
   &:after {
+    width: 100%;
+    content:'';
+    position: absolute;
+    left:0;
+    @include border-box();
     @include transform(scale(0));
     @include transition(0.5s);
   }
 
   &:before {
+    top:0;
+    height:80%;
+    border-bottom: $border-width solid $color-hover;
+    border-left: 0;
     @include transform-origin(0% 100%);
   }
 
   &:after {
+    top: -10%;
+    height: 100%;
+    border-top: 0;
+    border-right: 0;
     @include transform-origin(50% 50%);
   }
 
-  &:hover {
-    &:after,
-    &:before {
-      @include transform(scale(1));
-    }
-  }
+}
 
+@mixin expand-underline-home($color-hover) {
+  color: $color-hover;
+  &:after,
+  &:before {
+    @include transform(scale(1));
+  }
 }
 
 @mixin expand-underline($color-hover, $border-width) {

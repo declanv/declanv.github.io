@@ -49,16 +49,19 @@
           height: 20%;
           width: 100%;
 
-          h1 {
+          .section-header {
             position: relative;
             display: block;
             @include flex(0 1 auto);
-            @include expand-underline($site-purple, 3px);
+            //@include expand-underline($site-purple, 3px);
+            @include setup-underline-home($site-purple, 3px);
             padding: 0;
             margin: 0;
+            @include header-font-mid();
             line-height: 40px;
             background-color: white;
-            height: 80%;
+            height: 100%;
+            padding: 5% 0;
 
             span {
               position: relative;
@@ -108,6 +111,18 @@
       }
 
       &:hover {
+
+        .section-title {
+
+          .title-wrapper {
+            h1 {
+              //@include expand-underline-home(blue);
+              @include expand-underline-home($site-purple);
+
+            }
+          }
+
+        }
 
 
 
