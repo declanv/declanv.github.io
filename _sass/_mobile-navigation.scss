@@ -225,7 +225,7 @@
 									.page-link {
 
 										color: white;
-										margin: 5% 0;
+										margin: 0;
 										padding: 4px 0 2% 0;
 										opacity: 0;
 										$navLinks: 3;
@@ -287,9 +287,14 @@
 								line-height: 20px;
 								//transform: scale(0.8);
 								transition: 0.5s;
-								margin: 7% 0;
+								margin: 4% 0;
 								padding: 4px 0 4% 0;
 								opacity: 0.8;
+							}
+
+							.subpages {
+								//border-top: blue;
+
 							}
 						}
 
