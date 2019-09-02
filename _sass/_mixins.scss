@@ -1390,7 +1390,7 @@
       border-left: 0;
       @include transform-origin(0% 100%);
     }
-    color: $color-hover;
+    //color: $color-hover;
   }
   @include border-box();
 }
