@@ -19,9 +19,6 @@
 		@include fadeInGrid(0.4s, 1s);
 	}
 
-	@media (min-width: 985px) {
-		max-width: 985px;
-	}
 	@include clearfix();
 
 

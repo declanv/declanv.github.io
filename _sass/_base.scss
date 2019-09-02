@@ -83,12 +83,12 @@ body {
 }
 
 hr {
-	margin: 10px -100% 20px;
+	margin: 10px 0 20px 0;
 	border: none;
 	//border-top: 3px double lightgrey;
 	border-top: 2px solid lightgrey;
 	color: lightgrey;
-	overflow: visible;
+	overflow: hidden;
 	text-align: center;
 	height: 10px;
 }
@@ -134,6 +134,10 @@ hr {
 			}
 		}
 	}
+}
+
+@media (min-width: 985px) {
+
 }
 
 
