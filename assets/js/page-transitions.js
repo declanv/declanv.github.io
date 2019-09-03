@@ -1,16 +1,25 @@
 $( document ).ready(function() {
 	  // Barba.Pjax.Dom.containerClass = 'body';
+  var navWChildren = $('.subpages').prev('.page-link');
+  var subpages = navWChildren.siblings('.subpages');
+	console.log('here are the subpages: ', subpages);
+
+  var closeSubPageGroups = function() {
+
+	  navWChildren.find('.page-link').removeClass('selected');
+	  $('.trigger.box').removeClass('subnav-open');
+
+	  subpages.addClass('closing-subnav');
+	  subpages.removeClass('open');
+  }
+
   mobileMenuOpen = false;
 	  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
   var clickOutsideClose = function() {
 
-	var navWChildren = $('.subpages').prev('.page-link');
-	var subpages = navWChildren.find('.subpages');
-
-
 	$(document).on("click.document", function (e) {
 
-	  if ($(window).width() < 650 && mobileMenuOpen) {
+	  if ($(window).width() <= 600 && mobileMenuOpen) {
 
 		if (!navWChildren.is(e.target) // if the target of the click isn't the container...
 				&& navWChildren.has(e.target).length === 0
@@ -19,13 +28,9 @@ $( document ).ready(function() {
 		{
 
 
-		  console.log('inside the clickOutsideClose and here is the element: ', e.target);
+		  // console.log('inside the clickOutsideClose and here is the element: ', e.target);
 
-		  navWChildren.find('.page-link').removeClass('selected');
-		  $('.trigger.box').removeClass('subnav-open');
-
-		  subpages.addClass('closing-subnav');
-		  subpages.removeClass('open');
+			closeSubPageGroups();
 
 		  // window.setTimeout(function() {subpages.removeClass('open')}, 100);
 
@@ -40,7 +45,8 @@ $( document ).ready(function() {
 	var closeMobileMenu = function() {
 		mobileMenuOpen = false;
 		$('.site-header').removeClass('open-mobile');
-		console.log('closing mobile menu.');
+		closeSubPageGroups();
+		// console.log('closing mobile menu.');
 	}
 
   var openMobileMenu = function() {
@@ -50,7 +56,7 @@ $( document ).ready(function() {
 
   var mobileMenuClick = function() {
 
-	console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
+	// console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
 	$('#menu').off('click');
 
 	$('#menu').on('click', function(){
@@ -132,8 +138,8 @@ $( document ).ready(function() {
 	  window.requestAnimationFrame(function() {
 
 		scrollToShow();
+	  	// console.log('scroll check happening')
 		fadeHeader();
-		// doSomething(last_known_scroll_position);
 		ticking = false;
 	  });
 
@@ -212,7 +218,6 @@ $( document ).ready(function() {
 	};
 
 	if ($('.page-nav.next').length && $(window).scrollTop() + $(window).height() > $(document).height() - 300) {
-		console.log("you're at the bottom of the page");
 		$('.page-nav.next').addClass('open');
 	} else if ($('.page-nav.next').length && $(window).scrollTop() + $(window).height() < $(document).height() - 300) {
 		$('.page-nav.next').removeClass('open');
@@ -300,7 +305,7 @@ $( document ).ready(function() {
 	// triggers when user clicks on thumbnail
 	var onThumbnailsClick = function(e) {
 
-		console.log('in onthumbnails click');
+		// console.log('in onthumbnails click');
 		e = e || window.event;
 		e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
@@ -309,12 +314,11 @@ $( document ).ready(function() {
 		// find root element of slide
 		var clickedListItem = closest(eTarget, function(el) {
 			// add check to see whether the thing clicked was a project page link
-			debugger;
-			console.log('here is the element in clickedListItem function: ', el, "and here is the eTarget: ", eTarget);
+			// console.log('here is the element in clickedListItem function: ', el, "and here is the eTarget: ", eTarget);
 			return (el.tagName && el.tagName.toUpperCase() === 'FIGURE' && eTarget.className !== "project-link-text");
 		});
 
-		console.log("here is the clickedListItem: ", clickedListItem);
+		// console.log("here is the clickedListItem: ", clickedListItem);
 
 		if(!clickedListItem) {
 			return;
@@ -495,7 +499,7 @@ $( document ).ready(function() {
 	   * this.oldContainer is the HTMLElement of the old Container
 	   */
 	  // $('body').removeClass('transition');
-	  console.log('here is what the background color will look like: ', '#' + currentTransitionColor);
+	  // console.log('here is what the background color will look like: ', '#' + currentTransitionColor);
 	  transitionContainer.removeClass('transition-out');
 	  transitionContainer.addClass('transition-in');
 	  transitionContainer.css('background-color', '#' + currentTransitionColor);
@@ -604,7 +608,7 @@ $( document ).ready(function() {
 
 	previousBodyClass = '';
     var removePreviousBodyClass = function () {
-    	console.log('here is the previous body class: ', previousBodyClass);
+    	// console.log('here is the previous body class: ', previousBodyClass);
         $('body').removeClass(previousBodyClass);
     }
 
