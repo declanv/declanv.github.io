@@ -114,10 +114,10 @@ layout: default
 		</div>
 		<div class="full-width-text-container">
 			<p class="text">
-				{{ page.description3 }}
+				{{ page.description2 }}
 			</p>
 		</div>
-		{% if page.image4 == nil %}
+		{% if page.image3 == nil %}
 			<div class="isolated-text">
 				<p class='text'>
 					{{ page.description2 }}
@@ -126,17 +126,33 @@ layout: default
 		{% endif %}
 	</div>
 
+	{% if page.image3 %}
+		<div class="content-container outro show-on-scroll">
+			<div class="intro-image">
+				<img src="{{img_path | append: page.image3}}" />
+			</div>
+			<div class="isolated-text">
+				<p class='text'>
+					{{ page.description3 }}
+				</p>
+			</div>
+		</div>
+	{% endif %}
+
 	{% if page.image4 %}
 		<div class="content-container outro show-on-scroll">
 			<div class="intro-image">
 				<img src="{{img_path | append: page.image4}}" />
 			</div>
-			<div class="isolated-text">
-				<p class='text'>
-					{{ page.description2 }}
-				</p>
-			</div>
+			{% if page.description4 %}
+				<div class="full-width-text-container">
+					<p class="text">
+						{{ page.description4 }}
+					</p>
+				</div>
+			{% endif %}
 		</div>
-	{% endif %}
+	{% endif %}}
+
 </div>
 
