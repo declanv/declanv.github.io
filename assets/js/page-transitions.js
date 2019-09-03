@@ -604,6 +604,7 @@ $( document ).ready(function() {
 
 	previousBodyClass = '';
     var removePreviousBodyClass = function () {
+    	console.log('here is the previous body class: ', previousBodyClass);
         $('body').removeClass(previousBodyClass);
     }
 

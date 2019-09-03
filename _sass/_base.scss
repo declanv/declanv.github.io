@@ -33,6 +33,7 @@ body {
 	// overflow-y: scroll;
 	z-index: 5;
 	// background-color: map_get($colors, 'purple');
+	//overflow-x: hidden;
 
 	p {
 		font-family: NunitoSans-Regular, sans-serif;
@@ -44,7 +45,16 @@ body {
 
 	}
 
+	.barba-container {
+		overflow-x: hidden;
 
+	}
+
+	&.about {
+		.barba-container {
+			overflow-x: visible;
+		}
+	}
 
 
 }
