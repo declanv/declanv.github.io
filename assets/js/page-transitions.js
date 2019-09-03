@@ -621,7 +621,7 @@ $( document ).ready(function() {
 		  onEnter: function() {
 			  // The new Container is ready and attached to the DOM.
 			  currentBodyClass = parent;
-
+			  addCurrentBodyClass();
 		  },
 		  onEnterCompleted: function() {
 			  // The Transition has just finished.
@@ -710,7 +710,7 @@ var galleryViews  = [
 		'namespace':'other'
 	},
 	{
-		'about':'about',
+		'parent':'about',
 		'namespace':'about'
 	}
 ];
