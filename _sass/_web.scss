@@ -166,7 +166,8 @@
 				.title {	
 					// transform: skewX(-20deg);
 					@include header-font();
-					color: $site-light-blue;
+					//color: $site-light-blue;
+					color: white;
 
 					// font-family: NunitoSans-ExtraBold, sans-serif;
 					// font-family: MedulaOne, sans-serif;
