@@ -161,6 +161,7 @@
 						@include flex-direction-column();
 
 						&.subnav-open {
+
 							.page-link {
 								// padding-bottom: 2.5%;
 								margin: 10% 0;
@@ -218,6 +219,7 @@
 								top: initial;
 								height: initial;
 								transition: 0.5s;
+								border: 3px solid $site-pink;
 
 								li {
 									display: block;
@@ -290,6 +292,10 @@
 								margin: 4% 0;
 								padding: 4px 0 4% 0;
 								opacity: 0.8;
+
+								&.selected {
+									@include expand-underline($site-pink, 3px);
+								}
 							}
 
 							.subpages {
