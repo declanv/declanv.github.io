@@ -1292,6 +1292,7 @@
     top:0;
     left:0;
     @include border-box();
+    border-bottom: $border-width solid transparent;
   }
 
   &:before {

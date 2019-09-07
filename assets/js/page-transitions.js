@@ -71,10 +71,10 @@ $( document ).ready(function() {
 	var mobileSubpageClick = function($link) {
 		$link.addClass('selected');
 		$('.trigger.box').addClass('subnav-open');
-		currentSubPageSet = $link.siblings('.subpages');
-		// I will likely need to add another class here which will enable a reverse transition (like a fadeout)
-		$('.subpages').addClass('closing-subnav');
+		var currentSubPageSet = $link.siblings('.subpages');
 		$('.subpages').not(currentSubPageSet).removeClass('open');
+		// I will likely need to add another class here which will enable a reverse transition (like a fadeout)
+		// $('.subpages').addClass('closing-subnav');
 		currentSubPageSet.addClass('open');
 		currentSubPageSet.removeClass('closing-subnav');
 		clickOutsideClose();
