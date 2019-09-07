@@ -160,6 +160,7 @@
 						@include display-flex();
 						@include flex-direction-column();
 
+
 						&.subnav-open {
 
 							.page-link {
@@ -219,7 +220,9 @@
 								top: initial;
 								height: initial;
 								transition: 0.5s;
-								border: 3px solid $site-pink;
+
+								border: 1.5px solid $sva-today-blue;
+
 
 								li {
 									display: block;
@@ -309,12 +312,69 @@
 
 			}
 
+
 		}
 
 
 	}
 
 
+	.about {
+		.site-header.open-mobile {
+			.wrapper {
+				.site-nav {
+					.trigger.box {
+						.subpages.open {
+							border: 1.5px solid $sva-today-blue;
+						}
+					}
+				}
+			}
+		}
+
+	}
+	.web {
+		.site-header.open-mobile {
+			.wrapper {
+				.site-nav {
+					.trigger.box {
+						.subpages.open {
+							border: 1.5px solid orange;
+						}
+					}
+				}
+			}
+		}
+
+	}
+	.art {
+		.site-header.open-mobile {
+			.wrapper {
+				.site-nav {
+					.trigger.box {
+						.subpages.open {
+							border: 1.5px solid $sva-today-blue;
+						}
+					}
+				}
+			}
+		}
+
+	}
+	.photo {
+		.site-header.open-mobile {
+			.wrapper {
+				.site-nav {
+					.trigger.box {
+						.subpages.open {
+							border: 1.5px solid $sva-today-blue;
+						}
+					}
+				}
+			}
+		}
+
+	}
 }
 
 
