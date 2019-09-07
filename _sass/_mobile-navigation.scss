@@ -318,62 +318,55 @@
 
 	}
 
+	@mixin mobileSubnavColor($color1, $color2) {
+		.site-header.open-mobile {
+			.wrapper {
+				.site-nav {
+					.trigger.box {
+						.subpages.open {
+							border: 1.5px solid $color1;
+						}
+
+						&.subnav-open {
+							.page-link.selected {
+								@include expand-underline($color2, 3px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 
 	.about {
-		.site-header.open-mobile {
-			.wrapper {
-				.site-nav {
-					.trigger.box {
-						.subpages.open {
-							border: 1.5px solid $sva-today-blue;
-						}
-					}
-				}
-			}
-		}
-
+		@include mobileSubnavColor($about-dark-blue, $about-pink);
 	}
 	.web {
-		.site-header.open-mobile {
-			.wrapper {
-				.site-nav {
-					.trigger.box {
-						.subpages.open {
-							border: 1.5px solid orange;
-						}
-					}
-				}
-			}
+
+		@include mobileSubnavColor($site-blue, $site-orange);
+
+		&.relay {
+			@include mobileSubnavColor($relay-blue, $relay-red);
 		}
 
+		&.sightseer {
+			@include mobileSubnavColor($sightseer-blue, $sightseer-red);
+		}
+
+		&.ritandeclan {
+			@include mobileSubnavColor($ritandeclan-blue, $ritandeclan-pink);
+		}
+
+		&.sva-today-builder {
+			@include mobileSubnavColor($sva-today-blue, $sva-today-red);
+		}
 	}
 	.art {
-		.site-header.open-mobile {
-			.wrapper {
-				.site-nav {
-					.trigger.box {
-						.subpages.open {
-							border: 1.5px solid $sva-today-blue;
-						}
-					}
-				}
-			}
-		}
-
+		@include mobileSubnavColor($site-blue, $site-pink);
 	}
 	.photo {
-		.site-header.open-mobile {
-			.wrapper {
-				.site-nav {
-					.trigger.box {
-						.subpages.open {
-							border: 1.5px solid $sva-today-blue;
-						}
-					}
-				}
-			}
-		}
-
+		@include mobileSubnavColor($site-purple, $site-yellow);
 	}
 }
 
