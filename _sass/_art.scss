@@ -31,6 +31,9 @@
 		position: relative;
 		display: block;
 		width: 48%;
+		//margin: 0 1%;
+		padding: 10px;
+		@include border-box();
 		@media (max-width: 756px) {
 			width: 100%;
 		}

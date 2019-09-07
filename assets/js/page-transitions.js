@@ -641,14 +641,14 @@ $( document ).ready(function() {
 			  .always( function( instance ) {
 				  // console.log('all images loaded');
 
-				  $('.grid').masonry({
-					  // itemSelector: '.grid-item',
-					  // columnWidth: '.grid-sizer',
-					  // columnWidth: 300,
-					  percentPosition: true,
-					  // fitWidth: true,
-					  gutter: 30
-				  });
+				  // $('.grid').masonry({
+					//   // itemSelector: '.grid-item',
+					//   // columnWidth: '.grid-sizer',
+					//   // columnWidth: 300,
+					//   percentPosition: true,
+					//   fitWidth: true,
+					//   gutter: 0
+				  // });
 
 				  imageOptimizer();
 				  initPhotoSwipeFromDOM('.projects-container');
