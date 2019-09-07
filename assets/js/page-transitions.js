@@ -1,15 +1,15 @@
 $( document ).ready(function() {
 	  // Barba.Pjax.Dom.containerClass = 'body';
-  var navWChildren = $('.subpages').prev('.page-link');
-  var subpages = navWChildren.siblings('.subpages');
-	console.log('here are the subpages: ', subpages);
 
   var closeSubPageGroups = function() {
+
+	  var navWChildren = $('.subpages').prev('.page-link');
+	  var subpages = navWChildren.siblings('.subpages');
 
 	  navWChildren.find('.page-link').removeClass('selected');
 	  $('.trigger.box').removeClass('subnav-open');
 
-	  subpages.addClass('closing-subnav');
+	  // subpages.addClass('closing-subnav');
 	  subpages.removeClass('open');
   }
 
@@ -20,6 +20,7 @@ $( document ).ready(function() {
 	$(document).on("click.document", function (e) {
 
 	  if ($(window).width() <= 600 && mobileMenuOpen) {
+	    var navWChildren = $('.subpages').prev('.page-link');
 
 		if (!navWChildren.is(e.target) // if the target of the click isn't the container...
 				&& navWChildren.has(e.target).length === 0
@@ -76,7 +77,7 @@ $( document ).ready(function() {
 		// I will likely need to add another class here which will enable a reverse transition (like a fadeout)
 		// $('.subpages').addClass('closing-subnav');
 		currentSubPageSet.addClass('open');
-		currentSubPageSet.removeClass('closing-subnav');
+		// currentSubPageSet.removeClass('closing-subnav');
 		clickOutsideClose();
   	}
 

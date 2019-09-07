@@ -1,4 +1,3 @@
-
 @media (max-width: 600px) {
 
 	.site-header {
@@ -165,14 +164,14 @@
 
 							.page-link {
 								// padding-bottom: 2.5%;
-								margin: 10% 0;
+								//margin: 10% 0;
 							}
 						}
 
 						.page-link {
 							display: block;
-							margin: 5% 0;
-							padding-bottom: 5%;
+							margin: 5% 0 6% 0;
+							//padding-bottom: 5%;
 							text-align: center;
 							opacity: 0;
 							color: white;
@@ -197,7 +196,7 @@
 
 						.subpages {
 							visibility: hidden;
-							// display: none;
+							display: none;
 							opacity: 0;
 							// border: none;
 
@@ -230,8 +229,8 @@
 									.page-link {
 
 										color: white;
-										margin: 0;
-										padding: 4px 0 2% 0;
+										//margin: 0;
+										//padding: 4px 0 2% 0;
 										opacity: 0;
 										$navLinks: 3;
 
@@ -251,9 +250,10 @@
 							}
 
 
-							&.closing-subnav {
-								@include closeSubnav();
-							}
+							//&.closing-subnav {
+							//	//display: block;
+							//	@include closeSubnav();
+							//}
 
 						}
 
@@ -263,7 +263,7 @@
 
 						.page-link {
 
-							padding: 4px 0 5% 0;
+							//padding: 4px 0 5% 0;
 
 							&.active {
 								margin-bottom: 0;
@@ -293,7 +293,7 @@
 								//transform: scale(0.8);
 								transition: 0.5s;
 								margin: 4% 0;
-								padding: 4px 0 4% 0;
+								//padding: 4px 0 4% 0;
 								opacity: 0.8;
 
 								&.selected {
@@ -312,9 +312,7 @@
 
 			}
 
-
 		}
-
 
 	}
 
@@ -337,7 +335,6 @@
 			}
 		}
 	}
-
 
 	.about {
 		@include mobileSubnavColor($about-dark-blue, $about-pink);
@@ -369,5 +366,3 @@
 		@include mobileSubnavColor($site-purple, $site-yellow);
 	}
 }
-
-
