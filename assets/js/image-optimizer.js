@@ -1,5 +1,9 @@
-var imageOptimizer = function() {
-    var lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+var imageOptimizer = function(galleryContainer, macyInstance) {
+    if (typeof galleryContainer === undefined || galleryContainer === null) {
+        galleryContainer = '.grid';
+    }
+    var container = document.querySelector(galleryContainer);
+    var lazyImages = [].slice.call(container.querySelectorAll('img.lazy'));
     // console.log("here are the lazyImages: ", lazyImages);
     if ('IntersectionObserver' in window) {
         // console.log('the intersection observer check works');
@@ -17,6 +21,7 @@ var imageOptimizer = function() {
                         $lazyImage = $(lazyImage);
                         $lazyImage.parent().addClass('unblur');
                         $lazyImage.removeClass('blur');
+                        macyInstance.recalculate();
                         // lazyImage.classList.add('unblur');
                         lazyImageObserver.unobserve(lazyImage);
                     }
@@ -34,4 +39,4 @@ var imageOptimizer = function() {
     }
 }
 
-imageOptimizer();
+// imageOptimizer();

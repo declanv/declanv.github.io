@@ -636,7 +636,7 @@ $( document ).ready(function() {
 			  grid.imagesLoaded().done( function( instance ) {
 				  // console.log('all images successfully loaded');
 
-			  grid.addClass("fade-in-grid");
+			  	grid.addClass("fade-in-grid");
 
 			  })
 			  .always( function( instance ) {
@@ -657,11 +657,12 @@ $( document ).ready(function() {
 							index = index + 1;
 							var galleryName = '.gallery-'+index;
 							console.log('here is the galleryName: ', galleryName);
-							var macyName = Macy({
+							var macyInstance = Macy({
 								// See below for all available options.
 								container: galleryName,
 								trueOrder: false,
 								waitForImages: true,
+								useOwnImageLoader: false,
 								margin: 0,
 								columns: 2,
 								// breakAt: {
@@ -671,13 +672,22 @@ $( document ).ready(function() {
 								//   400: 1
 								// }
 							});
+							imageOptimizer(galleryName, macyInstance);
+							// macyInstance.runOnImageLoad(function () {
+							// 	console.log('I only get called when all images are loaded');
+							// 	macyInstance.recalculate(true, true);
+							// });
+							// macyInstance.on(macyInstance.constants.EVENT_RECALCULATED, function (ctx) {
+							// 	console.log('recalculated');
+							// });
 						});
 					} else {
-						var macyName = Macy({
+						var macyInstance = Macy({
 							// See below for all available options.
 							container: '.grid',
 							trueOrder: false,
 							waitForImages: true,
+							useOwnImageLoader: false,
 							margin: 0,
 							columns: 2,
 							// breakAt: {
@@ -687,11 +697,18 @@ $( document ).ready(function() {
 							//   400: 1
 							// }
 						});
+						imageOptimizer('.grid', macyInstance);
+						// macyInstance.runOnImageLoad(function () {
+						// 	console.log('I only get called when all images are loaded');
+						// 	macyInstance.recalculate(true, true);
+						// });
+						// macyInstance.on(macyInstance.constants.EVENT_RECALCULATED, function (ctx) {
+						// 	console.log('recalculated');
+						// });
 					}
 
 				  }
 
-				  imageOptimizer();
 				  initPhotoSwipeFromDOM('.projects-container');
 
 			  })
