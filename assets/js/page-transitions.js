@@ -677,9 +677,9 @@ $( document ).ready(function() {
 							// 	console.log('I only get called when all images are loaded');
 							// 	macyInstance.recalculate(true, true);
 							// });
-							// macyInstance.on(macyInstance.constants.EVENT_RECALCULATED, function (ctx) {
-							// 	console.log('recalculated');
-							// });
+							macyInstance.on(macyInstance.constants.EVENT_RECALCULATED, function (ctx) {
+								console.log('recalculated');
+							});
 						});
 					} else {
 						var macyInstance = Macy({
@@ -702,9 +702,9 @@ $( document ).ready(function() {
 						// 	console.log('I only get called when all images are loaded');
 						// 	macyInstance.recalculate(true, true);
 						// });
-						// macyInstance.on(macyInstance.constants.EVENT_RECALCULATED, function (ctx) {
-						// 	console.log('recalculated');
-						// });
+						macyInstance.on(macyInstance.constants.EVENT_RECALCULATED, function (ctx) {
+							console.log('recalculated');
+						});
 					}
 
 				  }
