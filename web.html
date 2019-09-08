@@ -15,7 +15,8 @@ custom_js:
 
 <div class="projects-container">
 
-	{% for web in site.webs %}
+	{% assign sortedWebs = site.webs | sort: 'order' %}
+	{% for web in sortedWebs %}
 
 		{% assign img_path = "/assets/images/web/" | append: web.image-cover %}
 
