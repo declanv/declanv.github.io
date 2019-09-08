@@ -71,7 +71,7 @@
 
 		a {
 			&.unblur {
-				padding-bottom: 0;
+				padding-bottom: 10px !important;
 				.image {
 					@include unBlur(0s, 0s);
 				}
