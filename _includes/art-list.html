@@ -1,5 +1,5 @@
   {% assign type = include.type %}
-  {% assign section = include.section %}
+  {% assign section = include.section | append: "/" %}
 <!--   <div class="section-title">
     <h4>
       {{type | replace: "-", " "}}

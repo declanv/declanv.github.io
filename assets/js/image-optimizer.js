@@ -15,7 +15,8 @@ var imageOptimizer = function() {
                         var lazyImage = entry.target;
                         lazyImage.src = lazyImage.dataset.src;
                         $lazyImage = $(lazyImage);
-                        $lazyImage.parent().addClass('unblur');
+                        // $lazyImage.parent().addClass('unblur');
+                        $lazyImage.removeClass('blur');
                         // lazyImage.classList.add('unblur');
                         lazyImageObserver.unobserve(lazyImage);
                     }

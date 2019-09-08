@@ -617,7 +617,7 @@ $( document ).ready(function() {
         $('body').addClass(currentBodyClass);
     }
 
-  var setupGalleryView = function(parent, viewName) {
+  var setupGalleryView = function(parent, viewName, notGridLayout) {
 	  var camelCasedView = viewName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
 	  var nameSpace = viewName.replace(/-/g, ' ');
 
@@ -649,6 +649,22 @@ $( document ).ready(function() {
 					//   fitWidth: true,
 					//   gutter: 0
 				  // });
+				  if (notGridLayout == false) {
+					  var macyInstance = Macy({
+						  // See below for all available options.
+						  container: '.grid',
+						  trueOrder: false,
+						  waitForImages: true,
+						  margin: 0,
+						  columns: 2,
+						  // breakAt: {
+						  //   1200: 5,
+						  //   940: 3,
+						  //   520: 2,
+						  //   400: 1
+						  // }
+					  });
+				  }
 
 				  imageOptimizer();
 				  initPhotoSwipeFromDOM('.projects-container');
@@ -680,11 +696,13 @@ $( document ).ready(function() {
 var galleryViews  = [
 	{
 	  'parent':'home',
-	  'namespace':'home'
+	  'namespace':'home',
+	  'notGridLayout':true
 	},
 	{
 	  'parent':'web',
-	  'namespace':'web'
+	  'namespace':'web',
+	  'notGridLayout':true
 	},
 	{
 		'parent':'art',
@@ -716,12 +734,18 @@ var galleryViews  = [
 	},
 	{
 		'parent':'about',
-		'namespace':'about'
+		'namespace':'about',
+		'notGridLayout':true
 	}
 ];
 
 $.each(galleryViews, function(i, galleryView){
-	setupGalleryView(galleryView.parent, galleryView.namespace);
+	if (typeof galleryView.notGridLayout === 'undefined') {
+		var notGridLayout = false;
+	} else {
+		var notGridLayout = true;
+	}
+	setupGalleryView(galleryView.parent, galleryView.namespace, notGridLayout);
 //     Home.init();
 //     Art.init();
 // // Illustration.init();
