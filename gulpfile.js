@@ -48,7 +48,7 @@ var files = {
 	 	 		jsVendor + 'photoswipe-ui-default.min.js',
 	 	 		jsVendor + 'barba.min.js',
 				// js + 'gallery-custom.js',
-				js + 'masonry-custom.js',
+				// js + 'masonry-custom.js',
 				js + 'scroll-into-view.js',
 				js + 'image-optimizer.js',
 				js + 'page-transitions.js'

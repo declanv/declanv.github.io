@@ -396,6 +396,7 @@ $( document ).ready(function() {
 
 		// define options (if needed)
 		options = {
+			spacing: 0,
 
 			// define gallery index (for URL)
 			galleryUID: galleryElement.getAttribute('data-pswp-uid'),
@@ -620,7 +621,7 @@ $( document ).ready(function() {
   var setupGalleryView = function(parent, viewName, notGridLayout) {
 	  var camelCasedView = viewName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
 	  var nameSpace = viewName.replace(/-/g, ' ');
-
+	  var grid = $('.grid');
 	  var viewName = Barba.BaseView.extend({
 		  namespace: nameSpace,
 		  onEnter: function() {
@@ -632,10 +633,10 @@ $( document ).ready(function() {
 			  // The Transition has just finished.
 			  mobileMenuClick();
 
-			  $('.grid').imagesLoaded().done( function( instance ) {
+			  grid.imagesLoaded().done( function( instance ) {
 				  // console.log('all images successfully loaded');
 
-				  $('.grid').addClass("fade-in-grid");
+			  grid.addClass("fade-in-grid");
 
 			  })
 			  .always( function( instance ) {
@@ -650,20 +651,44 @@ $( document ).ready(function() {
 					//   gutter: 0
 				  // });
 				  if (notGridLayout == false) {
-					  var macyInstance = Macy({
-						  // See below for all available options.
-						  container: '.grid',
-						  trueOrder: false,
-						  waitForImages: true,
-						  margin: 0,
-						  columns: 2,
-						  // breakAt: {
-						  //   1200: 5,
-						  //   940: 3,
-						  //   520: 2,
-						  //   400: 1
-						  // }
-					  });
+
+					if (grid.length > 1) {
+						$('.grid').each(function(index) {
+							index = index + 1;
+							var galleryName = '.gallery-'+index;
+							console.log('here is the galleryName: ', galleryName);
+							var macyName = Macy({
+								// See below for all available options.
+								container: galleryName,
+								trueOrder: false,
+								waitForImages: true,
+								margin: 0,
+								columns: 2,
+								// breakAt: {
+								//   1200: 5,
+								//   940: 3,
+								//   520: 2,
+								//   400: 1
+								// }
+							});
+						});
+					} else {
+						var macyName = Macy({
+							// See below for all available options.
+							container: '.grid',
+							trueOrder: false,
+							waitForImages: true,
+							margin: 0,
+							columns: 2,
+							// breakAt: {
+							//   1200: 5,
+							//   940: 3,
+							//   520: 2,
+							//   400: 1
+							// }
+						});
+					}
+
 				  }
 
 				  imageOptimizer();
