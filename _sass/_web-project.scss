@@ -316,6 +316,7 @@
 					.intro-text {
 						opacity: 0;
 						@include body-font();
+						font-size: 23px;
 						@include text-reveal-from-below(2s, cubic-bezier(0, 0.58, 0, 1));
 
 					}
@@ -325,17 +326,23 @@
 				.tech-wrapper {
 
 					position: relative;
-					display: block;
+					@include display-flex();
+					@include flex-direction-column();
 					@include flex(1 1 auto);
+					@include justify-content-space-between();
+					@include align-self-start();
 
 					padding-left: 10px;
 
 					.tech-title {
-
-						@include header-font();
-						font-size: 30px;
+						position: relative;
+						display: block;
+						@include body-font-wide();
+						font-size: 32px;
+						line-height: 32px;
 						@include text-in-left(1.75s, cubic-bezier(0, 0.58, 0, 1));
-						@include expand-ruleline($relay-blue, 2s);	
+						@include expand-ruleline($relay-blue, 2s);
+
 					}
 					.tech-list {
 
@@ -344,6 +351,9 @@
 						margin-top: 15px;
 						@include body-light();
 						font-weight: 100;
+						@include display-flex();
+						@include flex-direction-row();
+						@include flex-wrap(wrap);
 
 						$techs: 10;
 
@@ -370,7 +380,12 @@
 							}
 
 							.tech-item {
+								font-size: 16px;
+								@include display-flex();
+								@include flex-direction-row();
+								@include flex(1 0 auto);
 								span {
+									@include flex(1 0 auto);
 									&:after {
 										content: ', ';
 										position: relative;
@@ -519,7 +534,7 @@
 			@include justify-content-center();
 			margin: 100px auto 125px auto;
 			z-index: 4;
-			width: 50%;
+			width: 75%;
 			@include border-box();
 
 			&:before {
@@ -726,7 +741,7 @@
 					.tech-wrapper {
 
 						.tech-list {
-							display: inline-block;
+							//display: inline-block;
 
 							.tech-item {
 								font-size: 16px;
@@ -794,7 +809,7 @@
 	}
 
 	&.sva {
-		@include web-project($sva-red, $sva-btn-red, $sva-blue);
+		@include web-project($sva-red, $sva-blue, $sva-today-grey);
 	}
 
 
