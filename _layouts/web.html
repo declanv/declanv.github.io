@@ -4,35 +4,41 @@ layout: default
  
 {% assign img_path = "/assets/images/web/" %}
 
+{% assign nextNumber = page.listOrder| plus: 1 %}
+{% assign prevNumber = page.listOrder| minus: 1 %}
+
+{% assign nextPage = site.webs | where: "listOrder", "{{nextNumber}}" | first %}
+{% assign prevPage = site.webs | where: "listOrder", "{{prevNumber}}" | first %}
+
 <div class="web-project-container {{ page.title | replace: ' ','-' | downcase }}">
 	<div class="background-color one"></div>
 	<div class="background-color two"></div>
-	{% if page.previous.url %}
-		<a class='page-nav prev' href="{{page.previous.url}}.html" data-hex="{{page.previous.hex}}">
-			<div class="arrow-link-container">
-				<div class="arrow">
-				</div>
-			    <div class="text-container" >
-			    	<span class='one'>Previous</span> 
-			    	<span class='two'>Project</span>
-			    	<!-- {{page.previous.title}} -->
-			    </div>
+	{% if nextPage %}
+	<a class='page-nav prev' href="{{nextPage.url}}" data-hex="{{nextPage.hex}}">
+		<div class="arrow-link-container">
+			<div class="arrow">
 			</div>
-		</a>
+			<div class="text-container" >
+				<span class='one'>Previous</span>
+				<span class='two'>Project</span>
+				<!-- {{page.previous.title}} -->
+			</div>
+		</div>
+	</a>
 	{% endif %}
-	{% if page.next.url %}
-		<a class="page-nav next" href="{{page.next.url}}.html" data-hex="{{page.next.hex}}">
-			<div class="arrow-link-container">
+	{% if prevPage %}
+	<a class="page-nav next" href="{{prevPage.url}}" data-hex="{{prevPage.hex}}">
+		<div class="arrow-link-container">
 
-		    	<div class="text-container" >
-		    		<span class='one'>Next</span> 
-		    		<span class='two'>Project</span>
-		    		<!-- {{page.next.title}} -->
-		    	</div>
-				<div class="arrow">
-				</div>
+			<div class="text-container" >
+				<span class='one'>Next</span>
+				<span class='two'>Project</span>
+				<!-- {{page.next.title}} -->
 			</div>
-		</a>
+			<div class="arrow">
+			</div>
+		</div>
+	</a>
 	{% endif %}
 	<div class="content-container intro">
 
