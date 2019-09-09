@@ -4,8 +4,8 @@ layout: default
  
 {% assign img_path = "/assets/images/web/" %}
 
-{% assign nextNumber = page.listOrder| plus: 1 %}
-{% assign prevNumber = page.listOrder| minus: 1 %}
+{% assign nextNumber = page.listOrder | plus: 1 %}
+{% assign prevNumber = page.listOrder | minus: 1 %}
 
 {% assign nextPage = site.webs | where: "listOrder", "{{nextNumber}}" | first %}
 {% assign prevPage = site.webs | where: "listOrder", "{{prevNumber}}" | first %}
