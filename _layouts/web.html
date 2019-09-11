@@ -4,17 +4,18 @@ layout: default
  
 {% assign img_path = "/assets/images/web/" %}
 
-{% assign nextNumber = page.listOrder | plus: 1 %}
-{% assign prevNumber = page.listOrder | minus: 1 %}
+{% assign nextNumber = page.sortOrder | plus: 1 %}
+{% assign prevNumber = page.sortOrder | minus: 1 %}
 
-{% assign nextPage = site.webs | where: "listOrder", "{{nextNumber}}" | first %}
-{% assign prevPage = site.webs | where: "listOrder", "{{prevNumber}}" | first %}
+{% assign nextPage = site.webs | where_exp: "item", "item.sortOrder == nextNumber" %}
+{% assign prevPage = site.webs | where_exp: "item", "item.sortOrder == prevNumber" %}
+{% assign nextPageUrl = nextPage.url %}
 
 <div class="web-project-container {{ page.title | replace: ' ','-' | downcase }}">
 	<div class="background-color one"></div>
 	<div class="background-color two"></div>
 	{% if nextPage %}
-	<a class='page-nav prev' href="{{nextPage.url}}" data-hex="{{nextPage.hex}}">
+	<a class='page-nav prev' href="{{nextPageUrl}}" data-hex="{{nextPage.hex}}">
 		<div class="arrow-link-container">
 			<div class="arrow">
 			</div>

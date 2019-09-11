@@ -11,12 +11,13 @@ custom_js:
 	<h4>
 		Web
 	</h4>
-</div>	 -->	
+</div>	 -->
 
 <div class="projects-container">
 
+	{% assign sortedWebs = site.webs | sort: "sortOrder" %}
 
-	{% for web in site.webs %}
+	{% for web in sortedWebs %}
 
 		{% assign img_path = "/assets/images/web/" | append: web.image-cover %}
 
@@ -51,8 +52,8 @@ custom_js:
 				</div>
 			</div>
 
-		</a>	
+		</a>
 
-	{% endfor %}  
+	{% endfor %}
 
 </div>
