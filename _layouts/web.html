@@ -3,19 +3,14 @@ layout: default
 ---
  
 {% assign img_path = "/assets/images/web/" %}
-
-{% assign nextNumber = page.sortOrder | plus: 1 %}
-{% assign prevNumber = page.sortOrder | minus: 1 %}
-
-{% assign nextPage = site.webs | where_exp: "item", "item.sortOrder == nextNumber" %}
-{% assign prevPage = site.webs | where_exp: "item", "item.sortOrder == prevNumber" %}
-{% assign nextPageUrl = nextPage.url %}
+{% assign nextPage = page.next %}
+{% assign prevPage = page.previous %}
 
 <div class="web-project-container {{ page.title | replace: ' ','-' | downcase }}">
 	<div class="background-color one"></div>
 	<div class="background-color two"></div>
-	{% if nextPage %}
-	<a class='page-nav prev' href="{{nextPageUrl}}" data-hex="{{nextPage.hex}}">
+	{% if page.previous %}
+	<a class='page-nav prev' href="{{prevPage.url}}" data-hex="{{prevPage.hex}}">
 		<div class="arrow-link-container">
 			<div class="arrow">
 			</div>
@@ -27,8 +22,8 @@ layout: default
 		</div>
 	</a>
 	{% endif %}
-	{% if prevPage %}
-	<a class="page-nav next" href="{{prevPage.url}}" data-hex="{{prevPage.hex}}">
+	{% if nextPage %}
+	<a class="page-nav next" href="{{nextPage.url}}" data-hex="{{nextPage.hex}}">
 		<div class="arrow-link-container">
 
 			<div class="text-container" >
