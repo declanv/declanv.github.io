@@ -707,6 +707,8 @@ $( document ).ready(function() {
 						});
 					}
 
+				  } else {
+					  imageOptimizer('.content-container');
 				  }
 
 				  initPhotoSwipeFromDOM('.projects-container');

@@ -21,9 +21,12 @@ var imageOptimizer = function(galleryContainer, macyInstance) {
                         $lazyImage = $(lazyImage);
                         $lazyImage.parent().addClass('unblur');
                         $lazyImage.removeClass('blur');
-                        macyInstance.recalculate();
                         // lazyImage.classList.add('unblur');
                         lazyImageObserver.unobserve(lazyImage);
+                        console.log('here is the galleryCOntainer: ', galleryContainer);
+                        if (macyInstance != null || typeof macyInstance != 'undefined') {
+                            macyInstance.recalculate();
+                        }
                     }
                 });
             }, config);
