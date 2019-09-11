@@ -8,4 +8,5 @@ medium: Vine Charcoal and white Nupastel on grey paper
 large-image: tram-4-3-14-large.jpg
 small-image: tram-4-3-14-small.jpg
 size: 1482x1956
+sortOrder: 2
 ---

@@ -48,9 +48,9 @@ collections:
   webs:
     output: true 
     permalink: /web/:path
-  # arts:
-  #   output: true 
-  #   permalink: /art/:path
+#  arts:
+#    output: true
+#    permalink: /art/:path
   # illustrations:
   #   output: true 
   #   permalink: /illustration/:path
