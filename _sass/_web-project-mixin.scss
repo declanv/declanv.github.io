@@ -61,7 +61,7 @@
 
 
 			&:after {
-			    border-left: 50px solid $color2; 
+			    border-left: 50px solid $color2;
 			}
 		}
 
@@ -75,10 +75,10 @@
 			.description-container {
 
 				.tech-wrapper {
-			
+
 					.tech-title {
 
-						@include expand-ruleline($color2, 2s);	
+						@include expand-ruleline($color2, 2s);
 					}
 				}
 			}
@@ -161,7 +161,7 @@
 
 			&:after {
 
-			    border-left: 50px solid $color2; 
+			    border-left: 50px solid $color2;
 			}
 		}
 	}

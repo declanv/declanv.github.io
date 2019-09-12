@@ -71,8 +71,8 @@ body {
 
 .page-content {
 	position: relative;
-	margin-top: 80px;
-
+	//margin-top: 80px;
+	padding-top: 110px;
 	@include flex(1);
 
 	p {

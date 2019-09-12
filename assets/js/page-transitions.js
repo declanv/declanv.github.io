@@ -197,9 +197,9 @@ $( document ).ready(function() {
 
   function fadeHeader() {
 
+	  console.log('here is the window scrollTop: ', $(window).scrollTop());
 
-	if ($(window).scrollTop() > $('.site-header').outerHeight() * 2) {
-
+	if ($(window).scrollTop() > $('.site-header').outerHeight() / 2) {
 
 	  $('header').addClass('scroll-away');
 	  $('header').removeClass('scroll-in');
