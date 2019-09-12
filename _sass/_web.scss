@@ -332,6 +332,10 @@
 			@include web-project-colors($sightseer-red, $sightseer-blue, $sightseer-grey);
 		}
 
+		&.sva{
+			@include web-project-colors($sva-blue, $sva-red, $sva-today-grey);
+		}
+
 		// responsive styles
 
 		@media (max-width: 1000px) {
