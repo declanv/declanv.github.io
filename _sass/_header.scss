@@ -337,91 +337,48 @@
 			@include nav-button($site-blue, $site-orange);
 		}
 
-
-		&.relay {
-
-			.site-title,
-			.page-link {
-				@include nav-button($relay-red, $relay-blue);
-			}
-
-			.site-nav {
-				li:hover {
-					.subpages {
-						border: 1.5px solid $relay-blue;
-						border-top: none;
-					}
-				}
-				.site-title-wrapper {
-					@include hamburger($relay-red, $relay-blue);
-				}
-			}
-
-		}
-
-		&.sightseer {
-
+		@mixin pageHeaderStyles($color1, $color2, $color3) {
 			.site-title,
 			.page-link {
 				// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
-				@include nav-button($sightseer-red, $sightseer-blue);
+				@include nav-button($color1, $color2);
 			}
 
 			.site-nav {
 				li:hover {
 					.subpages {
-						border: 1.5px solid $sightseer-blue;
+						background-color: $color3;
+						border: 1.5px solid $color2;
 						border-top: none;
+						.page-link {
+							@include nav-button($color1, $color2);
+						}
 					}
 				}
 				.site-title-wrapper {
-					@include hamburger($sightseer-red, $sightseer-blue);
+					@include hamburger($color3, $color2);
 				}
 			}
-
 		}
 
+
+		&.sva {
+			@include pageHeaderStyles($sva-today-grey, $sva-blue, $sva-red);
+		}
+		&.sva-redesign {
+			@include pageHeaderStyles($sva-redesign-grey, $sva-redesign-blue, $sva-redesign-red);
+		}
+		&.relay {
+			@include pageHeaderStyles($relay-grey, $relay-blue, $relay-red);
+		}
+		&.sightseer {
+			@include pageHeaderStyles($sightseer-grey, $sightseer-blue, $sightseer-red);
+		}
 		&.ritandeclan {
-
-			.site-title,
-			.page-link {
-				// @include web-project($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
-				@include nav-button($ritandeclan-pink, $ritandeclan-blue);
-			}
-
-			.site-nav {
-				li:hover {
-					.subpages {
-						border: 1.5px solid $ritandeclan-blue;
-						border-top: none;
-					}
-				}
-				.site-title-wrapper {
-					@include hamburger($ritandeclan-pink, $ritandeclan-blue);
-				}
-			}
+			@include pageHeaderStyles($ritandeclan-grey, $ritandeclan-blue, $ritandeclan-pink);
 		}
-
-		&.sva-today-builder {
-
-			.site-title,
-			.page-link {
-				// @include web-project($sva-today-red, $sva-today-blue, $sva-today-grey);
-				@include nav-button($sva-today-red, $sva-today-blue);
-			}
-
-			.site-nav {
-				li:hover {
-					.subpages {
-						border: 1.5px solid $sva-today-blue;
-						border-top: none;
-					}
-				}
-				.site-title-wrapper {
-					@include hamburger($sva-today-red, $sva-today-blue);
-				}
-			}
-
+		&.e-blast-builder {
+			@include pageHeaderStyles($sva-today-grey, $sva-today-blue, $sva-today-red);
 		}
 
 

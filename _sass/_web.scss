@@ -325,7 +325,7 @@
 			@include web-project-colors($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
 		}
 
-		&.sva-today-builder {
+		&.e-blast-builder {
 			@include web-project-colors($sva-today-red, $sva-today-blue, $sva-today-grey);
 		}
 
@@ -339,6 +339,10 @@
 
 		&.sva{
 			@include web-project-colors($sva-blue, $sva-red, $sva-today-grey);
+		}
+
+		&.sva-redesign{
+			@include web-project-colors($sva-redesign-blue, $sva-redesign-red, $sva-redesign-grey);
 		}
 
 		// responsive styles

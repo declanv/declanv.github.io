@@ -278,13 +278,26 @@
 			@include angled-title();
 		}
 
-		.intro-image {
+		.intro-image,
+		.video-container {
 			position: relative;
 			display: block;
 			height: auto;
 			max-height: 500px;
 			overflow: hidden;
 			border: 5px solid $relay-red;
+		}
+
+		.video-container {
+			padding-top: 56.25%;
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border: 0;
+			}
 		}
 
 		.intro-text-container {
@@ -807,12 +820,16 @@
 		@include web-project($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
 	}
 
-	&.sva-today-builder {
+	&.e-blast-builder {
 		@include web-project($sva-today-red, $sva-today-blue, $sva-today-grey);
 	}
 
 	&.sva {
 		@include web-project($sva-red, $sva-blue, $sva-today-grey);
+	}
+
+	&.sva-redesign {
+		@include web-project($sva-redesign-red, $sva-redesign-blue, $sva-redesign-grey);
 	}
 
 
