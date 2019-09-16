@@ -73,6 +73,7 @@ layout: default
 					</div>
 				</div>
 			</div>
+			{% if page.externalUrl %}
 			<div class="link-container">
 				<div class="link-wrapper">
 					<a class="link" href="{{ page.externalUrl }}" target="_blank">
@@ -80,6 +81,7 @@ layout: default
 					</a>
 				</div>
 			</div>
+			{% endif %}
 		</div>
 
 	</div>
@@ -183,6 +185,22 @@ layout: default
 				</p>
 			</div>
 		</div>
+	{% endif %}
+
+	{% if page.image5 %}
+	<div class="content-container outro show-on-scroll">
+		<div class="intro-image">
+			<img src="{{img_path | append: page.image5}}" />
+		</div>
+		{% if page.description5 %}
+		<div class="isolated-text">
+			<p class='text'>
+				{{ page.description5 }}
+			</p>
+		</div>
+		{% endif %}
+	</div>
+
 	{% endif %}
 
 </div>
