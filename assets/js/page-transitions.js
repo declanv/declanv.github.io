@@ -672,7 +672,7 @@ $( document ).ready(function() {
 								//   400: 1
 								// }
 							});
-							imageOptimizer(galleryName, macyInstance);
+							// imageOptimizer(galleryName, macyInstance);
 							// macyInstance.runOnImageLoad(function () {
 							// 	console.log('I only get called when all images are loaded');
 							// 	macyInstance.recalculate(true, true);
@@ -697,7 +697,7 @@ $( document ).ready(function() {
 							//   400: 1
 							// }
 						});
-						imageOptimizer('.grid', macyInstance);
+						// imageOptimizer('.grid', macyInstance);
 						// macyInstance.runOnImageLoad(function () {
 						// 	console.log('I only get called when all images are loaded');
 						// 	macyInstance.recalculate(true, true);
@@ -708,7 +708,7 @@ $( document ).ready(function() {
 					}
 
 				  } else {
-					  imageOptimizer('.content-container');
+					  // imageOptimizer('.content-container');
 				  }
 
 				  initPhotoSwipeFromDOM('.projects-container');

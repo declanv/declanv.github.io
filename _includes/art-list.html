@@ -10,7 +10,7 @@
 
     {% if art.type contains include.type | split: ", " %}
 
-        {% include lazy-image.html type=type section=section art=art %}
+        {% include regular-image.html type=type section=section art=art %}
 
     {% endif %}
 

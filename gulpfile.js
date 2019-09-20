@@ -36,7 +36,7 @@ var files = {
 				// js + 'gallery-custom.js',
 				// js + 'masonry-custom.js',
 				js + 'scroll-into-view.js',
-				js + 'image-optimizer.js',
+				// js + 'image-optimizer.js',
 				js + 'page-transitions.js'
 			],
 			all: [
@@ -50,7 +50,7 @@ var files = {
 				// js + 'gallery-custom.js',
 				// js + 'masonry-custom.js',
 				js + 'scroll-into-view.js',
-				js + 'image-optimizer.js',
+				// js + 'image-optimizer.js',
 				js + 'page-transitions.js'
 			]
 		}
