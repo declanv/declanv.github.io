@@ -12,7 +12,11 @@ padding-bottom:{{aspect_ratio}}%;
 {% endcapture %}
 
 {% capture img_height %}
-height:{{size_array[0]}};
+    {{size_array[0]}}
+{% endcapture %}
+
+{% capture img_width %}
+    {{size_array[1]}}
 {% endcapture %}
 
 {% if art.project %}
