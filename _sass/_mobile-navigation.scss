@@ -314,6 +314,12 @@
 
 		}
 
+		.close-mobile {
+			.site-header .site-nav .site-title-wrapper .menu-wrapper #menu {
+				@include closeMobileNav();
+			}
+		}
+
 	}
 
 	@mixin mobileSubnavColor($color1, $color2) {

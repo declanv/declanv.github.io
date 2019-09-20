@@ -46,6 +46,7 @@ $( document ).ready(function() {
 	var closeMobileMenu = function() {
 		mobileMenuOpen = false;
 		$('.site-header').removeClass('open-mobile');
+		// $('.site-header').addClass('close-mobile');
 		closeSubPageGroups();
 		// console.log('closing mobile menu.');
 	}
@@ -55,37 +56,45 @@ $( document ).ready(function() {
 	  $('.site-header').addClass('open-mobile');
   }
 
-  var mobileMenuClick = function() {
 
+  var mobileMenuClick = function() {
+	console.log('mobile menu clicks');
 	// console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
-	$('#menu').off('click');
 
 	$('#menu').on('click', function(){
-	  $(this).addClass('touched');
 	  if (!mobileMenuOpen) {
 		  openMobileMenu();
+		  $(this).addClass('touched');
 	  } else {
 		  closeMobileMenu();
 	  }
 	});
 
 	var mobileSubpageClick = function($link) {
-		$link.addClass('selected');
-		$('.trigger.box').addClass('subnav-open');
-		var currentSubPageSet = $link.siblings('.subpages');
-		$('.subpages').not(currentSubPageSet).removeClass('open');
-		// I will likely need to add another class here which will enable a reverse transition (like a fadeout)
-		// $('.subpages').addClass('closing-subnav');
-		currentSubPageSet.addClass('open');
-		// currentSubPageSet.removeClass('closing-subnav');
+		if ($link.hasClass('selected')) {
+			console.log('second click');
+		} else {
+			$link.addClass('selected');
+			$('.trigger.box').addClass('subnav-open');
+			var currentSubPageSet = $link.siblings('.subpages');
+			$('.subpages').not(currentSubPageSet).removeClass('open');
+			$('.page-link').not($link).removeClass('selected');
+			// I will likely need to add another class here which will enable a reverse transition (like a fadeout)
+			// $('.subpages').addClass('closing-subnav');
+			currentSubPageSet.addClass('open');
+			// currentSubPageSet.removeClass('closing-subnav');
+		}
+
 		clickOutsideClose();
   	}
 
 	$('.page-link, .site-title').on('click', function(e){
-		if (window.innerWidth < 600 && $(this).siblings('.subpages').length > 0) {
-			e.preventDefault();
-			e.stopImmediatePropagation();
-			mobileSubpageClick($(this));
+		if (window.innerWidth < 600 && $(this).siblings('.subpages').length > 0 ) {
+			if (!$(this).hasClass('selected')) {
+				e.preventDefault();
+				e.stopImmediatePropagation();
+				mobileSubpageClick($(this));
+			}
 		} else {
 			closeMobileMenu();
 		}
@@ -130,6 +139,8 @@ $( document ).ready(function() {
   var last_known_scroll_position = 0;
   var ticking = false;
 
+
+
   window.addEventListener('scroll', function(e) {
 
 	last_known_scroll_position = window.scrollY;
@@ -150,6 +161,30 @@ $( document ).ready(function() {
 
   });
 
+  // var resizeTicking = false;
+  // var lastKnownWindowWith = window.innerWidth;
+  //
+  // window.addEventListener('resize', function(e){
+  //
+	//   lastKnownWindowWith = window.innerWidth;
+  //
+	//   if (!ticking) {
+  //
+	// 	  window.requestAnimationFrame(function() {
+	// 		  resizeTicking = false;
+	// 		  console.log("here is the window width: ", lastKnownWindowWith)
+  //
+	// 		  if (lastKnownWindowWith <= 600) {
+	// 		  	$('#menu').removeClass('touched');
+	// 			  closeMobileMenu();
+	// 		  }
+	// 	  });
+  //
+	// 	  resizeTicking = true;
+  //
+	//   }
+  //
+  // });
 
 
   var scroll = window.requestAnimationFrame ||
@@ -663,7 +698,7 @@ $( document ).ready(function() {
 								trueOrder: false,
 								waitForImages: true,
 								useOwnImageLoader: false,
-								margin: 0,
+								margin: 10,
 								columns: 2,
 								// breakAt: {
 								//   1200: 5,
@@ -688,7 +723,7 @@ $( document ).ready(function() {
 							trueOrder: false,
 							waitForImages: true,
 							useOwnImageLoader: false,
-							margin: 0,
+							margin: 10,
 							columns: 2,
 							// breakAt: {
 							//   1200: 5,
@@ -727,6 +762,10 @@ $( document ).ready(function() {
 		  },
 		  onLeave: function() {
 			  previousBodyClass = parent;
+			  // this prevents the menu from automatically animating closed upon transition
+			  $('#menu').removeClass('touched');
+			  // $('#menu').off('click');
+
 			  // A new Transition toward a new page has just started.
 		  },
 		  onLeaveCompleted: function() {

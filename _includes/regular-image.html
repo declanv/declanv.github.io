@@ -6,9 +6,9 @@
 {% assign tiny_img_path = "/assets/images/" | append: section | append: type | append: "/tiny/" | append: art.small-image %}
 
 {% assign size_array = {{art.size}} | split: "x" %}
-{% assign aspect_ratio = size_array[0] | times: 1.0 | divided_by: size_array[1] | times: 1.0 | times: 100 %}
+{% assign aspect_ratio = size_array[0] | times: 1.0 | divided_by: size_array[1] | times: 1.0 | times: 100 | round: 2 %}
 {% capture padding_bottom %}
-padding-bottom:{{aspect_ratio}}%;
+    style="padding-bottom:{{aspect_ratio}}%;"
 {% endcapture %}
 
 {% capture img_height %}
