@@ -58,14 +58,18 @@ $( document ).ready(function() {
 
 
   var mobileMenuClick = function() {
-	console.log('mobile menu clicks');
 	// console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
 
 	$('#menu').on('click', function(){
+
 	  if (!mobileMenuOpen) {
+		console.log('mobile menu click in closed');
+
 		  openMobileMenu();
 		  $(this).addClass('touched');
 	  } else {
+		console.log('mobile menu click in open');
+
 		  closeMobileMenu();
 	  }
 	});
@@ -764,6 +768,7 @@ $( document ).ready(function() {
 			  previousBodyClass = parent;
 			  // this prevents the menu from automatically animating closed upon transition
 			  $('#menu').removeClass('touched');
+			  mobileMenuOpen = false;
 			  // $('#menu').off('click');
 
 			  // A new Transition toward a new page has just started.
