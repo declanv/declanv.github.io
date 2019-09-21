@@ -672,38 +672,40 @@ $( document ).ready(function() {
 			  // The Transition has just finished.
 			  mobileMenuClick();
 
-			  $('.grid').imagesLoaded().done( function( instance ) {
-				  // console.log('all images successfully loaded');
+			  if (!notGridLayout) {
 
-				  $('.grid').addClass("fade-in-grid");
+				  $('.grid').imagesLoaded().done(function (instance) {
+					  // console.log('all images successfully loaded');
 
-			  })
-			  .always( function( instance ) {
-				  // console.log('all images loaded');
+					  $('.grid').addClass("fade-in-grid");
 
-				  $('.grid').masonry({
-					  // itemSelector: '.grid-item',
-					  // columnWidth: '.grid-sizer',
-					  // columnWidth: 300,
-					  percentPosition: true,
-					  // fitWidth: true,
-					  gutter: 30
-				  });
+				  })
+					  .always(function (instance) {
+						  // console.log('all images loaded');
 
-				  imageOptimizer();
-				  initPhotoSwipeFromDOM('.projects-container');
+						  $('.grid').masonry({
+							  // itemSelector: '.grid-item',
+							  // columnWidth: '.grid-sizer',
+							  // columnWidth: 300,
+							  percentPosition: true,
+							  // fitWidth: true,
+							  gutter: 30
+						  });
 
-			  })
+						  imageOptimizer();
+						  initPhotoSwipeFromDOM('.projects-container');
 
-			  .fail( function() {
-				  // console.log('all images loaded, at least one is broken');
-			  })
-			  .progress( function( instance, image ) {
-				  var result = image.isLoaded ? 'loaded' : 'broken';
-				  // console.log( 'image is ' + result + ' for ' + image.img.src );
+					  })
 
-			  });
+					  .fail(function () {
+						  // console.log('all images loaded, at least one is broken');
+					  })
+					  .progress(function (instance, image) {
+						  var result = image.isLoaded ? 'loaded' : 'broken';
+						  // console.log( 'image is ' + result + ' for ' + image.img.src );
 
+					  });
+			  }
 
 		  },
 		  onLeave: function() {
