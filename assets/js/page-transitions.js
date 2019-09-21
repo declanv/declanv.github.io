@@ -672,84 +672,25 @@ $( document ).ready(function() {
 			  // The Transition has just finished.
 			  mobileMenuClick();
 
-			  grid.imagesLoaded().done( function( instance ) {
+			  $('.grid').imagesLoaded().done( function( instance ) {
 				  // console.log('all images successfully loaded');
 
-			  	grid.addClass("fade-in-grid");
+				  $('.grid').addClass("fade-in-grid");
 
 			  })
 			  .always( function( instance ) {
 				  // console.log('all images loaded');
 
-				  // $('.grid').masonry({
-					//   // itemSelector: '.grid-item',
-					//   // columnWidth: '.grid-sizer',
-					//   // columnWidth: 300,
-					//   percentPosition: true,
-					//   fitWidth: true,
-					//   gutter: 0
-				  // });
-				  if (notGridLayout == false) {
+				  $('.grid').masonry({
+					  // itemSelector: '.grid-item',
+					  // columnWidth: '.grid-sizer',
+					  // columnWidth: 300,
+					  percentPosition: true,
+					  // fitWidth: true,
+					  gutter: 30
+				  });
 
-					if (grid.length > 1) {
-						$('.grid').each(function(index) {
-							index = index + 1;
-							var galleryName = '.gallery-'+index;
-							console.log('here is the galleryName: ', galleryName);
-							var macyInstance = Macy({
-								// See below for all available options.
-								container: galleryName,
-								trueOrder: false,
-								waitForImages: true,
-								useOwnImageLoader: false,
-								margin: 10,
-								columns: 2,
-								// breakAt: {
-								//   1200: 5,
-								//   940: 3,
-								//   520: 2,
-								//   400: 1
-								// }
-							});
-							// imageOptimizer(galleryName, macyInstance);
-							// macyInstance.runOnImageLoad(function () {
-							// 	console.log('I only get called when all images are loaded');
-							// 	macyInstance.recalculate(true, true);
-							// });
-							macyInstance.on(macyInstance.constants.EVENT_RECALCULATED, function (ctx) {
-								console.log('recalculated');
-							});
-						});
-					} else {
-						var macyInstance = Macy({
-							// See below for all available options.
-							container: '.grid',
-							trueOrder: false,
-							waitForImages: true,
-							useOwnImageLoader: false,
-							margin: 10,
-							columns: 2,
-							// breakAt: {
-							//   1200: 5,
-							//   940: 3,
-							//   520: 2,
-							//   400: 1
-							// }
-						});
-						// imageOptimizer('.grid', macyInstance);
-						// macyInstance.runOnImageLoad(function () {
-						// 	console.log('I only get called when all images are loaded');
-						// 	macyInstance.recalculate(true, true);
-						// });
-						macyInstance.on(macyInstance.constants.EVENT_RECALCULATED, function (ctx) {
-							console.log('recalculated');
-						});
-					}
-
-				  } else {
-					  // imageOptimizer('.content-container');
-				  }
-
+				  imageOptimizer();
 				  initPhotoSwipeFromDOM('.projects-container');
 
 			  })
@@ -762,6 +703,7 @@ $( document ).ready(function() {
 				  // console.log( 'image is ' + result + ' for ' + image.img.src );
 
 			  });
+
 
 		  },
 		  onLeave: function() {
