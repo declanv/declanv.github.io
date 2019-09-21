@@ -683,7 +683,7 @@ $( document ).ready(function() {
 					  .always(function (instance) {
 						  // console.log('all images loaded');
 
-						  $('.grid').masonry({
+						  var msrny = $('.grid').masonry({
 							  // itemSelector: '.grid-item',
 							  // columnWidth: '.grid-sizer',
 							  // columnWidth: 300,
@@ -692,7 +692,7 @@ $( document ).ready(function() {
 							  gutter: 30
 						  });
 
-						  imageOptimizer();
+						  imageOptimizer('.grid', msrny);
 						  initPhotoSwipeFromDOM('.projects-container');
 
 					  })

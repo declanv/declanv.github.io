@@ -1,4 +1,4 @@
-var imageOptimizer = function(galleryContainer, macyInstance) {
+var imageOptimizer = function(galleryContainer, masonryInstance) {
     if (typeof galleryContainer === undefined || galleryContainer === null) {
         galleryContainer = '.grid';
     }
@@ -19,14 +19,18 @@ var imageOptimizer = function(galleryContainer, macyInstance) {
                         var lazyImage = entry.target;
                         lazyImage.src = lazyImage.dataset.src;
                         $lazyImage = $(lazyImage);
+                        console.log('lazy image: ', $lazyImage);
                         $lazyImage.parent().addClass('unblur');
                         $lazyImage.removeClass('blur');
                         lazyImage.classList.add('unblur');
                         lazyImageObserver.unobserve(lazyImage);
                         console.log('here is the galleryCOntainer: ', galleryContainer);
-                        if (macyInstance != null || typeof macyInstance != 'undefined') {
-                            macyInstance.recalculate();
+                        console.log('intersectionRatio ', entry.intersectionRatio);
+                        if (masonryInstance !== null || typeof masonryInstance !== undefined) {
+                            $(galleryContainer).masonry('layout');
                         }
+                    } else if (entry) {
+                        console.log('entry: ', entry);
                     }
                 });
             }, config);
