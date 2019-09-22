@@ -21,7 +21,6 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
                         downloadingImage.onload = function () {
                             lazyImage.src = this.src;
                             if (masonryInstance !== null || typeof masonryInstance !== undefined) {
-                                console.log('here is the entry: ', entry);
                                 $(galleryContainer).masonry('layout');
                             }
                         }
@@ -32,8 +31,6 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
                         $lazyImage.removeClass('blur');
                         lazyImage.classList.add('unblur');
                         lazyImageObserver.unobserve(lazyImage);
-                        console.log('here is the galleryCOntainer: ', galleryContainer);
-                        console.log('intersectionRatio ', entry.intersectionRatio);
                     } else {
                         console.log('image is not yet in viewport...here is the entry: ', entry.target);
                     }

@@ -683,18 +683,23 @@ $( document ).ready(function() {
 				  .always(function (instance) {
 					  // console.log('all images loaded');
 
-					  var msrny = $('.grid').masonry({
-						  // itemSelector: '.grid-item',
-						  // columnWidth: '.grid-sizer',
-						  // columnWidth: 300,
-						  percentPosition: true,
-						  // fitWidth: true,
-						  gutter: 30
-					  });
+					  var grids = $('.grid');
 
-					  imageOptimizer('.grid', msrny);
-					  msrny.masonry('layout');
-					  initPhotoSwipeFromDOM('.projects-container');
+					  $.each(grids, function(i, grid){
+						  var msrynName = 'msnry' + i;
+						  var msrynName = $('.grid').masonry({
+							  // itemSelector: '.grid-item',
+							  // columnWidth: '.grid-sizer',
+							  // columnWidth: 300,
+							  percentPosition: true,
+							  // fitWidth: true,
+							  gutter: 30
+						  });
+
+						  console.log('here is the masonry grid for ', i, ' and here is the var: ', msrynName);
+						  imageOptimizer('.grid', msrynName);
+						  initPhotoSwipeFromDOM('.projects-container');
+					  });
 
 				  })
 
