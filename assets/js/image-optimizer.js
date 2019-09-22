@@ -15,9 +15,17 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
         var lazyImageObserver = new IntersectionObserver(
             function(entries, observer) {
                 entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0) {
                         var lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
+                        var downloadingImage = new Image();
+                        downloadingImage.onload = function () {
+                            lazyImage.src = this.src;
+                            if (masonryInstance !== null || typeof masonryInstance !== undefined) {
+                                console.log('here is the entry: ', entry);
+                                $(galleryContainer).masonry('layout');
+                            }
+                        }
+                        downloadingImage.src = lazyImage.dataset.src;
                         $lazyImage = $(lazyImage);
                         console.log('lazy image: ', $lazyImage);
                         $lazyImage.parent().addClass('unblur');
@@ -26,17 +34,15 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
                         lazyImageObserver.unobserve(lazyImage);
                         console.log('here is the galleryCOntainer: ', galleryContainer);
                         console.log('intersectionRatio ', entry.intersectionRatio);
-                        if (masonryInstance !== null || typeof masonryInstance !== undefined) {
-                            $(galleryContainer).masonry('layout');
-                        }
-                    } else if (entry) {
-                        console.log('entry: ', entry);
+                    } else {
+                        console.log('image is not yet in viewport...here is the entry: ', entry.target);
                     }
                 });
             }, config);
         lazyImages.forEach(function(lazyImage) {
             lazyImageObserver.observe(lazyImage);
         });
+
     } else {
         // For browsers that don't support IntersectionObserver yet,
         // load all the images now:

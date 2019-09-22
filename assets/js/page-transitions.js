@@ -680,31 +680,32 @@ $( document ).ready(function() {
 					  $('.grid').addClass("fade-in-grid");
 
 				  })
-					  .always(function (instance) {
-						  // console.log('all images loaded');
+				  .always(function (instance) {
+					  // console.log('all images loaded');
 
-						  var msrny = $('.grid').masonry({
-							  // itemSelector: '.grid-item',
-							  // columnWidth: '.grid-sizer',
-							  // columnWidth: 300,
-							  percentPosition: true,
-							  // fitWidth: true,
-							  gutter: 30
-						  });
-
-						  imageOptimizer('.grid', msrny);
-						  initPhotoSwipeFromDOM('.projects-container');
-
-					  })
-
-					  .fail(function () {
-						  // console.log('all images loaded, at least one is broken');
-					  })
-					  .progress(function (instance, image) {
-						  var result = image.isLoaded ? 'loaded' : 'broken';
-						  // console.log( 'image is ' + result + ' for ' + image.img.src );
-
+					  var msrny = $('.grid').masonry({
+						  // itemSelector: '.grid-item',
+						  // columnWidth: '.grid-sizer',
+						  // columnWidth: 300,
+						  percentPosition: true,
+						  // fitWidth: true,
+						  gutter: 30
 					  });
+
+					  imageOptimizer('.grid', msrny);
+					  msrny.masonry('layout');
+					  initPhotoSwipeFromDOM('.projects-container');
+
+				  })
+
+				  .fail(function () {
+					  // console.log('all images loaded, at least one is broken');
+				  })
+				  .progress(function (instance, image) {
+					  var result = image.isLoaded ? 'loaded' : 'broken';
+					  // console.log( 'image is ' + result + ' for ' + image.img.src );
+
+				  });
 			  }
 
 		  },

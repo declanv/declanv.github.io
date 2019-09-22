@@ -43,7 +43,7 @@ var files = {
 				jsVendor + 'jquery-3.2.1.min.js',
 			 	jsVendor + 'imagesloaded.pkgd.min.js',
 				jsVendor + 'macy.js',
-			 	// jsVendor + 'masonry.pkgd.min.js',
+			 	jsVendor + 'masonry.pkgd.min.js',
 	 	 		jsVendor + 'photoswipe.min.js',
 	 	 		jsVendor + 'photoswipe-ui-default.min.js',
 	 	 		jsVendor + 'barba.min.js',
