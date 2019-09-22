@@ -8,5 +8,4 @@ medium: Medium Format Photograph Print
 large-image: field-barns.jpg
 small-image: field-barns.jpg
 size: 995x1000
-project: true
 ---

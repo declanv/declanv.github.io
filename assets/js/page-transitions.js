@@ -694,7 +694,7 @@ $( document ).ready(function() {
 							  // columnWidth: 300,
 							  percentPosition: true,
 							  // fitWidth: true,
-							  gutter: 30
+							  // gutter: 30
 						  });
 
 						  console.log('here is the masonry grid for ', i, ' and here is the var: ', galleryName);

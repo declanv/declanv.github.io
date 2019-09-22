@@ -30,11 +30,10 @@
 	.grid-item {
 		position: relative;
 		display: block;
-		width: 48%;
+		width: 50%;
 		margin: 0;
 		padding: 10px;
 		@include border-box();
-		border: 1px solid black;
 
 		@media (max-width: 756px) {
 			width: 100%;
