@@ -686,8 +686,9 @@ $( document ).ready(function() {
 					  var grids = $('.grid');
 
 					  $.each(grids, function(i, grid){
-						  var msrynName = 'msnry' + i;
-						  var msrynName = $('.grid').masonry({
+
+						  var galleryNameString = 'gallery-' + (i+1);
+						  var galleryName = $('.grid').masonry({
 							  // itemSelector: '.grid-item',
 							  // columnWidth: '.grid-sizer',
 							  // columnWidth: 300,
@@ -696,8 +697,8 @@ $( document ).ready(function() {
 							  gutter: 30
 						  });
 
-						  console.log('here is the masonry grid for ', i, ' and here is the var: ', msrynName);
-						  imageOptimizer('.grid', msrynName);
+						  console.log('here is the masonry grid for ', i, ' and here is the var: ', galleryName);
+						  imageOptimizer('.' + galleryNameString, galleryName);
 						  initPhotoSwipeFromDOM('.projects-container');
 					  });
 

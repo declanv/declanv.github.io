@@ -2,6 +2,7 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
     if (typeof galleryContainer === undefined || galleryContainer === null) {
         galleryContainer = '.grid';
     }
+    console.log('here is the galleryContainer: ', galleryContainer);
     var container = document.querySelector(galleryContainer);
     var lazyImages = [].slice.call(container.querySelectorAll('img.lazy'));
     // console.log("here are the lazyImages: ", lazyImages);
@@ -30,9 +31,10 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
                         $lazyImage.parent().addClass('unblur');
                         $lazyImage.removeClass('blur');
                         lazyImage.classList.add('unblur');
+                        console.log('image is not yet in viewport...here is the entry: ', entry.target);
                         lazyImageObserver.unobserve(lazyImage);
                     } else {
-                        console.log('image is not yet in viewport...here is the entry: ', entry.target);
+                        console.log('image has intersectionRatio of: ', entry.intersectionRatio, ' and it is not yet in viewport...here is the entry: ', entry.target);
                     }
                 });
             }, config);
