@@ -31,7 +31,7 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
                         $lazyImage.parent().addClass('unblur');
                         $lazyImage.removeClass('blur');
                         lazyImage.classList.add('unblur');
-                        console.log('image is not yet in viewport...here is the entry: ', entry.target);
+                        console.log('image IS in viewport...here is the entry: ', entry.target);
                         lazyImageObserver.unobserve(lazyImage);
                     } else {
                         console.log('image has intersectionRatio of: ', entry.intersectionRatio, ' and it is not yet in viewport...here is the entry: ', entry.target);

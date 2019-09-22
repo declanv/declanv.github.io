@@ -698,7 +698,11 @@ $( document ).ready(function() {
 						  });
 
 						  console.log('here is the masonry grid for ', i, ' and here is the var: ', galleryName);
-						  imageOptimizer('.' + galleryNameString, galleryName);
+						  if (grids.length > 1) {
+							  imageOptimizer('.' + galleryNameString, galleryName);
+						  } else {
+							  imageOptimizer('.grid', galleryName);
+						  }
 						  initPhotoSwipeFromDOM('.projects-container');
 					  });
 
