@@ -113,9 +113,15 @@ layout: default
 	</div>
 
 	<div class="content-container outro show-on-scroll">
-		<div class="intro-image">
-			<img src="{{img_path | append: page.image2}}" />
-		</div>
+		{% if page.video1 %}
+			<div class="video-container">
+				{{ page.video1 }}
+			</div>
+		{% elsif page.image2 %}
+			<div class="intro-image">
+				<img src="{{img_path | append: page.image2}}" />
+			</div>
+		{% endif %}
 		{% if page.image3 == nil %}
 			<div class="isolated-text">
 				<p class='text'>
@@ -143,10 +149,10 @@ layout: default
 			</div>
 		</div>
 
-	{% elsif page.video1 %}
+	{% elsif page.video2 %}
 		<div class="content-container outro show-on-scroll">
 			<div class="video-container">
-				{{ page.video1 }}
+				{{ page.video2 }}
 			</div>
 			<div class="isolated-text">
 				<p class='text'>
@@ -164,7 +170,7 @@ layout: default
 		</div>
 	{% endif %}
 
-	{% if page.image4 %}
+	{% if page.image4 and page.description4 %}
 		<div class="content-container outro show-on-scroll">
 			<div class="intro-image">
 				<img src="{{img_path | append: page.image4}}" />
@@ -177,6 +183,17 @@ layout: default
 				</div>
 			{% endif %}
 		</div>
+	{% elsif page.video3 and page.description4 %}
+        <div class="content-container outro show-on-scroll">
+            <div class="video-container">
+                {{ page.video3 }}
+            </div>
+            <div class="full-width-text-container">
+                <p class="text">
+                    {{ page.description4 }}
+                </p>
+            </div>
+        </div>
 	{% elsif page.description4 %}
 		<div class="content-container outro show-on-scroll">
 			<div class="full-width-text-container">
