@@ -10,7 +10,7 @@ hex: FFFFFF
 {% assign art-cover = site.pages | where: "title", "Ayesha" | first %}
 {% assign photo-cover = site.pages | where: "title", "Haunted Mansion" | first %}
 
-<a href="/web" class="section-link" id="web">
+<a href="/web" class="section-link" id="web" data-hex="9DF4FE">
     <div class="image-container web-pattern-container">
         {% include web-intro.svg %}
 <!--        <img src="/assets/images/home/web-cover.svg">-->
@@ -23,7 +23,7 @@ hex: FFFFFF
         </span>
     </div>
 </a>
-<a href="{{'/' | append: art-cover.section}}" class="section-link" id="art">
+<a href="{{'/' | append: art-cover.section}}" class="section-link" id="art" data-hex="FA2466">
     {% include homepage-lazy-image.html art=art-cover section=art-cover.section type='figure-drawing' %}
     <div class="section-title">
         <span class="title-wrapper">
@@ -33,7 +33,7 @@ hex: FFFFFF
         </span>
     </div>
 </a>
-<a href="{{'/' | append: photo-cover.section}}" class="section-link" id="photo">
+<a href="{{'/' | append: photo-cover.section}}" class="section-link" id="photo" data-hex="350941">
     {% include homepage-lazy-image.html art=photo-cover section=photo-cover.section type='holga' %}
     <div class="section-title">
         <span class="title-wrapper">
