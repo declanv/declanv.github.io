@@ -10,7 +10,10 @@ weight: 2
 {% assign photo-cover = site.pages | where: "title", "Haunted Mansion" | first %}
 
 <a href="/web" class="section-link" id="web">
-    <div class="image-container web-pattern-container">{% include web-intro.svg %}</div>
+    <div class="image-container web-pattern-container">
+        {% include web-intro.svg %}
+<!--        <img src="/assets/images/home/web-cover.svg">-->
+    </div>
     <div class="section-title">
         <span class="title-wrapper">
             <h1 class="section-header">

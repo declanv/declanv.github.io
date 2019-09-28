@@ -31,17 +31,27 @@
           width: 100%;
           z-index: 200;
           animation: remove-intro .75s 5s forwards;
+          background-image: linear-gradient(#FDB170, #9DF4FE);
+
+          //flex-direction: column;
           svg {
-            transform: scale(3) rotate(45deg);
-            opacity: 0.6;
+            //transform: scale(3) rotate(45deg);
+            opacity: 0.5;
             position: relative;
             display: block;
-            width: 100%;
-            height: 100%;
+            width: auto;
+            height: 175%;
+            left: -50%;
+            top: -50%;
+            //flex: 2 1 300%;
 
-            rect {
+            rect,
+            path,
+            circle,
+            ellipse {
               stroke-dasharray: 5000;
               stroke-dashoffset: 5000;
+              stroke-width: 3px;
               animation: dash 35s linear alternate infinite;
 
               .slower {
