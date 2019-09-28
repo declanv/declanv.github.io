@@ -21,7 +21,9 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
                         var downloadingImage = new Image();
                         downloadingImage.onload = function () {
                             lazyImage.src = this.src;
-                            if (masonryInstance !== null || typeof masonryInstance !== undefined) {
+                            console.log('here is the masonry instance: ', masonryInstance);
+                            if (masonryInstance !== null) {
+                                console.log('making it into the check that i shoudlnt')
                                 $(galleryContainer).masonry('layout');
                             }
                         }

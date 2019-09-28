@@ -716,6 +716,9 @@ $( document ).ready(function() {
 					  // console.log( 'image is ' + result + ' for ' + image.img.src );
 
 				  });
+			  } else {
+			  	console.log('theis is not a grid container');
+				  imageOptimizer('.content', null);
 			  }
 
 		  },

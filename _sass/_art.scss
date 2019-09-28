@@ -2,11 +2,13 @@
 	// max-width: 100%;
 	// padding-left: 15px;
 	// padding-right: 15px;
+
 }
 
 .grid {
 	position: relative;
-	display: none;
+	display: block;
+	//visibility: hidden;
 	opacity: 0;
 	margin: 0 auto;
 	width: 100%;
