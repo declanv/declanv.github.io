@@ -90,6 +90,25 @@ body {
 	h4 {
 		font-weight: 900;
 	}
+	 //This part is to add in a loading animation
+	&:after {
+		content: '';
+		background: url('../images/loader.svg');
+		position: absolute;
+		left: 50%;
+		top: 10%;
+		//stroke: $site-pink;
+		z-index: 2000;
+		height: 50px;
+		width: 50px;
+		display: block;
+	}
+
+	&.loaded {
+		&:after {
+			display: none;
+		}
+	}
 }
 
 hr {

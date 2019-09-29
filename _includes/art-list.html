@@ -5,7 +5,6 @@
       {{type | replace: "-", " "}}
     </h4>
   </div>   -->
-
   {% for art in site.pages %}
 
     {% if art.type contains include.type | split: ", " %}

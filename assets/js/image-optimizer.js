@@ -21,9 +21,7 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
                         var downloadingImage = new Image();
                         downloadingImage.onload = function () {
                             lazyImage.src = this.src;
-                            console.log('here is the masonry instance: ', masonryInstance);
-                            if (masonryInstance !== null) {
-                                console.log('making it into the check that i shoudlnt')
+                            if (masonryInstance !== null && typeof masonryInstance !== undefined) {
                                 $(galleryContainer).masonry('layout');
                             }
                         }
@@ -33,10 +31,8 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
                         $lazyImage.parent().addClass('unblur');
                         $lazyImage.removeClass('blur');
                         lazyImage.classList.add('unblur');
-                        console.log('image IS in viewport...here is the entry: ', entry.target);
                         lazyImageObserver.unobserve(lazyImage);
                     } else {
-                        console.log('image has intersectionRatio of: ', entry.intersectionRatio, ' and it is not yet in viewport...here is the entry: ', entry.target);
                     }
                 });
             }, config);

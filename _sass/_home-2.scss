@@ -1,3 +1,5 @@
+
+
 .home {
   .wrapper.content {
     position: relative;
@@ -92,6 +94,9 @@
         //max-height: 100%;
         justify-content: center;
         align-content: center;
+        &:after {
+          display: none;
+        }
 
         &:hover,
         &:active {
@@ -132,6 +137,22 @@
               line-height: 40px;
               color: $site-purple;
             }
+
+             	$letters: 31;
+
+             	@for $i from 1 through $letters {
+             	    // $i: index($techs, $tech);
+             	    // $timeCalc: .05 * $i;
+             	    $time: #{$i*.12}s;
+             	    .intro-letter-#{$i} {
+             	    	position: relative;
+             	    	display: inline-block;
+             	    	background-color: transparent;
+             	    	// opacity: 0;
+             	       @include revealLetters($time);
+
+             	    }
+             	}
 
           }
         }
@@ -245,6 +266,15 @@
 
 
 
+  }
+
+  &.art,
+  &.web,
+  &.about,
+  &.photo {
+    .page-content {
+      display: none;
+    }
   }
 
 }

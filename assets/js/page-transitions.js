@@ -678,6 +678,7 @@ $( document ).ready(function() {
 					  // console.log('all images successfully loaded');
 
 					  $('.grid').addClass("fade-in-grid");
+					  $('.section-title').addClass('loaded');
 
 				  })
 				  .always(function (instance) {
