@@ -10,6 +10,11 @@ hex: FFFFFF
 {% assign art-cover = site.pages | where: "title", "Ayesha" | first %}
 {% assign photo-cover = site.pages | where: "title", "Haunted Mansion" | first %}
 
+{% assign web_title_array = 'Web' | split: "" %}
+{% assign art_title_array = art-cover.section | split: "" %}
+{% assign photo_title_array = photo-cover.section | split: "" %}
+
+
 <a href="/web" class="section-link" id="web" data-hex="9DF4FE">
     <div class="image-container web-pattern-container">
         {% include web-intro.svg %}
@@ -17,8 +22,8 @@ hex: FFFFFF
     </div>
     <div class="section-title">
         <span class="title-wrapper">
-            <h1 class="section-header">
-                <span class="fade-in-letter">W</span><span class="fade-in-letter">e</span><span class="fade-in-letter">b</span>
+            <h1 class="section-header section-1">
+                {% include letter-loop.html letters=web_title_array %}
             </h1>
         </span>
     </div>
@@ -27,8 +32,8 @@ hex: FFFFFF
     {% include homepage-lazy-image.html art=art-cover section=art-cover.section type='figure-drawing' %}
     <div class="section-title">
         <span class="title-wrapper">
-            <h1 class="section-header">
-                <span class="fade-in-letter">A</span><span class="fade-in-letter">r</span><span class="fade-in-letter">t</span>
+            <h1 class="section-header section-2">
+                {% include letter-loop.html letters=art_title_array %}
             </h1>
         </span>
     </div>
@@ -37,8 +42,8 @@ hex: FFFFFF
     {% include homepage-lazy-image.html art=photo-cover section=photo-cover.section type='holga' %}
     <div class="section-title">
         <span class="title-wrapper">
-            <h1 class="section-header">
-                <span class="fade-in-letter">P</span><span class="fade-in-letter">h</span><span class="fade-in-letter">o</span><span class="fade-in-letter">t</span><span class="fade-in-letter">o</span>
+            <h1 class="section-header section-3">
+                {% include letter-loop.html letters=photo_title_array %}
             </h1>
         </span>
     </div>

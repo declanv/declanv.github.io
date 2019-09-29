@@ -550,7 +550,7 @@
   // }
   70% {
     opacity: 0;
-    // transform: translateY(-10%);
+     transform: translateY(-10%);
   }
   100% {
     opacity: 1;
@@ -1554,3 +1554,20 @@
   }
 }
 
+
+@mixin letterLoop($time) {
+  $letters: 5;
+  @for $i from 1 through $letters {
+    // $i: index($techs, $tech);
+    // $timeCalc: .05 * $i;
+    $sumTime: #{$i*$time*.1};
+    .letter-#{$i} {
+      position: relative;
+      display: inline-block;
+      background-color: transparent;
+      //padding: $s;
+      // opacity: 0;
+      @include revealLetters(#{$sumTime}s);
+    }
+  }
+}

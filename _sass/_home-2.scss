@@ -60,9 +60,9 @@
                 animation: dash 50s linear alternate infinite;
               }
 
-              // .faster {
-              // 	animation: dash 5s linear alternate infinite;
-              // }
+               .faster {
+               	animation: dash 5s linear alternate infinite;
+               }
             }
 
             @keyframes dash {
@@ -125,7 +125,7 @@
             height: 100%;
             padding: 5% 0;
 
-            span {
+            .fade-in-letter {
               position: relative;
               display: inline-block;
               margin: 0;
@@ -136,23 +136,22 @@
               font-size: 40px;
               line-height: 40px;
               color: $site-purple;
+              opacity: 0;
+              transform: translateY(-100%);
+
+
+
             }
 
-             	$letters: 31;
-
-             	@for $i from 1 through $letters {
-             	    // $i: index($techs, $tech);
-             	    // $timeCalc: .05 * $i;
-             	    $time: #{$i*.12}s;
-             	    .intro-letter-#{$i} {
-             	    	position: relative;
-             	    	display: inline-block;
-             	    	background-color: transparent;
-             	    	// opacity: 0;
-             	       @include revealLetters($time);
-
-             	    }
-             	}
+            &.section-1 {
+              @include letterLoop(1);
+            }
+            &.section-2 {
+              @include letterLoop(2);
+            }
+            &.section-3 {
+              @include letterLoop(3);
+            }
 
           }
         }
