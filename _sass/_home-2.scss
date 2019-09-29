@@ -145,15 +145,15 @@
 
             &.section-1 {
               //@include letterLoop(1);
-              revealLetters(0.25);
+              revealLetters(0.25s);
             }
             &.section-2 {
               //@include letterLoop(2);
-              revealLetters(0.5);
+              revealLetters(0.5s);
             }
             &.section-3 {
               //@include letterLoop(3);
-              revealLetters(0.75);
+              revealLetters(0.75s);
             }
 
           }
