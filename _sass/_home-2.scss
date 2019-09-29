@@ -144,13 +144,16 @@
             }
 
             &.section-1 {
-              @include letterLoop(1);
+              //@include letterLoop(1);
+              revealLetters(0.25);
             }
             &.section-2 {
-              @include letterLoop(2);
+              //@include letterLoop(2);
+              revealLetters(0.5);
             }
             &.section-3 {
-              @include letterLoop(3);
+              //@include letterLoop(3);
+              revealLetters(0.75);
             }
 
           }
