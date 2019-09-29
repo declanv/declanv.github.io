@@ -18,7 +18,7 @@
 	//}
 
 	&.fade-in-grid {
-		@include fadeInGrid(0.2s, 0.1s);
+		@include fadeInGrid(0.5s, 0.7s);
 	}
 
 	@include clearfix();
