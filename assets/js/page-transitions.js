@@ -48,7 +48,6 @@ $( document ).ready(function() {
 		$('.site-header').removeClass('open-mobile');
 		// $('.site-header').addClass('close-mobile');
 		closeSubPageGroups();
-		// console.log('closing mobile menu.');
 	}
 
   var openMobileMenu = function() {
@@ -58,17 +57,14 @@ $( document ).ready(function() {
 
 
   var mobileMenuClick = function() {
-	// console.log('mobile menu click triggered. Is the #menu around? ', $('#menu').length);
 
 	$('#menu').on('click', function(){
 
 	  if (!mobileMenuOpen) {
-		console.log('mobile menu click in closed');
 
 		  openMobileMenu();
 		  $(this).addClass('touched');
 	  } else {
-		console.log('mobile menu click in open');
 
 		  closeMobileMenu();
 	  }
@@ -76,7 +72,6 @@ $( document ).ready(function() {
 
 	var mobileSubpageClick = function($link) {
 		if ($link.hasClass('selected')) {
-			console.log('second click');
 		} else {
 			$link.addClass('selected');
 			$('.trigger.box').addClass('subnav-open');
@@ -236,7 +231,6 @@ $( document ).ready(function() {
 
   function fadeHeader() {
 
-	  console.log('here is the window scrollTop: ', $(window).scrollTop());
 
 	if ($(window).scrollTop() > $('.site-header').outerHeight() / 2) {
 
@@ -388,7 +382,6 @@ $( document ).ready(function() {
 
 		if(index >= 0) {
 			// open PhotoSwipe if valid index found
-			console.log('open photoswipe bc valid index found');
 
 			openPhotoSwipe( index, clickedGallery );
 		}
@@ -425,7 +418,6 @@ $( document ).ready(function() {
 
 	var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
 
-		console.log("open photoswipe is actually happening");
 		var pswpElement = document.querySelectorAll('.pswp')[0],
 			gallery,
 			options,
@@ -480,12 +472,10 @@ $( document ).ready(function() {
 			options.showAnimationDuration = 0;
 		}
 
-		console.log("photoswipe, here is the element ", pswpElement, "here are the items: ", items, "here are the options: ", options);
 
 
 		// Pass data to PhotoSwipe and initialize it
 		gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-		console.log('here is the gallery: ', gallery);
 		gallery.init();
 	};
 
@@ -675,14 +665,12 @@ $( document ).ready(function() {
 			  if (!notGridLayout) {
 
 				  $('.grid').imagesLoaded().done(function (instance) {
-					  // console.log('all images successfully loaded');
 
 					  $('.grid').addClass("fade-in-grid");
 					  $('.section-title').addClass('loaded');
 
 				  })
 				  .always(function (instance) {
-					  // console.log('all images loaded');
 
 					  var grids = $('.grid');
 
@@ -698,7 +686,6 @@ $( document ).ready(function() {
 							  // gutter: 30
 						  });
 
-						  console.log('here is the masonry grid for ', i, ' and here is the var: ', galleryName);
 						  if (grids.length > 1) {
 							  imageOptimizer('.' + galleryNameString, galleryName);
 						  } else {
@@ -710,15 +697,12 @@ $( document ).ready(function() {
 				  })
 
 				  .fail(function () {
-					  // console.log('all images loaded, at least one is broken');
 				  })
 				  .progress(function (instance, image) {
 					  var result = image.isLoaded ? 'loaded' : 'broken';
-					  // console.log( 'image is ' + result + ' for ' + image.img.src );
 
 				  });
 			  } else {
-			  	console.log('theis is not a grid container');
 				  imageOptimizer('.content', null);
 			  }
 

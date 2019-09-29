@@ -125,35 +125,57 @@
             height: 100%;
             padding: 5% 0;
 
-            .fade-in-letter {
-              position: relative;
-              display: inline-block;
-              margin: 0;
-              padding: 0;
-              @include header-font-mid();
-              //@include header-font-mid();
-              //@include nav-font();
-              font-size: 40px;
-              line-height: 40px;
-              color: $site-purple;
+
+
+            .letter-container {
               opacity: 0;
               transform: translateY(-100%);
-
-
-
+              .fade-in-letter {
+                position: relative;
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+                @include header-font-mid();
+                //@include header-font-mid();
+                //@include nav-font();
+                font-size: 40px;
+                line-height: 40px;
+                color: $site-purple;
+              }
             }
 
             &.section-1 {
               //@include letterLoop(1);
-              @include revealLetters(0.25s);
+              //@include letterLoop(0.25s);
+              .letter-container {
+                  @include revealLetters(0.75s, 0.25s);
+                //.fade-in-letter {
+                //  @include letterLoop(1);
+                //}
+              }
+
             }
             &.section-2 {
               //@include letterLoop(2);
-              @include revealLetters(0.5s);
+              //@include letterLoop(0.5s);
+              .letter-container {
+                  @include revealLetters(1s, 0.5s);
+                //.fade-in-letter {
+                //  @include letterLoop(1);
+                //}
+              }
+
             }
             &.section-3 {
               //@include letterLoop(3);
-              @include revealLetters(0.75s);
+              //@include letterLoop(0.75s);
+              .letter-container {
+                  @include revealLetters(1.25s, 0.75s);
+                //.fade-in-letter {
+                //  @include letterLoop(1);
+                //}
+              }
+
             }
 
           }
@@ -247,18 +269,22 @@
       .section-title {
         .title-wrapper {
           .section-header {
-            span {
-
-              @media (max-width: 600px) {
-                font-size: 30px;
+            .letter-container {
+              .fade-in-letter {
+                @media (max-width: 800px) {
+                  font-size: 30px;
+                }
+                @media (max-width: 600px) {
+                  font-size: 22px;
+                }
+                @media (max-width: 450px) {
+                  font-size: 18px;
+                }
+                @media (max-width: 380px) {
+                  @include header-font();
+                  font-size: 10px;
+                }
               }
-              @media (max-width: 450px) {
-                font-size: 22px;
-              }
-              @media (max-width: 350px) {
-                font-size: 18px;
-              }
-
             }
           }
         }

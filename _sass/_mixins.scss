@@ -1139,8 +1139,8 @@
   @include prefix-animation(bounceLetter $timing cubic-bezier(0.5, 0, 0.5, 1) forwards);
 }
 
-@mixin revealLetters ($timing) {
-  @include prefix-animation(revealLetters $timing cubic-bezier(0.58, 0.33, 0.35, 0.99) forwards);
+@mixin revealLetters ($delay, $timing) {
+  @include prefix-animation(revealLetters $delay $timing cubic-bezier(0.58, 0.33, 0.35, 0.99) forwards);
 }
 
 @mixin section-in-left () {
@@ -1565,13 +1565,13 @@
     // $i: index($techs, $tech);
     // $timeCalc: .05 * $i;
     $sumTime: #{$i*$time*.1};
-    .letter-#{$i} {
+    &.letter-#{$i} {
       position: relative;
       display: inline-block;
       background-color: transparent;
       //padding: $s;
       // opacity: 0;
-      @include revealLetters(#{$sumTime}s);
+      @include revealLetters(0s, #{$sumTime}s);
     }
   }
 }
