@@ -132,7 +132,7 @@
 							display: inline-block;
 
 							@include openMobileNav();
-							padding: 12px 46px 0 0;
+							padding: 6px 46px 0 0;
 
 							.hamburger {
 								background-color: white;
@@ -170,11 +170,14 @@
 
 						.page-link {
 							display: block;
-							margin: 5% 0 6% 0;
+							margin: 12% 0 6% 0;
 							//padding-bottom: 5%;
 							text-align: center;
 							opacity: 0;
 							color: white;
+							&.active {
+								margin-bottom: 7%;
+							}
 						}
 
 
@@ -265,9 +268,9 @@
 
 							//padding: 4px 0 5% 0;
 
-							&.active {
-								margin-bottom: 0;
-							}
+							//&.active {
+							//	margin-bottom: 0;
+							//}
 
 							// the delay was originally 0.2s for all of them
 							// @include fadeInMobileLinks(0.2s);
