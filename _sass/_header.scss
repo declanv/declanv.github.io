@@ -294,11 +294,11 @@
 	}
 }
 
+// Page-specific header styles:
 .about {
 	@include pageHeaderStyles($about-pink, $about-dark-blue);
 }
 
-// Page-specific header styles:
 .art {
 	@include pageHeaderStyles($site-pink, $site-blue);
 }
