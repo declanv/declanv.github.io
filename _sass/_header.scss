@@ -269,116 +269,67 @@
 }
 
 @mixin pageHeaderStyles($color1, $color2) {
-	.site-title,
-	.page-link {
-		// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
-		@include nav-button($color1, $color2);
-	}
+	.site-header {
+		.site-title,
+		.page-link {
+			// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
+			@include nav-button($color1, $color2);
+		}
 
-	.site-nav {
-		li:hover {
-			.subpages {
-				//background-color: $color3;
-				border: 1.5px solid $color2;
-				border-top: none;
-				.page-link {
-					@include nav-button($color1, $color2);
+		.site-nav {
+			li:hover {
+				.subpages {
+					//background-color: $color3;
+					border: 1.5px solid $color2;
+					border-top: none;
+					.page-link {
+						@include nav-button($color1, $color2);
+					}
 				}
 			}
-		}
-		.site-title-wrapper {
-			@include hamburger($color1, $color2);
+			.site-title-wrapper {
+				@include hamburger($color1, $color2);
+			}
 		}
 	}
 }
 
 .about {
-	.site-header {
-		.site-nav {
-			.site-title-wrapper {
-				@include hamburger($about-pink, $about-dark-blue);	
-			}	
-		}
-
-
-		.site-title,
-		.page-link {
-			@include nav-button($about-pink, $about-dark-blue);
-		}
-
-	}
+	@include pageHeaderStyles($about-pink, $about-dark-blue);
 }
 
 // Page-specific header styles:
 .art {
-	.site-header {
-
-		// background-image: linear-gradient(white, transparent);
-		.site-nav {
-			li:hover {
-				.subpages {
-					border: 1.5px solid $site-blue;
-					border-top: none;
-				}
-			}
-			.site-title-wrapper {
-				@include hamburger($site-pink, $site-blue);
-			}
-		}
-
-
-		.site-title,
-		.page-link {
-			@include nav-button($site-pink, $site-blue);
-		}
-	}
+	@include pageHeaderStyles($site-pink, $site-blue);
 }
 
 .photo {
-	.site-header {
-
-		// background-image: linear-gradient(white, transparent);
-		.site-nav {
-			li:hover {
-				.subpages {
-					border: 1.5px solid $site-blue;
-					border-top: none;
-				}
-			}
-			.site-title-wrapper {
-				@include hamburger($site-purple, $site-yellow);
-			}
-		}
-
-
-		.site-title,
-		.page-link {
-			@include nav-button($site-purple, $site-yellow);
-		}
-	}
+	@include pageHeaderStyles($site-purple, $site-yellow);
 }
 
 .web {
 
-	@include pageHeaderStyles($site-blue, $site-orange);
+	.site-header {
+		@include pageHeaderStyles($site-blue, $site-orange);
 
-	&.sva {
-		@include webProjectHeaderStyles($sva-today-grey, $sva-blue, $sva-red);
-	}
-	&.sva-redesign {
-		@include webProjectHeaderStyles($sva-redesign-grey, $sva-redesign-blue, $sva-redesign-red);
-	}
-	&.relay {
-		@include webProjectHeaderStyles($relay-grey, $relay-blue, $relay-red);
-	}
-	&.sightseer {
-		@include webProjectHeaderStyles($sightseer-grey, $sightseer-blue, $sightseer-red);
-	}
-	&.ritandeclan {
-		@include webProjectHeaderStyles($ritandeclan-grey, $ritandeclan-blue, $ritandeclan-pink);
-	}
-	&.e-blast-builder {
-		@include webProjectHeaderStyles($sva-today-grey, $sva-today-blue, $sva-today-red);
+		&.sva {
+			@include webProjectHeaderStyles($sva-today-grey, $sva-blue, $sva-red);
+		}
+		&.sva-redesign {
+			@include webProjectHeaderStyles($sva-redesign-grey, $sva-redesign-blue, $sva-redesign-red);
+		}
+		&.relay {
+			@include webProjectHeaderStyles($relay-grey, $relay-blue, $relay-red);
+		}
+		&.sightseer {
+			@include webProjectHeaderStyles($sightseer-grey, $sightseer-blue, $sightseer-red);
+		}
+		&.ritandeclan {
+			@include webProjectHeaderStyles($ritandeclan-grey, $ritandeclan-blue, $ritandeclan-pink);
+		}
+		&.e-blast-builder {
+			@include webProjectHeaderStyles($sva-today-grey, $sva-today-blue, $sva-today-red);
+		}
 	}
 
 }
