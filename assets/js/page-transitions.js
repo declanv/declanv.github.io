@@ -535,7 +535,7 @@ $( document ).ready(function() {
 	  transitionContainer.addClass('transition-in');
 	  transitionContainer.css('background-color', '#' + currentTransitionColor);
 
-	  return $(this.oldContainer).animate({ opacity: 0 }, 800, function() {}).promise().then(
+	  return $(this.oldContainer).animate({ opacity: 0 }, 200, function() {}).promise().then(
 	  	function() {
 			removePreviousBodyClass()
 		}
@@ -577,7 +577,7 @@ $( document ).ready(function() {
 	  });
 	  // transitionContainer.addClass('.transition-in');
 
-	  $el.animate({ opacity: 1 }, 800, function() {
+	  $el.animate({ opacity: 1 }, 400, function() {
 		/**
 		 * Do not forget to call .done() as soon your transition is finished!
 		 * .done() will automatically remove from the DOM the old Container
