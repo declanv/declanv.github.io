@@ -247,30 +247,37 @@
 
 
 @mixin webProjectHeaderStyles($color1, $color2, $color3) {
+
 	.site-title,
 	.page-link {
 		// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
 		@include nav-button($color1, $color2);
 	}
+
 	.site-title {
 		margin-left: 0;
 	}
 
 	.site-nav {
-		li:hover {
-			.subpages {
-				background-color: $color3;
-				border: 1.5px solid $color2;
-				border-top: none;
-				.page-link {
-					@include nav-button($color1, $color2);
+		.trigger.box {
+			li:hover {
+				.subpages {
+					background-color: $color3;
+					border: 1.5px solid $color2;
+					border-top: none;
+
+					.page-link {
+						@include nav-button($color1, $color2);
+					}
 				}
 			}
 		}
+
 		.site-title-wrapper {
-			@include hamburger($color3, $color2);
+			@include hamburger($color1, $color2);
 		}
 	}
+
 }
 
 @mixin pageHeaderStyles($color1, $color2) {
@@ -280,7 +287,6 @@
 			// @include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
 			@include nav-button($color1, $color2);
 		}
-
 
 		.site-nav {
 			li:hover {
@@ -314,27 +320,35 @@
 }
 
 .web {
+	@include pageHeaderStyles($site-blue, $site-orange);
 
 	.site-header {
-		@include pageHeaderStyles($site-blue, $site-orange);
+		@media (min-width: 600px) {
 
-		&.sva {
-			@include webProjectHeaderStyles($sva-today-grey, $sva-blue, $sva-red);
-		}
-		&.sva-redesign {
-			@include webProjectHeaderStyles($sva-redesign-grey, $sva-redesign-blue, $sva-redesign-red);
-		}
-		&.relay {
-			@include webProjectHeaderStyles($relay-grey, $relay-blue, $relay-red);
-		}
-		&.sightseer {
-			@include webProjectHeaderStyles($sightseer-grey, $sightseer-blue, $sightseer-red);
-		}
-		&.ritandeclan {
-			@include webProjectHeaderStyles($ritandeclan-grey, $ritandeclan-blue, $ritandeclan-pink);
-		}
-		&.e-blast-builder {
-			@include webProjectHeaderStyles($sva-today-grey, $sva-today-blue, $sva-today-red);
+			&.sva {
+				@include webProjectHeaderStyles($sva-today-grey, $sva-blue, $sva-red);
+				//@include pageHeaderStyles($sva-today-grey, $sva-blue);
+			}
+			&.sva-redesign {
+				@include webProjectHeaderStyles($sva-redesign-grey, $sva-redesign-blue, $sva-redesign-red);
+				//@include pageHeaderStyles($sva-redesign-grey, $sva-redesign-blue);
+			}
+			&.relay {
+				@include webProjectHeaderStyles($relay-grey, $relay-blue, $relay-red);
+				//@include pageHeaderStyles($relay-grey, $relay-blue);
+			}
+			&.sightseer {
+				@include webProjectHeaderStyles($sightseer-grey, $sightseer-blue, $sightseer-red);
+				//@include pageHeaderStyles($sightseer-grey, $sightseer-blue);
+			}
+			&.ritandeclan {
+				@include webProjectHeaderStyles($ritandeclan-grey, $ritandeclan-blue, $ritandeclan-pink);
+				//@include pageHeaderStyles($ritandeclan-grey, $ritandeclan-blue);
+			}
+			&.e-blast-builder {
+				@include webProjectHeaderStyles($sva-today-grey, $sva-today-blue, $sva-today-red);
+				//@include pageHeaderStyles($sva-today-grey, $sva-today-blue);
+			}
 		}
 	}
 

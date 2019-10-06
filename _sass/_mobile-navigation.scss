@@ -331,6 +331,40 @@
 		.site-header.open-mobile {
 			.wrapper {
 				.site-nav {
+					.site-title-wrapper {
+						.site-title {
+							color: $color1;
+							&:hover,
+							&:active {
+								@include expand-underline($color2, 3px);
+							}
+						}
+						.menu-wrapper {
+							#menu {
+								.hamburger {
+									background: $color1;
+
+									&:before,
+									&:after {
+										background: $color1;
+									}
+								}
+
+								&:hover,
+								&:active {
+									.hamburger {
+										background: $color2;
+
+										&:before,
+										&:after {
+											background: $color2;
+										}
+									}
+								}
+							}
+
+						}
+					}
 					.trigger.box {
 						.subpages.open {
 							border: 1.5px solid $color1;
