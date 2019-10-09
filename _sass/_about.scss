@@ -251,7 +251,9 @@ body.about {
 								width: 175px;
 								height: 175px;
 								border-radius: 100%;
+								//border-radius: 27% 73% 38% 62% / 46% 57% 43% 54%;
 								background-color: $about-pink;
+								background: linear-gradient(19deg, $about-pink 0%, $about-light-blue 100%);
 								opacity: 0.6;
 								z-index: 400;
 								right: -20%;
@@ -259,6 +261,8 @@ body.about {
 								top: 40%;
 
 								@include shapeInTop(4s, 0.5s);
+								//@include morph(20s);
+
 
 								// @include gradient-shadow();
 								// transform: translateZ(-0.25px) scale(2);
