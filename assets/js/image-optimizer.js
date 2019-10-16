@@ -41,8 +41,7 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
     if ('IntersectionObserver' in window) {
         observeImages();
     } else {
-        function loadScript(url, callback)
-        {
+        function loadScript(url, callback) {
             // Adding the script tag to the head as suggested before
             var head = document.head;
             var script = document.createElement('script');
