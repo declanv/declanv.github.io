@@ -260,7 +260,8 @@
 
 	.site-nav {
 		.trigger.box {
-			li:hover {
+			li:hover,
+			li:focus {
 				.subpages {
 					background-color: $color3;
 					border: 1.5px solid $color2;
