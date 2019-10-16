@@ -26,6 +26,8 @@
 }());
 
 $( document ).ready(function() {
+  // Adding a touchstart listener on the document in order to emulate hover states on touch devices
+  // document.addEventListener("touchstart", function(){}, true);
 	  // Barba.Pjax.Dom.containerClass = 'body';
 
   var closeSubPageGroups = function() {
@@ -714,6 +716,7 @@ $( document ).ready(function() {
 						  });
 
 						  if (grids.length > 1) {
+							  console.log('here is the galleryNameString: ', '.' + galleryNameString);
 							  imageOptimizer('.' + galleryNameString, galleryName);
 						  } else {
 							  imageOptimizer('.grid', galleryName);
