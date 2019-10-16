@@ -43,7 +43,10 @@ var imageOptimizer = function(galleryContainer, masonryInstance) {
         lazyImages.forEach(function(lazyImage) {
             lazyImage.src = lazyImage.dataset.src;
             lazyImage.classList.remove('blur');
-            lazyImage.classList.add('unblur');      
+            lazyImage.classList.add('unblur');
+            if (masonryInstance !== null && typeof masonryInstance !== undefined) {
+                $(galleryContainer).masonry('layout');
+            }
         });
     }
 }
