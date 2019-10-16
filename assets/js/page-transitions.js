@@ -716,7 +716,6 @@ $( document ).ready(function() {
 						  });
 
 						  if (grids.length > 1) {
-							  console.log('here is the galleryNameString: ', '.' + galleryNameString);
 							  imageOptimizer('.' + galleryNameString, galleryName);
 						  } else {
 							  imageOptimizer('.grid', galleryName);
