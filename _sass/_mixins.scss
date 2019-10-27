@@ -53,31 +53,31 @@
 @include font-face("Tofino-Narrow-Medium", "../fonts/TofinoProPersonalNarrow-Book", 300, bold, otf);
 
 @mixin nav-font() {
-  font-family: Tofino-Narrow-Medium, sans-serif;
+  font-family: Tofino-Narrow-Medium, Arial, Helvetica, sans-serif;
   color: $site-blue;
 }
 
 @mixin header-font() {
-  font-family: Tonfino-Semibold, sans-serif;
+  font-family: Tonfino-Semibold, Arial, Helvetica, sans-serif;
 }
 
 @mixin body-font() {
-  font-family: Tofino-Wide-Regular, sans-serif;
+  font-family: Tofino-Wide-Regular, Arial, Helvetica, sans-serif;
   font-size: 19px;
 }
 
 @mixin body-font-regular() {
-  font-family: Tofino-Regular, sans-serif;
+  font-family: Tofino-Regular, Arial, Helvetica, sans-serif;
   font-size: 19px;
 }
 
 @mixin body-font-wide() {
-  font-family: Tofino-Wide-Thin, sans-serif;
+  font-family: Tofino-Wide-Thin, Arial, Helvetica, sans-serif;
   font-size: 19px;
 }
 
 @mixin body-light() {
-  font-family: Tofino-Light, sans-serif;
+  font-family: Tofino-Light, Arial, Helvetica, sans-serif;
 }
 
 // mobile variables
