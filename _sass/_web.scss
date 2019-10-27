@@ -233,6 +233,7 @@
 					@include body-light();
 					// font-family: NunitoSans-ExtraLight, sans-serif;
 					font-weight: 100;
+
 					&:after {
 						content: ', ';
 						position: relative;

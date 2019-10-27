@@ -396,11 +396,16 @@
 							}
 
 							.tech-item {
+								@include body-font-regular();
+								letter-spacing: 0.5px;
 								font-size: 16px;
 								@include display-flex();
 								@include flex-direction-row();
 								@include flex(0 1 auto);
+
 								span {
+									@include body-font-regular();
+									letter-spacing: 0.5px;
 									@include flex(1 0 auto);
 									&:after {
 										content: ', ';
