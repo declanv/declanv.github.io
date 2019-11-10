@@ -76,9 +76,6 @@ gulp.task('serve', () => {
   });
 });
 
-gulp.task('watch', () => {
-  gulp.watch(allJs, ['js']);	
-});
 
 gulp.task('jekyll', () => {
   const jekyll = child.spawn('jekyll', ['build',
@@ -116,6 +113,14 @@ gulp.task('js', function () {
       .pipe(gulp.dest(compiledJs));
 });
 
+
+gulp.task('watch', () => {
+	gulp.watch(allJs, ['js']);
+});
+
+gulp.task('watchServe', gulp.series('serve', 'watch'));
+
+
 // Add un-concatenated js files
 gulp.task('extraJs', function () {
   // return console.log('js dest: ', files.dest.js);
@@ -137,4 +142,12 @@ gulp.task('jsSourcemap', function () {
       .pipe(gulp.dest(files.dest.js));
 });
 
-gulp.task('default', ['js', 'extraJs', 'jekyll', 'serve', 'watch']);
+// const build = gulp.series('js', 'extraJs', 'jekyll', 'serve', 'watch');
+// const watch = gulp.parallel('watch', 'serve');
+
+// exports.default = gulp.series(
+// 	gulp.parallel('js', 'extraJs', 'jekyll'),
+// 	'serve,', 'watch'
+// );
+
+gulp.task('default', gulp.series('js', 'extraJs', 'watchServe', 'jekyll'));
