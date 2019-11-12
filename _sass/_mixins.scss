@@ -1523,6 +1523,27 @@
   @include border-box();
 }
 
+@mixin buttonUnderline($color, $color-hover) {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  @include border-box();
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  color: $color;
+  @include border-box();
+  @include expand-underline($color-hover, 1px);
+
+  &.active {
+    &:before {
+      border-bottom: 1px solid $color-hover;
+      border-left: 0;
+      @include transform-origin(0% 100%);
+    }
+    color: $color-hover;
+  }
+}
+
 
 @mixin gradient-shadow() {
   box-shadow: 27px 23px 107px -6px rgba(0,0,0,0.32);
