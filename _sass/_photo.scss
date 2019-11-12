@@ -1,0 +1,16 @@
+
+.photo {
+
+  .wrapper {
+    // max-width: 100%;
+    // padding-left: 15px;
+    // padding-right: 15px;
+    .subsection-title a {
+      @include body-font-wide();
+      @include buttonUnderline($site-purple, $site-yellow);
+      &:visited {
+        color: $site-purple;
+      }
+    }
+  }
+}
