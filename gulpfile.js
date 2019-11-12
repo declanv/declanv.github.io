@@ -18,7 +18,9 @@ var assets = 'assets/',
 	allJs = js + '**/*.js',
 	compiled = assets + 'compiled/',
 	compiledJs = compiled + 'js/',
-	css = assets + 'css/**/*.?(s)css';
+	css = assets + 'css/**/*.?(s)css',
+	html = '**/*.html',
+	md = '**/*.md';
 
 var files = {
 	source: {
@@ -76,9 +78,6 @@ gulp.task('serve', () => {
   });
 });
 
-gulp.task('watch', () => {
-  gulp.watch(allJs, ['js']);	
-});
 
 gulp.task('jekyll', () => {
   const jekyll = child.spawn('jekyll', ['build',
@@ -97,13 +96,25 @@ gulp.task('jekyll', () => {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
+gulp.task('jekyllBuild', () => {
+  const jekyll = child.spawn('jekyll', ['build']);
+
+  const jekyllLogger = (buffer) => {
+    buffer.toString()
+      .split(/\n/)
+      .forEach((message) => gutil.log('Jekyll: ' + message));
+  };
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+});
+
 gulp.task('css', () => {
   gulp.src(css)
   	.pipe(sass())
     .pipe(concat('all.css'))
     .pipe(gulp.dest('assets'))
 });
-
 
 // Uglify the JS files
 gulp.task('js', function () {
@@ -115,6 +126,14 @@ gulp.task('js', function () {
       // .pipe(cache('js'))
       .pipe(gulp.dest(compiledJs));
 });
+
+gulp.task('watch', () => {
+	gulp.watch(allJs, ['js']);
+	// gulp.watch(css, ['css']);
+	// gulp.watch(html, md, ['jekyllBuild']);
+});
+
+gulp.task('watchServe', gulp.series('serve', 'watch'));
 
 // Add un-concatenated js files
 gulp.task('extraJs', function () {
@@ -137,4 +156,12 @@ gulp.task('jsSourcemap', function () {
       .pipe(gulp.dest(files.dest.js));
 });
 
-gulp.task('default', ['js', 'extraJs', 'jekyll', 'serve', 'watch']);
+// const build = gulp.series('js', 'extraJs', 'jekyll', 'serve', 'watch');
+// const watch = gulp.parallel('watch', 'serve');
+
+// exports.default = gulp.series(
+// 	gulp.parallel('js', 'extraJs', 'jekyll'),
+// 	'serve,', 'watch'
+// );
+
+gulp.task('default', gulp.series('js', 'extraJs', gulp.parallel('watchServe', 'jekyll')));

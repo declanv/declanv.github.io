@@ -56,12 +56,7 @@ $( document ).ready(function() {
 				  && !$('#menu').is(e.target)
 				) // ... nor a descendant of the container
 		{
-
-
-		  // console.log('inside the clickOutsideClose and here is the element: ', e.target);
-
 			closeSubPageGroups();
-
 		  // window.setTimeout(function() {subpages.removeClass('open')}, 100);
 
 		}
