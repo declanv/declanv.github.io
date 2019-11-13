@@ -8,7 +8,7 @@ medium: Double sided, folded two-color silkscreen print on cotton rag paper
 large-image: meg-invite.jpg
 small-image: meg-invite.jpg
 size: 3000x1000
-project: true
+project: false
 
 image-cover: ritandeclan-postcards-1.png
 image1: ritandeclan-invitation.jpg
