@@ -877,7 +877,7 @@
 		@include web-project($sva-today-red, $sva-today-blue, $sva-today-grey);
 	}
 
-	&.sva {
+	&.sva-pre-2020 {
 		@include web-project($sva-red, $sva-blue, $sva-today-grey);
 	}
 
