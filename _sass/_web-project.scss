@@ -865,6 +865,10 @@
 		@include web-project($sightseer-red, $sightseer-blue, $sightseer-grey);
 	}
 
+	&.relay {
+		@include web-project($relay-red, $relay-blue, $relay-grey);
+	}
+
 	&.ritandeclan {
 		@include web-project($ritandeclan-pink, $ritandeclan-blue, $ritandeclan-grey);
 	}
