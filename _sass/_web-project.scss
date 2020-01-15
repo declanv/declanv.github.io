@@ -371,7 +371,7 @@
 						@include flex-direction-row();
 						@include flex-wrap(wrap);
 
-						$techs: 10;
+						$techs: 12;
 
 						@for $i from 1 through $techs {
 							$time: #{$i*.2+1}s;

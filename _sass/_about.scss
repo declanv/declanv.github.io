@@ -341,11 +341,17 @@ body.about {
 					.intro-text {
 						width: 100%;
 						@include border-box();
-						padding: 50px;
+						padding: 25px;
 						color: white;
 						@include body-font();
 						border: 10px solid white;
 						@include transform(translateY(-10px));
+
+						.sub-text {
+							margin-top: 10px;
+							font-size: 15px;
+							line-height: 18px;
+						}
 					}
 
 					.hey-container {
