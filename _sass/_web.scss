@@ -225,6 +225,7 @@
 					// @include text-in-left(1.75s, cubic-bezier(0, 0.58, 0, 1));
 					z-index: 1;
 				}
+
 				.tech-list {
 					position: relative;
 					display: block;
@@ -240,11 +241,13 @@
 						color: black;
 						display: inline-block
 					}
+
 					&:last-of-type {
 						&:after {
 							content: '';
 						}
 					}
+
 					// @include tech-in-left(2s, cubic-bezier(1, 0.04, 0.46, 0.75));
 					// $colors-list: #111 #222 #333 #444 #555;
 
@@ -265,6 +268,7 @@
 
 				}
 			}
+
 		}
 
 

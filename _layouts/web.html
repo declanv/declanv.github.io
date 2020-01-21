@@ -57,33 +57,35 @@ hex: 3EAFC4
 						{{page.description1}}
 					</div>
 				</div>
-				<div class="tech-wrapper">
-					<h6 class="tech-title">Technologies:</h6>
-					<div class="tech-list">
+				<div class="tech-link-container">
+					<div class="tech-wrapper">
+						<h6 class="tech-title">Technologies:</h6>
+						<div class="tech-list">
 
-						{% for technology in page.technologies %}
-							<p class="tech-item tech-{{ forloop.index }}">
-								<span>
-									{{technology}}
+							{% for technology in page.technologies %}
+								<p class="tech-item tech-{{ forloop.index }}">
+									<span>
+										{{technology}}
 
-									{% comment %}
-										{{technology}}{% if forloop.last != true %}, {% endif %}
-									{% endcomment %}
-								</span>
-							</p>
-						{% endfor %}
+										{% comment %}
+											{{technology}}{% if forloop.last != true %}, {% endif %}
+										{% endcomment %}
+									</span>
+								</p>
+							{% endfor %}
+						</div>
 					</div>
+					{% if page.externalUrl %}
+						<div class="link-container">
+							<div class="link-wrapper">
+								<a class="link" href="{{ page.externalUrl }}" target="_blank">
+									View Live Site
+								</a>
+							</div>
+						</div>
+					{% endif %}
 				</div>
 			</div>
-			{% if page.externalUrl %}
-			<div class="link-container">
-				<div class="link-wrapper">
-					<a class="link" href="{{ page.externalUrl }}" target="_blank">
-						View Live Site
-					</a>
-				</div>
-			</div>
-			{% endif %}
 		</div>
 
 	</div>

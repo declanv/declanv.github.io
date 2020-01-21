@@ -326,7 +326,7 @@
 					@include display-flex();
 					@include flex-direction-column();
 					@include align-items(center);
-					padding-right: 10px;
+					padding-right: 15px;
 					overflow: hidden;
 
 					.intro-text {
@@ -334,8 +334,10 @@
 						@include body-font();
 						font-size: 23px;
 						@include text-reveal-from-below(2s, cubic-bezier(0, 0.58, 0, 1));
+
 						a {
 							color: $relay-blue;
+
 							&:hover,
 							&:active {
 								color: $relay-red;
@@ -345,94 +347,114 @@
 
 				}
 
-				.tech-wrapper {
-
+				.tech-link-container {
 					position: relative;
 					@include display-flex();
 					@include flex-direction-column();
-					@include flex(1 1 auto);
+					@include align-content(flex-start);
 					@include justify-content-space-between();
+					flex-direction: column;
+					height: 100%;
+					width: auto;
 					@include align-self-start();
 
-					padding-left: 10px;
-
-					.tech-title {
-						position: relative;
-						display: block;
-						@include body-font-wide();
-						font-size: 32px;
-						line-height: 32px;
-						@include text-in-left(1.75s, cubic-bezier(0, 0.58, 0, 1));
-						@include expand-ruleline($relay-blue, 2s);
-
+					.link-container {
+						margin-top: 35px;
 					}
-					.tech-list {
+
+					.tech-wrapper {
 
 						position: relative;
-						display: block;
-						margin-top: 15px;
-						@include body-light();
-						font-weight: 100;
 						@include display-flex();
-						@include flex-direction-row();
-						@include flex-wrap(wrap);
+						@include flex-direction-column();
+						@include flex(1 1 auto);
+						@include justify-content-space-between();
+						@include align-self-start();
 
-						$techs: 12;
+						padding-left: 10px;
+						margin-bottom: 10px;
 
-						@for $i from 1 through $techs {
-							$time: #{$i*.2+1}s;
-							.tech-#{$i} {
-								position: relative;
-								display: inline-block;
-								background-color: transparent;
-								overflow: hidden;
-								margin: 0;
+						.tech-title {
+							position: relative;
+							display: block;
+							@include body-font-wide();
+							font-size: 32px;
+							line-height: 32px;
+							@include text-in-left(1.75s, cubic-bezier(0, 0.58, 0, 1));
+							@include expand-ruleline($relay-blue, 2s);
 
-								span {
+						}
+
+						.tech-list {
+
+							position: relative;
+							display: block;
+							margin-top: 15px;
+							@include body-light();
+							font-weight: 100;
+							@include display-flex();
+							@include flex-direction-row();
+							@include flex-wrap(wrap);
+
+							$techs: 12;
+
+							@for $i from 1 through $techs {
+								$time: #{$i*.2+1}s;
+								.tech-#{$i} {
 									position: relative;
 									display: inline-block;
-									opacity: 0;
-									padding: 0;
+									background-color: transparent;
+									overflow: hidden;
 									margin: 0;
-									width: auto;
 
-									@include text-reveal-from-below($time, cubic-bezier(0, 0.58, 0, 1));
+									span {
+										position: relative;
+										display: inline-block;
+										opacity: 0;
+										padding: 0;
+										margin: 0;
+										width: auto;
+
+										@include text-reveal-from-below($time, cubic-bezier(0, 0.58, 0, 1));
+									}
+
 								}
 
-							}
-
-							.tech-item {
-								@include body-font-regular();
-								letter-spacing: 0.5px;
-								font-size: 16px;
-								@include display-flex();
-								@include flex-direction-row();
-								@include flex(0 1 auto);
-
-								span {
+								.tech-item {
 									@include body-font-regular();
 									letter-spacing: 0.5px;
-									@include flex(1 0 auto);
-									&:after {
-										content: ', ';
-										position: relative;
-										color: black;
-										display: inline-block;
-										margin-left: -5px;
-										margin-right: 5px;
-									}
-								}
+									font-size: 16px;
+									@include display-flex();
+									@include flex-direction-row();
+									@include flex(0 1 auto);
 
-								&:last-of-type {
 									span {
+										@include body-font-regular();
+										letter-spacing: 0.5px;
+										@include flex(1 0 auto);
+
 										&:after {
-											content: '';
+											content: ', ';
+											position: relative;
+											color: black;
+											display: inline-block;
+											margin-left: -5px;
+											margin-right: 5px;
+										}
+									}
+
+									&:last-of-type {
+										span {
+											&:after {
+												content: '';
+											}
 										}
 									}
 								}
 							}
 						}
 					}
+
 				}
 			}
 
@@ -706,40 +728,45 @@
 						}
 					}
 
-					.tech-wrapper {
+					.tech-link-container {
+						//@include flex-direction-row();
 						width: 100%;
-						margin-top: 20px;
-						padding-left: 0;
+						.tech-wrapper {
+							width: 100%;
+							margin-top: 20px;
+							padding-left: 0;
 
-						.tech-title {
-							font-weight: 800;
-							font-size: 20px;
-							margin-bottom: 0;
-						}
-
-						.tech-list {
-							@include display-flex();
-							@include flex-direction-row();
-							@include justify-content-space-between();
-							.tech-item {
-								padding: 0;
-								font-size: 16px;
-
-								span {
-									&:after {
-										display: none;
-									}
-								}
-
+							.tech-title {
+								font-weight: 800;
+								font-size: 20px;
+								margin-bottom: 0;
 							}
+
+							.tech-list {
+								@include display-flex();
+								@include flex-direction-row();
+								@include justify-content-space-between();
+
+								.tech-item {
+									padding: 0;
+									font-size: 16px;
+
+									span {
+										&:after {
+											display: none;
+										}
+									}
+
+								}
+							}
+
 						}
 
-					}
-
-					.link-container {
-						.link-wrapper {
-							.link {
-								font-size: 16px;
+						.link-container {
+							.link-wrapper {
+								.link {
+									font-size: 16px;
+								}
 							}
 						}
 					}
@@ -783,20 +810,23 @@
 
 				.description-container {
 
-					.tech-wrapper {
+					.tech-link-container {
 
-						.tech-list {
-							//display: inline-block;
-							@include justify-content-flex-start();
+						.tech-wrapper {
 
-							.tech-item {
-								font-size: 18px;
-								@include flex(0 1 auto);
+							.tech-list {
+								//display: inline-block;
+								@include justify-content-flex-start();
 
-								span {
-									&:after {
-										display: inline-block;
-										margin-left: -5px;
+								.tech-item {
+									font-size: 18px;
+									@include flex(0 1 auto);
+
+									span {
+										&:after {
+											display: inline-block;
+											margin-left: -5px;
+										}
 									}
 								}
 							}
