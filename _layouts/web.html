@@ -222,5 +222,35 @@ hex: 3EAFC4
 
 	{% endif %}
 
+	{% if page.description5 %}
+		<div class="content-container outro show-on-scroll">
+			{% if page.video5 %}
+			<div class="video-container">
+				{{ page.video5 }}
+			</div>
+			{% endif %}
+			<div class="isolated-text">
+				<p class='text'>
+					{{ page.description5 }}
+				</p>
+			</div>
+		</div>
+	{% endif %}
+
+	{% if page.description6 %}
+		<div class="content-container outro show-on-scroll">
+			{% if page.image6 %}
+				<div class="intro-image">
+					{% include web-lazy-image.html type=type image=page.image6 %}
+				</div>
+			{% endif %}
+			<div class="isolated-text">
+				<p class='text'>
+					{{ page.description6 }}
+				</p>
+			</div>
+		</div>
+	{% endif %}
+
 </div>
 
