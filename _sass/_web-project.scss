@@ -752,6 +752,7 @@
 									font-size: 16px;
 
 									span {
+										font-size: 16px;
 										&:after {
 											display: none;
 										}
@@ -863,14 +864,22 @@
 			.intro-text-container {
 
 				.description-container {
+					margin-bottom: 20px;
 
-					.tech-wrapper {
+					.tech-link-container {
 
-						.tech-list {
-							//display: inline-block;
+						.tech-wrapper {
 
-							.tech-item {
-								font-size: 15px;
+							.tech-list {
+								//display: inline-block;
+
+								.tech-item {
+									font-size: 15px;
+
+									span {
+										font-size: 15px;
+									}
+								}
 							}
 						}
 					}
