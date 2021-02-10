@@ -931,6 +931,10 @@
 		@include web-project($sva-redesign-red, $sva-redesign-blue, $sva-redesign-grey);
 	}
 
+	&.start-at-sva {
+		@include web-project($start-yellow, $start-black, $start-pink);
+	}
+
 
 
 }
