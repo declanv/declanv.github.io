@@ -115,7 +115,7 @@
 			max-height: 350px;
 			overflow: hidden;
 			border: 2px solid $site-purple;
-
+			align-self: flex-start;
 			width: 65%;
 			z-index: 5;
 
@@ -372,6 +372,7 @@
 
 			.img-container {
 				max-height: 275px;
+				align-self: center;
 			}
 
 			.description-container {
@@ -380,6 +381,8 @@
 
 					&:before {
 						transform: skew(-22deg);
+						width: 340%;
+						left: -250%;
 					}
 					.title {
 						@include header-font-mid();
@@ -401,8 +404,10 @@
 				.title-container {
 
 					&:before {
-						width: 140%;
-						left: -30%;
+						//width: 140%;
+						//left: -30%;
+						width: 340%;
+						left: -250%;
 						transform: skew(-34deg);
 					}
 
