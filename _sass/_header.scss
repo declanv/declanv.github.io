@@ -154,7 +154,7 @@
 // Here's the idea:
 // The user will hover over the art link and the subnav links will reveal one by one below
 // Meanwhile, the initial underline will animate around the outskirts of the subnav until it's outlined
-// Then, we'll use a little js (or maybe we can get away with a hover state) to detect when the user is no longer hovering over the subnav items and we'll then close them 
+// Then, we'll use a little js (or maybe we can get away with a hover state) to detect when the user is no longer hovering over the subnav items and we'll then close them
 
 
 @keyframes openSubNav {
@@ -201,7 +201,7 @@
 		padding-top: 10px;
 		height: auto;
 		width: auto;
-		z-index: 300;	
+		z-index: 300;
 		margin: 0;
 		opacity: 0;
 		border: 1.5px solid transparent;
@@ -231,7 +231,7 @@
 
 				@for $i from 1 through $subNavLinks {
 					$time: #{$i*.2}s;
-					&.link-#{$i} { 
+					&.link-#{$i} {
 
 						@include fadeInSubNavLinks($time);
 
@@ -349,6 +349,10 @@
 			}
 			&.e-blast-builder {
 				@include webProjectHeaderStyles($sva-today-grey, $sva-today-blue, $sva-today-red);
+				//@include pageHeaderStyles($sva-today-grey, $sva-today-blue);
+			}
+			&.start-at-sva {
+				@include webProjectHeaderStyles($start-black, $start-pink, $start-yellow);
 				//@include pageHeaderStyles($sva-today-grey, $sva-today-blue);
 			}
 		}

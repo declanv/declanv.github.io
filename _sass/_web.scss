@@ -350,6 +350,10 @@
 			@include web-project-colors($sva-redesign-blue, $sva-redesign-red, $sva-redesign-grey);
 		}
 
+		&.start-at-sva{
+			@include web-project-colors($start-black, $start-yellow, $start-pink);
+		}
+
 		// responsive styles
 
 		@media (max-width: 1000px) {
