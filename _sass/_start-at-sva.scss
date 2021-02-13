@@ -1,0 +1,60 @@
+.web-project-container {
+  &.start-at-sva {
+    .content-container {
+
+      &.intro {
+        .intro-text-container {
+          .description-container {
+            .tech-link-container {
+              @include fancyBtn($start-black, $start-yellow, 1.25s);
+
+              .link-container {
+                .link-wrapper {
+                  .link {
+                    color: $start-black;
+                  }
+                  &:hover,
+                  &:active {
+
+                    cursor: pointer;
+
+                    &:before {
+                      background-color: $start-yellow;
+                      border-color: $start-yellow;
+                    }
+                    &:after {
+                      background-color: $start-black;
+                      border-color: $start-black;
+                    }
+
+                    .link {
+                      color: white;
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+      .full-width-text-container {
+        .text {
+          color: $start-black;
+          a {
+            color: $start-dark-purple;
+            @include expand-underline($start-dark-purple, 3px);
+
+            &:hover {
+              color: black;
+            }
+          }
+        }
+      }
+      .intro-image {
+        max-height: initial;
+      }
+    }
+  }
+}

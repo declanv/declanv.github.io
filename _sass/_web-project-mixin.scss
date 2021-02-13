@@ -151,6 +151,12 @@
 
 			background-color: $color1;
 
+			.text {
+				a {
+					@include expand-underline($color2, 3px);
+				}
+			}
+
 		}
 
 		.isolated-text {
