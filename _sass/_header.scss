@@ -335,6 +335,10 @@
 				@include webProjectHeaderStyles($sva-redesign-grey, $sva-redesign-blue, $sva-redesign-red);
 				//@include pageHeaderStyles($sva-redesign-grey, $sva-redesign-blue);
 			}
+			&.sva-pre-2020 {
+				@include webProjectHeaderStyles($sva-today-grey, $sva-blue, $sva-red);
+				//@include pageHeaderStyles($sva-redesign-grey, $sva-redesign-blue);
+			}
 			&.relay {
 				@include webProjectHeaderStyles($relay-grey, $relay-blue, $relay-red);
 				//@include pageHeaderStyles($relay-grey, $relay-blue);
