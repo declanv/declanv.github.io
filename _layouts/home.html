@@ -7,8 +7,8 @@ hex: FBB53C
 <!-- subpages: Illustration, Figure Drawings, Other Art -->
 ---
 
-{% assign art-cover = site.pages | where: "title", "Ayesha" | first %}
-{% assign photo-cover = site.pages | where: "title", "Haunted Mansion" | first %}
+{% assign art-cover = site.pages | where: "title", "Cowboy Tears" | first %}
+{% assign photo-cover = site.pages | where: "title", "Camels" | first %}
 
 {% assign web_title_array = 'Web' | split: "" %}
 {% assign art_title_array = art-cover.section | split: "" %}
@@ -29,7 +29,7 @@ hex: FBB53C
     </div>
 </a>
 <a href="{{'/' | append: art-cover.section}}" class="section-link" id="art" data-hex="FA2466">
-    {% include homepage-lazy-image.html art=art-cover section=art-cover.section type='figure-drawing' %}
+    {% include homepage-lazy-image.html art=art-cover section=art-cover.section type='illustration' %}
     <div class="section-title">
         <span class="title-wrapper">
             <h1 class="section-header section-2">

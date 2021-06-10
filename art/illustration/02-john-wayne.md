@@ -2,6 +2,7 @@
 layout: illustration
 title: Cowboy Tears
 type: art, illustration
+section: art
 description: Personal Illustration
 alt: illustration of John Wayne Crying in Front of Landscape with Cowboy Riding into the Distance
 medium: Silkscreen on Paper

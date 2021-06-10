@@ -2,6 +2,7 @@
 layout: illustration
 title: Camels
 type: photo, holga
+section: photo 
 description: Personal Photograph
 alt: Double exposure of a bushes over topiaries trimmed to look like camels.
 medium: Medium Format Photograph Print 
