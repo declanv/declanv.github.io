@@ -1,10 +1,28 @@
 .web-project-container {
-  &.start-at-sva {
+  &.sva-digital-viewbook {
     .content-container {
 
       &.intro {
         .intro-text-container {
           .description-container {
+            .intro-text-description {
+              .intro-text {
+                a {
+                  color: $start-pink;
+                  // @include expand-underline($start-pink, 3px);
+                  &:before,
+                  &:after {
+                    display: none;
+                  }
+
+                  &:hover,
+                  &:active {
+                    color: $start-dark-purple;
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
             .tech-link-container {
               @include fancyBtn($start-black, $start-yellow, 1.25s);
 

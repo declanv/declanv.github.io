@@ -350,8 +350,8 @@
 			@include web-project-colors($sva-redesign-blue, $sva-redesign-red, $sva-redesign-grey);
 		}
 
-		&.start-at-sva{
-			@include web-project-colors($start-black, $start-yellow, $start-pink);
+		&.sva-digital-viewbook{
+			@include web-project-colors($start-black, $start-yellow, $start-dark-purple);
 		}
 
 		// responsive styles
