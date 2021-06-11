@@ -159,8 +159,10 @@
 					background-color: $site-purple;
 
 				    position:absolute;
-				    top:10px;left:-30%;
-				    width:120%; height:100%;
+				    top:10px;
+				    left:-24%;
+				    width:120%;
+				    height:100%;
 				    // background: rgba(90,190,230,0.9);
 				    transform-origin:0 0;
 				    transform:skew(-30deg);
@@ -361,7 +363,7 @@
 			.description-container {
 				.title-container {
 					&:before {
-						left: -25%;
+						left: -16%;
 					}
 				}
 			}
@@ -382,10 +384,10 @@
 					&:before {
 						transform: skew(-22deg);
 						width: 340%;
-						left: -250%;
+						left: -245%;
 					}
 					.title {
-						@include header-font-mid();
+						font-size: 17px;
 					}
 				}
 
@@ -407,7 +409,7 @@
 						//width: 140%;
 						//left: -30%;
 						width: 340%;
-						left: -250%;
+						left: -233%;
 						transform: skew(-34deg);
 					}
 
@@ -552,6 +554,22 @@
 			}
 		}
 
+	}
+}
+
+.web {
+	.web-project {
+		&.sva-digital-viewbook {
+			@media (max-width: 768px) {
+
+				.img-container {
+				    display: flex;
+					justify-content: flex-end;
+				    flex-direction: column;
+				    align-items: flex-end;
+				}
+			}
+		}
 	}
 }
 
