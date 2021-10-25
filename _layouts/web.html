@@ -2,7 +2,7 @@
 layout: default
 hex: 3EAFC4
 ---
- 
+
 {% assign img_path = "/assets/images/web/" %}
 {% assign nextPage = page.next %}
 {% assign prevPage = page.previous %}
@@ -47,14 +47,14 @@ hex: 3EAFC4
 		</div>
 
 		<div class="intro-image">
-			{% include web-lazy-image.html type=type image=page.image1 %}
+			{% include web-lazy-image.html type=type image=page.intro-image %}
 		</div>
 
 		<div class="intro-text-container">
 			<div class="description-container">
 				<div class="intro-text-description">
 					<div class="intro-text">
-						{{page.description1}}
+						{{page.intro-description}}
 					</div>
 				</div>
 				<div class="tech-link-container">
@@ -116,130 +116,32 @@ hex: 3EAFC4
 
 	</div>
 
-	<div class="content-container outro show-on-scroll">
-		{% if page.video1 %}
-			<div class="video-container">
-				{{ page.video1 }}
-			</div>
-		{% elsif page.image2 %}
-			<div class="intro-image">
-				{% include web-lazy-image.html type=type image=page.image2 %}
-			</div>
-		{% endif %}
-		{% if page.image3 == nil %}
-			<div class="isolated-text">
-				<p class='text'>
-					{{ page.description2 }}
-				</p>
-			</div>
-		{% else %}
-			<div class="full-width-text-container">
-				<p class="text">
-					{{ page.description2 }}
-				</p>
-			</div>
-		{% endif %}
-	</div>
-
-	{% if page.image3 and page.video2 == nil %}
-		<div class="content-container outro show-on-scroll">
-			<div class="intro-image">
-				{% include web-lazy-image.html type=type image=page.image3 %}
-			</div>
-			<div class="isolated-text">
-				<p class='text'>
-					{{ page.description3 }}
-				</p>
-			</div>
-		</div>
-
-	{% elsif page.video2 %}
-		<div class="content-container outro show-on-scroll">
-			<div class="video-container">
-				{{ page.video2 }}
-			</div>
-			<div class="isolated-text">
-				<p class='text'>
-					{{ page.description3 }}
-				</p>
-			</div>
-		</div>
-	{% elsif page.description3 %}
-		<div class="content-container outro show-on-scroll">
-			<div class="isolated-text show-on-scroll">
-				<p class='text'>
-					{{ page.description3 }}
-				</p>
-			</div>
-		</div>
-	{% endif %}
-
-	{% if page.image4 and page.description4 %}
-		<div class="content-container outro show-on-scroll">
-			<div class="intro-image">
-				{% include web-lazy-image.html type=type image=page.image4 %}
-			</div>
-			{% if page.description4 %}
-				<div class="full-width-text-container">
-					<p class="text">
-						{{ page.description4 }}
-					</p>
+	{% if page.contentBlocks %}
+		{% for item in page.contentBlocks %}
+			{% if item.contentType == "video" %}
+				<div class="content-container outro show-on-scroll">
+					<div class="video-container">
+						{{ item.content }}
+					</div>
+					<div class="full-width-text-container">
+						<p class="text">
+							{{ item.description }}
+						</p>
+					</div>
+				</div>
+			{% elsif item.contentType == "image" %}
+				<div class="content-container outro show-on-scroll">
+					<div class="intro-image">
+						{% include web-lazy-image.html type=type image=item.content %}
+					</div>
+					<div class="isolated-text">
+						<p class='text'>
+							{{ item.description }}
+						</p>
+					</div>
 				</div>
 			{% endif %}
-		</div>
-	{% elsif page.video3 and page.description4 %}
-        <div class="content-container outro show-on-scroll">
-            <div class="video-container">
-                {{ page.video3 }}
-            </div>
-            <div class="full-width-text-container">
-                <p class="text">
-                    {{ page.description4 }}
-                </p>
-            </div>
-        </div>
-	{% elsif page.description4 %}
-		<div class="content-container outro show-on-scroll">
-			<div class="full-width-text-container">
-				<p class="text">
-					{{ page.description4 }}
-				</p>
-			</div>
-		</div>
-	{% endif %}
-
-	{% if page.description5 %}
-		<div class="content-container outro show-on-scroll">
-			{% if page.video5 %}
-				<div class="video-container">
-					{{ page.video5 }}
-				</div>
-			{% elsif page.image5 %}
-				<div class="intro-image">
-					{% include web-lazy-image.html type=type image=page.image5 %}
-				</div>
-			{% endif %}
-			<div class="isolated-text">
-				<p class='text'>
-					{{ page.description5 }}
-				</p>
-			</div>
-		</div>
-	{% endif %}
-
-	{% if page.description6 %}
-		<div class="content-container outro show-on-scroll">
-			{% if page.image6 %}
-				<div class="intro-image">
-					{% include web-lazy-image.html type=type image=page.image6 %}
-				</div>
-			{% endif %}
-			<div class="isolated-text">
-				<p class='text'>
-					{{ page.description6 }}
-				</p>
-			</div>
-		</div>
+		{% endfor %}
 	{% endif %}
 
 </div>
