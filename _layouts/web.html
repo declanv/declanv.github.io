@@ -137,6 +137,47 @@ hex: 3EAFC4
 						</div>
 					{% endif %}
 				</div>
+			{% elsif item.contentType == "video-with-image" %}
+				<div class="content-container outro show-on-scroll">
+					<div class="video-container">
+						{{ item.video-content }}
+					</div>
+					{% if item.style == "isolated" %}
+					<div class="isolated-text">
+						<p class='text'>
+							{{ item.description }}
+						</p>
+					</div>
+					{% else %}
+					<div class="full-width-text-container">
+						<p class="text">
+							{{ item.description }}
+						</p>
+					</div>
+					<div class="intro-image">
+						{% include web-lazy-image.html type=type image=item.image-content %}
+					</div>
+					{% endif %}
+				</div>
+			{% elsif item.contentType == "full-width-image" %}
+				<div class="content-container outro show-on-scroll">
+					<div class="intro-image full-width">
+						{% include web-lazy-image.html type=type image=item.content %}
+					</div>
+				</div>
+			{% elsif item.contentType == "multiple-images" %}
+				<div class="content-container outro show-on-scroll multi-image">
+					<div class="isolated-text">
+						<p class='text'>
+							{{ item.description }}
+						</p>
+					</div>
+					{% for image in item.content %}
+						<div class="intro-image full-width">
+							{% include web-lazy-image.html type=type image=image%}
+						</div>
+					{% endfor %}
+				</div>
 			{% elsif item.contentType == "image" %}
 				<div class="content-container outro show-on-scroll">
 					<div class="intro-image">
