@@ -123,22 +123,38 @@ hex: 3EAFC4
 					<div class="video-container">
 						{{ item.content }}
 					</div>
-					<div class="full-width-text-container">
-						<p class="text">
-							{{ item.description }}
-						</p>
-					</div>
+					{% if item.style == "isolated" %}
+						<div class="isolated-text">
+							<p class='text'>
+								{{ item.description }}
+							</p>
+						</div>
+					{% else %}
+						<div class="full-width-text-container">
+							<p class="text">
+								{{ item.description }}
+							</p>
+						</div>
+					{% endif %}
 				</div>
 			{% elsif item.contentType == "image" %}
 				<div class="content-container outro show-on-scroll">
 					<div class="intro-image">
 						{% include web-lazy-image.html type=type image=item.content %}
 					</div>
-					<div class="isolated-text">
-						<p class='text'>
-							{{ item.description }}
-						</p>
-					</div>
+					{% if item.style == "full-width" %}
+						<div class="full-width-text-container">
+							<p class="text">
+								{{ item.description }}
+							</p>
+						</div>
+					{% else %}
+						<div class="isolated-text">
+							<p class='text'>
+								{{ item.description }}
+							</p>
+						</div>
+					{% endif %}
 				</div>
 			{% endif %}
 		{% endfor %}
